@@ -1,0 +1,686 @@
+/* Skeletal base stylesheet.
+ *
+ */
+
+/* RESET
+ *
+ * Yes, there is still part of Eric Meyer's reset in here. We'll get to
+ * setting soon.
+ */
+a, abbr, address, b, blockquote, body, caption, cite, code, dd, del, dfn, div,
+dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins,
+kbd, label, legend, li, object, ol, p, pre, q, samp, small, span, strong, sub,
+sup, table, tbody, td, tfoot, th, thead, tr, ul, var {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+/*	background: transparent;*/
+}
+
+
+/* BASE
+ *
+ */
+body {
+	font-size: 62.5%; /* 10px */
+	line-height: 1;
+}
+
+
+/* COLOR
+ *
+ * Color scheme:
+ *
+ *     color     |  hex-value  |     rgb-value
+ * ------------------------------------------------
+ *   black       |   #000      |
+ *   light blue  |   #258ccc   |  rgb(37,140,204)
+ *   dark blue   |   #297eb2   |  rgb(41,126,178)
+ *   dark grey   |   #333      |
+ *   grey        |   #666      |
+ *   dark red    |   #b22121   |  rgb(178,33,33)
+ *   light grey  |   #eee      |
+ *   light red   |   #ff4848   |  rgb(255,72,72)
+ *   yellow      |   #fffd61   |  rgb(255,253,97)
+ *   white       |   #fff
+ */
+a:link {
+	color: #297eb2;
+}
+
+a:visited {
+	color: #297eb2;
+}
+
+a:hover {
+	color: #258ccc;
+}
+
+blockquote {
+	color: #666;
+}
+
+body {
+	color: #333;
+	background-color: inherit;
+}
+
+code {
+	background: #eee;
+	color: #ff4848;
+}
+
+html {
+	background-color: #fff;
+}
+
+legend {
+	color: #000;
+}
+
+mark {
+	background: #fffd61;
+}
+
+pre {
+	background: #eee;
+	color: #ff4848;
+}
+
+th {
+	background: #eee;
+}
+
+
+
+
+/* FONTS
+ *
+ */
+abbr {
+	font-variant: normal;
+}
+
+address {
+  font-style: italic;
+}
+
+b {
+	font-weight: bold;
+}
+
+blockquote {
+	font-family: Georgia, Times, "Times New Roman", serif;
+	font-style: italic;
+}
+
+body {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+cite {
+  font-style: italic;
+	font-weight: bold;
+}
+
+code {
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+dt {
+	font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Georgia, Times, "Times New Roman", serif;
+	font-weight: bold;
+}
+
+i {
+  font-style: italic;
+}
+
+kbd {
+	font-family: "Courier New", Courier, monospace;
+}
+
+legend {
+	font-family: Georgia, Times, "Times New Roman", serif;
+	font-weight: bold;
+}
+
+pre {
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+}
+
+q {
+  font-style: italic;
+}
+
+samp {
+	font-family: "Courier New", Courier, monospace;
+}
+
+strong {
+	font-weight: bold;
+}
+
+th {
+	font-weight: bold;
+}
+
+var {
+	font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+}
+
+
+/* TEXT
+ *
+ */
+a:focus {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+h1 {
+	letter-spacing: 0.025em;
+}
+
+h2 {
+	letter-spacing: 0.025em;
+}
+
+h3 {
+	letter-spacing: 0.025em;
+}
+
+h4 {
+	letter-spacing: 0.025em;
+}
+
+h5 {
+	letter-spacing: 0.025em;
+}
+
+h6 {
+	letter-spacing: 0.025em;
+}
+
+ins {
+	text-decoration: none;
+} /* TODO highlight inserts */
+
+legend {
+	letter-spacing: 0.025em;
+}
+
+
+
+/* HORIZONTAL GRID
+ *
+ */
+aside {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+body {
+	margin-left: auto;
+	margin-right: auto;
+	width: 96em;
+}
+
+dl {
+	margin-left: 6em;
+	margin-right: 6em;
+}
+
+footer {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+header {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+hr {
+	margin-left: 6em;
+	margin-right: 6em;
+}
+
+nav > ol {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+nav > ol > li {
+	margin-right: 1em;
+}
+
+ol {
+	margin-left: 6em;
+	margin-right: 6em;
+}
+
+ol > li > ol {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+ol > li > ul {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+pre {
+	margin-left: 5em; /* 60px */
+	margin-right: 5em; /* 60px */
+}
+
+section {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+table {
+	margin-left: 6em;
+	margin-right: 6em;
+}
+
+ul {
+	margin-left: 6em;
+	margin-right: 6em;
+}
+
+ul > li > ol {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+ul > li > ul {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+
+
+/* VERTICAL GRID
+ *
+ * The vertical grid is based on a default line height of 24px. This allows
+ * for the use of (line-)heights that are multiples of 6px (6px, 12px, 18px,
+ * 24px, 30px, 36px, 42px, 48px).
+ *
+ * Sensible font-size and line-height combinations are:
+ *
+ *   font-size  |  line-height (em)  |  line-height (px)
+ * -------------+--------------------+--------------------
+ *     10px     |       1.8em        |       18px
+ *     12px     |       1.5em        |       18px
+ *     15px     |       1.6em        |       24px
+ *     16px     |       1.5em        |       24px
+ *     20px     |       1.8em        |       36px
+ *     24px     |       1.5em        |       36px
+ *     25px     |       1.44em       |       36px
+ *     30px     |       1.4em        |       42px
+ */
+article {
+	margin-bottom: 1.2em;
+}
+
+aside {
+	margin-bottom: 1.2em;
+	margin-top: 0;
+}
+
+blockquote {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+}
+
+button {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+}
+
+cite {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+}
+
+dd {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+}
+
+dl {
+	margin-bottom: 1.2em;
+}
+
+dt {
+	font-size: 1.5em;
+	line-height: 1.6em; /* 24px */
+}
+
+footer > p {
+	margin-bottom: 0;
+}
+
+h1 {
+	font-size: 3em;
+	line-height: 1.4em; /* 42px */
+}
+
+h2 {
+	font-size: 2.4em;
+	line-height: 1.5em; /* 36px */
+}
+
+h3 {
+	font-size: 2em;
+	line-height: 1.8em; /* 36px */
+}
+
+h4 {
+	font-size: 1.6em;
+	line-height: 1.5em; /* 24px */
+}
+
+h5 {
+	font-size: 1.5em;
+	line-height: 1.6em; /* 24px */
+}
+
+h6 {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+}
+
+header {
+	margin-bottom: 1.2em;
+}
+
+input {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+}
+
+label {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+}
+
+legend {
+	font-size: 1.5em;
+	line-height: 1.6em; /* 24px */
+}
+
+li > ol > li {
+	font-size: 1em; /* 12px */
+	line-height: 1.5em; /* 18px */
+}
+
+li > ul > li {
+	font-size: 1em; /* 12px */
+	line-height: 1.5em; /* 18px */
+}
+
+nav > ol > li {
+	font-size: 1em;
+}
+
+nav > ol > li > a {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+}
+
+ol {
+	margin-bottom: 1.2em;
+}
+
+ol > li {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+}
+
+ol > li > ol {
+	margin-bottom: 0;
+}
+
+ol > li > ul {
+	margin-bottom: 0;
+}
+
+option {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+}
+
+optgroup {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+}
+
+p {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+	margin-bottom: 1em; /* 12px */
+}
+
+pre {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+	margin-bottom: 1em; /* 12px */
+}
+
+section {
+	margin-bottom: 1.2em;
+}
+
+select {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+}
+
+table {
+	margin-bottom: 1.2em;
+}
+
+table > tfoot > tr > th {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+}
+
+table > thead > tr > th {
+	font-size: 1.5em;
+	line-height: 1.6em; /* 24px */
+}
+
+td {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+}
+
+textarea {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+}
+
+ul {
+	margin-bottom: 1.2em;
+}
+
+ul > li {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
+}
+
+ul > li > ol {
+	margin-bottom: 0;
+}
+
+ul > li > ul {
+	margin-bottom: 0;
+}
+
+
+
+/* LISTS
+ *
+ */
+nav > ol {
+	list-style: none;
+}
+
+li > ol > li {
+	margin-left: 1.5em; /* 18px */
+}
+
+li > ul > li {
+	margin-left: 1.5em; /* 18px */
+}
+
+ol {
+	list-style-position: inside;
+	list-style-type: decimal;
+}
+
+ol > li > ol {
+	list-style-type: lower-alpha;
+}
+
+ol > li > ol > li > ol {
+	list-style-type: lower-roman;
+}
+
+ul {
+	list-style-position: inside;
+	list-style-type: disc;
+}
+
+ul > li > ul {
+	list-style-type: circle;
+}
+
+ul > li > ul > li > ul {
+	list-style-type: square;
+}
+
+
+
+
+
+/* POSITION
+ *
+ */
+nav > ol {
+	overflow: hidden;
+}
+
+nav > ol > li {
+	float: left;
+}
+
+
+
+/* TABLES
+ *
+ */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+table > tfoot > tr > th {
+	text-align: left;
+}
+
+table > thead > tr > th {
+	text-align: center;
+}
+
+table > tbody > tr > th {
+	text-align: left;
+}
+
+td {
+	border: 0.1em solid;
+	padding: 0.5em 0.9em;
+}
+
+table > tfoot > tr > th {
+	border: 0.1em solid;
+	padding: 0.2em 0.9em;
+}
+
+table > thead > tr > th {
+	border: 0.1em solid;
+	padding: 0.2em 1.9em;
+}
+
+
+
+/* FORMS
+ *
+ * I hate forms.
+ */
+label:after {
+	content: ":";
+}
+
+
+
+/* BLOCKS
+ *
+ */
+code {
+	display: inline-block;
+	padding: 0 0.25em;
+}
+
+mark {
+	display: inline-block;
+	padding: 0 0.25em;
+}
+
+nav > ol > li > a {
+	display: block;
+}
+
+
+
+/* DEBUG
+ *
+ * Uncomment to debug the horizontal grid.
+ */
+/** { background-color: rgba(255,0,0,0.1); } body { background-image: url(../img/960.gs/16_col.gif); background-position: center top; background-repeat: repeat-y; }*/
