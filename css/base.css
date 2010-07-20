@@ -73,6 +73,10 @@ code {
 	color: #ff4848;
 }
 
+hr {
+	color: #b22121;
+}
+
 html {
 	background-color: #fff;
 }
@@ -90,8 +94,16 @@ pre {
 	color: #ff4848;
 }
 
-th {
+table > tfoot {
 	background: #eee;
+}
+
+table > tfoot > tr > th {
+	background: #ccc;
+}
+
+table > thead {
+	background: #ccc;
 }
 
 
@@ -99,6 +111,8 @@ th {
 
 /* FONTS
  *
+ * Font stacks are chosen based on:
+ * http://unitinteractive.com/blog/2008/06/26/better-css-font-stacks/
  */
 abbr {
 	font-variant: normal;
@@ -163,7 +177,6 @@ legend {
 
 pre {
 	font-family: "Courier New", Courier, monospace;
-	font-weight: bold;
 }
 
 q {
@@ -259,6 +272,10 @@ body {
 	width: 96em;
 }
 
+dd {
+	margin-left: 1.25em;
+}
+
 dl {
 	margin-left: 6em;
 	margin-right: 6em;
@@ -304,8 +321,10 @@ ol > li > ul {
 }
 
 pre {
-	margin-left: 5em; /* 60px */
-	margin-right: 5em; /* 60px */
+	margin-left: 3.75em; /* 60px */
+	margin-right: 3.75em; /* 60px */
+	padding-left: 0.625em; /* 10px */
+	padding-right: 0.625em; /* 10px */
 }
 
 section {
@@ -337,22 +356,21 @@ ul > li > ul {
 
 /* VERTICAL GRID
  *
- * The vertical grid is based on a default line height of 24px. This allows
- * for the use of (line-)heights that are multiples of 6px (6px, 12px, 18px,
- * 24px, 30px, 36px, 42px, 48px).
+ * The vertical grid is based on a height of 6px. This allows for the use of
+ * line-heights like 12px, 18px, 24px, 30px, etc.
  *
  * Sensible font-size and line-height combinations are:
  *
- *   font-size  |  line-height (em)  |  line-height (px)
- * -------------+--------------------+--------------------
- *     10px     |       1.8em        |       18px
- *     12px     |       1.5em        |       18px
- *     15px     |       1.6em        |       24px
- *     16px     |       1.5em        |       24px
- *     20px     |       1.8em        |       36px
- *     24px     |       1.5em        |       36px
- *     25px     |       1.44em       |       36px
- *     30px     |       1.4em        |       42px
+ *   font-size  |  line-height (em)  |  line-height (px)  |   10px
+ * -------------+--------------------+--------------------|----------
+ *     10px     |       1.8em        |       18px         |  1em
+ *     12px     |       1.5em        |       18px         |  
+ *     15px     |       1.6em        |       24px         |  .625em
+ *     16px     |       1.5em        |       24px         |
+ *     20px     |       1.8em        |       36px         |  .5em
+ *     24px     |       1.5em        |       36px         |
+ *     25px     |       1.44em       |       36px         |  .4em
+ *     30px     |       1.4em        |       42px         |
  */
 article {
 	margin-bottom: 1.2em;
@@ -379,20 +397,23 @@ cite {
 }
 
 dd {
-	font-size: 1.2em;
-	line-height: 1.5em; /* 18px */
+	font-size: 1.6em;
+	line-height: 1.5em; /* 24px */
+	margin-bottom: 0.375em; /* 6px */
 }
 
 dl {
-	margin-bottom: 1.2em;
+	margin-bottom: 0.6em;
 }
 
 dt {
-	font-size: 1.5em;
-	line-height: 1.6em; /* 24px */
+	font-size: 1.6em;
+	line-height: 1.5em; /* 24px */
 }
 
 footer > p {
+	font-size: 1.2em;
+	line-height: 1.5em; /* 18px */
 	margin-bottom: 0;
 }
 
@@ -430,14 +451,19 @@ header {
 	margin-bottom: 1.2em;
 }
 
+hr {
+	border-width: 0.1em 0 0 0;
+	margin-bottom: 1.1em;
+}
+
 input {
 	font-size: 1.2em;
 	line-height: 1.5em; /* 18px */
 }
 
 label {
-	font-size: 1.2em;
-	line-height: 1.5em; /* 18px */
+	font-size: 1.5em;
+	line-height: 1.6em; /* 24px */
 }
 
 legend {
@@ -446,13 +472,13 @@ legend {
 }
 
 li > ol > li {
-	font-size: 1em; /* 12px */
-	line-height: 1.5em; /* 18px */
+	font-size: 1em; /* 15px */
+	line-height: 1.6em; /* 24px */
 }
 
 li > ul > li {
-	font-size: 1em; /* 12px */
-	line-height: 1.5em; /* 18px */
+	font-size: 1em; /* 15px */
+	line-height: 1.6em; /* 24px */
 }
 
 nav > ol > li {
@@ -460,8 +486,8 @@ nav > ol > li {
 }
 
 nav > ol > li > a {
-	font-size: 1.2em;
-	line-height: 1.5em; /* 18px */
+	font-size: 1.6em;
+	line-height: 1.5em; /* 24px */
 }
 
 ol {
@@ -469,8 +495,8 @@ ol {
 }
 
 ol > li {
-	font-size: 1.2em;
-	line-height: 1.5em; /* 18px */
+	font-size: 1.5em;
+	line-height: 1.6em; /* 24px */
 }
 
 ol > li > ol {
@@ -492,15 +518,17 @@ optgroup {
 }
 
 p {
-	font-size: 1.2em;
-	line-height: 1.5em; /* 18px */
-	margin-bottom: 1em; /* 12px */
+	font-size: 1.5em;
+	line-height: 1.6em; /* 24px */
+	margin-bottom: 0.8em; /* 12px */
 }
 
 pre {
-	font-size: 1.2em;
+	font-size: 1.6em;
 	line-height: 1.5em; /* 18px */
-	margin-bottom: 1em; /* 12px */
+	margin-bottom: 0.75em; /* 12px */
+	padding-bottom: 0.375em; /* 6px */
+	padding-top: 0.375em; /* 6px */
 }
 
 section {
@@ -517,18 +545,22 @@ table {
 }
 
 table > tfoot > tr > th {
-	font-size: 1.2em;
-	line-height: 1.5em; /* 18px */
-}
-
-table > thead > tr > th {
 	font-size: 1.5em;
 	line-height: 1.6em; /* 24px */
 }
 
+table > thead > tr > th {
+	font-size: 1.6em;
+	line-height: 1.5em; /* 24px */
+}
+
 td {
-	font-size: 1.2em;
-	line-height: 1.5em; /* 18px */
+	border-bottom: 0.1em solid; /* ~1px */
+	border-top: 0.1em solid; /* ~1px */
+	font-size: 1.5em;
+	line-height: 1.6em; /* 24px */
+	padding-bottom: 0.6em; /* 9px */
+	padding-top: 0.6em; /* 9px */
 }
 
 textarea {
@@ -541,8 +573,8 @@ ul {
 }
 
 ul > li {
-	font-size: 1.2em;
-	line-height: 1.5em; /* 18px */
+	font-size: 1.5em;
+	line-height: 1.6em; /* 24px */
 }
 
 ul > li > ol {
@@ -634,8 +666,10 @@ table > tbody > tr > th {
 }
 
 td {
-	border: 0.1em solid;
-	padding: 0.5em 0.9em;
+	border-left: 0.1em solid;
+	border-right: 0.1em solid;
+	padding-left: 0.9em; /* 13.5px */
+	padding-right: 0.9em; /* 13.5px */
 }
 
 table > tfoot > tr > th {
@@ -665,16 +699,29 @@ label:after {
  */
 code {
 	display: inline-block;
-	padding: 0 0.25em;
+	padding: 0 0.2em; /* 0 3px with a 15px font */
+}
+
+h1 > a {
+	display: inline-block;
 }
 
 mark {
 	display: inline-block;
-	padding: 0 0.25em;
+	padding: 0 0.2em; /* 0 3px with a 15px font */
 }
 
 nav > ol > li > a {
 	display: block;
+}
+
+
+
+/* BORDERS
+ *
+ */
+hr {
+	border-style: solid;
 }
 
 
