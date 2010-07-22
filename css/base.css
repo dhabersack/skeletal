@@ -73,12 +73,33 @@ code {
 	color: #ff4848;
 }
 
+fieldset > fieldset {
+	border-color: #666;
+}
+
 hr {
 	color: #b22121;
 }
 
 html {
 	background-color: #fff;
+}
+
+input[type=color],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {
+	border-bottom-color: #999;
+	border-left-color: #ccc;
+	border-right-color: #999;
+	border-top-color: #ccc;
 }
 
 legend {
@@ -273,7 +294,7 @@ body {
 }
 
 dd {
-	margin-left: 1.25em;
+	margin-left: 1.25em; /* 20px */
 }
 
 dl {
@@ -281,9 +302,26 @@ dl {
 	margin-right: 6em;
 }
 
+fieldset > fieldset {
+	border-left-width: 0.1em;
+	border-right-width: 0.1em;
+	padding-left: 0.9em;
+	padding-right: 0.9em;
+}
+
+fieldset > fieldset > legend {
+	padding-left: 0.625em; /* 10px */
+	padding-right: 0.625em; /* 10px */
+}
+
 footer {
 	margin-left: 1em;
 	margin-right: 1em;
+}
+
+form {
+	margin-left: 6em;
+	margin-right: 6em;
 }
 
 header {
@@ -294,6 +332,23 @@ header {
 hr {
 	margin-left: 6em;
 	margin-right: 6em;
+}
+
+input[type=color],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {
+	border-left-width: 0.1em;
+	border-right-width: 0.1em;
+	padding-left: 0.4em;
+	padding-right: 0.4em;
 }
 
 nav > ol {
@@ -411,6 +466,14 @@ dt {
 	line-height: 1.5em; /* 24px */
 }
 
+fieldset > fieldset {
+	border-bottom-width: 0.1em;
+	border-top-width: 0.1em;
+	margin-bottom: 1.2em;
+	padding-bottom: 1.1em;
+	padding-top: 0.5em;
+}
+
 footer > p {
 	font-size: 1.2em;
 	line-height: 1.5em; /* 18px */
@@ -456,9 +519,23 @@ hr {
 	margin-bottom: 1.1em;
 }
 
-input {
-	font-size: 1.2em;
-	line-height: 1.5em; /* 18px */
+input[type=color],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {
+	border-bottom-width: 0.1em; /* TODO find em-value */
+	border-top-width: 0.1em; /* TODO find em-value */
+	font-size: 1em;
+	line-height: 1em;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
 }
 
 label {
@@ -467,8 +544,8 @@ label {
 }
 
 legend {
-	font-size: 1.5em;
-	line-height: 1.6em; /* 24px */
+	font-size: 1.6em;
+	line-height: 1.5em; /* 24px */
 }
 
 li > ol > li {
@@ -684,13 +761,10 @@ table > thead > tr > th {
 
 
 
-/* FORMS
+/* CONTENT
  *
- * I hate forms.
+ * Content elements dynamically added by CSS.
  */
-label:after {
-	content: ":";
-}
 
 
 
@@ -703,6 +777,10 @@ code {
 }
 
 h1 > a {
+	display: inline-block;
+}
+
+label {
 	display: inline-block;
 }
 
@@ -721,6 +799,24 @@ nav > ol > li > a {
  *
  */
 hr {
+	border-style: solid;
+}
+
+fieldset > fieldset {
+	border-style: solid;
+}
+
+input[type=color],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {
 	border-style: solid;
 }
 
