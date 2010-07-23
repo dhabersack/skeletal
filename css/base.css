@@ -187,6 +187,20 @@ i {
   font-style: italic;
 }
 
+input[type=color],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
 kbd {
 	font-family: "Courier New", Courier, monospace;
 }
@@ -270,6 +284,7 @@ h6 {
 }
 
 ins {
+	border-bottom: 1px dashed;
 	text-decoration: none;
 } /* TODO highlight inserts */
 
@@ -345,10 +360,13 @@ input[type=text],
 input[type=time],
 input[type=url],
 input[type=week] {
-	border-left-width: 0.1em;
-	border-right-width: 0.1em;
-	padding-left: 0.4em;
-	padding-right: 0.4em;
+	border-left-width: 0.0625em; /* 1px */
+	border-right-width: 0.0625em; /* 1px */
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0.25em; /* 4px */
+	padding-right: 0.25em; /* 4px */
+	width: 16.875em; /* 270px */
 }
 
 nav > ol {
@@ -466,6 +484,18 @@ dt {
 	line-height: 1.5em; /* 24px */
 }
 
+fieldset {
+	line-height: 1; /* helps to set vertical alignment of radio buttons and checkboxes; probably unnecessary */
+}
+
+fieldset > div {
+	margin-bottom: 1.2em;
+}
+
+fieldset > fieldset > div {
+	margin-bottom: 0;
+}
+
 fieldset > fieldset {
 	border-bottom-width: 0.1em;
 	border-top-width: 0.1em;
@@ -530,12 +560,14 @@ input[type=text],
 input[type=time],
 input[type=url],
 input[type=week] {
-	border-bottom-width: 0.1em; /* TODO find em-value */
-	border-top-width: 0.1em; /* TODO find em-value */
-	font-size: 1em;
-	line-height: 1em;
-	padding-bottom: 0.5em;
-	padding-top: 0.5em;
+	border-bottom-width: 0.0625em; /* 1px */
+	border-top-width: 0.0625em; /* 1px */
+	font-size: 1.6em;
+	line-height: 1em; /* 16px */
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-bottom: 0.375em; /* 6px */
+	padding-top: 0.375em; /* 6px */
 }
 
 label {
@@ -712,12 +744,38 @@ ul > li > ul > li > ul {
 /* POSITION
  *
  */
-nav > ol {
+fieldset {
+	clear: left;
+}
+
+fieldset > div {
 	overflow: hidden;
 }
 
-nav > ol > li {
+fieldset > div > input {
+	clear: left;
 	float: left;
+}
+
+fieldset > div > label {
+	float: left;
+}
+
+fieldset > div > select {
+	clear: left;
+	float: left;
+}
+
+fieldset > fieldset > div > input {
+	float: none;
+}
+
+fieldset > fieldset > div > label {
+	float: none;
+}
+
+nav > ol {
+	overflow: hidden;
 }
 
 
@@ -787,6 +845,10 @@ label {
 mark {
 	display: inline-block;
 	padding: 0 0.2em; /* 0 3px with a 15px font */
+}
+
+nav > ol > li {
+	float: left;
 }
 
 nav > ol > li > a {
