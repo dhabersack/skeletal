@@ -1,5 +1,22 @@
 /* Skeletal base stylesheet.
  *
+ * Sections:
+ *   - reset
+ *   - base
+ *   - color
+ *   - fonts
+ *   - text
+ *   - horizontal grid
+ *   - vertical grid
+ *   - lists
+ *   - position
+ *   - tables
+ *   - content
+ *   - blocks
+ *   - borders
+ *   - decoration
+ *   - behaviour
+ *   - debug
  */
 
 /* RESET
@@ -47,6 +64,11 @@ body {
  *   yellow      |   #fffd61   |  rgb(255,253,97)
  *   white       |   #fff
  */
+a:link:focus {
+	background: #297eb2;
+	color: #fff;
+}
+
 a:link {
 	color: #297eb2;
 }
@@ -68,6 +90,20 @@ body {
 	background-color: inherit;
 }
 
+button,
+input[type=reset],
+input[type=submit] {
+	background: #333;
+	color: #fff;
+}
+
+button:hover,
+input[type=reset]:hover,
+input[type=submit]:hover {
+	background-color: #666;
+	cursor: pointer;
+}
+
 code {
 	background: #eee;
 	color: #ff4848;
@@ -78,7 +114,7 @@ fieldset > fieldset {
 }
 
 hr {
-	color: #b22121;
+	color: #666;
 }
 
 html {
@@ -102,6 +138,20 @@ input[type=week] {
 	border-top-color: #ccc;
 }
 
+input[type=color]:focus,
+input[type=datetime]:focus,
+input[type=datetime-local]:focus,
+input[type=email]:focus,
+input[type=month]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=text]:focus,
+input[type=time]:focus,
+input[type=url]:focus,
+input[type=week]:focus {
+	border-color: #258ccc;
+}
+
 legend {
 	color: #000;
 }
@@ -115,18 +165,30 @@ pre {
 	color: #ff4848;
 }
 
+table > tbody > tr > td {
+	border-color: #666;
+}
+
 table > tfoot {
 	background: #eee;
 }
 
+table > tfoot > tr > td {
+	border-color: #666;
+}
+
 table > tfoot > tr > th {
 	background: #ccc;
+	border-color: #666;
 }
 
 table > thead {
 	background: #ccc;
 }
 
+table > thead > tr > th {
+	border-color: #666;
+}
 
 
 
@@ -156,6 +218,12 @@ body {
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
+button,
+input[type=reset],
+input[type=submit] {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
 cite {
   font-style: italic;
 	font-weight: bold;
@@ -163,7 +231,6 @@ cite {
 
 code {
 	font-family: "Courier New", Courier, monospace;
-	font-weight: bold;
 }
 
 dfn {
@@ -260,36 +327,36 @@ del {
 }
 
 h1 {
-	letter-spacing: 0.025em;
+	letter-spacing: .025em;
 }
 
 h2 {
-	letter-spacing: 0.025em;
+	letter-spacing: .025em;
 }
 
 h3 {
-	letter-spacing: 0.025em;
+	letter-spacing: .025em;
 }
 
 h4 {
-	letter-spacing: 0.025em;
+	letter-spacing: .025em;
 }
 
 h5 {
-	letter-spacing: 0.025em;
+	letter-spacing: .025em;
 }
 
 h6 {
-	letter-spacing: 0.025em;
+	letter-spacing: .025em;
 }
 
 ins {
 	border-bottom: 1px dashed;
 	text-decoration: none;
-} /* TODO highlight inserts */
+}
 
 legend {
-	letter-spacing: 0.025em;
+	letter-spacing: .025em;
 }
 
 
@@ -308,6 +375,17 @@ body {
 	width: 96em;
 }
 
+button,
+input[type=reset],
+input[type=submit] {
+	border-left: 0;
+	border-right: 0;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 1.5em; /* 0 24px */
+	padding-right: 1.5em; /* 0 24px */
+}
+
 dd {
 	margin-left: 1.25em; /* 20px */
 }
@@ -318,15 +396,15 @@ dl {
 }
 
 fieldset > fieldset {
-	border-left-width: 0.1em;
-	border-right-width: 0.1em;
-	padding-left: 0.9em;
-	padding-right: 0.9em;
+	border-left-width: .1em;
+	border-right-width: .1em;
+	padding-left: .9em;
+	padding-right: .9em;
 }
 
 fieldset > fieldset > legend {
-	padding-left: 0.625em; /* 10px */
-	padding-right: 0.625em; /* 10px */
+	padding-left: .625em; /* 10px */
+	padding-right: .625em; /* 10px */
 }
 
 footer {
@@ -360,12 +438,12 @@ input[type=text],
 input[type=time],
 input[type=url],
 input[type=week] {
-	border-left-width: 0.0625em; /* 1px */
-	border-right-width: 0.0625em; /* 1px */
+	border-left-width: .0625em; /* 1px */
+	border-right-width: .0625em; /* 1px */
 	margin-left: 0;
 	margin-right: 0;
-	padding-left: 0.25em; /* 4px */
-	padding-right: 0.25em; /* 4px */
+	padding-left: .25em; /* 4px */
+	padding-right: .25em; /* 4px */
 	width: 16.875em; /* 270px */
 }
 
@@ -396,8 +474,8 @@ ol > li > ul {
 pre {
 	margin-left: 3.75em; /* 60px */
 	margin-right: 3.75em; /* 60px */
-	padding-left: 0.625em; /* 10px */
-	padding-right: 0.625em; /* 10px */
+	padding-left: .625em; /* 10px */
+	padding-right: .625em; /* 10px */
 }
 
 section {
@@ -408,6 +486,26 @@ section {
 table {
 	margin-left: 6em;
 	margin-right: 6em;
+}
+
+table > tbody > tr > td {
+	padding-left: .6em; /* 9px */
+	padding-right: .6em; /* 9px */
+}
+
+table > tfoot > tr > td {
+	padding-left: .6em; /* 9px */
+	padding-left: .6em; /* 9px */
+}
+
+table > tfoot > tr > th {
+	padding-left: .6em; /* 9px */
+	padding-right: .6em; /* 9px */
+}
+
+table > thead > tr > th {
+	padding-left: 1.6em; /* 24px */
+	padding-right: 1.6em; /* 24px */
 }
 
 ul {
@@ -437,12 +535,13 @@ ul > li > ul {
  *   font-size  |  line-height (em)  |  line-height (px)  |   10px
  * -------------+--------------------+--------------------|----------
  *     10px     |       1.8em        |       18px         |  1em
- *     12px     |       1.5em        |       18px         |  
+ *     12px     |       1.5em        |       18px         |
  *     15px     |       1.6em        |       24px         |  .625em
  *     16px     |       1.5em        |       24px         |
- *     20px     |       1.8em        |       36px         |  .5em
+ *     20px     |       1.5em        |       30px         |  .5em
  *     24px     |       1.5em        |       36px         |
  *     25px     |       1.44em       |       36px         |  .4em
+ *     28px     |       1.5em        |       42px         |
  *     30px     |       1.4em        |       42px         |
  */
 article {
@@ -459,9 +558,17 @@ blockquote {
 	line-height: 1.5em; /* 18px */
 }
 
-button {
-	font-size: 1.2em;
-	line-height: 1.5em; /* 18px */
+button,
+input[type=reset],
+input[type=submit] {
+	border-bottom: 0;
+	border-top: 0;
+	font-size: 1.6em;
+	line-height: 1.875em; /* 30px */
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-bottom: 0;
+	padding-top: 0;
 }
 
 cite {
@@ -470,18 +577,18 @@ cite {
 }
 
 dd {
-	font-size: 1.6em;
+	font-size: 1.5em;
 	line-height: 1.5em; /* 24px */
-	margin-bottom: 0.375em; /* 6px */
+	margin-bottom: .4em; /* 6px */
 }
 
 dl {
-	margin-bottom: 0.6em;
+	margin-bottom: .6em;
 }
 
 dt {
-	font-size: 1.6em;
-	line-height: 1.5em; /* 24px */
+	font-size: 1.5em;
+	line-height: 1.6em; /* 24px */
 }
 
 fieldset {
@@ -497,17 +604,17 @@ fieldset > fieldset > div {
 }
 
 fieldset > fieldset {
-	border-bottom-width: 0.1em;
-	border-top-width: 0.1em;
+	border-bottom-width: .1em;
+	border-top-width: .1em;
 	margin-bottom: 1.2em;
 	padding-bottom: 1.1em;
-	padding-top: 0.5em;
+	padding-top: .5em;
 }
 
 footer > p {
 	font-size: 1.2em;
 	line-height: 1.5em; /* 18px */
-	margin-bottom: 0;
+	margin-bottom: .5em; /* 6px */
 }
 
 h1 {
@@ -516,28 +623,28 @@ h1 {
 }
 
 h2 {
+	font-size: 2.5em;
+	line-height: 1.44em; /* 36px */
+}
+
+h3 {
 	font-size: 2.4em;
 	line-height: 1.5em; /* 36px */
 }
 
-h3 {
+h4 {
 	font-size: 2em;
-	line-height: 1.8em; /* 36px */
+	line-height: 1.5em; /* 30px */
 }
 
-h4 {
+h5 {
 	font-size: 1.6em;
 	line-height: 1.5em; /* 24px */
 }
 
-h5 {
+h6 {
 	font-size: 1.5em;
 	line-height: 1.6em; /* 24px */
-}
-
-h6 {
-	font-size: 1.2em;
-	line-height: 1.5em; /* 18px */
 }
 
 header {
@@ -545,7 +652,7 @@ header {
 }
 
 hr {
-	border-width: 0.1em 0 0 0;
+	border-width: .1em 0 0 0;
 	margin-bottom: 1.1em;
 }
 
@@ -560,14 +667,14 @@ input[type=text],
 input[type=time],
 input[type=url],
 input[type=week] {
-	border-bottom-width: 0.0625em; /* 1px */
-	border-top-width: 0.0625em; /* 1px */
+	border-bottom-width: .0625em; /* 1px */
+	border-top-width: .0625em; /* 1px */
 	font-size: 1.6em;
 	line-height: 1em; /* 16px */
 	margin-bottom: 0;
 	margin-top: 0;
-	padding-bottom: 0.375em; /* 6px */
-	padding-top: 0.375em; /* 6px */
+	padding-bottom: .375em; /* 6px */
+	padding-top: .375em; /* 6px */
 }
 
 label {
@@ -629,15 +736,15 @@ optgroup {
 p {
 	font-size: 1.5em;
 	line-height: 1.6em; /* 24px */
-	margin-bottom: 0.8em; /* 12px */
+	margin-bottom: .8em; /* 12px */
 }
 
 pre {
 	font-size: 1.6em;
 	line-height: 1.5em; /* 18px */
-	margin-bottom: 0.75em; /* 12px */
-	padding-bottom: 0.375em; /* 6px */
-	padding-top: 0.375em; /* 6px */
+	margin-bottom: .75em; /* 12px */
+	padding-bottom: .375em; /* 6px */
+	padding-top: .375em; /* 6px */
 }
 
 section {
@@ -653,23 +760,24 @@ table {
 	margin-bottom: 1.2em;
 }
 
+table > tbody > tr > td {
+	font-size: 1.5em;
+	line-height: 2em; /* 30px */
+}
+
+table > tfoot > tr > td {
+	font-size: 1.5em;
+	line-height: 2em; /* 30px */
+}
+
 table > tfoot > tr > th {
 	font-size: 1.5em;
-	line-height: 1.6em; /* 24px */
+	line-height: 2em; /* 30px */
 }
 
 table > thead > tr > th {
-	font-size: 1.6em;
-	line-height: 1.5em; /* 24px */
-}
-
-td {
-	border-bottom: 0.1em solid; /* ~1px */
-	border-top: 0.1em solid; /* ~1px */
 	font-size: 1.5em;
-	line-height: 1.6em; /* 24px */
-	padding-bottom: 0.6em; /* 9px */
-	padding-top: 0.6em; /* 9px */
+	line-height: 2.4em; /* 36px */
 }
 
 textarea {
@@ -800,21 +908,20 @@ table > tbody > tr > th {
 	text-align: left;
 }
 
-td {
-	border-left: 0.1em solid;
-	border-right: 0.1em solid;
-	padding-left: 0.9em; /* 13.5px */
-	padding-right: 0.9em; /* 13.5px */
+table > tbody > tr > td {
+	border-style: solid;
+}
+
+table > tfoot > tr > td {
+	border-style: solid;
 }
 
 table > tfoot > tr > th {
-	border: 0.1em solid;
-	padding: 0.2em 0.9em;
+	border-style: solid;
 }
 
 table > thead > tr > th {
-	border: 0.1em solid;
-	padding: 0.2em 1.9em;
+	border-style: solid;
 }
 
 
@@ -831,7 +938,7 @@ table > thead > tr > th {
  */
 code {
 	display: inline-block;
-	padding: 0 0.2em; /* 0 3px with a 15px font */
+	padding: 0 .2em; /* 0 3px with a 15px font */
 }
 
 h1 > a {
@@ -844,7 +951,7 @@ label {
 
 mark {
 	display: inline-block;
-	padding: 0 0.2em; /* 0 3px with a 15px font */
+	padding: 0 .2em; /* 0 3px with a 15px font */
 }
 
 nav > ol > li {
@@ -881,6 +988,64 @@ input[type=url],
 input[type=week] {
 	border-style: solid;
 }
+
+
+
+/* DECORATION
+ *
+ */
+:focus {
+	outline: 0;
+}
+
+abbr {
+	border-bottom: 1px dotted #333;
+}
+
+fieldset > fieldset {
+	-webkit-border-radius: .2em; /* 2px */
+}
+
+input[type=color],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {
+	-webkit-border-radius: .125em; /* 2px */
+}
+
+button,
+input[type=reset],
+input[type=submit] {
+	-webkit-border-radius: .125em; /* 2px */
+}
+
+
+
+/* BEHAVIOUR
+ *
+ */
+a:active {
+	position: relative;
+	top: 1px;
+}
+
+button:hover,
+input[type=reset]:hover,
+input[type=submit]:hover {
+	cursor: pointer;
+}
+
+abbr {
+	cursor: help;
+}
+
 
 
 
