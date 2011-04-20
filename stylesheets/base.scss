@@ -326,8 +326,12 @@ fieldset {
 	> fieldset {
 		border: .1em solid $grey;
 		margin-bottom: 1.2em;
-		padding: .5em .9em 0;
+		padding: .5em .9em 1.1em;
 		-webkit-border-radius: .2em; /* 2px */
+
+		> div {
+			margin-bottom: 0;
+		}
 
 		> legend {
 			padding: 0 .625em; /* 10px */
@@ -421,8 +425,9 @@ h6 {
 
 header {
 	background: $off-black;
+	border-bottom: .1em solid $off-white;
 	display: block;
-	margin-bottom: 1.2em;
+	margin-bottom: 1.1em;
 
 	> div {
 		margin: 0 auto;

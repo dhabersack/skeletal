@@ -262,9 +262,11 @@ fieldset {
   fieldset > fieldset {
     border: 0.1em solid #666666;
     margin-bottom: 1.2em;
-    padding: .5em .9em 0;
+    padding: .5em .9em 1.1em;
     -webkit-border-radius: .2em;
     /* 2px */ }
+    fieldset > fieldset > div {
+      margin-bottom: 0; }
     fieldset > fieldset > legend {
       padding: 0 .625em;
       /* 10px */ }
@@ -336,8 +338,9 @@ h6 {
 
 header {
   background: #1c1c1c;
+  border-bottom: 0.1em solid #f8f8f8;
   display: block;
-  margin-bottom: 1.2em; }
+  margin-bottom: 1.1em; }
   header > div {
     margin: 0 auto;
     overflow: hidden;
