@@ -1,0 +1,24 @@
+// add border around entire element
+@mixin border-radius($radius: 0) {
+	border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+// add border at specified position ('bottom-left', 'bottom-right', 'top-left', 'top-right')
+@mixin border-position-radius($position, $radius: 0) {
+	border-#{$position}-radius: $radius;
+  -moz-border-radius-#{$position}: $radius;
+  -webkit-border-#{$position}-radius: $radius;
+}
+
+@mixin form-field-border {
+	border: {
+		bottom-color: #999; /* TODO color */
+		left-color: #ccc; /* TODO color */
+		right-color: #999; /* TODO color */
+		style: solid;
+		top-color: #ccc; /* TODO color */
+		width: .0625em; /* 1px */
+	}
+}

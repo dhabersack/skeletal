@@ -37,7 +37,7 @@ a:active {
   top: 1px; }
 a:focus {
   background: #297eb2;
-  color: #f8f8f8;
+  color: #fdfdfd;
   text-decoration: none; }
 a:hover {
   color: #258ccc;
@@ -46,7 +46,7 @@ a:link {
   color: #297eb2;
   text-decoration: none; }
   a:link:focus {
-    color: #f8f8f8; }
+    color: #fdfdfd; }
 a:visited {
   color: #297eb2;
   text-decoration: none; }
@@ -80,11 +80,10 @@ body {
   background-color: inherit;
   color: #1c1c1c;
   font: 62.5%/1 Arial, "Helvetica Neue", Helvetica, sans-serif;
-  /* 10px/10px */ }
-  body > div {
-    margin: 0 auto;
-    overflow: hidden;
-    width: 96em; }
+  /* 10px/10px */
+  margin: 0 auto;
+  overflow: hidden;
+  width: 96em; }
 
 button,
 input[type="reset"],
@@ -100,6 +99,10 @@ input[type="submit"] {
   /* TODO color */
   border-width: .0625em;
   /* 1px */
+  border-radius: 0.125em;
+  -moz-border-radius: 0.125em;
+  -webkit-border-radius: 0.125em;
+  /* 2px */
   background: #e6e6e6;
   color: #1c1c1c;
   float: left;
@@ -108,9 +111,7 @@ input[type="submit"] {
   margin: 0 .3125em 0 0;
   /* 0 5px 0 0 */
   padding: 0 .875em;
-  /* 0 14px */
-  -webkit-border-radius: .125em;
-  /* 2px */ }
+  /* 0 14px */ }
   button:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
@@ -163,7 +164,8 @@ fieldset {
   /* helps set vertical alignment of radio buttons and checkboxes; probably unnecessary */ }
   fieldset > div {
     margin-bottom: 1.2em;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative; }
     fieldset > div > input {
       clear: left;
       float: left; }
@@ -188,6 +190,10 @@ fieldset {
         /* TODO color */
         border-width: .0625em;
         /* 1px */
+        border-radius: 0.125em;
+        -moz-border-radius: 0.125em;
+        -webkit-border-radius: 0.125em;
+        /* 2px */
         background: white;
         font: 1.6em/1em Arial, "Helvetica Neue", Helvetica, sans-serif;
         /* #/16px */
@@ -198,9 +204,7 @@ fieldset {
         padding: .375em .25em;
         /* 6px 4px */
         width: 16.875em;
-        /* 270px */
-        -webkit-border-radius: .125em;
-        /* 2px */ }
+        /* 270px */ }
         fieldset > div > input[type="color"]:focus, fieldset > div > input[type="datetime"]:focus, fieldset > div > input[type="datetime-local"]:focus, fieldset > div > input[type="email"]:focus, fieldset > div > input[type="month"]:focus, fieldset > div > input[type="number"]:focus, fieldset > div > input[type="password"]:focus, fieldset > div > input[type="tel"]:focus, fieldset > div > input[type="text"]:focus, fieldset > div > input[type="time"]:focus, fieldset > div > input[type="url"]:focus, fieldset > div > input[type="week"]:focus {
           border-color: #258ccc; }
     fieldset > div > label {
@@ -209,6 +213,27 @@ fieldset {
       font-size: 1.6em;
       line-height: 1.875em;
       /* 30px */ }
+      fieldset > div > label[data-unit]:after {
+        color: #666;
+        /* TODO color */
+        content: attr(data-unit);
+        font-size: .75em;
+        /* 12px */
+        line-height: 2.5em;
+        /* 30px */
+        position: absolute;
+        left: 20em;
+        /* 240px */
+        text-align: right;
+        top: 2.5em;
+        /* 30px */
+        width: 2.5em;
+        /* 30px */ }
+      fieldset > div > label[data-unit] + input[type="text"] {
+        padding-right: 3.0625em;
+        /* 49px */
+        width: 14.0625em;
+        /* 225px */ }
     fieldset > div > p {
       clear: left;
       color: #666666;
@@ -248,23 +273,27 @@ fieldset {
       /* TODO color */
       border-width: .0625em;
       /* 1px */
+      border-radius: 0.125em;
+      -moz-border-radius: 0.125em;
+      -webkit-border-radius: 0.125em;
+      /* 2px */
       font: 1.6em/1.5em Arial, "Helvetica Neue", Helvetica, sans-serif;
       /* #/24px */
       margin: 0;
       padding: .375em .25em;
       /* 6px 4px */
       width: 16.875em;
-      /* 270px */
-      -webkit-border-radius: .125em;
-      /* 2px */ }
+      /* 270px */ }
       fieldset > div > textarea:focus {
         border-color: #258ccc; }
   fieldset > fieldset {
+    border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    /* 2px */
     border: 0.1em solid #666666;
     margin-bottom: 1.2em;
-    padding: .5em .9em 1.1em;
-    -webkit-border-radius: .2em;
-    /* 2px */ }
+    padding: .5em .9em 1.1em; }
     fieldset > fieldset > div {
       margin-bottom: 0; }
     fieldset > fieldset > legend {
@@ -278,16 +307,26 @@ fieldset {
 
 footer {
   padding: .6em 0;
-  text-align: right; }
-  footer > div {
-    margin: 0 auto;
-    padding: 0 1em;
-    width: 94em; }
-    footer > div > p {
-      font-size: 1.2em;
-      line-height: 1.5em;
-      /* 18px */
-      margin-bottom: 0; }
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 1em;
+  width: 94em; }
+  footer > ol > li {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    /* 18px */
+    margin-bottom: 0; }
+  footer > p {
+    float: right;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    /* 18px */
+    margin-bottom: 0; }
+  footer > ul > li {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    /* 18px */
+    margin-bottom: 0; }
 
 form {
   margin-bottom: 1.2em; }
@@ -296,8 +335,6 @@ form {
     text-indent: -999em; }
 
 h1 {
-  background: inherit;
-  color: #f8f8f8;
   font: bold 3em/2em Arial, "Helvetica Neue", Helvetica, sans-serif;
   /* #/60px */
   letter-spacing: .025em; }
@@ -337,15 +374,11 @@ h6 {
   /* 36px */ }
 
 header {
-  background: #1c1c1c;
-  border-bottom: 0.1em solid #f8f8f8;
   display: block;
-  margin-bottom: 1.1em; }
-  header > div {
-    margin: 0 auto;
-    overflow: hidden;
-    padding: 0 1em;
-    width: 94em; }
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 1em;
+  width: 94em; }
 
 hr {
   border-style: solid;
@@ -354,7 +387,7 @@ hr {
   margin: 0 6em 1.1em; }
 
 html {
-  background-color: #f8f8f8;
+  background-color: #fdfdfd;
   overflow-y: scroll; }
 
 i {
@@ -391,7 +424,7 @@ nav {
     nav > ol > li {
       float: left;
       font-size: 1em;
-      margin-right: 1em; }
+      margin-right: 2em; }
       nav > ol > li > a {
         display: block;
         font-size: 1.5em;
@@ -422,6 +455,10 @@ p {
   /* 12px */ }
 
 pre {
+  border-radius: 0.125em;
+  -moz-border-radius: 0.125em;
+  -webkit-border-radius: 0.125em;
+  /* 2px */
   background: #e6e6e6;
   color: #ff4848;
   font: 1.6em/1.5em "Courier New", Courier, monospace;
@@ -429,9 +466,7 @@ pre {
   margin-bottom: .75em;
   /* 12px */
   padding: .375em .625em;
-  /* 6px 10px */
-  -webkit-border-radius: .125em;
-  /* 2px */ }
+  /* 6px 10px */ }
 
 q {
   font-style: italic; }
@@ -505,10 +540,14 @@ table {
         padding: 0 1.25em;
         /* 0 20px */ }
         table > thead > tr > th:first-child {
-          -webkit-border-top-left-radius: .125em;
+          border-top-left-radius: 0.125em;
+          -moz-border-radius-top-left: 0.125em;
+          -webkit-border-top-left-radius: 0.125em;
           /* 2px */ }
         table > thead > tr > th:last-child {
-          -webkit-border-top-right-radius: .125em;
+          border-top-right-radius: 0.125em;
+          -moz-border-radius-top-right: 0.125em;
+          -webkit-border-top-right-radius: 0.125em;
           /* 2px */ }
 
 ul {
@@ -532,4 +571,16 @@ var {
   font-style: italic; }
 
 /* DEBUG (uncomment to debug horizontal grid) */
-/** { background-color: rgba(255,0,0,0.1); } body { background-image: url(../images/960.gs/16_col.gif); background-position: center top; background-repeat: repeat-y; }*/
+/*
+* {
+	background-color: rgba(255,0,0,.1);
+}
+
+body {
+	background: {
+		image: url(../images/960.gs/16_col.gif);
+		position: center top;
+		repeat: repeat-y;
+	}
+}
+*/

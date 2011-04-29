@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 0.1.2 (April 29th, 2011)
+
+* Moving stylesheets to SASS
+* Removing additional div-tags from markup
+* Increasing space between items in main navigation
+* Lightening off-white color
+* Adding units to text-fields (data-unit on preceding label-element)
+
+
 ## 0.1.1 (April 13th, 2011)
 
 * Reworking tables

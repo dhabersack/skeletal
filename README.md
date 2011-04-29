@@ -3,6 +3,16 @@
 Skeletal is a blank slate for website creation. Instead of resetting default browser styling with a reset.css you then have to override, Skeletal comes with sensible defaults in its base.css.
 
 
+## Features
+
+### Units in text fields
+
+You can add units to text fields by adding the custom attribute data-unit to the preceding label like this:
+
+<label for="field" data-unit="mph">Miles per hour</label>
+<input type="text" id="field" name="field" value="120">
+
+
 ## Known issues
 
 Skeletal uses HTML5-tags (header, footer, nav, article, section and others) that are not supported by all browsers. Support for those will be added at a later point.

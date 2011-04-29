@@ -1,40 +1,8 @@
+@import 'colors.scss';
+@import 'font-stacks.scss';
+@import 'mixins.scss';
+
 /* Skeletal base stylesheet */
-
-$off-black    : #1c1c1c;
-$light-grey   : #e6e6e6;
-$grey         : #666666;
-$dark-grey    : #333333;
-// $light-green  : #______;
-// $green        : #______;
-// $dark-green   : #______;
-$light-blue   : #258ccc;
-// $blue         : #______;
-$dark-blue    : #297eb2;
-$light-red    : #ff4848;
-// $red          : #______;
-$dark-red     : #b22121;
-$light-yellow : #fffd61;
-$yellow       : #ffda54;
-$dark-yellow  : #e8d64d;
-$off-white    : #f8f8f8;
-$white        : #ffffff;
-
-// Font stacks are chosen based on:
-// http://unitinteractive.com/blog/2008/06/26/better-css-font-stacks/
-$font-stack-monospace  : 'Courier New', Courier, monospace;
-$font-stack-sans-serif : Arial, 'Helvetica Neue', Helvetica, sans-serif;
-$font-stack-serif      : Georgia, Times, 'Times New Roman', serif;
-
-@mixin form-field-border {
-	border: {
-		bottom-color: #999; /* TODO color */
-		left-color: #ccc; /* TODO color */
-		right-color: #999; /* TODO color */
-		style: solid;
-		top-color: #ccc; /* TODO color */
-		width: .0625em; /* 1px */
-	}
-}
 
 /*
  * VERTICAL GRID
@@ -138,18 +106,16 @@ body {
 	background-color: inherit;
 	color: $off-black;
 	font: 62.5%/1 $font-stack-sans-serif; /* 10px/10px */
-
-	> div {
-		margin: 0 auto;
-		overflow: hidden;
-		width: 96em;
-	}
+	margin: 0 auto;
+	overflow: hidden;
+	width: 96em;
 }
 
 button,
 input[type="reset"],
 input[type="submit"] {
 	@include form-field-border;
+	@include border-radius(.125em); /* 2px */
 
 	background: $light-grey;
 	color: $off-black;
@@ -157,7 +123,6 @@ input[type="submit"] {
 	font: 1.6em/1.75em $font-stack-sans-serif; /* #/28px */
 	margin: 0 .3125em 0 0; /* 0 5px 0 0 */
 	padding: 0 .875em; /* 0 14px */
-	-webkit-border-radius: .125em; /* 2px */
 
 	&:hover {
 		cursor: pointer;
@@ -223,6 +188,7 @@ fieldset {
 	> div {
 		margin-bottom: 1.2em;
 		overflow: hidden;
+		position: relative;
 
 		> input {
 			clear: left;
@@ -251,6 +217,7 @@ fieldset {
 			&[type="url"],
 			&[type="week"] {
 				@include form-field-border;
+				@include border-radius(.125em); /* 2px */
 
 				background: $white;
 				font: 1.6em/1em $font-stack-sans-serif; /* #/16px */
@@ -258,7 +225,6 @@ fieldset {
 				margin: 0 .625em 0 0; /* 0 10px 0 0 */
 				padding: .375em .25em; /* 6px 4px */
 				width: 16.875em; /* 270px */
-				-webkit-border-radius: .125em; /* 2px */
 
 				&:focus {
 					border-color: $light-blue;
@@ -271,6 +237,25 @@ fieldset {
 			float: left;
 			font-size: 1.6em;
 			line-height: 1.875em; /* 30px */
+
+			&[data-unit] {
+				&:after {
+					color: #666; /* TODO color */
+					content: attr(data-unit);
+					font-size: .75em; /* 12px */
+					line-height: 2.5em; /* 30px */
+					position: absolute;
+					left: 20em; /* 240px */
+					text-align: right;
+					top: 2.5em; /* 30px */
+					width: 2.5em; /* 30px */
+				}
+
+				+ input[type="text"] {
+					padding-right: 3.0625em; /* 49px */
+					width: 14.0625em; /* 225px */
+				}
+			}
 		}
 
 		> p {
@@ -310,12 +295,12 @@ fieldset {
 
 		> textarea {
 			@include form-field-border;
+			@include border-radius(.125em); /* 2px */
 
 			font: 1.6em/1.5em $font-stack-sans-serif; /* #/24px */
 			margin: 0;
 			padding: .375em .25em; /* 6px 4px */
 			width: 16.875em; /* 270px */
-			-webkit-border-radius: .125em; /* 2px */
 
 			&:focus {
 				border-color: $light-blue;
@@ -324,10 +309,10 @@ fieldset {
 	}
 
 	> fieldset {
+		@include border-radius(.2em); /* 2px */
 		border: .1em solid $grey;
 		margin-bottom: 1.2em;
 		padding: .5em .9em 1.1em;
-		-webkit-border-radius: .2em; /* 2px */
 
 		> div {
 			margin-bottom: 0;
@@ -347,18 +332,28 @@ fieldset {
 
 footer {
 	padding: .6em 0;
-	text-align: right;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0 1em;
+	width: 94em;
 
-	> div {
-		margin: 0 auto;
-		padding: 0 1em;
-		width: 94em;
+	> ol > li {
+		font-size: 1.2em;
+		line-height: 1.5em; /* 18px */
+		margin-bottom: 0;
+	}
 
-		> p {
-			font-size: 1.2em;
-			line-height: 1.5em; /* 18px */
-			margin-bottom: 0;
-		}
+	> p {
+		float: right;
+		font-size: 1.2em;
+		line-height: 1.5em; /* 18px */
+		margin-bottom: 0;
+	}
+
+	> ul > li {
+		font-size: 1.2em;
+		line-height: 1.5em; /* 18px */
+		margin-bottom: 0;
 	}
 }
 
@@ -372,8 +367,6 @@ form {
 }
 
 h1 {
-	background: inherit;
-	color: $off-white;
 	font: bold 3em/2em $font-stack-sans-serif; /* #/60px */
 	letter-spacing: .025em;
 
@@ -424,17 +417,11 @@ h6 {
 }
 
 header {
-	background: $off-black;
-	border-bottom: .1em solid $off-white;
 	display: block;
-	margin-bottom: 1.1em;
-
-	> div {
-		margin: 0 auto;
-		overflow: hidden;
-		padding: 0 1em;
-		width: 94em;
-	}
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0 1em;
+	width: 94em;
 }
 
 hr {
@@ -490,7 +477,7 @@ nav {
 		> li {
 			float: left;
 			font-size: 1em;
-			margin-right: 1em;
+			margin-right: 2em;
 
 			> a {
 				display: block;
@@ -534,12 +521,13 @@ p {
 }
 
 pre {
+	@include border-radius(.125em); /* 2px */
+
 	background: $light-grey;
 	color: $light-red;
 	font: 1.6em/1.5em $font-stack-monospace; /* #/24px */
 	margin-bottom: .75em; /* 12px */
 	padding: .375em .625em; /* 6px 10px */
-	-webkit-border-radius: .125em; /* 2px */
 }
 
 q {
@@ -632,11 +620,11 @@ table {
 				padding: 0 1.25em; /* 0 20px */
 
 				&:first-child {
-					-webkit-border-top-left-radius: .125em; /* 2px */
+					@include border-position-radius('top-left', .125em); /* 2px */
 				}
 
 				&:last-child {
-					-webkit-border-top-right-radius: .125em; /* 2px */
+					@include border-position-radius('top-right', .125em); /* 2px */
 				}
 			}
 		}
@@ -677,4 +665,16 @@ var {
 }
 
 /* DEBUG (uncomment to debug horizontal grid) */
-/** { background-color: rgba(255,0,0,0.1); } body { background-image: url(../images/960.gs/16_col.gif); background-position: center top; background-repeat: repeat-y; }*/
+/*
+* {
+	background-color: rgba(255,0,0,.1);
+}
+
+body {
+	background: {
+		image: url(../images/960.gs/16_col.gif);
+		position: center top;
+		repeat: repeat-y;
+	}
+}
+*/
