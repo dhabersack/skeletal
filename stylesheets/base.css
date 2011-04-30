@@ -72,9 +72,9 @@ b {
   font-weight: bold; }
 
 blockquote {
-  border-radius: 0 1em 1em 1em;
-  -moz-border-radius: 0 1em 1em 1em;
-  -webkit-border-radius: 0 1em 1em 1em;
+  border-radius: 0 0.4em 0.4em 0.4em;
+  -moz-border-radius: 0 0.4em 0.4em 0.4em;
+  -webkit-border-radius: 0 0.4em 0.4em 0.4em;
   background: #e6e6e6;
   color: #333333;
   font-family: Georgia, Times, "Times New Roman", serif;

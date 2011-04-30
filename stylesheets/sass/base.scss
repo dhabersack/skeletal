@@ -98,7 +98,7 @@ b {
 }
 
 blockquote {
-	@include border-radius(0 1em 1em 1em);
+	@include border-radius(0 .4em .4em .4em);
 
 	background: $light-grey;
 	color: $dark-grey;
