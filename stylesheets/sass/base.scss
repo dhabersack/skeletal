@@ -98,8 +98,22 @@ b {
 }
 
 blockquote {
-	color: $grey;
-	font: italic 1.2em/1.5em $font-stack-serif; /* #/18px */
+	@include border-radius(0 1em 1em 1em);
+
+	background: $light-grey;
+	color: $dark-grey;
+	font: {
+		family: $font-stack-serif;
+		style: italic;
+	}
+	margin: 0 6em 1.2em;
+	padding: 1.2em 2em;
+
+	> p {
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
 }
 
 body {
