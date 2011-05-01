@@ -128,15 +128,20 @@ body {
 button,
 input[type="reset"],
 input[type="submit"] {
-	@include form-field-border;
+	@include background-gradient($off-white, $light-grey);
 	@include border-radius(.125em); /* 2px */
+	@include form-field-border;
 
-	background: $light-grey;
 	color: $off-black;
 	float: left;
 	font: 1.6em/1.75em $font-stack-sans-serif; /* #/28px */
+	height: 1.75em; /* 28px */
 	margin: 0 .3125em 0 0; /* 0 5px 0 0 */
 	padding: 0 .875em; /* 0 14px */
+
+	&:active {
+		@include background-gradient($light-grey, $off-white);
+	}
 
 	&:hover {
 		cursor: pointer;
@@ -225,6 +230,7 @@ fieldset {
 			&[type="month"],
 			&[type="number"],
 			&[type="password"],
+			&[type="range"],
 			&[type="tel"],
 			&[type="text"],
 			&[type="time"],
@@ -311,6 +317,8 @@ fieldset {
 			@include form-field-border;
 			@include border-radius(.125em); /* 2px */
 
+			clear: left;
+			float: left;
 			font: 1.6em/1.5em $font-stack-sans-serif; /* #/24px */
 			margin: 0;
 			padding: .375em .25em; /* 6px 4px */
@@ -381,6 +389,7 @@ form {
 }
 
 h1 {
+	float: left;
 	font: bold 3em/2em $font-stack-sans-serif; /* #/60px */
 	letter-spacing: .025em;
 
@@ -399,7 +408,7 @@ h1 {
 
 h2, h3, h4, h5, h6 {
 	font: {
-		family: $font-stack-serif;
+		family: $font-stack-sans-serif;
 		weight: bold;
 	}
 	letter-spacing: .025em;
@@ -432,7 +441,7 @@ h6 {
 
 header {
 	display: block;
-	margin: 0 auto;
+	margin: 0 auto 1.2em;
 	overflow: hidden;
 	padding: 0 1em;
 	width: 94em;
@@ -481,7 +490,8 @@ mark {
 }
 
 nav {
-	margin-bottom: 1.2em;
+	float: right;
+	margin: 1.8em 0;
 
 	> ol {
 		list-style: none;
@@ -491,7 +501,7 @@ nav {
 		> li {
 			float: left;
 			font-size: 1em;
-			margin-right: 2em;
+			margin-left: 2em;
 
 			> a {
 				display: block;

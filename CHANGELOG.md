@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## 0.1.3 (?, 2011)
+
+* Change font-stack for headings to sans-serif
+* Add @mixins for linear gradients and box shadow
+* Add gradient and :active-state to buttons
+* h1 and navigation now float left and right in header
+* Clear float on textarea
+* Add further @mixins for border-radius (border-left-radius, border-top-radius, etc)
+* Add height to buttons (cross-browser compatibility)
+
+
 ## 0.1.2 (April 29th, 2011)
 
 * Moving stylesheets to SASS
