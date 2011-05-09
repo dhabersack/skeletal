@@ -40,17 +40,40 @@
 	-webkit-border-radius: $radius $radius 0 0;
 }
 
-// add border at specified position ('bottom-left', 'bottom-right', 'top-left', 'top-right')
-@mixin border-position-radius($position, $radius: 0) {
-	border-#{$position}-radius:         $radius;
-  -moz-border-radius-#{$position}:    $radius;
-  -webkit-border-#{$position}-radius: $radius;
+@mixin border-bottom-left-radius($radius: 0) {
+	border-bottom-left-radius:         $radius;
+  -moz-border-radius-bottom-left:    $radius;
+  -webkit-border-bottom-left-radius: $radius;
+}
+
+@mixin border-bottom-right-radius($radius: 0) {
+	border-bottom-right-radius:         $radius;
+  -moz-border-radius-bottom-right:    $radius;
+  -webkit-border-bottom-right-radius: $radius;
+}
+
+@mixin border-top-left-radius($radius: 0) {
+	border-top-left-radius:         $radius;
+  -moz-border-radius-top-left:    $radius;
+  -webkit-border-top-left-radius: $radius;
+}
+
+@mixin border-top-right-radius($radius: 0) {
+	border-top-right-radius:         $radius;
+  -moz-border-radius-top-right:    $radius;
+  -webkit-border-top-right-radius: $radius;
 }
 
 @mixin box-shadow($position-x: 0, $position-y: 0, $blur: 0, $color: #000) {
 	box-shadow:         $position-x $position-y $blur $color;
 	-moz-box-shadow:    $position-x $position-y $blur $color;
 	-webkit-box-shadow: $position-x $position-y $blur $color;
+}
+
+@mixin box-shadow-inset($position-x: 0, $position-y: 0, $blur: 0, $color: #000) {
+	box-shadow:         inset $position-x $position-y $blur $color;
+	-moz-box-shadow:    inset $position-x $position-y $blur $color;
+	-webkit-box-shadow: inset $position-x $position-y $blur $color;
 }
 
 @mixin form-field-border {

@@ -139,10 +139,12 @@ input[type="submit"] {
     background-image: -ms-linear-gradient(top, #e6e6e6, #fdfdfd);
     background-image: -o-linear-gradient(top, #e6e6e6, #fdfdfd);
     background-image: linear-gradient(top, #e6e6e6, #fdfdfd);
-    /* standard, but currently unimplemented */ }
+    /* standard, but currently unimplemented */
+    border-color: #666666; }
   button:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
+    border-color: #666666;
     cursor: pointer; }
 
 cite {
@@ -305,6 +307,7 @@ fieldset {
       -moz-border-radius: 0.125em;
       -webkit-border-radius: 0.125em;
       /* 2px */
+      background: white;
       clear: left;
       float: left;
       font: 1.6em/1.5em Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -350,8 +353,7 @@ footer {
     float: right;
     font-size: 1.2em;
     line-height: 1.5em;
-    /* 18px */
-    margin-bottom: 0; }
+    /* 18px */ }
   footer > ul > li {
     font-size: 1.2em;
     line-height: 1.5em;
@@ -521,7 +523,7 @@ table {
   border-spacing: 0;
   margin-bottom: 1.2em; }
   table > tbody > tr {
-    background: #333333;
+    background: #e6e6e6;
     border-bottom: .1em dashed #ccc;
     /* 1px */
     /* TODO color */ }
@@ -543,6 +545,7 @@ table {
       /* 0 10px */
       text-align: right; }
   table > tfoot > tr {
+    background-color: white;
     border-top: 0.1em solid #666666; }
     table > tfoot > tr > td {
       font-size: 1.6em;

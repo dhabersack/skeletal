@@ -1,6 +1,15 @@
 # CHANGELOG
 
-## 0.1.3 (?, 2011)
+## 0.1.4 (May 9th, 2011)
+
+* Change background of table cells in tbody to light instead of dark grey
+* Change @mixin for targeted border-radii to dedicated instead of flexible (border-top-left-radius(...) instead of border-position-radius('top-left', ...))
+* Change border color on active buttons to uniform grey
+* Add examples
+* Rename imported SASS-stylesheets to act as partials (prevents generation of empty stylesheets)
+
+
+## 0.1.3 (May 1st, 2011)
 
 * Change font-stack for headings to sans-serif
 * Add @mixins for linear gradients and box shadow

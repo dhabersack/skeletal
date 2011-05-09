@@ -141,9 +141,12 @@ input[type="submit"] {
 
 	&:active {
 		@include background-gradient($light-grey, $off-white);
+
+		border-color: $grey;
 	}
 
 	&:hover {
+		border-color: $grey;
 		cursor: pointer;
 	}
 }
@@ -317,6 +320,7 @@ fieldset {
 			@include form-field-border;
 			@include border-radius(.125em); /* 2px */
 
+			background: $white;
 			clear: left;
 			float: left;
 			font: 1.6em/1.5em $font-stack-sans-serif; /* #/24px */
@@ -369,7 +373,6 @@ footer {
 		float: right;
 		font-size: 1.2em;
 		line-height: 1.5em; /* 18px */
-		margin-bottom: 0;
 	}
 
 	> ul > li {
@@ -583,7 +586,7 @@ table {
 
 	> tbody {
 		> tr {
-			background: $dark-grey;
+			background: $light-grey;
 			border-bottom: .1em dashed #ccc; /* 1px */ /* TODO color */
 
 			&:last-child {
@@ -611,6 +614,7 @@ table {
 
 	> tfoot {
 		> tr {
+			background-color: $white;
 			border-top: .1em solid $grey;
 
 			> td {
@@ -644,11 +648,11 @@ table {
 				padding: 0 1.25em; /* 0 20px */
 
 				&:first-child {
-					@include border-position-radius('top-left', .125em); /* 2px */
+					@include border-top-left-radius(.125em); /* 2px */
 				}
 
 				&:last-child {
-					@include border-position-radius('top-right', .125em); /* 2px */
+					@include border-top-right-radius(.125em); /* 2px */
 				}
 			}
 		}
