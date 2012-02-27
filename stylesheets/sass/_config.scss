@@ -1,0 +1,30 @@
+// Font stacks
+$code-font-family: $font-stack-monospace;
+$footer-font-family: $font-stack-sans-serif;
+$heading-font-family: $font-stack-sans-serif;
+$quote-font-family: $font-stack-serif;
+$content-font-family: $font-stack-serif;
+
+// Colors
+// normal text
+$text-color: $off-black;
+// code
+$subtle-background-color: $light-grey;
+$subtle-shadow-color: $off-black;
+// highlights
+$highlight-background-color: $yellow;
+$highlight-shadow-color: $off-black;
+// deleted text
+$deleted-text-color: $dark-grey;
+// page elements
+$content-background-color: $off-white;
+$content-color: $off-black;
+$footer-background-color: $off-black;
+$footer-color: $off-white;
+$header-background-color: $off-black;
+$header-color: $light-blue;
+$page-background-color: $light-grey;
+
+
+$full-width-header: true;
+$full-width-footer: true;

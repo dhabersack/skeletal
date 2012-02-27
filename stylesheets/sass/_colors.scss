@@ -1,18 +1,28 @@
-$off-black    : #1c1c1c;
-$light-grey   : #e6e6e6;
-$grey         : #666666;
-$dark-grey    : #333333;
-$light-green  : #bbed2b;
-// $green        : #______;
-// $dark-green   : #______;
-$light-blue   : #258ccc;
-// $blue         : #______;
-$dark-blue    : #297eb2;
+// You should not use these in your stylesheet. Instead, reference them from the
+// variables set above.
+$black        : #000000;
+$off-black    : #2d2d2d;
+$dark-grey    : #676767;
+$grey         : #dfdfdf;
+$light-grey   : #f1f1f1;
+$light-green  : #3d9400;
+$green        : #398a00;
+$dark-green   : #29691d;
+$light-blue   : #4d90fe;
+$blue         : #4787ee;
+$dark-blue    : #4079d6;
 $light-red    : #ff4848;
-$red          : #e92e13;
-$dark-red     : #b22121;
-$light-yellow : #fffd61;
-$yellow       : #ffda54;
+$red          : #dd4b39;
+$dark-red     : #d14836;
+$light-yellow : #fef7cc;
+$yellow       : #ffe475;
 $dark-yellow  : #e8d64d;
 $off-white    : #fdfdfd;
 $white        : #ffffff;
+
+// form field colors
+$form-light-grey : #cccccc;
+$form-grey       : #999999;
+$form-dark-grey  : #666666;
+
+$debug        : rgba(255,0,0,.4);

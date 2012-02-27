@@ -1,342 +1,346 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="description" content="">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
 
-		<title>Title</title>
+    <title>Skeletal</title>
 
-		<link rel="stylesheet" type="text/css" href="stylesheets/base.css">
-		<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
-	</head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/base.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 
-	<body>
-		<header>
-			<h1><a href="#">Title</a></h1>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.ico" />
+  </head>
 
-			<nav>
-				<ol>
-					<li><a href="#">Item one</a></li>
-					<li><a href="#">Item two</a></li>
-					<li><a href="#">Item three</a></li>
-					<li><a href="#">Item four</a></li>
-				</ol>
-			</nav>
-		</header>
+  <body>
+    <header>
+      <div>
+        <h1><a href="/">Skeletal</a></h1>
 
-		<section>
-			<h2>Heading two</h2>
+        <nav>
+          <ol>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#status">Status</a></li>
+          </ol>
+        </nav>
+      </div>
+    </header>
 
-			<p>
-				Lorem ipsum dolor <abbr title="Sit id tellus">sit</abbr> amet, consectetur adipiscing elit. <mark>Quisque lacinia <del>gravida</del> <ins>imperdiet</ins>.</mark> Praesent et tortor magna. Phasellus sed tempus elit.
-			</p>
+    <section>
+      <h2 id="introduction">Introduction</h2>
 
-			<h3>Heading three</h3>
+      <p>Skeletal is a <del>reset</del> <ins>preset</ins>-stylesheet that <mark>sets sensible defaults</mark> for most (for now) HTML5-tags, providing a solid base to build upon.</p>
+
+      <h3>Because a reset just isn't good enough.</h3>
+
+      <dl>
+        <dt>Clean</dt>
+        <dd>It does not clutter your markup with cryptic classes and IDs by using expressive, semantic tags. This allows for a very clean markup.</dd>
+
+        <dt>Easily configurable</dt>
+        <dd>Change the utilized colors and fonts, adapt parts of the layout by adjusting the configuration found in <code>_config.scss</code>.</dd>
+
+        <dt>Pretty</dt>
+        <dd>Look at all the nice colors! Seriously tough, Skeletal puts an emphasis on readability and clean organization to make the sites using it as easy and user-friendly as possible.</dd>
+      </dl>
+
+      <h4>Element demos</h4>
+
+      <p>The following includes a list of some of the styled elements.</p>
+
+      <h5><code>abbr</code></h5>
+
+      <p>Skeletal utilises <abbr title="Syntactically Awesome StyleSheets">sass</abbr>.</p>
+
+      <h5><code>pre</code></h5>
 
 <pre>
-Nunc tempor
-tempus enim, id
-   blandit tellus
-     auctor sit
-     amet.
-
- Pellentesque
-   ultricies
- odio
-   in nisi
-   elementum
- tristique
-   iaculis
-     posuere
-     est.
+Preformatted text
+  sometimes appears in
+    multiple lines.
 </pre>
 
-			<h4>Heading four</h4>
+      <h5><code>blockquote</code></h5>
 
-			<p>
-				Pellentesque condimentum <code>nibh at</code> arcu ornare rutrum tempus ante bibendum. Donec nisl magna, vulputate ut <code>auctor</code> a, hendrerit et eros. Pellentesque sit amet elit libero, ac ornare ante. Etiam <mark>semper lobortis libero</mark>, rutrum interdum odio mollis vel.
-			</p>
+      <blockquote>
+        <p>A long blockquote, followed by a horizontal line.</p>
+        <p>This person might even have said more than one single sentence. So much, in fact, that the entire sentence took more than a single line of space within this blockquote!</p>
+      </blockquote>
 
-			<blockquote>
-				<p>
-					Integer eget sem sit amet purus lacinia dictum pharetra nec dolor.
-				</p>
-			</blockquote>
+      <h5><code>hr</code></h5>
 
-			<p>Nunc porttitor ultrices tincidunt. Morbi velit justo, lacinia non tempor sit amet, eleifend ac dui.
-			</p>
+      <hr>
 
-			<hr>
+      <h5><code>ol</code></h5>
 
-			<p>
-				Etiam tempus dapibus nulla, vel malesuada sapien dapibus sed. Maecenas enim leo, placerat vitae sodales vitae, lacinia sed sem. Morbi nec lectus massa, ut imperdiet urna. Duis ipsum tortor, lobortis id lobortis non, rhoncus vel arcu. Curabitur elementum elit non magna rutrum porta.
-			</p>
+      <ol>
+        <li>volutpat
+          <ol>
+            <li>quis
+              <ol>
+                <li>Fusce
+                  <ol>
+                    <li>rhoncus</li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+      </ol>
 
-			<h5>Heading five</h5>
+      <h5><code>ul</code></h5>
 
-			<dl>
-				<dt>Nunc dapibus, est</dt>
-				<dd>et vulputate</dd>
+      <ul>
+        <li>sed
+          <ul>
+            <li>Maecenas
+              <ul>
+                <li>aliquam
+                  <ul>
+                    <li>eleifend</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
 
-				<dt>euismod, eros</dt>
-				<dd>lacus ullamcorper</dd>
+      <h5><code>table</code></h5>
 
-				<dt>velit, et imperdiet</dt>
-				<dd> mauris enim ut risus.</dd>
-			</dl>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Vestibulum ante</th>
+            <th>ipsum</th>
+            <th>primis</th>
+          </tr>
+        </thead>
 
-			<p>
-				Suspendisse augue felis, aliquet at tristique in, euismod ut urna. Integer pulvinar, turpis a varius ornare, nisi diam semper ante, id eleifend urna tellus ac mi. Pellentesque ultricies scelerisque urna, a fermentum ipsum mollis vel. Nam ut elit eros, mattis mollis diam. Nulla pharetra lobortis dolor eu fermentum. Aliquam erat volutpat.
-			</p>
+        <tfoot>
+          <tr>
+            <th>auctor</th>
+            <td>eu</td>
+            <td>et</td>
+            <td>libero</td>
+          </tr>
+        </tfoot>
 
-			<h6>Heading six</h6>
+        <tbody>
+          <tr>
+            <th>in facibus</th>
+            <td>orci</td>
+            <td>luctus</td>
+            <td>et ultrices</td>
+          </tr>
 
-			<ol>
-				<li>Fusce sollicitudin</li>
-				<li>volutpat
-					<ol>
-						<li>libero</li>
-						<li>quis
-							<ol>
-								<li>egestas.</li>
-								<li>Fusce
-									<ol>
-										<li>fermentum</li>
-										<li>rhoncus</li>
-									</ol>
-								</li>
-							</ol>
-						</li>
-					</ol>
-				</li>
-			</ol>
+          <tr>
+            <th>posuere</th>
+            <td>cubilia</td>
+            <td>Curae Phaellus</td>
+            <td>blandit</td>
+          </tr>
 
-			<ul>
-				<li>risus</li>
-				<li>sed
-					<ul>
-						<li>sollicitudin.</li>
-						<li>Maecenas
-							<ul>
-								<li>bibendum</li>
-								<li>aliquam
-									<ul>
-										<li>felis</li>
-										<li>vel</li>
-										<li>eleifend.</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-			</ul>
+          <tr>
+            <th>quam</th>
+            <td>tellus Morbi</td>
+            <td>ac est a</td>
+            <td>mauris pretium</td>
+          </tr>
+        </tbody>
+      </table>
 
-			<p>
-				In at erat ac nulla tristique fermentum. Curabitur auctor neque vitae est tristique pharetra.
-			</p>
+      <h2>Status</h2>
 
-			<p>
-				Quisque malesuada pharetra orci a viverra.
-			</p>
+      <p>Skeletal is a work in progress. Because of that, not all tags are completely styled yet. Below you can find a list of all finised and unfinished tags.</p>
 
-			<table>
-				<thead>
-					<tr>
-						<th></th>
-						<th>Vestibulum ante</th>
-						<th>ipsum</th>
-						<th>primis</th>
-					</tr>
-				</thead>
+      <h4>Styled tags</h4>
 
-				<tfoot>
-					<tr>
-						<th>auctor</th>
-						<td>eu</td>
-						<td>et</td>
-						<td>libero</td>
-					</tr>
-				</tfoot>
+      <p><code>abbr</code>, <code>article</code>, <code>b</code>, <code>blockquote</code>, <code>body</code>, <code>code</code>, <code>dd</code>, <code>dl</code>, <code>dt</code>, <code>em</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>, <code>h6</code>, <code>i</code>, <code>ins</code>, <code>pre</code>, <code>q</code>, <code>strong</code></p>
 
-				<tbody>
-					<tr>
-						<th>in facibus</th>
-						<td>orci</td>
-						<td>luctus</td>
-						<td>et ultrices</td>
-					</tr>
+      <h4>Partially styled tags</h4>
 
-					<tr>
-						<th>posuere</th>
-						<td>cubilia</td>
-						<td>Curae Phaellus</td>
-						<td>blandit</td>
-					</tr>
+      <p><code>a</code>, <code>address</code>, <code>aside</code>, <code>button</code>, <code>cite</code>, <code>del</code>, <code>dfn</code>, <code>fieldset</code>, <code>footer</code>, <code>form</code>, <code>h1</code>, <code>header</code>, <code>hr</code>, <code>html</code>, <code>input</code>, <code>kbd</code>, <code>label</code>, <code>legend</code>, <code>li</code>, <code>mark</code>, <code>nav</code>, <code>ol</code>, <code>optgroup</code>, <code>option</code>, <code>p</code>, <code>samp</code>, <code>section</code>, <code>select</code>, <code>table</code>, <code>tbody</code>, <code>td</code>, <code>textarea</code>, <code>tfoot</code>, <code>th</code>, <code>thead</code>, <code>tr</code>, <code>ul</code>, <code>var</code></p>
 
-					<tr>
-						<th>quam</th>
-						<td>tellus Morbi</td>
-						<td>ac est a</td>
-						<td>mauris pretium</td>
-					</tr>
-				</tbody>
-			</table>
+      <h4>Unstyled tags</h4>
 
-			<p>
-				Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-			</p>
-		</section>
+      <p><code>area</code>, <code>audio</code>, <code>bdi</code>, <code>bdo</code>, <code>br</code>, <code>canvas</code>, <code>caption</code>, <code>col</code>, <code>colgroup</code>, <code>datalist</code>, <code>details</code>, <code>div</code>, <code>embed</code>, <code>figcaption</code>, <code>figure</code>, <code>hgroup</code>, <code>iframe</code>, <code>img</code>, <code>keygen</code>, <code>map</code>, <code>menu</code>, <code>meter</code>, <code>object</code>, <code>output</code>, <code>param</code>, <code>progress</code>, <code>rp</code>, <code>rt</code>, <code>ruby</code>, <code>s</code>, <code>small</code>, <code>span</code>, <code>sub</code>, <code>summary</code>, <code>sup</code>, <code>time</code>, <code>u</code>, <code>video</code>, <code>wbr</code></p>
 
-		<aside>
-			<form>
-				<fieldset>
-					<legend>Search</legend>
+<!--
+      <aside>
+      </aside>
 
-					<div>
-						<label for="text">Text</label>
-						<input type="text" id="text" name="text" value="text">
-					</div>
+      <h2 id="forms">Forms</h2>
 
-					<div>
-						<label for="text-data-unit" data-unit="mph">Text (data-unit)</label>
-						<input type="text" id="text-data-unit" name="text-data-unit" value="text (data-unit)">
-					</div>
+      <form>
+        <fieldset>
+          <legend>Search</legend>
 
-					<div>
-						<label for="password">Password</label>
-						<input type="password" id="password" name="password" value="password">
-					</div>
+          <div>
+            <label for="text">Text</label>
+            <input type="text" id="text" name="text" value="text">
+          </div>
 
-					<div>
-						<label for="email">Email</label>
-						<input type="email" id="email" name="email" value="email">
-					</div>
+          <div>
+            <label for="text-data-unit" data-unit="mph">Text (data-unit)</label>
+            <input type="text" id="text-data-unit" name="text-data-unit" value="text (data-unit)">
+          </div>
 
-					<div>
-						<label for="url">URL</label>
-						<input type="url" id="url" name="url" value="url">
-					</div>
+          <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" value="password">
+          </div>
 
-					<div>
-						<label for="number">Number</label>
-						<input type="number" min="0" max="100" step="5" id="number" name="number" value="50">
-					</div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="email">
+          </div>
 
-					<div>
-						<label for="range">Range</label>
-						<input type="range" value="50" min="0" max="100" step="5" id="range" name="range">
-					</div>
+          <div>
+            <label for="url">URL</label>
+            <input type="url" id="url" name="url" value="url">
+          </div>
 
-					<div>
-						<label for="month">Month</label>
-						<input type="month" name="month" id="month" value="month">
-					</div>
+          <div>
+            <label for="number">Number</label>
+            <input type="number" min="0" max="100" step="5" id="number" name="number" value="50">
+          </div>
 
-					<div>
-						<label for="week">Week</label>
-						<input type="week" name="week" id="week" value="week">
-					</div>
+          <div>
+            <label for="range">Range</label>
+            <input type="range" value="50" min="0" max="100" step="5" id="range" name="range">
+          </div>
 
-					<div>
-						<label for="time">Time</label>
-						<input type="time" name="time" id="time" value="time">
-					</div>
+          <div>
+            <label for="month">Month</label>
+            <input type="month" name="month" id="month" value="month">
+          </div>
 
-					<div>
-						<label for="datetime">Datetime</label>
-						<input type="datetime" name="datetime" id="datetime" value="datetime">
-					</div>
+          <div>
+            <label for="week">Week</label>
+            <input type="week" name="week" id="week" value="week">
+          </div>
 
-					<div>
-						<label for="datetime-local">Datetime local</label>
-						<input type="datetime-local" name="datetime-local" id="datetime-local" value="datetime-local">
-					</div>
+          <div>
+            <label for="time">Time</label>
+            <input type="time" name="time" id="time" value="time">
+          </div>
 
-					<div>
-						<label for="search">Search</label>
-						<input type="search" id="search" name="search" value="search">
-					</div>
+          <div>
+            <label for="datetime">Datetime</label>
+            <input type="datetime" name="datetime" id="datetime" value="datetime">
+          </div>
 
-					<div>
-						<label for="color">Color</label>
-						<input type="color" id="color" name="color" value="color">
-					</div>
+          <div>
+            <label for="datetime-local">Datetime local</label>
+            <input type="datetime-local" name="datetime-local" id="datetime-local" value="datetime-local">
+          </div>
 
-					<div>
-						<label for="tel">Telephone</label>
-						<input type="tel" id="tel" name="tel" value="555-0545">
-					</div>
+          <div>
+            <label for="search">Search</label>
+            <input type="search" id="search" name="search" value="search">
+          </div>
 
-					<div>
-						<label for="select">Select</label>
-						<select id="select" name="select">
-							<optgroup label="Group one">
-								<option value="one">One</option>
-								<option value="two">Two</option>
-								<option value="three">Three</option>
-							</optgroup>
+          <div>
+            <label for="color">Color</label>
+            <input type="color" id="color" name="color" value="color">
+          </div>
 
-							<optgroup label="Group two">
-								<option value="four">Four</option>
-								<option value="five">Five</option>
-							</optgroup>
-						</select>
-					</div>
+          <div>
+            <label for="tel">Telephone</label>
+            <input type="tel" id="tel" name="tel" value="555-0545">
+          </div>
 
-					<div>
-						<label for="textarea">Textarea</label>
-						<textarea>This is some text. It's actually pretty long, so it wraps in this small textarea.</textarea>
-					</div>
+          <div>
+            <label for="select">Select</label>
+            <select id="select" name="select">
+              <optgroup label="Group one">
+                <option value="one">One</option>
+                <option value="two">Two</option>
+                <option value="three">Three</option>
+              </optgroup>
 
-					<fieldset>
-						<legend>Radio buttons</legend>
+              <optgroup label="Group two">
+                <option value="four">Four</option>
+                <option value="five">Five</option>
+              </optgroup>
+            </select>
+          </div>
 
-						<div>
-							<input type="radio" id="radio-1" name="radio" checked="checked">
-							<label for="radio-1">Radio one</label>
-						</div>
+          <div>
+            <label for="textarea">Textarea</label>
+            <textarea>This is some text. It's actually pretty long, so it wraps in this small textarea.</textarea>
+          </div>
 
-						<div>
-							<input type="radio" id="radio-2" name="radio">
-							<label for="radio-2">Radio two</label>
-						</div>
-					</fieldset>
+          <fieldset>
+            <legend>Radio buttons</legend>
 
-					<fieldset>
-						<legend>Checkboxes</legend>
+            <div>
+              <input type="radio" id="radio-1" name="radio" checked="checked">
+              <label for="radio-1">Radio one</label>
+            </div>
 
-						<div>
-							<input type="checkbox" id="checkbox-1" name="checkbox-1">
-							<label for="checkbox-1">Checkbox one</label>
-						</div>
+            <div>
+              <input type="radio" id="radio-2" name="radio">
+              <label for="radio-2">Radio two</label>
+            </div>
+          </fieldset>
 
-						<div>
-							<input type="checkbox" id="checkbox-2" name="checkbox-2">
-							<label for="checkbox-2">Checkbox two</label>
-						</div>
+          <fieldset>
+            <legend>Checkboxes</legend>
 
-						<div>
-							<input type="checkbox" id="checkbox-3" name="checkbox-3">
-							<label for="checkbox-3">Checkbox three</label>
-						</div>
-					</fieldset>
+            <div>
+              <input type="checkbox" id="checkbox-1" name="checkbox-1">
+              <label for="checkbox-1">Checkbox one</label>
+            </div>
 
-					<input type="reset" submit="Reset">
-					<input type="submit" value="Submit">
-					<button>Button</button>
-				</fieldset>
-			</form>
-		</aside>
+            <div>
+              <input type="checkbox" id="checkbox-2" name="checkbox-2">
+              <label for="checkbox-2">Checkbox two</label>
+            </div>
 
-		<footer>
-			<p>
-				Copyright &copy; 2011, <a href="#">Author</a>. All rights reserved.
-			</p>
-		</footer>
-	</body>
+            <div>
+              <input type="checkbox" id="checkbox-3" name="checkbox-3">
+              <label for="checkbox-3">Checkbox three</label>
+            </div>
+          </fieldset>
+
+          <input type="reset" submit="Reset">
+          <input type="submit" value="Submit">
+          <button>Button</button>
+        </fieldset>
+      </form>
+-->
+    </section>
+
+    <footer>
+      <div>
+        <p>Copyright &copy; 2012 <a href="http://dominikhabersack.com">Dominik Habersack</a></p>
+      </div>
+    </footer>
+
+    <!-- Google Analytics start -->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-13202125-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <!-- Google Analytics end -->
+  </body>
 </html>
 <!--
-	Created using 'Skeletal' by Dominik Habersack (@dhabersack).
-	Source: http://github.com/dhabersack/skeletal
+  Created using 'Skeletal' by Dominik Habersack (@dhabersack).
+  Source: http://github.com/dhabersack/skeletal
 -->

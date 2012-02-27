@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.1.5 (Feb 27th, 2012)
+
+* Add a whole bunch of HTML5-tags
+* Restructure index-page
+
+
 ## 0.1.4 (May 9th, 2011)
 
 * Change background of table cells in tbody to light instead of dark grey
