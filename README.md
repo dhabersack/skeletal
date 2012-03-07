@@ -2,38 +2,43 @@
 
 Skeletal is a blank slate for website creation. Instead of resetting default browser styling with a reset.css you then have to override, Skeletal comes with sensible defaults in its base.css.
 
+See a live demo at http://dabersack.github.com/skeletal!
 
-## Features
+## Bug tracker
 
-### Units in text fields
+Please create an issue on GitHub when you find a bug.
 
-You can add units to text fields by adding the custom attribute data-unit to the preceding label like this:
-
-<label for="field" data-unit="mph">Miles per hour</label>
-<input type="text" id="field" name="field" value="120">
-
-
-## Known issues
-
-Skeletal uses HTML5-tags (header, footer, nav, article, section and others) that are not supported by all browsers. Support for those will be added at a later point.
-
-Currently built on Webkit, support for other browsers not included yet.
-
-
-## Problems?
-
-Please open [an issue][issues].
+http://github.com/dhabersack/skeletal/issues
 
 
 ## Author
 
-* Dominik Habersack / <dhabersack@gmail.com>
+__Dominik Habersack__
+
+* http://twitter.com/dhabersack
+* http://github.com/dhabersack
 
 
-## License
+## Copyright and license
 
-Skeletal is relased under the [MIT License][license].
+The MIT License
 
+Copyright 2012 Dominik Habersack
 
-[issues]: http://github.com/dhabersack/skeletal/issues
-[license]: http://github.com/dhabersack/skeletal/blob/master/LICENSE
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

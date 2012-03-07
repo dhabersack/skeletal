@@ -1,30 +1,52 @@
-// Font stacks
-$code-font-family: $font-stack-monospace;
-$footer-font-family: $font-stack-sans-serif;
-$heading-font-family: $font-stack-sans-serif;
-$quote-font-family: $font-stack-serif;
-$content-font-family: $font-stack-serif;
+@import 'colors.scss';
+@import 'fonts.scss';
 
-// Colors
-// normal text
-$text-color: $off-black;
+//--------------------------------//
+// FONT STACKS                    //
+//--------------------------------//
+$font-family-code: $font-family-monospace;
+$font-family-headings: $font-family-sans-serif;
+$font-family-inputs: $font-family-sans-serif;
+$font-family-quotes: $font-family-serif;
+$font-family-content: $font-family-serif;
+
+//--------------------------------//
+// COLORS                         //
+//--------------------------------//
 // code
-$subtle-background-color: $light-grey;
-$subtle-shadow-color: $off-black;
-// highlights
-$highlight-background-color: $yellow;
-$highlight-shadow-color: $off-black;
+$background-color-subtle: $light-gray;
+$border-color-subtle: $gray;
+$shadow-color-subtle: $off-black;
+
 // deleted text
-$deleted-text-color: $dark-grey;
-// page elements
-$content-background-color: $off-white;
-$content-color: $off-black;
-$footer-background-color: $off-black;
-$footer-color: $off-white;
-$header-background-color: $off-black;
-$header-color: $light-blue;
-$page-background-color: $light-grey;
+$color-deleted: $dark-gray;
+
+// highlights
+$background-color-highlight: $yellow;
+$shadow-color-highlight: $off-black;
+
+// base content
+$background-color-content: $off-white;
+$color-content: $off-black;
+
+// footer
+$background-color-footer: $off-black;
+$color-footer: $off-white;
+
+// header
+$background-color-header: $off-black;
+$color-header: $light-blue;
+
+// page
+$background-color-page: $off-white;
 
 
-$full-width-header: true;
-$full-width-footer: true;
+//--------------------------------//
+// GRID                           //
+//--------------------------------//
+$vertical-grid-base-height: 6;
+
+//--------------------------------//
+// TYPOGRAPHY                     //
+//--------------------------------//
+$line-height-to-font-size-ratio: 1.5;
