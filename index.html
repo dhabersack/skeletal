@@ -6,31 +6,37 @@
 
     <title>Skeletal</title>
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/base.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/base.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
 
-    <!-- favicon -->
     <link rel="shortcut icon" href="favicon.ico" />
   </head>
 
   <body>
     <header>
-      <div>
-        <h1><a href="/">Skeletal</a></h1>
+      <h1><a href="/">Skeletal</a></h1>
 
-        <nav>
-          <ol>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#status">Status</a></li>
-          </ol>
-        </nav>
-      </div>
+      <nav>
+        <ol>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#demo">Demo</a></li>
+          <li><a href="#status">Status</a></li>
+        </ol>
+      </nav>
     </header>
 
     <section>
-      <h2 id="introduction">Introduction</h2>
+      <h1>Skeletal</h1>
 
-      <p>Skeletal is a <del>reset</del> <ins>preset</ins>-stylesheet that <mark>sets sensible defaults</mark> for most (for now) HTML5-tags, providing a solid base to build upon.</p>
+      <h2 id="introduction">It's like Bootstrap, but I built it.</h2>
+
+      <p>Similar to <a href="http://twitter.github.com/bootstrap">Bootstrap</a>, Skeletal is a <mark>preset-stylesheet</mark> that sets sensible defaults for most (for now) HTML5-tags, providing a solid base to build upon.</p>
+
+      <p>Other than when using Bootstrap, however, your markup won't be cluttered with additional <code>class</code>- and <code>id</code>-attributes. Want to use a button? Take <code>&lt;button&gt;</code>, <code>&lt;input type="button"&gt;</code>, <code>&lt;input type="submit"&gt;</code> or <code>&lt;input type="reset"&gt;</code> as is without adding a <code>btn</code>-class to it.</p>
+
+      <p>Because guess what, they are already buttons.</p>
+
+      <p>The same applies to a lot of other tags as well, keeping your markup as clean as possible.</p>
 
       <h3>Because a reset just isn't good enough.</h3>
 
@@ -45,43 +51,234 @@
         <dd>Look at all the nice colors! Seriously tough, Skeletal puts an emphasis on readability and clean organization to make the sites using it as easy and user-friendly as possible.</dd>
       </dl>
 
-      <h4>Element demos</h4>
+
+      <h2 id="demo">Element demos</h2>
 
       <p>The following includes a list of some of the styled elements.</p>
 
-      <h5><code>abbr</code></h5>
+<!--
+      <h3><code>a</code> - Hyperlink</h3>
 
-      <p>Skeletal utilises <abbr title="Syntactically Awesome StyleSheets">sass</abbr>.</p>
+      <h3><code>abbr</code> - Abbreviation</h3>
 
-      <h5><code>pre</code></h5>
+      <h3><code>address</code> - Contact information for a page or article element</h3>
+
+      <h3><code>area</code> - Hyperlink or dead area on an image map</h3>
+
+      <h3><code>article</code> Self-contained syndicatable or reusable composition</h3>
+
+      <h3><code>aside</code> - Sidebar for tangentially related content</h3>
+
+      <h3><code>audio</code> - Audio player</h3>
+
+      <h3><code>b</code> - Keywords</h3>
+
+      <h3><code>base</code> - Base URL and default target browsing context for hyperlinks and forms</h3>
+
+      <h3><code>bdi</code> - Text directionality isolation</h3>
+
+      <h3><code>bdo</code> - Text directionality formatting</h3>
+
+      <h3><code>blockquote</code> - A section quoted from another source</h3>
+
+      <h3><code>body</code> - Document body</h3>
+
+      <h3><code>br</code> - Line break, e.g. in poem or postal address</h3>
+
+      <h3><code>canvas</code> - Scriptable bitmap canvas</h3>
+
+      <h3><code>caption</code> - Table caption</h3>
+
+      <h3><code>cite</code> - Title of a work</h3>
+
+      <h3><code>code</code> - Computer code</h3>
+
+      <h3><code>col</code> - Table column</h3>
+
+      <h3><code>colgroup</code> - Group of columns in a table</h3>
+
+      <h3><code>command</code> - Menu command</h3>
+
+      <h3><code>datalist</code> - Container for options for combo box control</h3>
+
+      <h3><code>del</code> - A removal from the document</h3>
+
+      <h3><code>details</code> - Disclosure control for hiding details</h3>
+
+      <h3><code>dfn</code> - Defining instance</h3>
+
+      <h3><code>div</code> - Generic flow container</h3>
+
+
+      <h3><code>em</code> - Stress emphasis</h3>
+
+      <h3><code>embed</code> - Plugin</h3>
+
+      <h3><code>figcaption</code> - Caption for figure</h3>
+
+      <h3><code>figure</code> - Figure with optional caption</h3>
+
+      <h3><code>footer</code> - Footer for a page or section</h3>
+
+      <h3><code>header</code> - Introductory or navigational aids for a page or section</h3>
+
+      <h3><code>hr</code> - Thematic break</h3>
+
+      <h3><code>html</code> - Root element</h3>
+
+      <h3><code>i</code> - Alternate voice</h3>
+
+      <h3><code>iframe</code> - Nested browsing context</h3>
+
+      <h3><code>img</code> - Image</h3>
+
+      <h3><code>ins</code> - An addition to the document</h3>
+
+      <h3><code>kbd</code> - User input</h3>
+
+      <h3><code>keygen</code> - Cryptographic key-pair generator form control</h3>
+
+      <h3><code>map</code> - Image map</h3>
+
+      <h3><code>mark</code> - Highlight</h3>
+
+      <h3><code>menu</code> - Menu of commands</h3>
+
+      <h3><code>meter</code> - Gauge</h3>
+
+      <h3><code>nav</code> - Section with navigational links</h3>
+
+      <h3><code>noscript</code> - Fallback content for script</h3>
+
+      <h3><code>object</code>- Image, nested browsing context, or plugin</h3>
+
+      <h3><code>optgroup</code> - Group of options in a list box</h3>
+
+      <h3><code>output</code> - Calculated output value</h3>
+
+      <h3><code>p</code> - Paragraph</h3>
+
+      <h3><code>param</code> - Parameter for object</h3>
+
+      <h3><code>pre</code> - Block of preformatted text</h3>
+
+      <h3><code>progress</code> - Progress bar</h3>
+
+      <h3><code>q</code> - Quotation</h3>
+
+      <h3><code>rp</code> - Parenthesis for ruby annotation text</h3>
+
+      <h3><code>rt</code> - Ruby annotation text</h3>
+
+      <h3><code>ruby</code> - Ruby annotation(s)</h3>
+
+      <h3><code>s</code> - Inaccurate text</h3>
+
+      <h3><code>samp</code> - Computer output</h3>
+
+      <h3><code>section</code> - Generic document or application section</h3>
+
+      <h3><code>small</code> - Side comment</h3>
+
+      <h3><code>source</code> - Media source for video or audio</h3>
+
+      <h3><code>span</code> - Generic phrasing container</h3>
+
+      <h3><code>strong</code> - Importance</h3>
+
+      <h3><code>sub</code> - Subscript</h3>
+
+      <h3><code>summary</code> - Caption for details</h3>
+
+      <h3><code>sup</code> - Superscript</h3>
+
+      <h3><code>time</code> - Machine-readable equivalent of date- or time-related data</h3>
+
+      <h3><code>track</code> - Timed text track</h3>
+
+      <h3><code>u</code> - Keywords</h3>
+
+      <h3><code>var</code> - Variable</h3>
+
+      <h3><code>video</code> - Video player</h3>
+
+      <h3><code>wbr</code> - Line breaking opportunity</h3>
+-->
+
+      <h3>Root element</h3>
+
+      <h4>Root element markup</h4>
+
+      <p>Tags: <code>html</code></p>
+
+
+      <h3>Sections</h3>
+
+      <h4>Section markup</h4>
+
+      <p>Tags: <code>body</code>, <code>section</code>, <code>nav</code>, <code>article</code>, <code>aside</code>, <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>, <code>h6</code>, <code>hgroup</code>, <code>header</code>, <code>footer</code>, <code>address</code></p>
+
+      <h4>Section examples</h4>
+
+
+      <h3>Grouping content</h3>
+
+      <h4>Paragraphs</h4>
+
+      <p>The <code>p</code> element represents a paragraph.</p>
+
+      <h5>Example</h5>
+
+      <h6>Markup</h6>
 
 <pre>
-Preformatted text
-  sometimes appears in
-    multiple lines.
+&lt;p&gt;
+  The little kitten gently seated
+  himself on a piece of carpet. Later
+  in his life, this would be referred
+  to as the time the cat sat on the
+  mat.
+&lt;/p&gt;
 </pre>
 
-      <h5><code>blockquote</code></h5>
+      <h6>Result</h6>
 
-      <blockquote>
-        <p>A long blockquote, followed by a horizontal line.</p>
-        <p>This person might even have said more than one single sentence. So much, in fact, that the entire sentence took more than a single line of space within this blockquote!</p>
-      </blockquote>
+      <p>The little kitten gently seated himself on a piece of carpet. Later in his life, this would be referred to as the time the cat sat on the mat.</p>
 
-      <h5><code>hr</code></h5>
+      <h4><em>TODO</em></h4>
 
-      <hr>
+      <p>Tag: <code>hr</code>, <code>pre</code>, <code>blockquote</code></p>
 
-      <h5><code>ol</code></h5>
+      <h4>Lists</h4>
+
+      <h5>Definition lists</h5>
+
+      <p>Tags: <code>dl</code>, <code>dt</code>, <code>dd</code></p>
+
+      <dl>
+        <dt>Definition term one</dt>
+        <dd>Definition description one</dd>
+
+        <dt>Definition term two</dt>
+        <dd>Definition description two</dd>
+      </dl>
+
+      <h5>Ordered lists</h5>
+
+      <p>Tags: <code>ol</code>, <code>li</code></p>
 
       <ol>
-        <li>volutpat
+        <li>Ordered</li>
+        <li>List
           <ol>
-            <li>quis
+            <li>Containing
               <ol>
-                <li>Fusce
+                <li>Multiple</li>
+                <li>Sub-lists
                   <ol>
-                    <li>rhoncus</li>
+                    <li>With</li>
+                    <li>changing</li>
+                    <li>enumerators</li>
                   </ol>
                 </li>
               </ol>
@@ -90,16 +287,20 @@ Preformatted text
         </li>
       </ol>
 
-      <h5><code>ul</code></h5>
+      <h5>Unordered lists</h5>
+
+      <p>Tags: <code>ul</code>, <code>li</code></p>
 
       <ul>
-        <li>sed
+        <li>Unordered
           <ul>
-            <li>Maecenas
+            <li>List</li>
+            <li>doing
               <ul>
-                <li>aliquam
+                <li>The exact</li>
+                <li>Same
                   <ul>
-                    <li>eleifend</li>
+                    <li>Thing</li>
                   </ul>
                 </li>
               </ul>
@@ -108,72 +309,86 @@ Preformatted text
         </li>
       </ul>
 
-      <h5><code>table</code></h5>
+      <h4><em>TODO</em></h4>
+
+      <p><code>figure</code>, <code>figcaption</code>, <code>div</code></p>
+
+      <h3>Text-level semantics</h3>
+
+      <h4>Text-level semantics markup</h4>
+
+      <p>Tags: <code>a</code>, <code>em</code>, <code>strong</code>, <code>small</code>, <code>s</code>, <code>cite</code>, <code>q</code>, <code>dfn</code>, <code>abbr</code>, <code>time</code>, <code>code</code>, <code>var</code>, <code>samp</code>, <code>kbd</code>, <code>sub</code>, <code>sup</code>, <code>i</code>, <code>b</code>, <code>u</code>, <code>mark</code>, <code>ruby</code>, <code>rt</code>, <code>rp</code>, <code>bdi</code>, <code>bdo</code>, <code>span</code>, <code>br</code>, <code>wbr</code></p>
+
+      <h4>Text-level semantics examples</h4>
+
+      <h3>Edits</h3>
+
+      <h4>Inserted text</h4>
+
+      <p>Tag: <code>ins</code></p>
+
+      <h5>Example</h5>
+
+      <h4>Deleted text</h4>
+
+      <p>Tag: <code>del</code></p>
+
+      <h5>Example</h5>
+
+      <h3>Tables</h3>
+
+      <h4>Table markup</h4>
+
+      <p>Tags: <code>table</code>, <code>tbody</code>, <code>td</code>, <code>tfoot</code>, <code>th</code>, <code>thead</code>, <code>tr</code></p>
+
+      <h4>Table examples</h4>
 
       <table>
         <thead>
           <tr>
-            <th></th>
-            <th>Vestibulum ante</th>
-            <th>ipsum</th>
-            <th>primis</th>
+            <th>#</th>
+            <th>Lecture</th>
+            <th>Lecturer</th>
+            <th>Score</th>
           </tr>
         </thead>
-
         <tfoot>
           <tr>
-            <th>auctor</th>
-            <td>eu</td>
-            <td>et</td>
-            <td>libero</td>
+            <th>average</th>
+            <td></td>
+            <td></td>
+            <td>74.17% (D)</td>
           </tr>
         </tfoot>
-
         <tbody>
           <tr>
-            <th>in facibus</th>
-            <td>orci</td>
-            <td>luctus</td>
-            <td>et ultrices</td>
+            <th>1</th>
+            <td>Digital Media</td>
+            <td>Butz</td>
+            <td>97.5% (A)</td>
           </tr>
-
           <tr>
-            <th>posuere</th>
-            <td>cubilia</td>
-            <td>Curae Phaellus</td>
-            <td>blandit</td>
+            <th>2</th>
+            <td>Analysis for computer scientists</td>
+            <td>Renesse</td>
+            <td>25% (F)</td>
           </tr>
-
           <tr>
-            <th>quam</th>
-            <td>tellus Morbi</td>
-            <td>ac est a</td>
-            <td>mauris pretium</td>
+            <th>3</th>
+            <td>Introduction to programming</td>
+            <td>Hofmann</td>
+            <td>100% (A)</td>
           </tr>
         </tbody>
       </table>
 
-      <h2>Status</h2>
+      <h3>Forms</h3>
 
-      <p>Skeletal is a work in progress. Because of that, not all tags are completely styled yet. Below you can find a list of all finised and unfinished tags.</p>
+      <h4>Form markup</h4>
 
-      <h4>Styled tags</h4>
+      <p>Tags: <code>button</code>, <code>input</code>, <code>label</code>, <code>legend</code>, <code>option</code>, <code>select</code>, <code>textarea</code></p>
 
-      <p><code>abbr</code>, <code>article</code>, <code>b</code>, <code>blockquote</code>, <code>body</code>, <code>code</code>, <code>dd</code>, <code>dl</code>, <code>dt</code>, <code>em</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>, <code>h6</code>, <code>i</code>, <code>ins</code>, <code>pre</code>, <code>q</code>, <code>strong</code></p>
-
-      <h4>Partially styled tags</h4>
-
-      <p><code>a</code>, <code>address</code>, <code>aside</code>, <code>button</code>, <code>cite</code>, <code>del</code>, <code>dfn</code>, <code>fieldset</code>, <code>footer</code>, <code>form</code>, <code>h1</code>, <code>header</code>, <code>hr</code>, <code>html</code>, <code>input</code>, <code>kbd</code>, <code>label</code>, <code>legend</code>, <code>li</code>, <code>mark</code>, <code>nav</code>, <code>ol</code>, <code>optgroup</code>, <code>option</code>, <code>p</code>, <code>samp</code>, <code>section</code>, <code>select</code>, <code>table</code>, <code>tbody</code>, <code>td</code>, <code>textarea</code>, <code>tfoot</code>, <code>th</code>, <code>thead</code>, <code>tr</code>, <code>ul</code>, <code>var</code></p>
-
-      <h4>Unstyled tags</h4>
-
-      <p><code>area</code>, <code>audio</code>, <code>bdi</code>, <code>bdo</code>, <code>br</code>, <code>canvas</code>, <code>caption</code>, <code>col</code>, <code>colgroup</code>, <code>datalist</code>, <code>details</code>, <code>div</code>, <code>embed</code>, <code>figcaption</code>, <code>figure</code>, <code>hgroup</code>, <code>iframe</code>, <code>img</code>, <code>keygen</code>, <code>map</code>, <code>menu</code>, <code>meter</code>, <code>object</code>, <code>output</code>, <code>param</code>, <code>progress</code>, <code>rp</code>, <code>rt</code>, <code>ruby</code>, <code>s</code>, <code>small</code>, <code>span</code>, <code>sub</code>, <code>summary</code>, <code>sup</code>, <code>time</code>, <code>u</code>, <code>video</code>, <code>wbr</code></p>
-
-<!--
-      <aside>
-      </aside>
-
-      <h2 id="forms">Forms</h2>
+      <h4>Form examples</h4>
 
       <form>
         <fieldset>
@@ -313,16 +528,53 @@ Preformatted text
           <button>Button</button>
         </fieldset>
       </form>
--->
+
+      <hr>
+
+      <h5><code>abbr</code></h5>
+
+      <p>Skeletal utilises <abbr title="Syntactically Awesome StyleSheets">sass</abbr>.</p>
+
+      <h5><code>pre</code></h5>
+
+<pre>
+Preformatted text
+  sometimes appears in
+    multiple lines.
+</pre>
+
+      <h5><code>blockquote</code></h5>
+
+      <blockquote>
+        <p>A long blockquote, followed by a horizontal line.</p>
+        <p>This person might even have said more than one single sentence. So much, in fact, that the entire sentence took more than a single line of space within this blockquote!</p>
+        <cite>A very smart person</cite>
+      </blockquote>
+
+      <h2>Status</h2>
+
+      <p>Skeletal is a work in progress. Because of that, not all tags are completely styled yet. Below you can find a list of all finised and unfinished tags.</p>
+
+      <h4>Styled tags</h4>
+
+      <p><code>abbr</code>, <code>article</code>, <code>b</code>, <code>blockquote</code>, <code>body</code>, <code>code</code>, <code>dd</code>, <code>dl</code>, <code>dt</code>, <code>em</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>, <code>h6</code>, <code>i</code>, <code>ins</code>, <code>pre</code>, <code>q</code>, <code>strong</code></p>
+
+      <h4>Partially styled tags</h4>
+
+      <p><code>a</code>, <code>address</code>, <code>aside</code>, <code>button</code>, <code>cite</code>, <code>del</code>, <code>dfn</code>, <code>fieldset</code>, <code>footer</code>, <code>form</code>, <code>h1</code>, <code>header</code>, <code>hr</code>, <code>html</code>, <code>input</code>, <code>kbd</code>, <code>label</code>, <code>legend</code>, <code>li</code>, <code>mark</code>, <code>nav</code>, <code>ol</code>, <code>optgroup</code>, <code>option</code>, <code>p</code>, <code>samp</code>, <code>section</code>, <code>select</code>, <code>table</code>, <code>tbody</code>, <code>td</code>, <code>textarea</code>, <code>tfoot</code>, <code>th</code>, <code>thead</code>, <code>tr</code>, <code>ul</code>, <code>var</code></p>
+
+      <h4>Unstyled tags</h4>
+
+      <p><code>area</code>, <code>audio</code>, <code>bdi</code>, <code>bdo</code>, <code>br</code>, <code>canvas</code>, <code>caption</code>, <code>col</code>, <code>colgroup</code>, <code>datalist</code>, <code>details</code>, <code>div</code>, <code>embed</code>, <code>figcaption</code>, <code>figure</code>, <code>hgroup</code>, <code>iframe</code>, <code>img</code>, <code>keygen</code>, <code>map</code>, <code>menu</code>, <code>meter</code>, <code>object</code>, <code>output</code>, <code>param</code>, <code>progress</code>, <code>rp</code>, <code>rt</code>, <code>ruby</code>, <code>s</code>, <code>small</code>, <code>span</code>, <code>sub</code>, <code>summary</code>, <code>sup</code>, <code>time</code>, <code>u</code>, <code>video</code>, <code>wbr</code></p>
+
+      <aside>
+      </aside>
     </section>
 
     <footer>
-      <div>
-        <p>Copyright &copy; 2012 <a href="http://dominikhabersack.com">Dominik Habersack</a></p>
-      </div>
+      <p>Copyright &copy; 2012 <a href="http://dominikhabersack.com">Dominik Habersack</a></p>
     </footer>
 
-    <!-- Google Analytics start -->
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-13202125-5']);
@@ -332,15 +584,10 @@ Preformatted text
       var ga = document.createElement('script');
       ga.type = 'text/javascript';
       ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0];
       s.parentNode.insertBefore(ga, s);
     })();
     </script>
-    <!-- Google Analytics end -->
   </body>
 </html>
-<!--
-  Created using 'Skeletal' by Dominik Habersack (@dhabersack).
-  Source: http://github.com/dhabersack/skeletal
--->
