@@ -1,0 +1,31 @@
+@import 'config.scss';
+
+// Additional setup based on given configuration.
+
+//--------------------------------//
+// COLORS                         //
+//--------------------------------//
+$percentage-lightest: 25%;
+$percentage-lighter:  15%;
+$percentage-darker:   25%;
+$percentage-darkest:  50%;
+
+$color-brand-lightest:     lighten($color-brand,     $percentage-lightest);
+$color-brand-lighter:      lighten($color-brand,     $percentage-lighter);
+$color-brand-darker:        darken($color-brand,     $percentage-darker);
+$color-brand-darkest:       darken($color-brand,     $percentage-darkest);
+
+$color-highlight-lightest: lighten($color-highlight, $percentage-lightest);
+$color-highlight-lighter:  lighten($color-highlight, $percentage-lighter);
+$color-highlight-darker:    darken($color-highlight, $percentage-darker);
+$color-highlight-darkest:   darken($color-highlight, $percentage-darkest);
+
+$color-link-lightest:      lighten($color-link,      $percentage-lightest);
+$color-link-lighter:       lighten($color-link,      $percentage-lighter);
+$color-link-darker:         darken($color-link,      $percentage-darker);
+$color-link-darkest:        darken($color-link,      $percentage-darkest);
+
+$color-neutral-lightest:   lighten($color-neutral,   $percentage-lightest);
+$color-neutral-lighter:    lighten($color-neutral,   $percentage-lighter);
+$color-neutral-darker:      darken($color-neutral,   $percentage-darker);
+$color-neutral-darkest:     darken($color-neutral,   $percentage-darkest);

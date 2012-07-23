@@ -28,7 +28,7 @@
 
 // root element
 html {
-  background-color: $background-color-page;
+  background-color: $color-neutral-lightest;
   overflow-y: scroll;
 }
 
@@ -39,16 +39,16 @@ html {
 // main content
 body {
   background-color: inherit;
-  color: $color-content;
+  color: $color-neutral-darkest;
   font: 62.5%/1 $font-family-content; // 10px/10px
 }
 
 // generic section
 section {
-  background: $background-color-content;
-  margin: 0 auto;
-  padding: 1.2em 1em;
-  width: 94em;
+  $margin: 0 auto;
+  $padding: 1.2em 0;
+
+  @include grid(12, $margin: $margin, $padding: $padding);
 }
 
 // section with navigation links
@@ -98,63 +98,59 @@ h1, h2, h3, h4, h5, h6 {
 
 // heading with highest rank
 h1 {
-  font: {
-    size: 8em; // 80px
-    weight: bold;
-  }
-  line-height: 1.5em; // 120px
+  @include font-size(8.0em); // line-height: 1.5em (120px)
+
+  font-weight: bold;
   padding: 0.15em 0 0.075em; // 12px 0 6px
 }
 
 // heading with second-highest rank
 h2 {
-  font-size: 4em; // 40px
-  line-height: 1.5em; // 60px
+  @include font-size(4.0em); // line-height: 1.5em (60px)
+
   padding: 0.3em 0 0.15em; // 12px 0 6px
 }
 
 // heading with third-highest rank
 h3 {
-  font-size: 3.2em; // 32px
-  line-height: 1.5em; // 48px
+  @include font-size(3.2em); // line-height: 1.5em (48px)
+
   padding: 0.375em 0 0.1875em; // 12px 0 6px
 }
 
 // heading with fourth-highest rank
 h4 {
-  font-size: 2.5em; // 25px
-  line-height: 1.68em; // 42px
+  @include font-size(2.5em); // line-height: 1.68em (42px)
+
   padding: 0.48em 0 0.24em; // 12px 0 6px
 }
 
 // heading with fifth-highest rank
 h5 {
-  font-size: 2em; // 20px
-  line-height: 1.5em; // 30px
+  @include font-size(2em); // line-height: 1.5em (30px);
+
   padding: 0.6em 0 0.3em; // 12px 0 6px
 }
 
 // heading with lowest rank
 h6 {
-  font-size: 1.6em; // 16px
-  line-height: 1.5em; // 24px
+  @include font-size(1.6em); // line-height: 1.5em (24px)
+
   margin: 0.75em 0 0.375em; // 12px 0 6px
 }
 
 // group of headings
-hgroup {
-}
+hgroup {}
 
 // introductory or navigational aids
 header {
-  background-color: $background-color-header;
-  color: $color-header;
+  $margin: 0 auto;
+
+  @include grid(12, $margin: $margin);
+
   display: block;
   font-family: $font-family-headings;
-  margin: 0 auto;
   overflow: hidden;
-  padding: 0 1em;
-  width: 94em;
 
   h1 {
     float: left;
@@ -180,24 +176,24 @@ header {
 // (information about its section such as author, links to related documents,
 // copyright data, …)
 footer {
-  background-color: $background-color-footer;
-  color: $color-footer;
+  $margin: 0 auto;
+  $padding: 1.2em 1em;
+
+  @include grid(12, $margin: $margin, $padding: $padding);
+
   display: block;
-  margin: 0 auto;
   overflow: hidden;
-  padding: 1.2em 1em;
-  width: 94em;
 
   ol li {
-    font-size: 1.2em; // 12px
-    line-height: 1.5em; // 18px
+    @include font-size(1.5em);
+
     margin-bottom: 0;
   }
 
   p {
+    @include font-size(1.5em);
+
     float: right;
-    font-size: 1.2em; // 12px
-    line-height: 1.5em; // 18px
 
     &:last-child {
       margin-bottom: 0;
@@ -205,8 +201,8 @@ footer {
   }
 
   ul li {
-    font-size: 1.2em; // 12px
-    line-height: 1.5em; // 18px
+    @include font-size(1.5em);
+
     margin-bottom: 0;
   }
 }
@@ -222,14 +218,15 @@ address {
 
 // paragraph
 p {
-  font-size: 1.6em; // 16px
-  line-height: 1.5em; // 24px
+  @include font-size(1.6em); // line-height: 1.5em (24px)
+
   margin-bottom: 0.75em; // 12px
 }
 
 // paragraph-level thematic break
 hr {
   border: {
+    color: $color-neutral-darker;
     style: solid;
     width: 0.1em 0 0 0; // 1px
   }
@@ -238,11 +235,12 @@ hr {
 
 // preformatted text
 pre {
-  @include border-radius(.125em); // 2px
-  @include box-shadow(0, 0, 0.0625em, $shadow-color-subtle); // 1px
+  @include border-radius(0.125em); // 2px
+  @include box-shadow(0, 0, 0.0625em, $color-neutral-darkest); // 1px
+  @include font-size(1.6em); // line-height: 1.5em (24px)
 
-  background: $background-color-subtle;
-  font: 1.6em/1.5em $font-family-code; // #/24px
+  background: $color-neutral-lighter;
+  font-family: $font-family-code;
   margin-bottom: 0.75em; // 12px
   padding: 0.375em 0.625em; // 6px 10px
 }
@@ -250,9 +248,9 @@ pre {
 // section that is quoted from another source
 blockquote {
   @include border-radius(.2em);
-  @include box-shadow(0, 0, 0.1em, $shadow-color-subtle);
+  @include box-shadow(0, 0, 0.1em, $color-neutral-darkest);
 
-  background: $background-color-subtle;
+  background: $color-neutral-lighter;
   font: {
     family: $font-family-quotes;
     style: italic;
@@ -260,11 +258,11 @@ blockquote {
   margin: 0 6em 1.2em;
   padding: 1.2em 2em;
 
-	> cite {
-		&::before {
-			content: '– ';
-		}
-	}
+  > cite {
+    &::before {
+      content: '– ';
+    }
+  }
 
   > p {
     &:last-of-type {
@@ -282,8 +280,7 @@ ol {
   margin-bottom: 1.2em;
 
   > li {
-    font-size: 1.5em;
-    line-height: 1.6em; // 24px
+    @include font-size(1.5em); // line-height: 1.6em (24px)
 
     > ol {
       list-style-type: lower-alpha;
@@ -309,8 +306,7 @@ ul {
   margin-bottom: 1.2em;
 
   > li {
-    font-size: 1.5em;
-    line-height: 1.6em; // 24px
+    @include font-size(1.5em); // line-height: 1.6em (24px)
 
     > ol {
       margin-bottom: 0;
@@ -343,32 +339,28 @@ dl {
 
 // definition term
 dt {
+  @include font-size(1.6em); // line-height: 1.5em (24px)
   font: {
     family: $font-family-headings;
-    size: 1.6em; // 16px
     weight: bold;
   }
-  line-height: 1.5em; // 24px
 }
 
 // definition description
 dd {
-  font-size: 1.6em; // 16px
-  line-height: 1.5em; // 24px
+  @include font-size(1.6em); // line-height: 1.5em (24px)
+
   margin: 0 0 0.75em 1.25em; // 0 0 12px 20px
 }
 
 // self-contained, single unit referenced from main flow of document
-figure {
-}
+figure {}
 
 // caption of figure element's contents
-figcaption {
-}
+figcaption {}
 
 // groups its children, has no special meaning at all
-div {
-}
+div {}
 
 //--------------------------------//
 // TEXT-LEVEL SEMANTICS           //
@@ -376,17 +368,17 @@ div {
 
 // hyperlink
 a {
-  color: $dark-blue;
+  color: $color-link;
 
   &:active {}
 
   &:focus {
-    outline: 1px dotted $red;
+    outline: 1px dotted $color-neutral-darkest;
     text-decoration: none;
   }
 
   &:hover {
-    color: $light-blue;
+    color: $color-link-lighter;
     text-decoration: underline;
   }
 
@@ -410,29 +402,27 @@ strong {
 }
 
 // side comments such as small print
-small {
-}
+small {}
 
 // no longer accurate or relevant
-s {
-}
+s {}
 
 // title of a work being quoted or mentioned in passing
 cite {
+  @include font-size(1.2em); // line-height: 1.5em (18px)
+
   font: {
-    size: 1.2em;
     style: italic;  
     weight: bold;
   }
-  line-height: 1.5em; // 18px
 }
 
 // phrasing content quoted from another source
 q {
   @include border-radius(.125em); // 2px
-  @include box-shadow(0, 0, 0.0625em, $shadow-color-subtle); // 1px
+  @include box-shadow(0, 0, 0.0625em, $color-neutral-darker); // 1px
 
-  background: $background-color-subtle;
+  background: $color-neutral;
   display: inline-block;
   font: {
     family: $font-family-quotes;
@@ -465,15 +455,14 @@ abbr {
 }
 
 // date/time
-time {
-}
+time {}
 
 // fragment of computer code
 code {
-  @include border-radius(.125em); // 2px
-  @include box-shadow(0, 0, 0.0625em, $shadow-color-subtle); // 1px
+  @include border-radius(0.125em); // 2px
+  @include box-shadow(0, 0, 0.0625em, $color-neutral-darkest); // 1px
 
-  background: $background-color-subtle;
+  background: $color-neutral-lighter;
   display: inline-block;
   font-family: $font-family-code;
   margin: 0 0.125em; // 0 2px
@@ -496,11 +485,8 @@ kbd {
   font-family: $font-family-code;
 }
 
-sub {
-}
-
-sup {
-}
+sub {}
+sup {}
 
 // italic text
 i {
@@ -512,45 +498,31 @@ b {
   font-weight: bold;
 }
 
-u {
-}
+u {}
 
 // marked text
 mark {
-  @include border-radius(.125em); // 2px
-  @include box-shadow(0, 0, 0.0625em, $shadow-color-highlight); // 1px
+  @include border-radius(0.125em); // 2px
+  @include box-shadow(0, 0, 0.0625em, $color-neutral-darkest); // 1px
 
-  background: $background-color-highlight;
+  background: $color-highlight-lighter;
   color: inherit;
   display: inline-block;
   margin: 0 0.125em; // 0 2px
   padding: 0 0.3125em; // 0 5px
 }
 
-ruby {
-}
-
-rt {
-}
-
-rp {
-}
-
-bdi {
-}
-
-bdo {
-}
-
-span {
-}
+ruby {}
+rt {}
+rp {}
+bdi {}
+bdo {}
+span {}
 
 // single line break
-br {
-}
+br {}
 
-wbr {
-}
+wbr {}
 
 //--------------------------------//
 // EDITS                          //
@@ -565,7 +537,7 @@ ins {
 
 // deleted text
 del {
-  color: $color-deleted;
+  color: $color-neutral-darkest;
   font-style: italic;
   text-decoration: line-through;
 }
@@ -574,43 +546,24 @@ del {
 // EMBEDDED CONTENT               //
 //--------------------------------//
 
-img {
-}
-
-iframe {
-}
-
-embed {
-}
-
-object {
-}
-
-param {
-}
-
-video {
-}
+img {}
+iframe {}
+embed {}
+object {}
+param {}
+video {}
 
 // sound element
-audio {
-}
+audio {}
 
-source {
-}
-
-track {
-}
+source {}
+track {}
 
 // graphics canvas
-canvas {
-}
+canvas {}
 
-map {
-}
-
-area {
-}
+map {}
+area {}
 
 //--------------------------------//
 // TABULAR DATA                   //
@@ -618,6 +571,8 @@ area {
 
 // table
 table {
+  @include border-radius(0.2em);
+  background: $color-neutral-lightest;
   border: {
     collapse: collapse;
     spacing: 0;
@@ -627,14 +582,10 @@ table {
 }
 
 // table caption
-caption {
-}
+caption {}
 
-colgroup {
-}
-
-col {
-}
+colgroup {}
+col {}
 
 // table body
 tbody {
@@ -642,9 +593,9 @@ tbody {
     font-weight: normal;
   }
 
-  tr {
+  > tr {
     &:nth-child(odd) {
-      background: $background-color-subtle;
+      background: $color-neutral-lighter;
     }
   }
 }
@@ -656,29 +607,29 @@ thead {
 
 // table footer
 tfoot {
-	> tr {
-		border-bottom: none;
-	}
+  > tr {
+    border-bottom: none;
+  }
 }
 
 // table row
 tr {
-  border-bottom: 0.1em solid $border-color-subtle; // 1px
+  border-bottom: 0.1em solid $color-neutral-darker; // 1px
 }
 
-td {
-  font-size: 1.6em;
-  line-height: 1.5em; // 24px
+// table data cell
+td { 
+  @include font-size(1.6em); // line-height: 1.5em; (24px)
+
   padding: 0 0.625em; // 0 10px
 }
 
+// table header cell
 th {
-  font: {
-    size: 1.6em; // 16px
-    weight: bold;
-  }
-  line-height: 1.875em; // 30px
-  padding: 0 0.625em; // 0 10px
+  @include font-size(1.6em); // line-height: 1.5em; (24px)
+
+  font-weight: bold;
+  padding: 0.1875em 0.625em; // 3px 10px
   text-align: left;
 }
 
@@ -709,7 +660,7 @@ fieldset {
     > label {
       &[data-unit] {
         &::after {
-          color: #666; // TODO color
+          color: $color-neutral-darker;
           content: attr(data-unit);
           font-size: 0.75em; // 12px
           line-height: 2.5em; // 30px
@@ -728,10 +679,10 @@ fieldset {
     }
 
     > p {
+      @include font-size(1.2em); // line-height: 1.5em (18px)
+
       clear: left;
-      color: $gray;
-      font-size: 1.2em;
-      line-height: 1.5em; // 18px
+      color: $color-neutral-darker;
       margin-bottom: 0;
     }
 
@@ -745,7 +696,7 @@ fieldset {
   > fieldset {
     @include border-radius(.2em); // 2px
 
-    border: 0.1em solid $gray;
+    border: 0.1em solid $color-neutral-darker;
     margin-bottom: 1.2em;
     padding: 0.5em 0.9em 1.1em;
 
@@ -760,8 +711,13 @@ fieldset {
 }
 
 legend {
-  color: $off-black;
-  font: bold 1.6em/1.5em $font-family-headings; // #/24px
+  @include font-size(1.6em); // line-height: 1.5em (24px)
+
+  color: $color-neutral-darkest;
+  font: {
+    family: $font-family-headings;
+    weight: bold;
+  }
   letter-spacing: 0.025em;
 }
 
@@ -774,41 +730,6 @@ label {
 }
 
 input {
-  &[type="hidden"] {
-  }
-
-  &[type="text"],
-  &[type="search"],
-  &[type="tel"],
-  &[type="url"],
-  &[type="email"],
-  &[type="password"],
-  &[type="datetime"],
-  &[type="date"],
-  &[type="month"],
-  &[type="week"],
-  &[type="time"],
-  &[type="datetime-local"],
-  &[type="number"],
-  &[type="range"],
-  &[type="color"] {
-    @include form-field-border;
-    @include border-radius(.125em); // 2px
-
-    background: $white;
-    clear: left;
-    float: left;
-    font: 1.6em/1em $font-family-inputs; // 16px/16px
-    height: 1em; // 16px
-    margin: 0 0.625em 0 0; // 0 10px 0 0
-    padding: 0.375em 0.25em; // 6px 4px
-    width: 16.875em; // 270px
-
-    &:focus {
-      border-color: $light-blue;
-    }
-  }
-
   &[type="checkbox"],
   &[type="radio"] {
     // TODO not happy with use of em-values on top of unknown base value
@@ -819,7 +740,59 @@ input {
     padding: 0;
   }
 
-  &[type="file"] {
+  &[type="color"] {
+    @include border-radius(0.125em);
+
+    border: none;
+    clear: left;
+    float: left;
+    font: 1.6em/1em $font-family-inputs; // 16px/16px
+    padding: 0;
+    width: 60px;
+  }
+
+  &[type="date"],
+  &[type="datetime"],
+  &[type="datetime-local"],
+  &[type="email"],
+  &[type="month"],
+  &[type="number"],
+  &[type="password"],
+  &[type="search"],
+  &[type="tel"],
+  &[type="text"],
+  &[type="time"],
+  &[type="url"],
+  &[type="week"] {
+    @include border-radius(0.125em); // 2px
+
+    background: $color-neutral-lightest;
+    border: {
+      color: $color-neutral-darker $color-neutral $color-neutral $color-neutral-darker;
+      style: solid;
+      width: 0.0625em; /* 1px */
+    }
+    clear: left;
+    float: left;
+    font: 1.6em/1em $font-family-inputs; // 16px/16px
+    height: 1em; // 16px
+    margin: 0 0.625em 0 0; // 0 10px 0 0
+    padding: 0.375em 0.25em; // 6px 4px
+    width: 16.875em; // 270px
+    width: 18.125em; // 160px
+
+    &:focus {
+      border-color: $color-link;
+    }
+  }
+
+  &[type="file"] {}
+
+  &[type="hidden"] {}
+
+  &[type="range"] {
+    clear: left;
+    float: left;
   }
 
   // button elements
@@ -833,37 +806,47 @@ input {
 
 // push buttons
 button {
-  @include background-gradient($off-white, $light-gray);
-  @include border-radius(.125em); // 2px
-  @include form-field-border;
+  @include background-gradient($color-neutral-lightest, $color-neutral-lighter);
+  @include border-radius(0.125em); // 2px
 
-  color: $off-black;
+  border: {
+    color: $color-neutral $color-neutral-darker $color-neutral-darker $color-neutral;
+    style: solid;
+    width: 0.0625em; /* 1px */
+  }
+  color: $color-neutral-darkest;
   float: left;
   font: 1.6em/1.75em $font-family-sans-serif; // 16px/28px
   height: 1.75em; // 28px
   margin: 0 0.3125em 0 0; // 0 5px 0 0
   padding: 0 0.875em; // 0 14px
-  text-shadow: 0 0.0625em 0 $off-white;
 
   &:active {
-    @include background-gradient($light-gray, $off-white);
+    @include background-gradient($color-neutral-lighter, $color-neutral-lightest);
 
-    border-color: $gray;
+    border-color: $color-neutral-darkest;
   }
 
   &:hover {
-    background: $light-gray;
-    border-color: $gray;
+    @include background-gradient($color-neutral-lighter, $color-neutral-lightest);
+
     cursor: pointer;
   }
 
-  &[disabled="disabled"] {
-    background: $light-gray;
-    color: $gray;
-    text-shadow: 0 -1px 0 $white;
+  &[disabled] {
+    background: $color-neutral-lighter;
+    color: $color-neutral;
+    text-shadow: 0 -1px 0 $color-neutral-lightest;
 
     &:hover {
-      @include form-field-border;
+      border: {
+        bottom-color: $color-neutral-lighter;
+        left-color: $color-neutral-darker;
+        right-color: $color-neutral-lighter;
+        style: solid;
+        top-color: $color-neutral-darker;
+        width: 0.0625em; /* 1px */
+      }
     }
   }
 }
@@ -879,20 +862,19 @@ select {
   }
 }
 
-datalist {
-}
-
-optgroup {
-}
-
-option {
-}
+datalist {}
+optgroup {}
+option {}
 
 textarea {
-  @include form-field-border;
-  @include border-radius(.125em); // 2px
+  @include border-radius(0.125em); // 2px
 
-  background: $white;
+  background: $color-neutral-lightest;
+  border: {
+    color: $color-neutral-darker $color-neutral $color-neutral $color-neutral-darker;
+    style: solid;
+    width: 0.0625em; /* 1px */
+  }
   clear: left;
   float: left;
   font: 1.6em/1.5em $font-family-sans-serif; // 16px/24px
@@ -902,49 +884,57 @@ textarea {
   width: 35.628em; // 570px
 
   &:focus {
-    border-color: $light-blue;
+    border-color: $color-brand-lighter;
   }
 }
 
-keygen {
-}
-
-output {
-}
-
-progress {
-}
-
-meter {
-}
+keygen {}
+output {}
+progress {}
+meter {}
 
 //--------------------------------//
 // INTERACTIVE ELEMENTS           //
 //--------------------------------//
 
-details {
-}
+details {}
+summary {}
+command {}
+menu {}
 
-summary {
-}
 
-command {
-}
+//--------------------------------//
+// DEBUGGING                      //
+//--------------------------------//
+@if ($is-in-debug-mode == true) {
+//  * { background-color: $color-debug; }
 
-menu {
-}
+  html {
+    background: repeat-y center top;
 
-// DEBUG (uncomment to debug horizontal grid)
-/*
-* {
-  background-color: rgba(255,0,0,.1);
-}
+    // smartphone (portrait and landscape)
+    @media (max-width: 480px) {
+      background-image: url('../images/grids/smartphone.png');
+    }
 
-body {
-  background: {
-    image: url(../images/960.gs/16_col.gif);
-    position: center top;
-    repeat: repeat-y;
+    // smartphone to tablet
+    @media (min-width: 481px) and (max-width: 767px) {
+      background-image: url('../images/grids/smartphone-to-tablet.png');
+    }
+
+    // portrait tablet
+    @media (min-width: 768px) and (max-width: 979px) {
+      background-image: url('../images/grids/tablet.png');
+    }
+
+    // default
+    @media (min-width: 980px) and (max-width: 1199px) {
+      background-image: url('../images/grids/default.png');
+    }
+
+    // large display
+    @media (min-width: 1200px) {
+      background-image: url('../images/grids/large-display.png');
+    }
   }
 }
-*/

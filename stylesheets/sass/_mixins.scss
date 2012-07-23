@@ -1,5 +1,5 @@
-// Adds a vertical background gradient to the element starting from the first
-// and transitioning to the second color.
+// Add a vertical background gradient to the element starting from the first and
+// transitioning downwards to the second color.
 @mixin background-gradient($color-top, $color-bottom) {
   background-color: $color-bottom;
 
@@ -11,97 +11,212 @@
   background-image:         linear-gradient(top, $color-top, $color-bottom); /* standard, but currently unimplemented */
 }
 
-// Adds a round border to all sides of the element.
+// Add a round border to all sides of the element.
 @mixin border-radius($radius) {
   border-radius:         $radius;
   -moz-border-radius:    $radius;
   -webkit-border-radius: $radius;
 }
 
-// Adds an elliptical border to the top bottom sides of the element.
+// Add an elliptical border to the top bottom sides of the element.
 @mixin border-radius-elliptical($radius-horizontal, $radius-vertical) {
-  border-radius:          #{$radius-horizontal} / #{$radius-vertical};
-  -moz-border-radius:     #{$radius-horizontal} / #{$radius-vertical};
-  -webkit-border-radius:  #{$radius-horizontal} / #{$radius-vertical};
+  border-radius:         #{$radius-horizontal} / #{$radius-vertical};
+  -moz-border-radius:    #{$radius-horizontal} / #{$radius-vertical};
+  -webkit-border-radius: #{$radius-horizontal} / #{$radius-vertical};
 }
 
-// Adds a round border to the bottom side of the element.
+// Add a round border to the bottom side of the element.
 @mixin border-bottom-radius($radius) {
   border-radius:         0 0 $radius $radius;
   -moz-border-radius:    0 0 $radius $radius;
   -webkit-border-radius: 0 0 $radius $radius;
 }
 
-// Adds a round border to the left side of the element.
+// Add a round border to the left side of the element.
 @mixin border-left-radius($radius) {
   border-radius:         $radius 0 0 $radius;
   -moz-border-radius:    $radius 0 0 $radius;
   -webkit-border-radius: $radius 0 0 $radius;
 }
 
-// Adds a round border to the right side of the element.
+// Add a round border to the right side of the element.
 @mixin border-right-radius($radius) {
   border-radius:         0 $radius $radius 0;
   -moz-border-radius:    0 $radius $radius 0;
   -webkit-border-radius: 0 $radius $radius 0;
 }
 
-// Adds a round border to the top side of the element.
+// Add a round border to the top side of the element.
 @mixin border-top-radius($radius) {
   border-radius:         $radius $radius 0 0;
   -moz-border-radius:    $radius $radius 0 0;
   -webkit-border-radius: $radius $radius 0 0;
 }
 
-// Adds a round border to the bottom left corner of the element.
+// Add a round border to the bottom left corner of the element.
 @mixin border-bottom-left-radius($radius) {
   border-bottom-left-radius:         $radius;
   -moz-border-radius-bottom-left:    $radius;
   -webkit-border-bottom-left-radius: $radius;
 }
 
-// Adds a round border to the bottom right corner of the element.
+// Add a round border to the bottom right corner of the element.
 @mixin border-bottom-right-radius($radius) {
   border-bottom-right-radius:         $radius;
   -moz-border-radius-bottom-right:    $radius;
   -webkit-border-bottom-right-radius: $radius;
 }
 
-// Adds a round border to the top left corner of the element.
+// Add a round border to the top left corner of the element.
 @mixin border-top-left-radius($radius) {
   border-top-left-radius:         $radius;
   -moz-border-radius-top-left:    $radius;
   -webkit-border-top-left-radius: $radius;
 }
 
-// Adds a round border to the top right corner of the element.
+// Add a round border to the top right corner of the element.
 @mixin border-top-right-radius($radius) {
   border-top-right-radius:         $radius;
   -moz-border-radius-top-right:    $radius;
   -webkit-border-top-right-radius: $radius;
 }
 
-// Adds a box shadow to the element.
+// Add a box shadow to the element.
 @mixin box-shadow($offset-x, $offset-y, $blur-radius, $color) {
   box-shadow:         $offset-x $offset-y $blur-radius $color;
   -moz-box-shadow:    $offset-x $offset-y $blur-radius $color;
   -webkit-box-shadow: $offset-x $offset-y $blur-radius $color;
 }
 
-// Adds an inset box shadow to the element.
+// Add an inset box shadow to the element.
 @mixin box-shadow-inset($offset-x, $offset-y, $blur-radius, $color) {
   box-shadow:         inset $offset-x $offset-y $blur-radius $color;
   -moz-box-shadow:    inset $offset-x $offset-y $blur-radius $color;
   -webkit-box-shadow: inset $offset-x $offset-y $blur-radius $color;
 }
 
-@mixin form-field-border {
-  border: {
-    bottom-color: #999; /* TODO color */
-    left-color: #ccc; /* TODO color */
-    right-color: #999; /* TODO color */
-    style: solid;
-    top-color: #ccc; /* TODO color */
-    width: 0.0625em; /* 1px */
+// Set a `font-size` as well as the appropriate `line-height`.
+@mixin font-size($font-size) {
+  $base-line-height: ($font-size * $line-height-to-font-size-ratio) / $vertical-grid-base-height;
+
+  // round up to nearest whole number if `$base-line-height` is not an integer
+  $delta: (floor($base-line-height * 1000 - floor($base-line-height) * 1000));
+  @if ($delta != 0) {
+    $base-line-height: ceil($base-line-height);
+  }
+
+  font-size: $font-size;
+  line-height: (($base-line-height * $vertical-grid-base-height) / $font-size)#{unit($font-size)};
+}
+
+// Set `margin`, `padding` and `width` for a container occupying a set number of
+// columns within the responsive grid.
+@mixin grid($number-of-columns, $margin: auto, $padding: 0) {
+  // extract padding-values from parameter
+  $margin-top:    nth($margin, 1);
+  $margin-right:  $margin-top;
+  $margin-bottom: $margin-top;
+  $margin-left:   $margin-top;
+
+  // check if margin-parameter does not only contain `auto` and update
+  // margin-values if concrete value has been given
+  $has-margin-parameter: not((length($margin) == 1) and ($margin == auto));
+  @if ($has-margin-parameter == true) {
+    @if (length($margin) >= 2) {
+      $margin-right: nth($margin, 2);
+      $margin-left:  $margin-right;
+    }
+    @if (length($margin) >= 3) {
+      $margin-bottom: nth($margin, 3);
+    }
+    @if (length($margin) >= 4) {
+      $margin-left: nth($margin, 4);
+    }
+  }
+
+  // extract padding-values from parameter
+  $padding-top:    nth($padding, 1);
+  $padding-right:  $padding-top;
+  $padding-bottom: $padding-top;
+  $padding-left:   $padding-top;
+
+  @if (length($padding) >= 2) {
+    $padding-right: nth($padding, 2);
+    $padding-left:  $padding-right;
+  }
+  @if (length($padding) >= 3) {
+    $padding-bottom: nth($padding, 3);
+  }
+  @if (length($padding) >= 4) {
+    $padding-left: nth($padding, 4);
+  }
+
+  // smartphone (portrait and landscape)
+  @media (max-width: 480px) {
+    padding: {
+      bottom: $padding-bottom;
+      left:   ($grid-smartphone-gutter-width / 2);
+      right:  ($grid-smartphone-gutter-width / 2);
+      top:    $padding-top;
+    }
+    @if ($has-margin-parameter == true) {
+      margin: {
+        bottom: $margin-bottom;
+        top:    $margin-top;
+      }
+    }
+    width: $grid-smartphone-column-width;
+  }
+
+  // smartphone to tablet
+  @media (min-width: 481px) and (max-width: 767px) {
+    // use default values if no margin-parameter was given
+    @if (not($has-margin-parameter)) {
+      $margin-left:  ($grid-smartphone-to-tablet-gutter-width / 2);
+      $margin-right: ($grid-smartphone-to-tablet-gutter-width / 2);
+    }
+
+    margin:  $margin-top $margin-right $margin-bottom $margin-left;
+    padding: $padding-top $padding-right $padding-bottom $padding-left;
+    width:   (($number-of-columns * $grid-smartphone-to-tablet-column-width) + (($number-of-columns - 1) * $grid-smartphone-to-tablet-gutter-width) - $padding-right - $padding-left);
+  }
+
+  // portrait tablet
+  @media (min-width: 768px) and (max-width: 979px) {
+    // use default values if no margin-parameter was given
+    @if (not($has-margin-parameter)) {
+      $margin-left:  ($grid-portrait-tablet-gutter-width / 2);
+      $margin-right: ($grid-portrait-tablet-gutter-width / 2);
+    }
+
+    margin:  $margin-top $margin-right $margin-bottom $margin-left;
+    padding: $padding-top $padding-right $padding-bottom $padding-left;
+    width:   (($number-of-columns * $grid-portrait-tablet-column-width) + (($number-of-columns - 1) * $grid-portrait-tablet-gutter-width) - $padding-right - $padding-left);
+  }
+
+  // default
+  @media (min-width: 980px) and (max-width: 1199px) {
+    // use default values if no margin-parameter was given
+    @if (not($has-margin-parameter)) {
+      $margin-left:  ($grid-default-gutter-width / 2);
+      $margin-right: ($grid-default-gutter-width / 2);
+    }
+
+    margin:  $margin-top $margin-right $margin-bottom $margin-left;
+    padding: $padding-top $padding-right $padding-bottom $padding-left;
+    width:   (($number-of-columns * $grid-default-column-width) + (($number-of-columns - 1) * $grid-default-gutter-width) - $padding-right - $padding-left);
+  }
+
+  // large display
+  @media (min-width: 1200px) {
+    // use default values if no margin-parameter was given
+    @if (not($has-margin-parameter)) {
+      $margin-left:  ($grid-large-display-gutter-width / 2);
+      $margin-right: ($grid-large-display-gutter-width / 2);
+    }
+
+    margin:  $margin-top $margin-right $margin-bottom $margin-left;
+    padding: $padding-top $padding-right $padding-bottom $padding-left;
+    width:   (($number-of-columns * $grid-large-display-column-width) + (($number-of-columns - 1) * $grid-large-display-gutter-width) - $padding-right - $padding-left);
   }
 }
