@@ -1,0 +1,106 @@
+@import 'import.scss';
+
+@font-face {
+  font: {
+    family: 'Quicksand Light';
+    style: normal;
+    weight: normal;
+  }
+  src: url('../fonts/Quicksand_Light-webfont.eot');
+  src: url('../fonts/Quicksand_Light-webfont.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Quicksand_Light-webfont.woff') format('woff'),
+      url('../fonts/Quicksand_Light-webfont.ttf') format('truetype'),
+      url('../fonts/Quicksand_Light-webfont.svg#QuicksandLight') format('svg');
+}
+
+a#full-portfolio {
+  @include background-gradient($color-link-lighter, $color-link-darkest);
+  @include border-radius(0.125em); /* 2px */
+  @include font-size(1.6em);
+
+  color: $color-neutral-lightest;
+  display: inline-block;
+  padding: 0 .625em; /* 0 15px */
+
+  &:hover {
+    background: $color-link-lighter;
+    @include background-gradient($color-link-darkest, $color-link-lighter);
+  }
+}
+
+article > header {
+  padding: 0;
+
+  > em {
+    @include font-size(1.2em);
+  } /* TODO find different tag (details?) */
+}
+
+blockquote {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+body {
+  $margin: 0 auto 1.2em;
+
+  @include grid(12, $margin: margin);
+
+  background: url('../images/painter/ornament.png') no-repeat 60em bottom;
+
+  > header {
+    @include grid(9);
+
+    background: $color-violet;
+  }
+}
+
+cite {
+  color: $color-neutral-darker;
+  display: block;
+  text-align: right;
+}
+
+h1 {
+  @include font-size(1.5em);
+}
+
+#home {
+  > aside > article > a > img {
+    width: 100%;
+  }
+
+  > section {
+    > h2 {
+      @include font-size(8em);
+
+      background: $color-brand-lighter;
+      color: $color-neutral-lightest;
+      display: inline-block;
+      margin-bottom: 0.15em; /* 12px */
+      padding: 0 0.125em; /* 0 10px */
+    }
+
+    > p {
+      @include font-size(2.4em);
+
+      font-family: 'Quicksand Light';
+      margin-bottom: 0.4em; /* 12px */
+      letter-spacing: -0.025em;
+    }
+  }
+}
+
+#portfolio > section > article {
+  overflow: hidden;
+
+  > a > img {
+    float: left;
+    width: 34em; /* 340px */
+  }
+
+  > div {
+    float: right;
+    width: 22em; /* 220px */
+  }
+}
