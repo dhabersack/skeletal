@@ -121,7 +121,7 @@
   // check if margin-parameter does not only contain `auto` and update
   // margin-values if concrete value has been given
   $has-margin-parameter: not((length($margin) == 1) and ($margin == auto));
-  @if ($has-margin-parameter == true) {
+  @if ($has-margin-parameter) {
     @if (length($margin) >= 2) {
       $margin-right: nth($margin, 2);
       $margin-left:  $margin-right;
@@ -153,19 +153,33 @@
 
   // smartphone (portrait and landscape)
   @media (max-width: 480px) {
-    padding: {
-      bottom: $padding-bottom;
-      left:   ($grid-smartphone-gutter-width / 2);
-      right:  ($grid-smartphone-gutter-width / 2);
-      top:    $padding-top;
+    // save previous values of horizontal paddings
+    $padding-left-previous:  $padding-left;
+    $padding-right-previous: $padding-right;
+
+    // always set horizontal paddings to default value unless set to zero
+    @if ($padding-left != 0) {
+      $padding-left:  ($grid-smartphone-gutter-width / 2);
     }
-    @if ($has-margin-parameter == true) {
-      margin: {
-        bottom: $margin-bottom;
-        top:    $margin-top;
-      }
+    @if ($padding-right != 0) {
+      $padding-right: ($grid-smartphone-gutter-width / 2);
     }
+
+    // always un-float
+    float: none;
+
+    @if ($has-margin-parameter) {
+      margin: $margin-top $margin-right $margin-bottom $margin-left;
+    }
+    padding: $padding-top $padding-right $padding-bottom $padding-left;
+
+    // always set width to default value
     width: $grid-smartphone-column-width;
+
+    // restore previous values of horizontal paddings for following @media
+    // directives
+    $padding-left:  $padding-left-previous;
+    $padding-right: $padding-right-previous;
   }
 
   // smartphone to tablet

@@ -50,14 +50,40 @@ body {
   background-color: inherit;
   color: $color-neutral-darkest;
   font: 62.5%/1 $font-family-content; // 10px/10px
+
+  // introductory or navigational aids
+  > header {
+    @include grid(12, $margin: 0 auto);
+
+    display: block;
+    font-family: $font-family-headings;
+    overflow: hidden;
+
+    h1 {
+      float: left;
+      font-size: 2em; // 20px
+      line-height: 2.1em; // 42px
+      margin: 0;
+      padding: 0;
+
+      > a {
+        display: inline-block;
+
+        &:active,
+        &:focus,
+        &:hover,
+        &:link,
+        &:visited {
+          color: inherit;
+        }
+      }
+    }
+  }
 }
 
 // generic section
 section {
-  $margin: 0 auto;
-  $padding: 1.2em 0;
-
-  @include grid(12, $margin: $margin, $padding: $padding);
+  @include grid(12, $margin: 0 auto, $padding: 1.2em 0);
 }
 
 // section with navigation links
@@ -76,10 +102,14 @@ nav {
       font-size: 1em;
       margin-left: 2em;
 
+      &:first-of-type {
+        margin-left: 0;
+      }
+
       > a {
+        @include font-size(1.6em);
+
         display: block;
-        font-size: 1.5em;
-        line-height: 1.6em; // 24px
       }
     }
   }
@@ -119,28 +149,28 @@ h1 {
   @media (min-width: 481px) and (max-width: 767px) {
     @include font-size(4.8em);
 
-    margin-bottom: 0.125em 0 0.25em; // 6px 0 12px
+    margin: 0.125em 0 0.25em; // 6px 0 12px
   }
 
   // portrait tablet
   @media (min-width: 768px) and (max-width: 979px) {
     @include font-size(6em);
 
-    margin-bottom: 0.1em 0 0.2em; // 6px 0 12px
+    margin: 0.1em 0 0.2em; // 6px 0 12px
   }
 
   // default
   @media (min-width: 980px) and (max-width: 1199px) {
     @include font-size(7.5em);
 
-    margin-bottom: 0.08em 0 0.16em; // 6px 0 12px
+    margin: 0.08em 0 0.16em; // 6px 0 12px
   }
 
   // large display
   @media (min-width: 1200px) {
     @include font-size(8em);
 
-    margin-bottom: 0.075em 0 0.15em; // 6px 0 12px
+    margin: 0.075em 0 0.15em; // 6px 0 12px
   }
 }
 
@@ -148,7 +178,7 @@ h1 {
 h2 {
   @include font-size(3em);
 
-  margin-bottom: 0.2em 0 0.4em; // 6px 0 12px
+  margin: 0.2em 0 0.4em; // 6px 0 12px
 
   // smartphone (portrait and landscape)
   @media (max-width: 480px) {}
@@ -157,28 +187,28 @@ h2 {
   @media (min-width: 481px) and (max-width: 767px) {
     @include font-size(3.2em);
 
-    margin-bottom: 0.1875em 0 0.375em; // 6px 0 12px
+    margin: 0.1875em 0 0.375em; // 6px 0 12px
   }
 
   // portrait tablet
   @media (min-width: 768px) and (max-width: 979px) {
     @include font-size(4em);
 
-    margin-bottom: 0.15em 0 0.3em; // 6px 0 12px
+    margin: 0.15em 0 0.3em; // 6px 0 12px
   }
 
   // default
   @media (min-width: 980px) and (max-width: 1199px) {
     @include font-size(4.8em);
 
-    margin-bottom: 0.125em 0 0.25em; // 6px 0 12px
+    margin: 0.125em 0 0.25em; // 6px 0 12px
   }
 
   // large display
   @media (min-width: 1200px) {
     @include font-size(5em);
 
-    margin-bottom: 0.12em 0 0.24em; // 6px 0 12px
+    margin: 0.12em 0 0.24em; // 6px 0 12px
   }
 }
 
@@ -186,7 +216,7 @@ h2 {
 h3 {
   @include font-size(2.5em);
 
-  margin-bottom: 0.24em 0 0.48em; // 6px 0 12px
+  margin: 0.12em 0 0.24em; // 3px 0 6px
 
   // smartphone (portrait and landscape)
   @media (max-width: 480px) {}
@@ -195,28 +225,28 @@ h3 {
   @media (min-width: 481px) and (max-width: 767px) {
     @include font-size(3em);
 
-    margin-bottom: 0.2em 0 0.4em; // 6px 0 12px
+    margin: 0.1em 0 0.2em; // 3px 0 6px
   }
 
   // portrait tablet
   @media (min-width: 768px) and (max-width: 979px) {
     @include font-size(3.2em);
 
-    margin-bottom: 0.1875em 0 0.375em; // 6px 0 12px
+    margin: 0.09375em 0 0.1875em; // 3px 0 6px
   }
 
   // default
   @media (min-width: 980px) and (max-width: 1199px) {
     @include font-size(4em);
 
-    margin-bottom: 0.15em 0 0.3em; // 6px 0 12px
+    margin: 0.075em 0 0.15em; // 3px 0 6px
   }
 
   // large display
   @media (min-width: 1200px) {
     @include font-size(4.8em);
 
-    margin-bottom: 0.125em 0 0.25em; // 6px 0 12px
+    margin: 0.0625em 0 0.125em; // 3px 0 6px
   }
 }
 
@@ -224,7 +254,7 @@ h3 {
 h4 {
   @include font-size(2.4em);
 
-  margin-bottom: 0.25em 0 0.5em; // 6px 0 12px
+  margin: 0.25em 0 0.5em; // 6px 0 12px
 
   // smartphone (portrait and landscape)
   @media (max-width: 480px) {}
@@ -233,28 +263,28 @@ h4 {
   @media (min-width: 481px) and (max-width: 767px) {
     @include font-size(2.5em);
 
-    margin-bottom: 0.24em 0 0.48em; // 6px 0 12px
+    margin: 0.24em 0 0.48em; // 6px 0 12px
   }
 
   // portrait tablet
   @media (min-width: 768px) and (max-width: 979px) {
     @include font-size(3em);
 
-    margin-bottom: 0.2em 0 0.4em; // 6px 0 12px
+    margin: 0.2em 0 0.4em; // 6px 0 12px
   }
 
   // default
   @media (min-width: 980px) and (max-width: 1199px) {
     @include font-size(3.2em);
 
-    margin-bottom: 0.1875em 0 0.375em; // 6px 0 12px
+    margin: 0.1875em 0 0.375em; // 6px 0 12px
   }
 
   // large display
   @media (min-width: 1200px) {
     @include font-size(4em);
 
-    margin-bottom: 0.15em 0 0.3em; // 6px 0 12px
+    margin: 0.15em 0 0.3em; // 6px 0 12px
   }
 }
 
@@ -262,7 +292,7 @@ h4 {
 h5 {
   @include font-size(2em);
 
-  margin-bottom: 0.3em 0 0.6em; // 6px 0 12px
+  margin: 0.3em 0 0.6em; // 6px 0 12px
 
   // smartphone (portrait and landscape)
   @media (max-width: 480px) {}
@@ -271,28 +301,28 @@ h5 {
   @media (min-width: 481px) and (max-width: 767px) {
     @include font-size(2.4em);
 
-    margin-bottom: 0.2em 0 0.4em; // 6px 0 12px
+    margin: 0.2em 0 0.4em; // 6px 0 12px
   }
 
   // portrait tablet
   @media (min-width: 768px) and (max-width: 979px) {
     @include font-size(2.5em);
 
-    margin-bottom: 0.24em 0 0.48em; // 6px 0 12px
+    margin: 0.24em 0 0.48em; // 6px 0 12px
   }
 
   // default
   @media (min-width: 980px) and (max-width: 1199px) {
     @include font-size(3em);
 
-    margin-bottom: 0.2em 0 0.4em; // 6px 0 12px
+    margin: 0.2em 0 0.4em; // 6px 0 12px
   }
 
   // large display
   @media (min-width: 1200px) {
     @include font-size(3.2em);
 
-    margin-bottom: 0.1875em 0 0.375em; // 6px 0 12px
+    margin: 0.1875em 0 0.375em; // 6px 0 12px
   }
 }
 
@@ -300,7 +330,7 @@ h5 {
 h6 {
   @include font-size(1.6em);
 
-  margin-bottom: 0.375em 0 0.75em; // 6px 0 12px
+  margin: 0.375em 0 0.75em; // 6px 0 12px
 
   // smartphone (portrait and landscape)
   @media (max-width: 480px) {}
@@ -312,65 +342,32 @@ h6 {
   @media (min-width: 768px) and (max-width: 979px) {
     @include font-size(2em);
 
-    margin-bottom: 0.3em 0 0.6em; // 6px 0 12px
+    margin: 0.3em 0 0.6em; // 6px 0 12px
   }
 
   // default
   @media (min-width: 980px) and (max-width: 1199px) {
     @include font-size(2em);
 
-    margin-bottom: 0.3em 0 0.6em; // 6px 0 12px
+    margin: 0.3em 0 0.6em; // 6px 0 12px
   }
 
   // large display
   @media (min-width: 1200px) {
     @include font-size(2em);
 
-    margin-bottom: 0.3em 0 0.6em; // 6px 0 12px
+    margin: 0.3em 0 0.6em; // 6px 0 12px
   }
 }
 
 // group of headings
 hgroup {}
 
-// introductory or navigational aids
-header {
-  $margin: 0 auto;
-
-  @include grid(12, $margin: $margin);
-
-  display: block;
-  font-family: $font-family-headings;
-  overflow: hidden;
-
-  h1 {
-    float: left;
-    font-size: 2em; // 20px
-    line-height: 2.1em; // 42px
-    padding: 0;
-
-    > a {
-      display: inline-block;
-
-      &:active,
-      &:focus,
-      &:hover,
-      &:link,
-      &:visited {
-        color: inherit;
-      }
-    }
-  }
-}
-
 // footer for nearest ancestor sectioning content or sectioning root element,
 // (information about its section such as author, links to related documents,
 // copyright data, …)
 footer {
-  $margin: 0 auto;
-  $padding: 1.2em 1em;
-
-  @include grid(12, $margin: $margin, $padding: $padding);
+  @include grid(12, $margin: 0 auto, $padding: 0.6em 0 1.2em);
 
   display: block;
   overflow: hidden;
@@ -413,6 +410,13 @@ p {
   @include font-size(1.6em);
 
   margin-bottom: 0.75em; // 12px
+
+  // large display
+  @media (min-width: 1200px) {
+    @include font-size(2em);
+
+    margin-bottom: 0.6em; // 12px
+  }
 }
 
 // paragraph-level thematic break
@@ -634,7 +638,7 @@ cite {
 
 // phrasing content quoted from another source
 q {
-  @include border-radius(.125em); // 2px
+  @include border-radius(0.125em); // 2px
   @include box-shadow(0, 0, 0.0625em, $color-neutral-darker); // 1px
 
   background: $color-neutral;
@@ -790,6 +794,7 @@ area {}
 // table
 table {
   @include border-radius(0.2em);
+
   background: $color-neutral-lightest;
   border: {
     collapse: collapse;
@@ -913,7 +918,7 @@ fieldset {
   }
 
   > fieldset {
-    @include border-radius(.2em); // 2px
+    @include border-radius(0.2em); // 2px
 
     border: 0.1em solid $color-neutral-darker;
     margin-bottom: 1.2em;
