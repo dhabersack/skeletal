@@ -10,6 +10,16 @@ $percentage-lighter:  15%;
 $percentage-darker:   25%;
 $percentage-darkest:  50%;
 
+$color-action-lightest:    lighten($color-action,    $percentage-lightest);
+$color-action-lighter:     lighten($color-action,    $percentage-lighter);
+$color-action-darker:       darken($color-action,    $percentage-darker);
+$color-action-darkest:      darken($color-action,    $percentage-darkest);
+
+$color-alert-lightest:     lighten($color-alert,     $percentage-lightest);
+$color-alert-lighter:      lighten($color-alert,     $percentage-lighter);
+$color-alert-darker:        darken($color-alert,     $percentage-darker);
+$color-alert-darkest:       darken($color-alert,     $percentage-darkest);
+
 $color-brand-lightest:     lighten($color-brand,     $percentage-lightest);
 $color-brand-lighter:      lighten($color-brand,     $percentage-lighter);
 $color-brand-darker:        darken($color-brand,     $percentage-darker);

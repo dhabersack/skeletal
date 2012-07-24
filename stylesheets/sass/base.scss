@@ -8,19 +8,27 @@
 // 
 // Sensible font-size and line-height combinations are:
 // 
-//   font-size  |  line-height (em)  |  line-height (px)  |   10px
-// -------------+--------------------+--------------------|----------
-//     10px     |       1.8em        |       18px         |  1em
-//     12px     |       1.5em        |       18px         |
-//     15px     |       1.6em        |       24px         |
-//     16px     |       1.5em        |       24px         |  0.625em
-//     20px     |       1.5em        |       30px         |  0.5em
-//     24px     |       1.5em        |       36px         |
-//     25px     |       1.68em       |       42px         |  0.4em
-//     28px     |       1.5em        |       42px         |
-//     30px     |       1.6em        |       48px         |
-//     32px     |       1.5em        |       48px         |  0.3125em
-//     40px     |       1.5em        |       60px         |  0.25em
+//   font-size  |   line-height    |    6px     |    10px    
+// -------------+------------------+------------+------------
+//    10px      |  1.8em  /  18px  |  0.6em     |  1em       
+//    12px      |  1.5em  /  18px  |  0.5em     |            
+//    15px      |  1.6em  /  24px  |  0.4em     |            
+//    16px      |  1.5em  /  24px  |  0.375em   |  0.625em   
+//    20px      |  1.5em  /  30px  |  0.3em     |  0.5em     
+//    24px      |  1.5em  /  36px  |  0.25em    |            
+//    25px      |  1.68em /  42px  |  0.24em    |  0.4em     
+//    30px      |  1.6em  /  48px  |  0.2em     |            
+//    32px      |  1.5em  /  48px  |  0.1875em  |  0.3125em  
+//    40px      |  1.5em  /  60px  |  0.15em    |  0.25em    
+//    48px      |  1.5em  /  72px  |  0.125em   |            
+//    50px      |  1.56em /  78px  |  0.12em    |  0.2em     
+//    60px      |  1.5em  /  90px  |  0.1em     |            
+//    75px      |  1.52em / 114px  |  0.08em    |            
+//    80px      |  1.5em  / 120px  |  0.075em   |  0.125em   
+//    96px      |  1.5em  / 144px  |  0.0625em  |            
+//   100px      |  1.5em  / 150px  |  0.06em    |  0.1em     
+//   120px      |  1.5em  / 180px  |  0.05em    |            
+
 
 //--------------------------------//
 // ROOT ELEMENT                   //
@@ -32,6 +40,7 @@ html {
   overflow-y: scroll;
 }
 
+
 //--------------------------------//
 // SECTIONS                       //
 //--------------------------------//
@@ -41,14 +50,40 @@ body {
   background-color: inherit;
   color: $color-neutral-darkest;
   font: 62.5%/1 $font-family-content; // 10px/10px
+
+  // introductory or navigational aids
+  > header {
+    @include grid(12, $margin: 0 auto);
+
+    display: block;
+    font-family: $font-family-headings;
+    overflow: hidden;
+
+    h1 {
+      float: left;
+      font-size: 2em; // 20px
+      line-height: 2.1em; // 42px
+      margin: 0;
+      padding: 0;
+
+      > a {
+        display: inline-block;
+
+        &:active,
+        &:focus,
+        &:hover,
+        &:link,
+        &:visited {
+          color: inherit;
+        }
+      }
+    }
+  }
 }
 
 // generic section
 section {
-  $margin: 0 auto;
-  $padding: 1.2em 0;
-
-  @include grid(12, $margin: $margin, $padding: $padding);
+  @include grid(12, $margin: 0 auto, $padding: 1.2em 0);
 }
 
 // section with navigation links
@@ -67,10 +102,14 @@ nav {
       font-size: 1em;
       margin-left: 2em;
 
+      &:first-of-type {
+        margin-left: 0;
+      }
+
       > a {
+        @include font-size(1.6em);
+
         display: block;
-        font-size: 1.5em;
-        line-height: 1.6em; // 24px
       }
     }
   }
@@ -98,88 +137,237 @@ h1, h2, h3, h4, h5, h6 {
 
 // heading with highest rank
 h1 {
-  @include font-size(8.0em); // line-height: 1.5em (120px)
+  @include font-size(4em);
 
   font-weight: bold;
-  padding: 0.15em 0 0.075em; // 12px 0 6px
+  margin: 0.15em 0 0.3em; // 6px 0 12px
+
+  // smartphone (portrait and landscape)
+  @media (max-width: 480px) {}
+
+  // smartphone to tablet
+  @media (min-width: 481px) and (max-width: 767px) {
+    @include font-size(4.8em);
+
+    margin: 0.125em 0 0.25em; // 6px 0 12px
+  }
+
+  // portrait tablet
+  @media (min-width: 768px) and (max-width: 979px) {
+    @include font-size(6em);
+
+    margin: 0.1em 0 0.2em; // 6px 0 12px
+  }
+
+  // default
+  @media (min-width: 980px) and (max-width: 1199px) {
+    @include font-size(7.5em);
+
+    margin: 0.08em 0 0.16em; // 6px 0 12px
+  }
+
+  // large display
+  @media (min-width: 1200px) {
+    @include font-size(8em);
+
+    margin: 0.075em 0 0.15em; // 6px 0 12px
+  }
 }
 
 // heading with second-highest rank
 h2 {
-  @include font-size(4.0em); // line-height: 1.5em (60px)
+  @include font-size(3em);
 
-  padding: 0.3em 0 0.15em; // 12px 0 6px
+  margin: 0.2em 0 0.4em; // 6px 0 12px
+
+  // smartphone (portrait and landscape)
+  @media (max-width: 480px) {}
+
+  // smartphone to tablet
+  @media (min-width: 481px) and (max-width: 767px) {
+    @include font-size(3.2em);
+
+    margin: 0.1875em 0 0.375em; // 6px 0 12px
+  }
+
+  // portrait tablet
+  @media (min-width: 768px) and (max-width: 979px) {
+    @include font-size(4em);
+
+    margin: 0.15em 0 0.3em; // 6px 0 12px
+  }
+
+  // default
+  @media (min-width: 980px) and (max-width: 1199px) {
+    @include font-size(4.8em);
+
+    margin: 0.125em 0 0.25em; // 6px 0 12px
+  }
+
+  // large display
+  @media (min-width: 1200px) {
+    @include font-size(5em);
+
+    margin: 0.12em 0 0.24em; // 6px 0 12px
+  }
 }
 
 // heading with third-highest rank
 h3 {
-  @include font-size(3.2em); // line-height: 1.5em (48px)
+  @include font-size(2.5em);
 
-  padding: 0.375em 0 0.1875em; // 12px 0 6px
+  margin: 0.12em 0 0.24em; // 3px 0 6px
+
+  // smartphone (portrait and landscape)
+  @media (max-width: 480px) {}
+
+  // smartphone to tablet
+  @media (min-width: 481px) and (max-width: 767px) {
+    @include font-size(3em);
+
+    margin: 0.1em 0 0.2em; // 3px 0 6px
+  }
+
+  // portrait tablet
+  @media (min-width: 768px) and (max-width: 979px) {
+    @include font-size(3.2em);
+
+    margin: 0.09375em 0 0.1875em; // 3px 0 6px
+  }
+
+  // default
+  @media (min-width: 980px) and (max-width: 1199px) {
+    @include font-size(4em);
+
+    margin: 0.075em 0 0.15em; // 3px 0 6px
+  }
+
+  // large display
+  @media (min-width: 1200px) {
+    @include font-size(4.8em);
+
+    margin: 0.0625em 0 0.125em; // 3px 0 6px
+  }
 }
 
 // heading with fourth-highest rank
 h4 {
-  @include font-size(2.5em); // line-height: 1.68em (42px)
+  @include font-size(2.4em);
 
-  padding: 0.48em 0 0.24em; // 12px 0 6px
+  margin: 0.25em 0 0.5em; // 6px 0 12px
+
+  // smartphone (portrait and landscape)
+  @media (max-width: 480px) {}
+
+  // smartphone to tablet
+  @media (min-width: 481px) and (max-width: 767px) {
+    @include font-size(2.5em);
+
+    margin: 0.24em 0 0.48em; // 6px 0 12px
+  }
+
+  // portrait tablet
+  @media (min-width: 768px) and (max-width: 979px) {
+    @include font-size(3em);
+
+    margin: 0.2em 0 0.4em; // 6px 0 12px
+  }
+
+  // default
+  @media (min-width: 980px) and (max-width: 1199px) {
+    @include font-size(3.2em);
+
+    margin: 0.1875em 0 0.375em; // 6px 0 12px
+  }
+
+  // large display
+  @media (min-width: 1200px) {
+    @include font-size(4em);
+
+    margin: 0.15em 0 0.3em; // 6px 0 12px
+  }
 }
 
 // heading with fifth-highest rank
 h5 {
-  @include font-size(2em); // line-height: 1.5em (30px);
+  @include font-size(2em);
 
-  padding: 0.6em 0 0.3em; // 12px 0 6px
+  margin: 0.3em 0 0.6em; // 6px 0 12px
+
+  // smartphone (portrait and landscape)
+  @media (max-width: 480px) {}
+
+  // smartphone to tablet
+  @media (min-width: 481px) and (max-width: 767px) {
+    @include font-size(2.4em);
+
+    margin: 0.2em 0 0.4em; // 6px 0 12px
+  }
+
+  // portrait tablet
+  @media (min-width: 768px) and (max-width: 979px) {
+    @include font-size(2.5em);
+
+    margin: 0.24em 0 0.48em; // 6px 0 12px
+  }
+
+  // default
+  @media (min-width: 980px) and (max-width: 1199px) {
+    @include font-size(3em);
+
+    margin: 0.2em 0 0.4em; // 6px 0 12px
+  }
+
+  // large display
+  @media (min-width: 1200px) {
+    @include font-size(3.2em);
+
+    margin: 0.1875em 0 0.375em; // 6px 0 12px
+  }
 }
 
 // heading with lowest rank
 h6 {
-  @include font-size(1.6em); // line-height: 1.5em (24px)
+  @include font-size(1.6em);
 
-  margin: 0.75em 0 0.375em; // 12px 0 6px
+  margin: 0.375em 0 0.75em; // 6px 0 12px
+
+  // smartphone (portrait and landscape)
+  @media (max-width: 480px) {}
+
+  // smartphone to tablet
+  @media (min-width: 481px) and (max-width: 767px) {}
+
+  // portrait tablet
+  @media (min-width: 768px) and (max-width: 979px) {
+    @include font-size(2em);
+
+    margin: 0.3em 0 0.6em; // 6px 0 12px
+  }
+
+  // default
+  @media (min-width: 980px) and (max-width: 1199px) {
+    @include font-size(2em);
+
+    margin: 0.3em 0 0.6em; // 6px 0 12px
+  }
+
+  // large display
+  @media (min-width: 1200px) {
+    @include font-size(2em);
+
+    margin: 0.3em 0 0.6em; // 6px 0 12px
+  }
 }
 
 // group of headings
 hgroup {}
 
-// introductory or navigational aids
-header {
-  $margin: 0 auto;
-
-  @include grid(12, $margin: $margin);
-
-  display: block;
-  font-family: $font-family-headings;
-  overflow: hidden;
-
-  h1 {
-    float: left;
-    font-size: 2em; // 20px
-    line-height: 2.1em; // 42px
-    padding: 0;
-
-    > a {
-      display: inline-block;
-
-      &:active,
-      &:focus,
-      &:hover,
-      &:link,
-      &:visited {
-        color: inherit;
-      }
-    }
-  }
-}
-
 // footer for nearest ancestor sectioning content or sectioning root element,
 // (information about its section such as author, links to related documents,
 // copyright data, …)
 footer {
-  $margin: 0 auto;
-  $padding: 1.2em 1em;
-
-  @include grid(12, $margin: $margin, $padding: $padding);
+  @include grid(12, $margin: 0 auto, $padding: 0.6em 0 1.2em);
 
   display: block;
   overflow: hidden;
@@ -212,15 +400,23 @@ address {
   font-style: italic;
 }
 
+
 //--------------------------------//
 // GROUPING CONTENT               //
 //--------------------------------//
 
 // paragraph
 p {
-  @include font-size(1.6em); // line-height: 1.5em (24px)
+  @include font-size(1.6em);
 
   margin-bottom: 0.75em; // 12px
+
+  // large display
+  @media (min-width: 1200px) {
+    @include font-size(2em);
+
+    margin-bottom: 0.6em; // 12px
+  }
 }
 
 // paragraph-level thematic break
@@ -237,7 +433,7 @@ hr {
 pre {
   @include border-radius(0.125em); // 2px
   @include box-shadow(0, 0, 0.0625em, $color-neutral-darkest); // 1px
-  @include font-size(1.6em); // line-height: 1.5em (24px)
+  @include font-size(1.6em);
 
   background: $color-neutral-lighter;
   font-family: $font-family-code;
@@ -280,7 +476,7 @@ ol {
   margin-bottom: 1.2em;
 
   > li {
-    @include font-size(1.5em); // line-height: 1.6em (24px)
+    @include font-size(1.5em);
 
     > ol {
       list-style-type: lower-alpha;
@@ -306,7 +502,7 @@ ul {
   margin-bottom: 1.2em;
 
   > li {
-    @include font-size(1.5em); // line-height: 1.6em (24px)
+    @include font-size(1.5em);
 
     > ol {
       margin-bottom: 0;
@@ -339,16 +535,38 @@ dl {
 
 // definition term
 dt {
-  @include font-size(1.6em); // line-height: 1.5em (24px)
+  @include font-size(1.6em);
+
   font: {
     family: $font-family-headings;
     weight: bold;
+  }
+
+  // smartphone (portrait and landscape)
+  @media (max-width: 480px) {}
+
+  // smartphone to tablet
+  @media (min-width: 481px) and (max-width: 767px) {}
+
+  // portrait tablet
+  @media (min-width: 768px) and (max-width: 979px) {
+    @include font-size(2em);
+  }
+
+  // default
+  @media (min-width: 980px) and (max-width: 1199px) {
+    @include font-size(2em);
+  }
+
+  // large display
+  @media (min-width: 1200px) {
+    @include font-size(2em);
   }
 }
 
 // definition description
 dd {
-  @include font-size(1.6em); // line-height: 1.5em (24px)
+  @include font-size(1.6em);
 
   margin: 0 0 0.75em 1.25em; // 0 0 12px 20px
 }
@@ -361,6 +579,7 @@ figcaption {}
 
 // groups its children, has no special meaning at all
 div {}
+
 
 //--------------------------------//
 // TEXT-LEVEL SEMANTICS           //
@@ -409,7 +628,7 @@ s {}
 
 // title of a work being quoted or mentioned in passing
 cite {
-  @include font-size(1.2em); // line-height: 1.5em (18px)
+  @include font-size(1.2em);
 
   font: {
     style: italic;  
@@ -419,7 +638,7 @@ cite {
 
 // phrasing content quoted from another source
 q {
-  @include border-radius(.125em); // 2px
+  @include border-radius(0.125em); // 2px
   @include box-shadow(0, 0, 0.0625em, $color-neutral-darker); // 1px
 
   background: $color-neutral;
@@ -524,6 +743,7 @@ br {}
 
 wbr {}
 
+
 //--------------------------------//
 // EDITS                          //
 //--------------------------------//
@@ -541,6 +761,7 @@ del {
   font-style: italic;
   text-decoration: line-through;
 }
+
 
 //--------------------------------//
 // EMBEDDED CONTENT               //
@@ -565,6 +786,7 @@ canvas {}
 map {}
 area {}
 
+
 //--------------------------------//
 // TABULAR DATA                   //
 //--------------------------------//
@@ -572,6 +794,7 @@ area {}
 // table
 table {
   @include border-radius(0.2em);
+
   background: $color-neutral-lightest;
   border: {
     collapse: collapse;
@@ -619,19 +842,20 @@ tr {
 
 // table data cell
 td { 
-  @include font-size(1.6em); // line-height: 1.5em; (24px)
+  @include font-size(1.6em);
 
   padding: 0 0.625em; // 0 10px
 }
 
 // table header cell
 th {
-  @include font-size(1.6em); // line-height: 1.5em; (24px)
+  @include font-size(1.6em);
 
   font-weight: bold;
   padding: 0.1875em 0.625em; // 3px 10px
   text-align: left;
 }
+
 
 //--------------------------------//
 // FORMS                          //
@@ -679,7 +903,7 @@ fieldset {
     }
 
     > p {
-      @include font-size(1.2em); // line-height: 1.5em (18px)
+      @include font-size(1.2em);
 
       clear: left;
       color: $color-neutral-darker;
@@ -694,7 +918,7 @@ fieldset {
   }
 
   > fieldset {
-    @include border-radius(.2em); // 2px
+    @include border-radius(0.2em); // 2px
 
     border: 0.1em solid $color-neutral-darker;
     margin-bottom: 1.2em;
@@ -711,7 +935,7 @@ fieldset {
 }
 
 legend {
-  @include font-size(1.6em); // line-height: 1.5em (24px)
+  @include font-size(1.6em);
 
   color: $color-neutral-darkest;
   font: {
@@ -725,7 +949,7 @@ label {
   display: block;
   float: left;
   font-family: $font-family-headings;
-  font-size: 1.6em; // 16px
+  font-size: 1.6em;
   line-height: 1.875em; // 30px
 }
 
@@ -892,6 +1116,7 @@ keygen {}
 output {}
 progress {}
 meter {}
+
 
 //--------------------------------//
 // INTERACTIVE ELEMENTS           //
