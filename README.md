@@ -1,8 +1,8 @@
 # Skeletal
 
-Skeletal is a blank slate for website creation. Instead of resetting default browser styling with a reset.css you then have to override, Skeletal comes with sensible defaults in its base.css.
+Skeletal is a preset-stylesheet that sets sensible defaults for most HTML5-tags, providing a solid foundation to build your next webdesign project on.
 
-See a live demo at http://dabersack.github.com/skeletal!
+See a live demo at http://dhabersack.github.com/skeletal/
 
 ## Bug tracker
 

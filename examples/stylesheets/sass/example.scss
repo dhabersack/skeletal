@@ -1,18 +1,5 @@
 @import 'stylesheets/sass/import.scss';
 
-@font-face {
-  font: {
-    family: 'Quicksand Light';
-    style: normal;
-    weight: normal;
-  }
-  src: url('../fonts/quicksand-light/regular.eot');
-  src: url('../fonts/quicksand-light/regular.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/quicksand-light/regular.woff') format('woff'),
-      url('../fonts/quicksand-light/regular.ttf') format('truetype'),
-      url('../fonts/quicksand-light/regular.svg#QuicksandLight') format('svg');
-}
-
 article {
   margin-bottom: 2.4em;
 }
@@ -21,7 +8,6 @@ aside {
   @include grid(4, $margin: 0);
 
   float: right;
-  font-family: 'Quicksand Light';
 
   > article {
     // person being quoted
@@ -47,6 +33,7 @@ blockquote {
   @include grid(4, $margin: 0 0 0.6em, $padding: 0.6em 1em);
 }
 
+// main content
 body {
   @include grid(12, $margin: 0 auto, $padding: 0);
 
@@ -101,8 +88,37 @@ body {
     }
   }
 
+  // main header
   > header {
     @include grid(7, $margin: 0);
+  }
+
+  // main content area
+  section {
+    @include grid(7, $margin: 0 0 1.2em);
+
+    float: left;
+
+    // "full portfolio" link
+    > a {
+      @include background-gradient($color-action-lighter, $color-action);
+      @include border-radius(0.125em); // 2px
+      @include font-size(1.6em);
+
+      color: $color-neutral-lightest;
+      display: inline-block;
+      padding: 0.375em 1.25em; // 6px 15px
+      text-shadow: 0 0 0.125em $color-neutral-darkest;
+
+      &:hover {
+        color: $color-neutral-lightest;
+      }
+
+      // large display
+      @media (min-width: 1200px) {
+        @include font-size(2em);
+      }
+    }
   }
 }
 
@@ -121,35 +137,15 @@ em {
   }
 }
 
+// greeting
 h4 {
   background: $color-brand;
   color: $color-neutral-lightest;
   display: inline-block;
-  font-family: 'Quicksand Light';
   padding: 0 0.25em;
+  text-shadow: 0 0 0.12em $color-neutral-darkest;
 }
 
 img {
   width: 100%;
-}
-
-section {
-  @include grid(7, $margin: 0 0 1.2em);
-
-  float: left;
-
-  // "full portfolio" link
-  > a {
-    @include background-gradient($color-action-lighter, $color-action);
-    @include border-radius(0.125em); // 2px
-    @include font-size(1.6em);
-
-    color: $color-neutral-darkest;
-    display: inline-block;
-    padding: 0.375em 1.25em; // 6px 15px
-
-    &:hover {
-      color: $color-neutral-lightest;
-    }
-  }
 }
