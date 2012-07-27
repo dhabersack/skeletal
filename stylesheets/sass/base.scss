@@ -77,18 +77,15 @@ body {
 
   // main header
   > header {
-    @include grid(12, $margin: 0 auto);
+    @include grid(12, $margin: 0 auto, $padding: 0.6em 0);
 
-    display: block;
     font-family: $font-family-headings;
     overflow: hidden;
 
     h1 {
-      float: left;
       font-size: 2em; // 20px
-      line-height: 2.1em; // 42px
+      line-height: 1.5em; // 30px
       margin: 0;
-      padding: 0;
 
       > a {
         display: inline-block;
@@ -104,9 +101,40 @@ body {
     }
   }
 
+  // main navigation
+  nav {
+    @include grid(12, $margin: 0 auto 1.2em, $padding: 0.6em 0);
+
+    font-family: $font-family-headings;
+    overflow: hidden;
+
+    a {
+      @include font-size(1.6em);
+
+      display: block;
+    }
+
+    li {
+      float: left;
+      font-size: 1em;
+      margin-right: 2em;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    > ol {
+      float: right;
+      list-style: none;
+      margin-bottom: 0;
+      overflow: hidden;
+    }
+  }
+
   // main content area
   > section {
-    @include grid(12, $margin: 0 auto, $padding: 1.2em 0);
+    @include grid(12, $margin: 0 auto 1.2em);
   }
 }
 
@@ -116,40 +144,18 @@ section {}
 // section with navigation links
 nav {
   display: block;
-  float: right;
-  padding: 0.9em 0;
-
-  > ol {
-    list-style: none;
-    margin-bottom: 0;
-    overflow: hidden;
-
-    > li {
-      float: left;
-      font-size: 1em;
-      margin-left: 2em;
-
-      &:first-of-type {
-        margin-left: 0;
-      }
-
-      > a {
-        @include font-size(1.6em);
-
-        display: block;
-      }
-    }
-  }
 }
 
 // independently distributable or reusable, self-contained composition
 article {
+  display: block;
   margin-bottom: 1.2em;
 }
 
 // content tangentially related to content around aside element; separate from
 // that content (pull quotes, sidebars, advertising, …)
 aside {
+  display: block;
   margin-bottom: 1.2em;
   padding: 0 1em;
 }
@@ -391,12 +397,16 @@ h6 {
 hgroup {}
 
 // introductory or navigational aids
-> header {}
+> header {
+  display: block;
+}
 
 // footer for nearest ancestor sectioning content or sectioning root element,
 // (information about its section such as author, links to related documents,
 // copyright data, …)
-footer {}
+footer {
+  display: block;
+}
 
 // contact information for its nearest article or body element ancestor
 address {
@@ -613,7 +623,7 @@ a {
 
   &:focus {
     outline: 1px dotted $color-neutral-darkest;
-    text-decoration: none;
+    text-decoration: underline;
   }
 
   &:hover {
@@ -622,11 +632,11 @@ a {
   }
 
   &:link {
-    text-decoration: none;
+    text-decoration: underline;
   }
 
   &:visited {
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
 
