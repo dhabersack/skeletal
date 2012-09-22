@@ -1,35 +1,6 @@
 @import 'import.scss';
 @import 'reset.scss';
 
-// VERTICAL GRID
-// 
-// The vertical grid is based on a height of 6px. This allows for the use of
-// line-heights like 12px, 18px, 24px, 30px, etc.
-// 
-// Sensible font-size and line-height combinations are:
-// 
-//   font-size  |   line-height    |    6px     |    10px    
-// -------------+------------------+------------+------------
-//    10px      |  1.8em  /  18px  |  0.6em     |  1em       
-//    12px      |  1.5em  /  18px  |  0.5em     |            
-//    15px      |  1.6em  /  24px  |  0.4em     |            
-//    16px      |  1.5em  /  24px  |  0.375em   |  0.625em   
-//    20px      |  1.5em  /  30px  |  0.3em     |  0.5em     
-//    24px      |  1.5em  /  36px  |  0.25em    |            
-//    25px      |  1.68em /  42px  |  0.24em    |  0.4em     
-//    30px      |  1.6em  /  48px  |  0.2em     |            
-//    32px      |  1.5em  /  48px  |  0.1875em  |  0.3125em  
-//    40px      |  1.5em  /  60px  |  0.15em    |  0.25em    
-//    48px      |  1.5em  /  72px  |  0.125em   |            
-//    50px      |  1.56em /  78px  |  0.12em    |  0.2em     
-//    60px      |  1.5em  /  90px  |  0.1em     |            
-//    75px      |  1.52em / 114px  |  0.08em    |            
-//    80px      |  1.5em  / 120px  |  0.075em   |  0.125em   
-//    96px      |  1.5em  / 144px  |  0.0625em  |            
-//   100px      |  1.5em  / 150px  |  0.06em    |  0.1em     
-//   120px      |  1.5em  / 180px  |  0.05em    |            
-
-
 //--------------------------------//
 // ROOT ELEMENT                   //
 //--------------------------------//
@@ -83,8 +54,8 @@ body {
     overflow: hidden;
 
     h1 {
-      font-size: 2em; // 20px
-      line-height: 1.5em; // 30px
+      @include font-size(2em);
+
       margin: 0;
 
       > a {
@@ -92,7 +63,6 @@ body {
 
         &:active,
         &:focus,
-        &:hover,
         &:link,
         &:visited {
           color: inherit;
@@ -139,7 +109,9 @@ body {
 }
 
 // generic section
-section {}
+section {
+  display: block;
+}
 
 // section with navigation links
 nav {
@@ -157,7 +129,6 @@ article {
 aside {
   display: block;
   margin-bottom: 1.2em;
-  padding: 0 1em;
 }
 
 // headings
@@ -175,73 +146,55 @@ h1 {
   font-weight: bold;
   margin: 0.15em 0 0.3em; // 6px 0 12px
 
-  // smartphone (portrait and landscape)
-  @media (max-width: 480px) {}
+  @media #{ $media-query-smartphone } {}
 
-  // smartphone to tablet
-  @media (min-width: 481px) and (max-width: 767px) {
+  @media #{ $media-query-smartphone-to-tablet } {}
+
+  @media #{ $media-query-portrait-tablet } {
     @include font-size(4.8em);
 
     margin: 0.125em 0 0.25em; // 6px 0 12px
   }
 
-  // portrait tablet
-  @media (min-width: 768px) and (max-width: 979px) {
+  @media #{ $media-query-default } {
     @include font-size(6em);
 
     margin: 0.1em 0 0.2em; // 6px 0 12px
   }
 
-  // default
-  @media (min-width: 980px) and (max-width: 1199px) {
+  @media #{ $media-query-large-display } {
     @include font-size(7.5em);
 
     margin: 0.08em 0 0.16em; // 6px 0 12px
-  }
-
-  // large display
-  @media (min-width: 1200px) {
-    @include font-size(8em);
-
-    margin: 0.075em 0 0.15em; // 6px 0 12px
   }
 }
 
 // heading with second-highest rank
 h2 {
-  @include font-size(3em);
+  @include font-size(3.2em);
 
-  margin: 0.2em 0 0.4em; // 6px 0 12px
+  margin: 0.1875em 0 0.375em; // 6px 0 12px
 
-  // smartphone (portrait and landscape)
-  @media (max-width: 480px) {}
+  @media #{ $media-query-smartphone } {}
 
-  // smartphone to tablet
-  @media (min-width: 481px) and (max-width: 767px) {
-    @include font-size(3.2em);
+  @media #{ $media-query-smartphone-to-tablet } {}
 
-    margin: 0.1875em 0 0.375em; // 6px 0 12px
-  }
-
-  // portrait tablet
-  @media (min-width: 768px) and (max-width: 979px) {
+  @media #{ $media-query-portrait-tablet } {
     @include font-size(4em);
 
     margin: 0.15em 0 0.3em; // 6px 0 12px
   }
 
-  // default
-  @media (min-width: 980px) and (max-width: 1199px) {
-    @include font-size(4.8em);
-
-    margin: 0.125em 0 0.25em; // 6px 0 12px
-  }
-
-  // large display
-  @media (min-width: 1200px) {
+  @media #{ $media-query-default } {
     @include font-size(5em);
 
     margin: 0.12em 0 0.24em; // 6px 0 12px
+  }
+
+  @media #{ $media-query-large-display } {
+    @include font-size(6em);
+
+    margin: 0.1em 0 0.2em; // 6px 0 12px
   }
 }
 
@@ -249,72 +202,54 @@ h2 {
 h3 {
   @include font-size(2.5em);
 
-  margin: 0.12em 0 0.24em; // 3px 0 6px
+  margin: 0.24em 0 0.48em; // 6px 0 12px
 
-  // smartphone (portrait and landscape)
-  @media (max-width: 480px) {}
+  @media #{ $media-query-smartphone } {}
 
-  // smartphone to tablet
-  @media (min-width: 481px) and (max-width: 767px) {
-    @include font-size(3em);
+  @media #{ $media-query-smartphone-to-tablet } {}
 
-    margin: 0.1em 0 0.2em; // 3px 0 6px
-  }
-
-  // portrait tablet
-  @media (min-width: 768px) and (max-width: 979px) {
-    @include font-size(3.2em);
-
-    margin: 0.09375em 0 0.1875em; // 3px 0 6px
-  }
-
-  // default
-  @media (min-width: 980px) and (max-width: 1199px) {
-    @include font-size(4em);
-
-    margin: 0.075em 0 0.15em; // 3px 0 6px
-  }
-
-  // large display
-  @media (min-width: 1200px) {
-    @include font-size(4.8em);
-
-    margin: 0.0625em 0 0.125em; // 3px 0 6px
-  }
-}
-
-// heading with fourth-highest rank
-h4 {
-  @include font-size(2.4em);
-
-  margin: 0.25em 0 0.5em; // 6px 0 12px
-
-  // smartphone (portrait and landscape)
-  @media (max-width: 480px) {}
-
-  // smartphone to tablet
-  @media (min-width: 481px) and (max-width: 767px) {
-    @include font-size(2.5em);
-
-    margin: 0.24em 0 0.48em; // 6px 0 12px
-  }
-
-  // portrait tablet
-  @media (min-width: 768px) and (max-width: 979px) {
-    @include font-size(3em);
-
-    margin: 0.2em 0 0.4em; // 6px 0 12px
-  }
-
-  // default
-  @media (min-width: 980px) and (max-width: 1199px) {
+  @media #{ $media-query-portrait-tablet } {
     @include font-size(3.2em);
 
     margin: 0.1875em 0 0.375em; // 6px 0 12px
   }
 
-  // large display
-  @media (min-width: 1200px) {
+  @media #{ $media-query-default } {
+    @include font-size(4em);
+
+    margin: 0.15em 0 0.3em; // 6px 0 12px
+  }
+
+  @media #{ $media-query-large-display } {
+    @include font-size(5em);
+
+    margin: 0.12em 0 0.24em; // 6px 0 12px
+  }
+}
+
+// heading with fourth-highest rank
+h4 {
+  @include font-size(2em);
+
+  margin: 0.3em 0 0.6em; // 6px 0 12px
+
+  @media #{ $media-query-smartphone } {}
+
+  @media #{ $media-query-smartphone-to-tablet } {}
+
+  @media #{ $media-query-portrait-tablet } {
+    @include font-size(2.5em);
+
+    margin: 0.24em 0 0.48em; // 6px 0 12px
+  }
+
+  @media #{ $media-query-default } {
+    @include font-size(3.2em);
+
+    margin: 0.1875em 0 0.375em; // 6px 0 12px
+  }
+
+  @media #{ $media-query-large-display } {
     @include font-size(4em);
 
     margin: 0.15em 0 0.3em; // 6px 0 12px
@@ -323,39 +258,30 @@ h4 {
 
 // heading with fifth-highest rank
 h5 {
-  @include font-size(2em);
+  @include font-size(1.6em);
 
-  margin: 0.3em 0 0.6em; // 6px 0 12px
+  margin: 0.375em 0 0.75em; // 6px 0 12px
 
-  // smartphone (portrait and landscape)
-  @media (max-width: 480px) {}
+  @media #{ $media-query-smartphone } {}
 
-  // smartphone to tablet
-  @media (min-width: 481px) and (max-width: 767px) {
+  @media #{ $media-query-smartphone-to-tablet } {}
+
+  @media #{ $media-query-portrait-tablet } {
+    @include font-size(2em);
+
+    margin: 0.3em 0 0.6em; // 6px 0 12px
+  }
+
+  @media #{ $media-query-default } {
     @include font-size(2.4em);
 
-    margin: 0.2em 0 0.4em; // 6px 0 12px
+    margin: 0.25em 0 0.5em; // 6px 0 12px
   }
 
-  // portrait tablet
-  @media (min-width: 768px) and (max-width: 979px) {
-    @include font-size(2.5em);
-
-    margin: 0.24em 0 0.48em; // 6px 0 12px
-  }
-
-  // default
-  @media (min-width: 980px) and (max-width: 1199px) {
+  @media #{ $media-query-large-display } {
     @include font-size(3em);
 
     margin: 0.2em 0 0.4em; // 6px 0 12px
-  }
-
-  // large display
-  @media (min-width: 1200px) {
-    @include font-size(3.2em);
-
-    margin: 0.1875em 0 0.375em; // 6px 0 12px
   }
 }
 
@@ -365,28 +291,15 @@ h6 {
 
   margin: 0.375em 0 0.75em; // 6px 0 12px
 
-  // smartphone (portrait and landscape)
-  @media (max-width: 480px) {}
+  @media #{ $media-query-smartphone } {}
 
-  // smartphone to tablet
-  @media (min-width: 481px) and (max-width: 767px) {}
+  @media #{ $media-query-smartphone-to-tablet } {}
 
-  // portrait tablet
-  @media (min-width: 768px) and (max-width: 979px) {
-    @include font-size(2em);
+  @media #{ $media-query-portrait-tablet } {}
 
-    margin: 0.3em 0 0.6em; // 6px 0 12px
-  }
+  @media #{ $media-query-default } {}
 
-  // default
-  @media (min-width: 980px) and (max-width: 1199px) {
-    @include font-size(2em);
-
-    margin: 0.3em 0 0.6em; // 6px 0 12px
-  }
-
-  // large display
-  @media (min-width: 1200px) {
+  @media #{ $media-query-large-display } {
     @include font-size(2em);
 
     margin: 0.3em 0 0.6em; // 6px 0 12px
@@ -397,7 +310,7 @@ h6 {
 hgroup {}
 
 // introductory or navigational aids
-> header {
+header {
   display: block;
 }
 
@@ -422,14 +335,7 @@ address {
 p {
   @include font-size(1.6em);
 
-  margin-bottom: 0.75em; // 12px
-
-  // large display
-  @media (min-width: 1200px) {
-    @include font-size(2em);
-
-    margin-bottom: 0.6em; // 12px
-  }
+  margin-bottom: 1.5em; // 24px
 }
 
 // paragraph-level thematic break
@@ -445,26 +351,36 @@ hr {
 // preformatted text
 pre {
   @include border-radius(0.125em); // 2px
-  @include box-shadow(0, 0, 0.0625em, $color-neutral-darkest); // 1px
+  @include box-shadow(inset 0 0 0.125em $color-neutral-darkest); // 2px
   @include font-size(1.6em);
 
   background: $color-neutral-lighter;
   font-family: $font-family-code;
-  margin-bottom: 0.75em; // 12px
+  margin-bottom: 1.5em; // 24px
   padding: 0.375em 0.625em; // 6px 10px
+
+  // code block as generated by Markdown
+  > code {
+    @include border-radius(0);
+    @include box-shadow(0 0 0 transparent);
+
+    background: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 // section that is quoted from another source
 blockquote {
-  @include border-radius(.2em);
-  @include box-shadow(0, 0, 0.1em, $color-neutral-darkest);
+  @include border-radius(0.2em);
+  @include box-shadow(0 0 0.1em $color-neutral-darkest);
 
   background: $color-neutral-lighter;
   font: {
     family: $font-family-quotes;
     style: italic;
   }
-  margin: 0 6em 1.2em;
+  margin: 0 6em 2.4em;
   padding: 1.2em 2em;
 
   > cite {
@@ -503,11 +419,6 @@ ol {
     > ul {
       margin-bottom: 0;
     }
-
-    // large display
-    @media (min-width: 1200px) {
-      @include font-size(2em);
-    }
   }
 }
 
@@ -533,11 +444,6 @@ ul {
       > li > ul {
         list-style-type: square;
       }
-    }
-
-    // large display
-    @media (min-width: 1200px) {
-      @include font-size(2em);
     }
   }
 }
@@ -565,24 +471,19 @@ dt {
     weight: bold;
   }
 
-  // smartphone (portrait and landscape)
-  @media (max-width: 480px) {}
+  @media #{ $media-query-smartphone } {}
 
-  // smartphone to tablet
-  @media (min-width: 481px) and (max-width: 767px) {}
+  @media #{ $media-query-smartphone-to-tablet } {}
 
-  // portrait tablet
-  @media (min-width: 768px) and (max-width: 979px) {
+  @media #{ $media-query-portrait-tablet } {
     @include font-size(2em);
   }
 
-  // default
-  @media (min-width: 980px) and (max-width: 1199px) {
+  @media #{ $media-query-default } {
     @include font-size(2em);
   }
 
-  // large display
-  @media (min-width: 1200px) {
+  @media #{ $media-query-large-display } {
     @include font-size(2em);
   }
 }
@@ -592,20 +493,35 @@ dd {
   @include font-size(1.6em);
 
   margin: 0 0 0.75em 1.25em; // 0 0 12px 20px
-
-  // large display
-  @media (min-width: 1200px) {
-    @include font-size(2em);
-
-    margin: 0 0 0.6em 1em; // 0 0 12px 20px
-  }
 }
 
 // self-contained, single unit referenced from main flow of document
-figure {}
+figure {
+  @include border-radius(0.2em);
+  @include box-shadow(0 0 0.1em $color-neutral-darkest);
+
+  background: $color-neutral-lighter;
+  margin: 0 0 2.4em;
+  padding: 1.2em 0 0;
+
+  > img {
+    display: block;
+    margin: 0 auto 1.2em;
+  }
+}
 
 // caption of figure element's contents
-figcaption {}
+figcaption {
+  @include font-size(1.5em);
+
+  background: $color-neutral;
+  font: {
+    family: $font-family-headings;
+    style: italic;
+  }
+  padding: 0.4em 1em; // 6px 15px
+  text-align: center;
+}
 
 // groups its children, has no special meaning at all
 div {}
@@ -618,25 +534,18 @@ div {}
 // hyperlink
 a {
   color: $color-link;
+  text-decoration: underline;
 
   &:active {}
 
   &:focus {
     outline: 1px dotted $color-neutral-darkest;
-    text-decoration: underline;
   }
 
-  &:hover {
-    color: $color-link-lighter;
-    text-decoration: underline;
-  }
-
-  &:link {
-    text-decoration: underline;
-  }
+  &:link {}
 
   &:visited {
-    text-decoration: underline;
+    color: $color-link-visited;
   }
 }
 
@@ -669,7 +578,7 @@ cite {
 // phrasing content quoted from another source
 q {
   @include border-radius(0.125em); // 2px
-  @include box-shadow(0, 0, 0.0625em, $color-neutral-darker); // 1px
+  @include box-shadow(0 0 0.0625em $color-neutral-darker); // 1px
 
   background: $color-neutral;
   display: inline-block;
@@ -709,7 +618,7 @@ time {}
 // fragment of computer code
 code {
   @include border-radius(0.125em); // 2px
-  @include box-shadow(0, 0, 0.0625em, $color-neutral-darkest); // 1px
+  @include box-shadow(inset 0 0 0.125em $color-neutral-darkest); // 2px
 
   background: $color-neutral-lighter;
   display: inline-block;
@@ -752,7 +661,7 @@ u {}
 // marked text
 mark {
   @include border-radius(0.125em); // 2px
-  @include box-shadow(0, 0, 0.0625em, $color-neutral-darkest); // 1px
+  @include box-shadow(0 0 0.0625em $color-neutral-darkest); // 1px
 
   background: $color-highlight-lighter;
   color: inherit;
@@ -1081,27 +990,10 @@ button {
     border-color: $color-neutral-darkest;
   }
 
-  &:hover {
-    @include background-gradient($color-neutral-lighter, $color-neutral-lightest);
-
-    cursor: pointer;
-  }
-
   &[disabled] {
     background: $color-neutral-lighter;
     color: $color-neutral;
     text-shadow: 0 -1px 0 $color-neutral-lightest;
-
-    &:hover {
-      border: {
-        bottom-color: $color-neutral-lighter;
-        left-color: $color-neutral-darker;
-        right-color: $color-neutral-lighter;
-        style: solid;
-        top-color: $color-neutral-darker;
-        width: 0.0625em; /* 1px */
-      }
-    }
   }
 }
 
@@ -1167,28 +1059,23 @@ menu {}
   html {
     background: repeat-y center top;
 
-    // smartphone (portrait and landscape)
-    @media (max-width: 480px) {
+    @media #{ $media-query-smartphone } {
       background-image: url('../images/grids/smartphone.png');
     }
 
-    // smartphone to tablet
-    @media (min-width: 481px) and (max-width: 767px) {
+    @media #{ $media-query-smartphone-to-tablet } {
       background-image: url('../images/grids/smartphone-to-tablet.png');
     }
 
-    // portrait tablet
-    @media (min-width: 768px) and (max-width: 979px) {
+    @media #{ $media-query-portrait-tablet } {
       background-image: url('../images/grids/tablet.png');
     }
 
-    // default
-    @media (min-width: 980px) and (max-width: 1199px) {
+    @media #{ $media-query-default } {
       background-image: url('../images/grids/default.png');
     }
 
-    // large display
-    @media (min-width: 1200px) {
+    @media #{ $media-query-large-display } {
       background-image: url('../images/grids/large-display.png');
     }
   }

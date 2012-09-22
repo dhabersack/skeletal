@@ -5,91 +5,45 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Skeletal</title>
+    <title>Title</title>
 
-    <link rel="stylesheet" type="text/css" href="./stylesheets/base.css">
-    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css">
 
     <link rel="shortcut icon" href="favicon.ico">
   </head>
 
   <body>
     <header>
-      <h1><a href="/">Skeletal</a></h1>
+      <h1><a href="/">Title</a></h1>
     </header>
 
     <nav>
       <ol>
-        <li><a href="#what-it-is">What it is</a></li>
-        <li><a href="#examples">Examples</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
       </ol>
     </nav>
 
     <section>
-      <h1>Skeletal</h1>
-
-      <h2 id="what-it-is">A clean foundation for webdesign.</h2>
+      <h1>Headline</h1>
 
       <p>
-        Skeletal is a <mark>preset-stylesheet</mark> that sets sensible defaults
-        for most HTML5-tags, providing a solid foundation to build your next
-        webdesign project on.
-      </p>
-
-      <h3>What it is</h3>
-
-      <dl>
-        <dt>Clean</dt>
-        <dd>
-          Skeletal puts an emphasis on readability and clean organization to
-          make the sites using it as simple and user-friendly as possible.
-        </dd>
-
-        <dt>Easily configurable</dt>
-        <dd>
-          Everything you might want to change can easily be adapted through
-          straightforward configuration files. This includes fonts, colors,
-          grids and more.
-        </dd>
-
-        <dt>Responsive</dt>
-        <dd>
-          Our <abbr
-          title="Syntactically Awesome StyleSheets">SASS</abbr>-powered grid
-          grows with the browser. Responsiveness is baked right in and available
-          through the <code>grid</code>-mixin.
-        </dd>
-
-        <dt>
-          Not <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
-        </dt>
-        <dd>
-          Other than options like Bootstrap, your markup won't need any
-          additional attributes and stays maintainable and flexible.
-        </dd>
-      </dl>
-
-      <h3 id="examples">Examples</h3>
-
-      <p>
-        Skeletal enables a variety of designs. The following contains a growing
-        list of examples of what can easily be achieved with very few additional
-        styles:
-      </p>
-
-      <ol>
-        <li><a href="examples/example.html">Portfolio</a></li>
-      </ol>
-
-      <p>
-        (Yes, I know. More will follow eventually.)
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+        sint occaecat cupidatat non proident, sunt in culpa qui officia
+        deserunt mollit anim id est laborum.
       </p>
     </section>
 
     <footer>
       <p>
-        Copyright &copy; 2012 <a href="http://dominikhabersack.com/">Dom
-        Habersack</a>
+        Copyright &copy; 2012 <a href="http://example.com/">your name</a>
       </p>
     </footer>
 
@@ -98,14 +52,14 @@
     _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
     _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script');
+    (function () {
+      var ga = document.createElement('script'), s;
       ga.type = 'text/javascript';
       ga.async = true;
       ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0];
+      s = document.getElementsByTagName('script')[0];
       s.parentNode.insertBefore(ga, s);
-    })();
+    }());
     </script>
   </body>
 </html>

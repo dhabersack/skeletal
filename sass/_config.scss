@@ -1,0 +1,93 @@
+@import 'colors.scss';
+@import 'fonts.scss';
+
+//--------------------------------//
+// COLORS                         //
+//--------------------------------//
+
+// color proxies
+$color-action:       $color-green;
+$color-alert:        $color-yellow;
+$color-brand:        $color-red;
+$color-error:        $color-red;
+$color-highlight:    $color-yellow;
+$color-link:         $color-blue;
+$color-link-visited: $color-violet;
+$color-neutral:      $color-gray;
+
+
+//--------------------------------//
+// DEBUGGING                      //
+//--------------------------------//
+
+// toggle background grid
+$is-in-debug-mode: true;
+
+
+//--------------------------------//
+// RESPONSIVE GRID (HORIZONTAL)   //
+//--------------------------------//
+
+// all vertical dimensions must be (or add up to) multiples of this base-height
+$vertical-grid-base-height: 0.6em;
+
+// media queries, layout breaking points for different common display sizes
+$media-query-smartphone:           '(max-width: 480px)';
+$media-query-smartphone-to-tablet: '(min-width: 481px) and (max-width: 767px)';
+$media-query-portrait-tablet:      '(min-width: 768px) and (max-width: 979px)';
+$media-query-default:              '(min-width: 980px) and (max-width: 1199px)';
+$media-query-large-display:        '(min-width: 1200px)';
+
+// widths used in responsive grid at different stages
+$grid-smartphone-column-width: 96%;
+$grid-smartphone-gutter-width: 4%;
+
+$grid-smartphone-to-tablet-column-width: 3em;
+$grid-smartphone-to-tablet-gutter-width: 1em;
+
+$grid-portrait-tablet-column-width: 4.4em;
+$grid-portrait-tablet-gutter-width: 2em;
+
+$grid-default-column-width: 6em;
+$grid-default-gutter-width: 2em;
+
+$grid-large-display-column-width: 8em;
+$grid-large-display-gutter-width: 2em;
+
+
+//--------------------------------//
+// TEXT                           //
+//--------------------------------//
+
+// font stack proxies
+$font-family-code:     $font-family-monospace;
+$font-family-headings: $font-family-sans-serif;
+$font-family-inputs:   $font-family-sans-serif;
+$font-family-quotes:   $font-family-serif;
+$font-family-content:  $font-family-serif;
+
+// typography: minimum ratio of `line-height` to `font-size`
+$line-height-to-font-size-ratio: 1.5;
+
+// available font-size and line-height combinations based on above defaults:
+//
+//   font-size  |   line-height    |    6px     |    10px
+// -------------+------------------+------------+------------
+//    10px      |  1.8em  /  18px  |  0.6em     |  1em
+//    12px      |  1.5em  /  18px  |  0.5em     |
+//    15px      |  1.6em  /  24px  |  0.4em     |
+//    16px      |  1.5em  /  24px  |  0.375em   |  0.625em
+//    20px      |  1.5em  /  30px  |  0.3em     |  0.5em
+//    24px      |  1.5em  /  36px  |  0.25em    |
+//    25px      |  1.68em /  42px  |  0.24em    |  0.4em
+//    30px      |  1.6em  /  48px  |  0.2em     |
+//    32px      |  1.5em  /  48px  |  0.1875em  |  0.3125em
+//    40px      |  1.5em  /  60px  |  0.15em    |  0.25em
+//    48px      |  1.5em  /  72px  |  0.125em   |
+//    50px      |  1.56em /  78px  |  0.12em    |  0.2em
+//    60px      |  1.5em  /  90px  |  0.1em     |
+//    75px      |  1.52em / 114px  |  0.08em    |
+//    80px      |  1.5em  / 120px  |  0.075em   |  0.125em
+//    96px      |  1.5em  / 144px  |  0.0625em  |
+//   100px      |  1.5em  / 150px  |  0.06em    |  0.1em
+//   120px      |  1.5em  / 180px  |  0.05em    |
