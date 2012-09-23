@@ -24,7 +24,7 @@ body {
 
   // main footer
   > footer {
-    @include grid(12, $margin: 0 auto, $padding: 0.6em 0 1.2em);
+    @include grid($number-of-grid-columns, $margin: 0 auto, $padding: 0.6em 0 1.2em);
 
     display: block;
     overflow: hidden;
@@ -48,7 +48,7 @@ body {
 
   // main header
   > header {
-    @include grid(12, $margin: 0 auto, $padding: 0.6em 0);
+    @include grid($number-of-grid-columns, $margin: 0 auto, $padding: 0.6em 0);
 
     font-family: $font-family-headings;
     overflow: hidden;
@@ -73,7 +73,7 @@ body {
 
   // main navigation
   nav {
-    @include grid(12, $margin: 0 auto 1.2em, $padding: 0.6em 0);
+    @include grid($number-of-grid-columns, $margin: 0 auto 1.2em, $padding: 0.6em 0);
 
     font-family: $font-family-headings;
     overflow: hidden;
@@ -104,7 +104,7 @@ body {
 
   // main content area
   > section {
-    @include grid(12, $margin: 0 auto 1.2em);
+    @include grid($number-of-grid-columns, $margin: 0 auto 1.2em);
   }
 }
 
@@ -1064,19 +1064,19 @@ menu {}
     }
 
     @media #{ $media-query-smartphone-to-tablet } {
-      background-image: url('../images/grids/smartphone-to-tablet.png');
+      background-image: url('../images/grids/smartphone-to-tablet-#{ $number-of-grid-columns }-columns.png');
     }
 
     @media #{ $media-query-portrait-tablet } {
-      background-image: url('../images/grids/tablet.png');
+      background-image: url('../images/grids/portrait-tablet-#{ $number-of-grid-columns }-columns.png');
     }
 
     @media #{ $media-query-default } {
-      background-image: url('../images/grids/default.png');
+      background-image: url('../images/grids/default-#{ $number-of-grid-columns }-columns.png');
     }
 
     @media #{ $media-query-large-display } {
-      background-image: url('../images/grids/large-display.png');
+      background-image: url('../images/grids/large-display-#{ $number-of-grid-columns }-columns.png');
     }
   }
 }

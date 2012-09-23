@@ -27,7 +27,7 @@
 
 // Set `font-size` as well as appropriate `line-height`.
 @mixin font-size($font-size) {
-  $base-line-height: ($font-size * $line-height-to-font-size-ratio) / $vertical-grid-base-height;
+  $base-line-height: ($font-size * $minimum-line-height-to-font-size-ratio) / $vertical-grid-base-height;
 
   // round up to nearest whole number if `$base-line-height` is not an integer
   $delta: (floor($base-line-height * 1000 - floor($base-line-height) * 1000));
@@ -81,8 +81,7 @@
     $padding-left: nth($padding, 4);
   }
 
-  // smartphone (portrait and landscape)
-  @media (max-width: 480px) {
+  @media #{ $media-query-smartphone } {
     // save previous values of horizontal paddings
     $padding-left-previous:  $padding-left;
     $padding-right-previous: $padding-right;
@@ -112,8 +111,7 @@
     $padding-right: $padding-right-previous;
   }
 
-  // smartphone to tablet
-  @media (min-width: 481px) and (max-width: 767px) {
+  @media #{ $media-query-smartphone-to-tablet } {
     // use default values if no margin-parameter was given
     @if (not($has-margin-parameter)) {
       $margin-left:  ($grid-smartphone-to-tablet-gutter-width / 2);
@@ -125,8 +123,7 @@
     width:   (($number-of-columns * $grid-smartphone-to-tablet-column-width) + (($number-of-columns - 1) * $grid-smartphone-to-tablet-gutter-width) - $padding-right - $padding-left);
   }
 
-  // portrait tablet
-  @media (min-width: 768px) and (max-width: 979px) {
+  @media #{ $media-query-portrait-tablet } {
     // use default values if no margin-parameter was given
     @if (not($has-margin-parameter)) {
       $margin-left:  ($grid-portrait-tablet-gutter-width / 2);
@@ -138,8 +135,7 @@
     width:   (($number-of-columns * $grid-portrait-tablet-column-width) + (($number-of-columns - 1) * $grid-portrait-tablet-gutter-width) - $padding-right - $padding-left);
   }
 
-  // default
-  @media (min-width: 980px) and (max-width: 1199px) {
+  @media #{ $media-query-default } {
     // use default values if no margin-parameter was given
     @if (not($has-margin-parameter)) {
       $margin-left:  ($grid-default-gutter-width / 2);
@@ -151,8 +147,7 @@
     width:   (($number-of-columns * $grid-default-column-width) + (($number-of-columns - 1) * $grid-default-gutter-width) - $padding-right - $padding-left);
   }
 
-  // large display
-  @media (min-width: 1200px) {
+  @media #{ $media-query-large-display } {
     // use default values if no margin-parameter was given
     @if (not($has-margin-parameter)) {
       $margin-left:  ($grid-large-display-gutter-width / 2);
