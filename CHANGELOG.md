@@ -3,6 +3,7 @@
 ## 0.2.3 (September 23, 2012)
 
 * Overhaul responsive grid: move breakpoint from 768px down to 720px, adapt to changes evenly, add and update Photoshop-templates and background images
+* `gutter` is now a valid unit for horizontal margins used in the `grid`-mixin
 
 
 ## 0.2.2 (September 22, 2012)
