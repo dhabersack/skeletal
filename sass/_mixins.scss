@@ -88,7 +88,9 @@
   }
 
   @media #{ $media-query-smartphone } {
-    // save previous values of horizontal paddings
+    // save previous values of horizontal margins and paddings
+    $margin-left-previous:   $margin-left;
+    $margin-right-previous:  $margin-right;
     $padding-left-previous:  $padding-left;
     $padding-right-previous: $padding-right;
 
@@ -104,6 +106,14 @@
     float: none;
 
     @if ($has-margin-parameter) {
+      @if (($margin-left != auto) and (unit($margin-left) == 'gutter')) {
+        $margin-left: ($margin-left / 1gutter) * $grid-smartphone-gutter-width;
+      }
+
+      @if (($margin-right != auto) and (unit($margin-right) == 'gutter')) {
+        $margin-right: ($margin-right / 1gutter) * $grid-smartphone-gutter-width;
+      }
+
       margin: $margin-top $margin-right $margin-bottom $margin-left;
     }
     padding: $padding-top $padding-right $padding-bottom $padding-left;
@@ -111,70 +121,111 @@
     // always set width to default value
     width: $grid-smartphone-column-width;
 
-    // restore previous values of horizontal paddings for following @media
-    // directives
+    // restore previous values of horizontal margins and paddings for following
+    // @media directives
+    $margin-left:   $margin-left-previous;
+    $margin-right:  $margin-right-previous;
     $padding-left:  $padding-left-previous;
     $padding-right: $padding-right-previous;
   }
 
   @media #{ $media-query-smartphone-to-tablet } {
+    // save previous values of horizontal margins and paddings
+    $margin-left-previous:   $margin-left;
+    $margin-right-previous:  $margin-right;
+    $padding-left-previous:  $padding-left;
+    $padding-right-previous: $padding-right;
+
     // use default values if no margin-parameter was given
     @if (not($has-margin-parameter)) {
       $margin-left:  ($grid-smartphone-to-tablet-gutter-width / 2);
       $margin-right: ($grid-smartphone-to-tablet-gutter-width / 2);
     }
 
-    @if (($margin-left != auto) and (unit($margin-left) == 'gutter')) {
+    @if (($margin-left != 'auto') and (unit($margin-left) == 'gutter')) {
       $margin-left: ($margin-left / 1gutter) * $grid-smartphone-to-tablet-gutter-width;
     }
 
-    @if (($margin-right != auto) and (unit($margin-right) == 'gutter')) {
+    @if (($margin-right != 'auto') and (unit($margin-right) == 'gutter')) {
       $margin-right: ($margin-right / 1gutter) * $grid-smartphone-to-tablet-gutter-width;
     }
 
     margin:  $margin-top $margin-right $margin-bottom $margin-left;
     padding: $padding-top $padding-right $padding-bottom $padding-left;
     width:   (($number-of-columns * $grid-smartphone-to-tablet-column-width) + (($number-of-columns - 1) * $grid-smartphone-to-tablet-gutter-width) - $padding-right - $padding-left);
+
+    // restore previous values of horizontal margins and paddings for following
+    // @media directives
+    $margin-left:   $margin-left-previous;
+    $margin-right:  $margin-right-previous;
+    $padding-left:  $padding-left-previous;
+    $padding-right: $padding-right-previous;
   }
 
   @media #{ $media-query-portrait-tablet } {
+    // save previous values of horizontal margins and paddings
+    $margin-left-previous:   $margin-left;
+    $margin-right-previous:  $margin-right;
+    $padding-left-previous:  $padding-left;
+    $padding-right-previous: $padding-right;
+
     // use default values if no margin-parameter was given
     @if (not($has-margin-parameter)) {
       $margin-left:  ($grid-portrait-tablet-gutter-width / 2);
       $margin-right: ($grid-portrait-tablet-gutter-width / 2);
     }
 
-    @if (($margin-left != auto) and (unit($margin-left) == 'gutter')) {
+    @if (($margin-left != 'auto') and (unit($margin-left) == 'gutter')) {
       $margin-left: ($margin-left / 1gutter) * $grid-portrait-tablet-gutter-width;
     }
 
-    @if (($margin-right != auto) and (unit($margin-right) == 'gutter')) {
+    @if (($margin-right != 'auto') and (unit($margin-right) == 'gutter')) {
       $margin-right: ($margin-right / 1gutter) * $grid-portrait-tablet-gutter-width;
     }
 
     margin:  $margin-top $margin-right $margin-bottom $margin-left;
     padding: $padding-top $padding-right $padding-bottom $padding-left;
     width:   (($number-of-columns * $grid-portrait-tablet-column-width) + (($number-of-columns - 1) * $grid-portrait-tablet-gutter-width) - $padding-right - $padding-left);
+
+    // restore previous values of horizontal margins and paddings for following
+    // @media directives
+    $margin-left:   $margin-left-previous;
+    $margin-right:  $margin-right-previous;
+    $padding-left:  $padding-left-previous;
+    $padding-right: $padding-right-previous;
   }
 
   @media #{ $media-query-default } {
+    // save previous values of horizontal margins and paddings
+    $margin-left-previous:   $margin-left;
+    $margin-right-previous:  $margin-right;
+    $padding-left-previous:  $padding-left;
+    $padding-right-previous: $padding-right;
+
     // use default values if no margin-parameter was given
     @if (not($has-margin-parameter)) {
       $margin-left:  ($grid-default-gutter-width / 2);
       $margin-right: ($grid-default-gutter-width / 2);
     }
 
-    @if (($margin-left != auto) and (unit($margin-left) == 'gutter')) {
+    @if (($margin-left != 'auto') and (unit($margin-left) == 'gutter')) {
       $margin-left: ($margin-left / 1gutter) * $grid-default-gutter-width;
     }
 
-    @if (($margin-right != auto) and (unit($margin-right) == 'gutter')) {
+    @if (($margin-right != 'auto') and (unit($margin-right) == 'gutter')) {
       $margin-right: ($margin-right / 1gutter) * $grid-default-gutter-width;
     }
 
     margin:  $margin-top $margin-right $margin-bottom $margin-left;
     padding: $padding-top $padding-right $padding-bottom $padding-left;
     width:   (($number-of-columns * $grid-default-column-width) + (($number-of-columns - 1) * $grid-default-gutter-width) - $padding-right - $padding-left);
+
+    // restore previous values of horizontal margins and paddings for following
+    // @media directives
+    $margin-left:   $margin-left-previous;
+    $margin-right:  $margin-right-previous;
+    $padding-left:  $padding-left-previous;
+    $padding-right: $padding-right-previous;
   }
 
   @media #{ $media-query-large-display } {
@@ -184,11 +235,11 @@
       $margin-right: ($grid-large-display-gutter-width / 2);
     }
 
-    @if (($margin-left != auto) and (unit($margin-left) == 'gutter')) {
+    @if (($margin-left != 'auto') and (unit($margin-left) == 'gutter')) {
       $margin-left: ($margin-left / 1gutter) * $grid-large-display-gutter-width;
     }
 
-    @if (($margin-right != auto) and (unit($margin-right) == 'gutter')) {
+    @if (($margin-right != 'auto') and (unit($margin-right) == 'gutter')) {
       $margin-right: ($margin-right / 1gutter) * $grid-large-display-gutter-width;
     }
 
