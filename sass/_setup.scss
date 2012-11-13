@@ -84,6 +84,16 @@ $grid-default-gutter-width:              ($breakpoint-default              / $nu
 $grid-large-display-column-width:        ($breakpoint-large-display        / $number-of-grid-columns) * $content-to-column-ratio;
 $grid-large-display-gutter-width:        ($breakpoint-large-display        / $number-of-grid-columns) * $gutter-to-column-ratio;
 
+// Using the default values, the following sizes are used in the grid:
+//
+//                ||      12 columns      ||      16 columns      |
+//    breakpoint  ||  content  |  gutter  ||  content  |  gutter  |
+// ---------------++-----------+----------++-----------+----------+
+//         480px  ||     32px  |     8px  ||     24px  |     6px  |
+//         720px  ||     48px  |    12px  ||     36px  |     9px  |
+//         960px  ||     64px  |    16px  ||     48px  |    12px  |
+//        1200px  ||     80px  |    20px  ||     60px  |    15px  |
+
 // minimum widths are pixel-values based on the breakpoints set above
 $min-width-smartphone-to-tablet: $breakpoint-smartphone-to-tablet / 1em * 10px;
 $min-width-portrait-tablet:      $breakpoint-portrait-tablet      / 1em * 10px;
@@ -97,8 +107,8 @@ $max-width-portrait-tablet:      $min-width-default              - 1px;
 $max-width-default:              $min-width-large-display        - 1px;
 
 // actual media queries to be used in @media-directives
-$media-query-smartphone:                                                                 '(max-width: #{ $max-width-smartphone           })';
-$media-query-smartphone-to-tablet: '(min-width: #{ $min-width-smartphone-to-tablet }) and (max-width: #{ $max-width-smartphone-to-tablet })';
-$media-query-portrait-tablet:      '(min-width: #{ $min-width-portrait-tablet      }) and (max-width: #{ $max-width-portrait-tablet      })';
-$media-query-default:              '(min-width: #{ $min-width-default              }) and (max-width: #{ $max-width-default              })';
-$media-query-large-display:        '(min-width: #{ $min-width-large-display        })';
+$media-query-smartphone:                                                                 'max-width: #{ $max-width-smartphone           }';
+$media-query-smartphone-to-tablet: 'min-width: #{ $min-width-smartphone-to-tablet }) and (max-width: #{ $max-width-smartphone-to-tablet }';
+$media-query-portrait-tablet:      'min-width: #{ $min-width-portrait-tablet      }) and (max-width: #{ $max-width-portrait-tablet      }';
+$media-query-default:              'min-width: #{ $min-width-default              }) and (max-width: #{ $max-width-default              }';
+$media-query-large-display:        'min-width: #{ $min-width-large-display        }';

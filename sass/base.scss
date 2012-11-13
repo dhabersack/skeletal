@@ -54,9 +54,27 @@ body {
     overflow: hidden;
 
     h1 {
-      @include font-size(2em);
+      @include font-size(3.2em);
 
-      margin: 0;
+      margin-bottom: 0.375em; // 12px
+
+      @media (#{ $media-query-portrait-tablet }) {
+        @include font-size(4em);
+
+        margin-bottom: 0.3em; // 12px
+      }
+
+      @media (#{ $media-query-default }) {
+        @include font-size(5em);
+
+        margin-bottom: 0.24em; // 12px
+      }
+
+      @media (#{ $media-query-large-display }) {
+        @include font-size(6em);
+
+        margin-bottom: 0.2em; // 12px
+      }
 
       > a {
         display: inline-block;
@@ -76,7 +94,6 @@ body {
     @include grid($number-of-grid-columns, $margin: 0 auto 1.2em, $padding: 0.6em 0);
 
     font-family: $font-family-headings;
-    overflow: hidden;
 
     a {
       @include font-size(1.6em);
@@ -95,7 +112,6 @@ body {
     }
 
     > ol {
-      float: right;
       list-style: none;
       margin-bottom: 0;
       overflow: hidden;
@@ -144,28 +160,28 @@ h1 {
   @include font-size(4em);
 
   font-weight: bold;
-  margin: 0.15em 0 0.3em; // 6px 0 12px
+  margin-bottom: 0.3em; // 12px
 
-  @media #{ $media-query-smartphone } {}
+  @media (#{ $media-query-smartphone }) {}
 
-  @media #{ $media-query-smartphone-to-tablet } {}
+  @media (#{ $media-query-smartphone-to-tablet }) {}
 
-  @media #{ $media-query-portrait-tablet } {
+  @media (#{ $media-query-portrait-tablet }) {
     @include font-size(4.8em);
 
-    margin: 0.125em 0 0.25em; // 6px 0 12px
+    margin-bottom: 0.25em; // 12px
   }
 
-  @media #{ $media-query-default } {
+  @media (#{ $media-query-default }) {
     @include font-size(6em);
 
-    margin: 0.1em 0 0.2em; // 6px 0 12px
+    margin-bottom: 0.2em; // 12px
   }
 
-  @media #{ $media-query-large-display } {
+  @media (#{ $media-query-large-display }) {
     @include font-size(7.5em);
 
-    margin: 0.08em 0 0.16em; // 6px 0 12px
+    margin-bottom: 0.16em; // 12px
   }
 }
 
@@ -173,28 +189,28 @@ h1 {
 h2 {
   @include font-size(3.2em);
 
-  margin: 0.1875em 0 0.375em; // 6px 0 12px
+  margin-bottom: 0.375em; // 12px
 
-  @media #{ $media-query-smartphone } {}
+  @media (#{ $media-query-smartphone }) {}
 
-  @media #{ $media-query-smartphone-to-tablet } {}
+  @media (#{ $media-query-smartphone-to-tablet }) {}
 
-  @media #{ $media-query-portrait-tablet } {
+  @media (#{ $media-query-portrait-tablet }) {
     @include font-size(4em);
 
-    margin: 0.15em 0 0.3em; // 6px 0 12px
+    margin-bottom: 0.3em; // 12px
   }
 
-  @media #{ $media-query-default } {
+  @media (#{ $media-query-default }) {
     @include font-size(5em);
 
-    margin: 0.12em 0 0.24em; // 6px 0 12px
+    margin-bottom: 0.24em; // 12px
   }
 
-  @media #{ $media-query-large-display } {
+  @media (#{ $media-query-large-display }) {
     @include font-size(6em);
 
-    margin: 0.1em 0 0.2em; // 6px 0 12px
+    margin-bottom: 0.2em; // 12px
   }
 }
 
@@ -202,28 +218,28 @@ h2 {
 h3 {
   @include font-size(2.5em);
 
-  margin: 0.24em 0 0.48em; // 6px 0 12px
+  margin-bottom: 0.48em; // 12px
 
-  @media #{ $media-query-smartphone } {}
+  @media (#{ $media-query-smartphone }) {}
 
-  @media #{ $media-query-smartphone-to-tablet } {}
+  @media (#{ $media-query-smartphone-to-tablet }) {}
 
-  @media #{ $media-query-portrait-tablet } {
+  @media (#{ $media-query-portrait-tablet }) {
     @include font-size(3.2em);
 
-    margin: 0.1875em 0 0.375em; // 6px 0 12px
+    margin-bottom: 0.375em; // 12px
   }
 
-  @media #{ $media-query-default } {
+  @media (#{ $media-query-default }) {
     @include font-size(4em);
 
-    margin: 0.15em 0 0.3em; // 6px 0 12px
+    margin-bottom: 0.3em; // 12px
   }
 
-  @media #{ $media-query-large-display } {
+  @media (#{ $media-query-large-display }) {
     @include font-size(5em);
 
-    margin: 0.12em 0 0.24em; // 6px 0 12px
+    margin-bottom: 0.24em; // 12px
   }
 }
 
@@ -231,28 +247,28 @@ h3 {
 h4 {
   @include font-size(2em);
 
-  margin: 0.3em 0 0.6em; // 6px 0 12px
+  margin-bottom: 0.6em; // 12px
 
-  @media #{ $media-query-smartphone } {}
+  @media (#{ $media-query-smartphone }) {}
 
-  @media #{ $media-query-smartphone-to-tablet } {}
+  @media (#{ $media-query-smartphone-to-tablet }) {}
 
-  @media #{ $media-query-portrait-tablet } {
+  @media (#{ $media-query-portrait-tablet }) {
     @include font-size(2.5em);
 
-    margin: 0.24em 0 0.48em; // 6px 0 12px
+    margin-bottom: 0.48em; // 12px
   }
 
-  @media #{ $media-query-default } {
+  @media (#{ $media-query-default }) {
     @include font-size(3.2em);
 
-    margin: 0.1875em 0 0.375em; // 6px 0 12px
+    margin-bottom: 0.375em; // 12px
   }
 
-  @media #{ $media-query-large-display } {
+  @media (#{ $media-query-large-display }) {
     @include font-size(4em);
 
-    margin: 0.15em 0 0.3em; // 6px 0 12px
+    margin-bottom: 0.3em; // 12px
   }
 }
 
@@ -260,28 +276,28 @@ h4 {
 h5 {
   @include font-size(1.6em);
 
-  margin: 0.375em 0 0.75em; // 6px 0 12px
+  margin-bottom: 0.75em; // 12px
 
-  @media #{ $media-query-smartphone } {}
+  @media (#{ $media-query-smartphone }) {}
 
-  @media #{ $media-query-smartphone-to-tablet } {}
+  @media (#{ $media-query-smartphone-to-tablet }) {}
 
-  @media #{ $media-query-portrait-tablet } {
+  @media (#{ $media-query-portrait-tablet }) {
     @include font-size(2em);
 
-    margin: 0.3em 0 0.6em; // 6px 0 12px
+    margin-bottom: 0.6em; // 12px
   }
 
-  @media #{ $media-query-default } {
+  @media (#{ $media-query-default }) {
     @include font-size(2.4em);
 
-    margin: 0.25em 0 0.5em; // 6px 0 12px
+    margin-bottom: 0.5em; // 12px
   }
 
-  @media #{ $media-query-large-display } {
+  @media (#{ $media-query-large-display }) {
     @include font-size(3em);
 
-    margin: 0.2em 0 0.4em; // 6px 0 12px
+    margin-bottom: 0.4em; // 12px
   }
 }
 
@@ -289,20 +305,20 @@ h5 {
 h6 {
   @include font-size(1.6em);
 
-  margin: 0.375em 0 0.75em; // 6px 0 12px
+  margin-bottom: 0.75em; // 12px
 
-  @media #{ $media-query-smartphone } {}
+  @media (#{ $media-query-smartphone }) {}
 
-  @media #{ $media-query-smartphone-to-tablet } {}
+  @media (#{ $media-query-smartphone-to-tablet }) {}
 
-  @media #{ $media-query-portrait-tablet } {}
+  @media (#{ $media-query-portrait-tablet }) {}
 
-  @media #{ $media-query-default } {}
+  @media (#{ $media-query-default }) {}
 
-  @media #{ $media-query-large-display } {
+  @media (#{ $media-query-large-display }) {
     @include font-size(2em);
 
-    margin: 0.3em 0 0.6em; // 6px 0 12px
+    margin-bottom: 0.6em; // 12px
   }
 }
 
@@ -335,7 +351,7 @@ address {
 p {
   @include font-size(1.6em);
 
-  margin-bottom: 1.5em; // 24px
+  margin-bottom: 0.75em; // 12px
 }
 
 // paragraph-level thematic break
@@ -471,19 +487,19 @@ dt {
     weight: bold;
   }
 
-  @media #{ $media-query-smartphone } {}
+  @media (#{ $media-query-smartphone }) {}
 
-  @media #{ $media-query-smartphone-to-tablet } {}
+  @media (#{ $media-query-smartphone-to-tablet }) {}
 
-  @media #{ $media-query-portrait-tablet } {
+  @media (#{ $media-query-portrait-tablet }) {
     @include font-size(2em);
   }
 
-  @media #{ $media-query-default } {
+  @media (#{ $media-query-default }) {
     @include font-size(2em);
   }
 
-  @media #{ $media-query-large-display } {
+  @media (#{ $media-query-large-display }) {
     @include font-size(2em);
   }
 }
@@ -505,7 +521,6 @@ figure {
   padding: 1.2em 0 0;
 
   > img {
-    display: block;
     margin: 0 auto 1.2em;
   }
 }
@@ -706,7 +721,10 @@ del {
 // EMBEDDED CONTENT               //
 //--------------------------------//
 
-img {}
+img {
+  display: block;
+}
+
 iframe {}
 embed {}
 object {}
@@ -1054,28 +1072,30 @@ menu {}
 // DEBUGGING                      //
 //--------------------------------//
 @if ($is-in-debug-mode == true) {
-//  * { background-color: $color-debug; }
+  * {
+    background-color: $color-debug;
+  }
 
   html {
     background: repeat-y center top;
 
-    @media #{ $media-query-smartphone } {
+    @media (#{ $media-query-smartphone }) {
       background-image: url('../images/grids/smartphone.png');
     }
 
-    @media #{ $media-query-smartphone-to-tablet } {
+    @media (#{ $media-query-smartphone-to-tablet }) {
       background-image: url('../images/grids/smartphone-to-tablet-#{ $number-of-grid-columns }-columns.png');
     }
 
-    @media #{ $media-query-portrait-tablet } {
+    @media (#{ $media-query-portrait-tablet }) {
       background-image: url('../images/grids/portrait-tablet-#{ $number-of-grid-columns }-columns.png');
     }
 
-    @media #{ $media-query-default } {
+    @media (#{ $media-query-default }) {
       background-image: url('../images/grids/default-#{ $number-of-grid-columns }-columns.png');
     }
 
-    @media #{ $media-query-large-display } {
+    @media (#{ $media-query-large-display }) {
       background-image: url('../images/grids/large-display-#{ $number-of-grid-columns }-columns.png');
     }
   }

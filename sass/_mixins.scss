@@ -13,16 +13,16 @@
 
 // Add border-radius to element.
 @mixin border-radius($radius) {
-  border-radius:         $radius;
-  -moz-border-radius:    $radius;
   -webkit-border-radius: $radius;
+  -moz-border-radius:    $radius;
+  border-radius:         $radius;
 }
 
 // Add box-shadow to element.
 @mixin box-shadow($box-shadow) {
-  box-shadow:         $box-shadow;
-  -moz-box-shadow:    $box-shadow;
   -webkit-box-shadow: $box-shadow;
+  -moz-box-shadow:    $box-shadow;
+  box-shadow:         $box-shadow;
 }
 
 // Set `font-size` as well as appropriate `line-height`.
@@ -48,17 +48,20 @@
   $margin-bottom: $margin-top;
   $margin-left:   $margin-top;
 
-  // check if margin-parameter does not only contain `auto` and update
-  // margin-values if concrete value has been given
+  // check if margin-parameter does not exclusively contain `auto`
   $has-margin-parameter: not((length($margin) == 1) and ($margin == auto));
+
+  // update margin-values if concrete value has been given
   @if ($has-margin-parameter) {
     @if (length($margin) >= 2) {
       $margin-right: nth($margin, 2);
       $margin-left:  $margin-right;
     }
+
     @if (length($margin) >= 3) {
       $margin-bottom: nth($margin, 3);
     }
+
     @if (length($margin) >= 4) {
       $margin-left: nth($margin, 4);
     }
@@ -70,19 +73,24 @@
   $padding-bottom: $padding-top;
   $padding-left:   $padding-top;
 
+  // update padding-values
   @if (length($padding) >= 2) {
     $padding-right: nth($padding, 2);
     $padding-left:  $padding-right;
   }
+
   @if (length($padding) >= 3) {
     $padding-bottom: nth($padding, 3);
   }
+
   @if (length($padding) >= 4) {
     $padding-left: nth($padding, 4);
   }
 
-  @media #{ $media-query-smartphone } {
-    // save previous values of horizontal paddings
+  @media (#{ $media-query-smartphone }) {
+    // save previous values of horizontal margins and paddings
+    $margin-left-previous:   $margin-left;
+    $margin-right-previous:  $margin-right;
     $padding-left-previous:  $padding-left;
     $padding-right-previous: $padding-right;
 
@@ -98,6 +106,14 @@
     float: none;
 
     @if ($has-margin-parameter) {
+      @if (($margin-left != auto) and (unit($margin-left) == 'gutter')) {
+        $margin-left: ($margin-left / 1gutter) * $grid-smartphone-gutter-width;
+      }
+
+      @if (($margin-right != auto) and (unit($margin-right) == 'gutter')) {
+        $margin-right: ($margin-right / 1gutter) * $grid-smartphone-gutter-width;
+      }
+
       margin: $margin-top $margin-right $margin-bottom $margin-left;
     }
     padding: $padding-top $padding-right $padding-bottom $padding-left;
@@ -105,53 +121,126 @@
     // always set width to default value
     width: $grid-smartphone-column-width;
 
-    // restore previous values of horizontal paddings for following @media
-    // directives
+    // restore previous values of horizontal margins and paddings for following
+    // @media directives
+    $margin-left:   $margin-left-previous;
+    $margin-right:  $margin-right-previous;
     $padding-left:  $padding-left-previous;
     $padding-right: $padding-right-previous;
   }
 
-  @media #{ $media-query-smartphone-to-tablet } {
+  @media (#{ $media-query-smartphone-to-tablet }) {
+    // save previous values of horizontal margins and paddings
+    $margin-left-previous:   $margin-left;
+    $margin-right-previous:  $margin-right;
+    $padding-left-previous:  $padding-left;
+    $padding-right-previous: $padding-right;
+
     // use default values if no margin-parameter was given
     @if (not($has-margin-parameter)) {
       $margin-left:  ($grid-smartphone-to-tablet-gutter-width / 2);
       $margin-right: ($grid-smartphone-to-tablet-gutter-width / 2);
     }
 
+    @if (($margin-left != 'auto') and (unit($margin-left) == 'gutter')) {
+      $margin-left: ($margin-left / 1gutter) * $grid-smartphone-to-tablet-gutter-width;
+    }
+
+    @if (($margin-right != 'auto') and (unit($margin-right) == 'gutter')) {
+      $margin-right: ($margin-right / 1gutter) * $grid-smartphone-to-tablet-gutter-width;
+    }
+
     margin:  $margin-top $margin-right $margin-bottom $margin-left;
     padding: $padding-top $padding-right $padding-bottom $padding-left;
     width:   (($number-of-columns * $grid-smartphone-to-tablet-column-width) + (($number-of-columns - 1) * $grid-smartphone-to-tablet-gutter-width) - $padding-right - $padding-left);
+
+    // restore previous values of horizontal margins and paddings for following
+    // @media directives
+    $margin-left:   $margin-left-previous;
+    $margin-right:  $margin-right-previous;
+    $padding-left:  $padding-left-previous;
+    $padding-right: $padding-right-previous;
   }
 
-  @media #{ $media-query-portrait-tablet } {
+  @media (#{ $media-query-portrait-tablet }) {
+    // save previous values of horizontal margins and paddings
+    $margin-left-previous:   $margin-left;
+    $margin-right-previous:  $margin-right;
+    $padding-left-previous:  $padding-left;
+    $padding-right-previous: $padding-right;
+
     // use default values if no margin-parameter was given
     @if (not($has-margin-parameter)) {
       $margin-left:  ($grid-portrait-tablet-gutter-width / 2);
       $margin-right: ($grid-portrait-tablet-gutter-width / 2);
     }
 
+    @if (($margin-left != 'auto') and (unit($margin-left) == 'gutter')) {
+      $margin-left: ($margin-left / 1gutter) * $grid-portrait-tablet-gutter-width;
+    }
+
+    @if (($margin-right != 'auto') and (unit($margin-right) == 'gutter')) {
+      $margin-right: ($margin-right / 1gutter) * $grid-portrait-tablet-gutter-width;
+    }
+
     margin:  $margin-top $margin-right $margin-bottom $margin-left;
     padding: $padding-top $padding-right $padding-bottom $padding-left;
     width:   (($number-of-columns * $grid-portrait-tablet-column-width) + (($number-of-columns - 1) * $grid-portrait-tablet-gutter-width) - $padding-right - $padding-left);
+
+    // restore previous values of horizontal margins and paddings for following
+    // @media directives
+    $margin-left:   $margin-left-previous;
+    $margin-right:  $margin-right-previous;
+    $padding-left:  $padding-left-previous;
+    $padding-right: $padding-right-previous;
   }
 
-  @media #{ $media-query-default } {
+  @media (#{ $media-query-default }) {
+    // save previous values of horizontal margins and paddings
+    $margin-left-previous:   $margin-left;
+    $margin-right-previous:  $margin-right;
+    $padding-left-previous:  $padding-left;
+    $padding-right-previous: $padding-right;
+
     // use default values if no margin-parameter was given
     @if (not($has-margin-parameter)) {
       $margin-left:  ($grid-default-gutter-width / 2);
       $margin-right: ($grid-default-gutter-width / 2);
     }
 
+    @if (($margin-left != 'auto') and (unit($margin-left) == 'gutter')) {
+      $margin-left: ($margin-left / 1gutter) * $grid-default-gutter-width;
+    }
+
+    @if (($margin-right != 'auto') and (unit($margin-right) == 'gutter')) {
+      $margin-right: ($margin-right / 1gutter) * $grid-default-gutter-width;
+    }
+
     margin:  $margin-top $margin-right $margin-bottom $margin-left;
     padding: $padding-top $padding-right $padding-bottom $padding-left;
     width:   (($number-of-columns * $grid-default-column-width) + (($number-of-columns - 1) * $grid-default-gutter-width) - $padding-right - $padding-left);
+
+    // restore previous values of horizontal margins and paddings for following
+    // @media directives
+    $margin-left:   $margin-left-previous;
+    $margin-right:  $margin-right-previous;
+    $padding-left:  $padding-left-previous;
+    $padding-right: $padding-right-previous;
   }
 
-  @media #{ $media-query-large-display } {
+  @media (#{ $media-query-large-display }) {
     // use default values if no margin-parameter was given
     @if (not($has-margin-parameter)) {
       $margin-left:  ($grid-large-display-gutter-width / 2);
       $margin-right: ($grid-large-display-gutter-width / 2);
+    }
+
+    @if (($margin-left != 'auto') and (unit($margin-left) == 'gutter')) {
+      $margin-left: ($margin-left / 1gutter) * $grid-large-display-gutter-width;
+    }
+
+    @if (($margin-right != 'auto') and (unit($margin-right) == 'gutter')) {
+      $margin-right: ($margin-right / 1gutter) * $grid-large-display-gutter-width;
     }
 
     margin:  $margin-top $margin-right $margin-bottom $margin-left;
