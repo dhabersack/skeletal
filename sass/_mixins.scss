@@ -13,16 +13,16 @@
 
 // Add border-radius to element.
 @mixin border-radius($radius) {
-  border-radius:         $radius;
-  -moz-border-radius:    $radius;
   -webkit-border-radius: $radius;
+  -moz-border-radius:    $radius;
+  border-radius:         $radius;
 }
 
 // Add box-shadow to element.
 @mixin box-shadow($box-shadow) {
-  box-shadow:         $box-shadow;
-  -moz-box-shadow:    $box-shadow;
   -webkit-box-shadow: $box-shadow;
+  -moz-box-shadow:    $box-shadow;
+  box-shadow:         $box-shadow;
 }
 
 // Set `font-size` as well as appropriate `line-height`.
@@ -87,7 +87,7 @@
     $padding-left: nth($padding, 4);
   }
 
-  @media #{ $media-query-smartphone } {
+  @media (#{ $media-query-smartphone }) {
     // save previous values of horizontal margins and paddings
     $margin-left-previous:   $margin-left;
     $margin-right-previous:  $margin-right;
@@ -129,7 +129,7 @@
     $padding-right: $padding-right-previous;
   }
 
-  @media #{ $media-query-smartphone-to-tablet } {
+  @media (#{ $media-query-smartphone-to-tablet }) {
     // save previous values of horizontal margins and paddings
     $margin-left-previous:   $margin-left;
     $margin-right-previous:  $margin-right;
@@ -162,7 +162,7 @@
     $padding-right: $padding-right-previous;
   }
 
-  @media #{ $media-query-portrait-tablet } {
+  @media (#{ $media-query-portrait-tablet }) {
     // save previous values of horizontal margins and paddings
     $margin-left-previous:   $margin-left;
     $margin-right-previous:  $margin-right;
@@ -195,7 +195,7 @@
     $padding-right: $padding-right-previous;
   }
 
-  @media #{ $media-query-default } {
+  @media (#{ $media-query-default }) {
     // save previous values of horizontal margins and paddings
     $margin-left-previous:   $margin-left;
     $margin-right-previous:  $margin-right;
@@ -228,7 +228,7 @@
     $padding-right: $padding-right-previous;
   }
 
-  @media #{ $media-query-large-display } {
+  @media (#{ $media-query-large-display }) {
     // use default values if no margin-parameter was given
     @if (not($has-margin-parameter)) {
       $margin-left:  ($grid-large-display-gutter-width / 2);

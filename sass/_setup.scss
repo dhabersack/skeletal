@@ -107,8 +107,8 @@ $max-width-portrait-tablet:      $min-width-default              - 1px;
 $max-width-default:              $min-width-large-display        - 1px;
 
 // actual media queries to be used in @media-directives
-$media-query-smartphone:                                                                 '(max-width: #{ $max-width-smartphone           })';
-$media-query-smartphone-to-tablet: '(min-width: #{ $min-width-smartphone-to-tablet }) and (max-width: #{ $max-width-smartphone-to-tablet })';
-$media-query-portrait-tablet:      '(min-width: #{ $min-width-portrait-tablet      }) and (max-width: #{ $max-width-portrait-tablet      })';
-$media-query-default:              '(min-width: #{ $min-width-default              }) and (max-width: #{ $max-width-default              })';
-$media-query-large-display:        '(min-width: #{ $min-width-large-display        })';
+$media-query-smartphone:                                                                 'max-width: #{ $max-width-smartphone           }';
+$media-query-smartphone-to-tablet: 'min-width: #{ $min-width-smartphone-to-tablet }) and (max-width: #{ $max-width-smartphone-to-tablet }';
+$media-query-portrait-tablet:      'min-width: #{ $min-width-portrait-tablet      }) and (max-width: #{ $max-width-portrait-tablet      }';
+$media-query-default:              'min-width: #{ $min-width-default              }) and (max-width: #{ $max-width-default              }';
+$media-query-large-display:        'min-width: #{ $min-width-large-display        }';
