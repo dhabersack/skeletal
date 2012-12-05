@@ -310,6 +310,18 @@ p {
   @include font-size(1.6em);
 
   margin-bottom: 1.5em; // 24px
+
+  @media (#{ $media-query-smartphone }) {}
+
+  @media (#{ $media-query-smartphone-to-tablet }) {}
+
+  @media (#{ $media-query-portrait-tablet }) {}
+
+  @media (#{ $media-query-default }) {}
+
+  @media (#{ $media-query-large-display }) {
+    @include font-size(2em);
+  }
 }
 
 // paragraph-level thematic break
