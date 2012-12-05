@@ -1,0 +1,36 @@
+@import 'import.scss';
+
+body {
+  > header {
+    background: $color-brand;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    div {
+      @include grid($number-of-grid-columns, $margin: 0 auto);
+    }
+  }
+}
+
+h2 {
+  font-weight: bold;
+  text-align: center;
+}
+
+#characteristics {
+  list-style: none;
+  overflow: hidden;
+
+  > li {
+    @include grid(4, $margin: 0 1gutter 0 0);
+
+    float: left;
+    font-size: 1em;
+    line-height: 1em;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

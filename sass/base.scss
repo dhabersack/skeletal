@@ -22,6 +22,11 @@ body {
   color: $color-neutral-darkest;
   font: 62.5%/1 $font-family-content; // 10px/10px
 
+  @media (#{ $media-query-smartphone }) {
+    margin: 0 ($grid-smartphone-gutter-width / 2);
+    width: $grid-smartphone-column-width;
+  }
+
   // main footer
   > footer {
     @include grid($number-of-grid-columns, $margin: 0 auto, $padding: 0.6em 0 1.2em);
@@ -39,10 +44,6 @@ body {
       @include font-size(1.5em);
 
       text-align: right;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
     }
   }
 
@@ -160,7 +161,6 @@ h1 {
   @include font-size(4em);
 
   font-weight: bold;
-  margin-bottom: 0.3em; // 12px
 
   @media (#{ $media-query-smartphone }) {}
 
@@ -168,20 +168,14 @@ h1 {
 
   @media (#{ $media-query-portrait-tablet }) {
     @include font-size(4.8em);
-
-    margin-bottom: 0.25em; // 12px
   }
 
   @media (#{ $media-query-default }) {
     @include font-size(6em);
-
-    margin-bottom: 0.2em; // 12px
   }
 
   @media (#{ $media-query-large-display }) {
     @include font-size(7.5em);
-
-    margin-bottom: 0.16em; // 12px
   }
 }
 
@@ -189,28 +183,20 @@ h1 {
 h2 {
   @include font-size(3.2em);
 
-  margin-bottom: 0.375em; // 12px
-
   @media (#{ $media-query-smartphone }) {}
 
   @media (#{ $media-query-smartphone-to-tablet }) {}
 
   @media (#{ $media-query-portrait-tablet }) {
     @include font-size(4em);
-
-    margin-bottom: 0.3em; // 12px
   }
 
   @media (#{ $media-query-default }) {
     @include font-size(5em);
-
-    margin-bottom: 0.24em; // 12px
   }
 
   @media (#{ $media-query-large-display }) {
     @include font-size(6em);
-
-    margin-bottom: 0.2em; // 12px
   }
 }
 
@@ -218,28 +204,20 @@ h2 {
 h3 {
   @include font-size(2.5em);
 
-  margin-bottom: 0.48em; // 12px
-
   @media (#{ $media-query-smartphone }) {}
 
   @media (#{ $media-query-smartphone-to-tablet }) {}
 
   @media (#{ $media-query-portrait-tablet }) {
     @include font-size(3.2em);
-
-    margin-bottom: 0.375em; // 12px
   }
 
   @media (#{ $media-query-default }) {
     @include font-size(4em);
-
-    margin-bottom: 0.3em; // 12px
   }
 
   @media (#{ $media-query-large-display }) {
     @include font-size(5em);
-
-    margin-bottom: 0.24em; // 12px
   }
 }
 
@@ -247,28 +225,20 @@ h3 {
 h4 {
   @include font-size(2em);
 
-  margin-bottom: 0.6em; // 12px
-
   @media (#{ $media-query-smartphone }) {}
 
   @media (#{ $media-query-smartphone-to-tablet }) {}
 
   @media (#{ $media-query-portrait-tablet }) {
     @include font-size(2.5em);
-
-    margin-bottom: 0.48em; // 12px
   }
 
   @media (#{ $media-query-default }) {
     @include font-size(3.2em);
-
-    margin-bottom: 0.375em; // 12px
   }
 
   @media (#{ $media-query-large-display }) {
     @include font-size(4em);
-
-    margin-bottom: 0.3em; // 12px
   }
 }
 
@@ -276,36 +246,26 @@ h4 {
 h5 {
   @include font-size(1.6em);
 
-  margin-bottom: 0.75em; // 12px
-
   @media (#{ $media-query-smartphone }) {}
 
   @media (#{ $media-query-smartphone-to-tablet }) {}
 
   @media (#{ $media-query-portrait-tablet }) {
     @include font-size(2em);
-
-    margin-bottom: 0.6em; // 12px
   }
 
   @media (#{ $media-query-default }) {
     @include font-size(2.4em);
-
-    margin-bottom: 0.5em; // 12px
   }
 
   @media (#{ $media-query-large-display }) {
     @include font-size(3em);
-
-    margin-bottom: 0.4em; // 12px
   }
 }
 
 // heading with lowest rank
 h6 {
   @include font-size(1.6em);
-
-  margin-bottom: 0.75em; // 12px
 
   @media (#{ $media-query-smartphone }) {}
 
@@ -317,8 +277,6 @@ h6 {
 
   @media (#{ $media-query-large-display }) {
     @include font-size(2em);
-
-    margin-bottom: 0.6em; // 12px
   }
 }
 
@@ -1072,9 +1030,9 @@ menu {}
 // DEBUGGING                      //
 //--------------------------------//
 @if ($is-in-debug-mode == true) {
-  * {
-    background-color: $color-debug;
-  }
+//  * {
+//    background-color: $color-debug;
+//  }
 
   html {
     background: repeat-y center top;

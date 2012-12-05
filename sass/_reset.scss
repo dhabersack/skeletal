@@ -14,3 +14,12 @@ a, abbr, address, b, blockquote, body, caption, cite, code, dd, del, dfn, div, d
 :focus {
   outline: 0;
 }
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
