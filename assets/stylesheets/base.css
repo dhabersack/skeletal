@@ -308,10 +308,6 @@ p {
   font-size: 1.6em;
   line-height: 1.5em;
   margin-bottom: 1.5em; }
-  @media (min-width: 1200px) {
-    p {
-      font-size: 2em;
-      line-height: 1.5em; } }
 
 hr {
   border-color: #7d7d7d;
