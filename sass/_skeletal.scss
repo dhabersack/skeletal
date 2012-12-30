@@ -35,13 +35,13 @@ body {
     overflow: hidden;
 
     li {
-      @include font-size(1.5em);
+      @include font-size(1.2em);
 
       margin-bottom: 0;
     }
 
     p {
-      @include font-size(1.5em);
+      @include font-size(1.2em);
 
       text-align: right;
     }
@@ -663,14 +663,12 @@ wbr {}
 // inserted text
 ins {
   border-bottom: 0.0625em dashed;
-  font-style: italic;
   text-decoration: none;
 }
 
 // deleted text
 del {
   color: $color-neutral-darkest;
-  font-style: italic;
   text-decoration: line-through;
 }
 
@@ -715,7 +713,7 @@ table {
     collapse: collapse;
     spacing: 0;
   }
-  margin-bottom: 1.2em;
+  margin-bottom: 2.4em;
   width: 100%;
 }
 
@@ -954,6 +952,7 @@ button {
     width: 0.0625em; /* 1px */
   }
   color: $color-neutral-darkest;
+  cursor: pointer;
   float: left;
   font: 1.6em/1.75em $font-family-sans-serif; // 16px/28px
   height: 1.75em; // 28px
