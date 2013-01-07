@@ -578,7 +578,8 @@ th {
   text-align: left; }
 
 form {
-  margin-bottom: 1.2em; }
+  margin-bottom: 2.4em;
+  overflow: hidden; }
   form > fieldset > legend {
     position: absolute;
     text-indent: -999em; }
@@ -797,6 +798,9 @@ h2 {
   font-weight: bold;
   text-align: center; }
 
+p {
+  clear: both; }
+
 #characteristics {
   list-style: none;
   overflow: hidden; }
@@ -814,7 +818,11 @@ h2 {
       #characteristics > li {
         margin: 0 0.6em 0 0;
         padding: 0 0 0 0;
-        width: 11.4em; } }
+        width: 23.4em; }
+        #characteristics > li:nth-of-type(2n) {
+          margin-right: 0; }
+        #characteristics > li:nth-of-type(2n + 1) {
+          clear: both; } }
     @media (min-width: 720px) and (max-width: 959px) {
       #characteristics > li {
         margin: 0 0.9em 0 0;

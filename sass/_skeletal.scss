@@ -713,7 +713,7 @@ table {
     collapse: collapse;
     spacing: 0;
   }
-  margin-bottom: 2.4em;
+  margin-bottom: 2.4em; // 24px
   width: 100%;
 }
 
@@ -776,7 +776,8 @@ th {
 
 // form
 form {
-  margin-bottom: 1.2em; // 12px
+  margin-bottom: 2.4em; // 24px
+  overflow: hidden;
 
   > fieldset > legend {
     position: absolute;

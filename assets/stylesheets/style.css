@@ -578,7 +578,8 @@ th {
   text-align: left; }
 
 form {
-  margin-bottom: 1.2em; }
+  margin-bottom: 2.4em;
+  overflow: hidden; }
   form > fieldset > legend {
     position: absolute;
     text-indent: -999em; }

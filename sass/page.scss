@@ -18,12 +18,17 @@ h2 {
   text-align: center;
 }
 
+p {
+  clear: both;
+}
+
 #characteristics {
   list-style: none;
   overflow: hidden;
 
   > li {
-    @include grid(4, $margin: 0 1gutter 0 0);
+    @include grid(8, $margin: 0 1gutter 0 0, $media-queries: ('smartphone', 'smartphone-to-tablet'), $break-every-nth: 2);
+    @include grid(4, $margin: 0 1gutter 0 0, $media-queries: ('portrait-tablet', 'default', 'large-display'));
 
     float: left;
     font-size: 1em;
