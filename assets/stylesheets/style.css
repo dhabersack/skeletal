@@ -29,8 +29,8 @@ body {
   font: 62.5%/1 Georgia, Times, "Times New Roman", serif; }
   @media (max-width: 479px) {
     body {
-      margin: 0 1%;
-      width: 98%; } }
+      margin: 0 4%;
+      width: 92%; } }
   body > footer {
     display: block;
     overflow: hidden; }

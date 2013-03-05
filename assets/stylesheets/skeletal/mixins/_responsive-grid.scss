@@ -1,24 +1,18 @@
 // Set `margin`, `padding` and `width` for a container occupying a set number of
 // columns within the responsive grid.
-@mixin grid($number-of-columns, $margin: auto, $padding: 0, $does-spill: false, $media-queries: ('smartphone', 'smartphone-to-tablet', 'portrait-tablet', 'default', 'large-display'), $break-every-nth: '') {
-  $does-include-smartphone: false;
-  $does-include-smartphone-to-tablet: false;
-  $does-include-portrait-tablet: false;
-  $does-include-default: false;
-  $does-include-large-display: false;
+@mixin grid($number-of-columns, $margin: auto, $padding: 0, $does-spill: false, $media-queries: ('extra-small', 'small', 'medium', 'large', 'extra-large'), $break-every-nth: '') {
+  $does-include-extra-small: false;
+  $does-include-small:       false;
+  $does-include-medium:      false;
+  $does-include-large:       false;
+  $does-include-extra-large: false;
 
   @each $media-query in $media-queries {
-    @if ($media-query == 'smartphone') {
-      $does-include-smartphone: true;
-    } @else if ($media-query == 'smartphone-to-tablet') {
-      $does-include-smartphone-to-tablet: true;
-    } @else if ($media-query == 'portrait-tablet') {
-      $does-include-portrait-tablet: true;
-    } @else if ($media-query == 'default') {
-      $does-include-default: true;
-    } @else if ($media-query == 'large-display') {
-      $does-include-large-display: true;
-    }
+    @if ($media-query == 'extra-small')      { $does-include-extra-small: true; }
+    @else if ($media-query == 'small')       { $does-include-small:       true; }
+    @else if ($media-query == 'medium')      { $does-include-medium:      true; }
+    @else if ($media-query == 'large')       { $does-include-large:       true; }
+    @else if ($media-query == 'extra-large') { $does-include-extra-large: true; }
   }
 
   // extract padding-values from parameter
@@ -66,8 +60,8 @@
     $padding-left: nth($padding, 4);
   }
 
-  @if ($does-include-smartphone == true) {
-    @media (#{ $media-query-smartphone }) {
+  @if ($does-include-extra-small == true) {
+    @media (#{ $media-query-extra-small }) {
       // un-float
       float: none;
 
@@ -78,8 +72,8 @@
     }
   }
 
-  @if ($does-include-smartphone-to-tablet == true) {
-    @media (#{ $media-query-smartphone-to-tablet }) {
+  @if ($does-include-small == true) {
+    @media (#{ $media-query-small }) {
       // save previous values of horizontal margins and paddings
       $margin-left-previous:   $margin-left;
       $margin-right-previous:  $margin-right;
@@ -88,19 +82,19 @@
 
       // use default values if no margin-parameter was given
       @if (not($has-margin-parameter)) {
-        $margin-left:  ($grid-smartphone-to-tablet-gutter-width / 2);
+        $margin-left:  ($grid-small-gutter-width / 2);
         $margin-right: $margin-left;
       }
 
       @if (($margin-left != 'auto') and (unit($margin-left) == 'gutter')) {
-        $margin-left: ($margin-left / 1gutter) * $grid-smartphone-to-tablet-gutter-width;
+        $margin-left: ($margin-left / 1gutter) * $grid-small-gutter-width;
       }
 
       @if (($margin-right != 'auto') and (unit($margin-right) == 'gutter')) {
-        $margin-right: ($margin-right / 1gutter) * $grid-smartphone-to-tablet-gutter-width;
+        $margin-right: ($margin-right / 1gutter) * $grid-small-gutter-width;
       }
 
-      $width: (($number-of-columns * $grid-smartphone-to-tablet-column-width) + (($number-of-columns - 1) * $grid-smartphone-to-tablet-gutter-width) - $padding-right - $padding-left);
+      $width: (($number-of-columns * $grid-small-column-width) + (($number-of-columns - 1) * $grid-small-gutter-width) - $padding-right - $padding-left);
       @if ($does-spill == true) {
         $padding-left:  $padding-left  + $grid-smartphone-to-tablet-gutter-width / 2;
         $padding-right: $padding-right + $grid-smartphone-to-tablet-gutter-width / 2;
@@ -129,8 +123,8 @@
     }
   }
 
-  @if ($does-include-portrait-tablet == true) {
-    @media (#{ $media-query-portrait-tablet }) {
+  @if ($does-include-medium == true) {
+    @media (#{ $media-query-medium }) {
       // save previous values of horizontal margins and paddings
       $margin-left-previous:   $margin-left;
       $margin-right-previous:  $margin-right;
@@ -144,17 +138,17 @@
       }
 
       @if (($margin-left != 'auto') and (unit($margin-left) == 'gutter')) {
-        $margin-left: ($margin-left / 1gutter) * $grid-portrait-tablet-gutter-width;
+        $margin-left: ($margin-left / 1gutter) * $grid-medium-gutter-width;
       }
 
       @if (($margin-right != 'auto') and (unit($margin-right) == 'gutter')) {
-        $margin-right: ($margin-right / 1gutter) * $grid-portrait-tablet-gutter-width;
+        $margin-right: ($margin-right / 1gutter) * $grid-medium-gutter-width;
       }
 
-      $width: (($number-of-columns * $grid-portrait-tablet-column-width) + (($number-of-columns - 1) * $grid-portrait-tablet-gutter-width) - $padding-right - $padding-left);
+      $width: (($number-of-columns * $grid-medium-column-width) + (($number-of-columns - 1) * $grid-medium-gutter-width) - $padding-right - $padding-left);
       @if ($does-spill == true) {
-        $padding-left:  $padding-left  + $grid-portrait-tablet-gutter-width / 2;
-        $padding-right: $padding-right + $grid-portrait-tablet-gutter-width / 2;
+        $padding-left:  $padding-left  + $grid-medium-gutter-width / 2;
+        $padding-right: $padding-right + $grid-medium-gutter-width / 2;
       }
 
       margin:  $margin-top $margin-right $margin-bottom $margin-left;
@@ -180,8 +174,8 @@
     }
   }
 
-  @if ($does-include-default == true) {
-    @media (#{ $media-query-default }) {
+  @if ($does-include-large == true) {
+    @media (#{ $media-query-large }) {
       // save previous values of horizontal margins and paddings
       $margin-left-previous:   $margin-left;
       $margin-right-previous:  $margin-right;
@@ -190,22 +184,22 @@
 
       // use default values if no margin-parameter was given
       @if (not($has-margin-parameter)) {
-        $margin-left:  ($grid-default-gutter-width / 2);
+        $margin-left:  ($grid-large-gutter-width / 2);
         $margin-right: $margin-left;
       }
 
       @if (($margin-left != 'auto') and (unit($margin-left) == 'gutter')) {
-        $margin-left: ($margin-left / 1gutter) * $grid-default-gutter-width;
+        $margin-left: ($margin-left / 1gutter) * $grid-large-gutter-width;
       }
 
       @if (($margin-right != 'auto') and (unit($margin-right) == 'gutter')) {
-        $margin-right: ($margin-right / 1gutter) * $grid-default-gutter-width;
+        $margin-right: ($margin-right / 1gutter) * $grid-large-gutter-width;
       }
 
-      $width: (($number-of-columns * $grid-default-column-width) + (($number-of-columns - 1) * $grid-default-gutter-width) - $padding-right - $padding-left);
+      $width: (($number-of-columns * $grid-large-column-width) + (($number-of-columns - 1) * $grid-large-gutter-width) - $padding-right - $padding-left);
       @if ($does-spill == true) {
-        $padding-left:  $padding-left  + $grid-default-gutter-width / 2;
-        $padding-right: $padding-right + $grid-default-gutter-width / 2;
+        $padding-left:  $padding-left  + $grid-large-gutter-width / 2;
+        $padding-right: $padding-right + $grid-large-gutter-width / 2;
       }
 
       margin:  $margin-top $margin-right $margin-bottom $margin-left;
@@ -231,26 +225,26 @@
     }
   }
 
-  @if ($does-include-large-display == true) {
-    @media (#{ $media-query-large-display }) {
+  @if ($does-include-extra-large == true) {
+    @media (#{ $media-query-extra-large }) {
       // use default values if no margin-parameter was given
       @if (not($has-margin-parameter)) {
-        $margin-left:  ($grid-large-display-gutter-width / 2);
+        $margin-left:  ($grid-extra-large-gutter-width / 2);
         $margin-right: $margin-left;
       }
 
       @if (($margin-left != 'auto') and (unit($margin-left) == 'gutter')) {
-        $margin-left: ($margin-left / 1gutter) * $grid-large-display-gutter-width;
+        $margin-left: ($margin-left / 1gutter) * $grid-extra-large-gutter-width;
       }
 
       @if (($margin-right != 'auto') and (unit($margin-right) == 'gutter')) {
-        $margin-right: ($margin-right / 1gutter) * $grid-large-display-gutter-width;
+        $margin-right: ($margin-right / 1gutter) * $grid-extra-large-gutter-width;
       }
 
-      $width: (($number-of-columns * $grid-large-display-column-width) + (($number-of-columns - 1) * $grid-large-display-gutter-width) - $padding-right - $padding-left);
+      $width: (($number-of-columns * $grid-extra-large-column-width) + (($number-of-columns - 1) * $grid-extra-large-gutter-width) - $padding-right - $padding-left);
       @if ($does-spill == true) {
-        $padding-left:  $padding-left  + $grid-large-display-gutter-width / 2;
-        $padding-right: $padding-right + $grid-large-display-gutter-width / 2;
+        $padding-left:  $padding-left  + $grid-extra-large-gutter-width / 2;
+        $padding-right: $padding-right + $grid-extra-large-gutter-width / 2;
       }
 
       @if (type-of($break-every-nth) == "number") {

@@ -24,9 +24,9 @@ body {
   color: $color-neutral-darkest;
   font: 62.5%/1 $font-family-content; // 10px/10px
 
-  @media (#{ $media-query-smartphone }) {
-    margin: 0 ($grid-smartphone-gutter-width / 2);
-    width: $grid-smartphone-column-width;
+  @media (#{ $media-query-extra-small }) {
+    margin: 0 $grid-extra-small-gutter-width;
+    width: $grid-extra-small-column-width;
   }
 
   // main footer
@@ -61,19 +61,19 @@ body {
 
       margin-bottom: 0.375em; // 12px
 
-      @media (#{ $media-query-portrait-tablet }) {
+      @media (#{ $media-query-medium }) {
         @include font-size(4em);
 
         margin-bottom: 0.3em; // 12px
       }
 
-      @media (#{ $media-query-default }) {
+      @media (#{ $media-query-large }) {
         @include font-size(5em);
 
         margin-bottom: 0.24em; // 12px
       }
 
-      @media (#{ $media-query-large-display }) {
+      @media (#{ $media-query-extra-large }) {
         @include font-size(6em);
 
         margin-bottom: 0.2em; // 12px
@@ -164,19 +164,15 @@ h1 {
 
   font-weight: bold;
 
-  @media (#{ $media-query-smartphone }) {}
-
-  @media (#{ $media-query-smartphone-to-tablet }) {}
-
-  @media (#{ $media-query-portrait-tablet }) {
+  @media (#{ $media-query-medium }) {
     @include font-size(4.8em);
   }
 
-  @media (#{ $media-query-default }) {
+  @media (#{ $media-query-large }) {
     @include font-size(6em);
   }
 
-  @media (#{ $media-query-large-display }) {
+  @media (#{ $media-query-extra-large }) {
     @include font-size(7.5em);
   }
 }
@@ -185,19 +181,15 @@ h1 {
 h2 {
   @include font-size(3.2em);
 
-  @media (#{ $media-query-smartphone }) {}
-
-  @media (#{ $media-query-smartphone-to-tablet }) {}
-
-  @media (#{ $media-query-portrait-tablet }) {
+  @media (#{ $media-query-medium }) {
     @include font-size(4em);
   }
 
-  @media (#{ $media-query-default }) {
+  @media (#{ $media-query-large }) {
     @include font-size(5em);
   }
 
-  @media (#{ $media-query-large-display }) {
+  @media (#{ $media-query-extra-large }) {
     @include font-size(6em);
   }
 }
@@ -206,19 +198,15 @@ h2 {
 h3 {
   @include font-size(2.5em);
 
-  @media (#{ $media-query-smartphone }) {}
-
-  @media (#{ $media-query-smartphone-to-tablet }) {}
-
-  @media (#{ $media-query-portrait-tablet }) {
+  @media (#{ $media-query-medium }) {
     @include font-size(3.2em);
   }
 
-  @media (#{ $media-query-default }) {
+  @media (#{ $media-query-large }) {
     @include font-size(4em);
   }
 
-  @media (#{ $media-query-large-display }) {
+  @media (#{ $media-query-extra-large }) {
     @include font-size(5em);
   }
 }
@@ -227,19 +215,15 @@ h3 {
 h4 {
   @include font-size(2em);
 
-  @media (#{ $media-query-smartphone }) {}
-
-  @media (#{ $media-query-smartphone-to-tablet }) {}
-
-  @media (#{ $media-query-portrait-tablet }) {
+  @media (#{ $media-query-medium }) {
     @include font-size(2.5em);
   }
 
-  @media (#{ $media-query-default }) {
+  @media (#{ $media-query-large }) {
     @include font-size(3.2em);
   }
 
-  @media (#{ $media-query-large-display }) {
+  @media (#{ $media-query-extra-large }) {
     @include font-size(4em);
   }
 }
@@ -248,19 +232,15 @@ h4 {
 h5 {
   @include font-size(1.6em);
 
-  @media (#{ $media-query-smartphone }) {}
-
-  @media (#{ $media-query-smartphone-to-tablet }) {}
-
-  @media (#{ $media-query-portrait-tablet }) {
+  @media (#{ $media-query-medium }) {
     @include font-size(2em);
   }
 
-  @media (#{ $media-query-default }) {
+  @media (#{ $media-query-large }) {
     @include font-size(2.4em);
   }
 
-  @media (#{ $media-query-large-display }) {
+  @media (#{ $media-query-extra-large }) {
     @include font-size(3em);
   }
 }
@@ -269,15 +249,7 @@ h5 {
 h6 {
   @include font-size(1.6em);
 
-  @media (#{ $media-query-smartphone }) {}
-
-  @media (#{ $media-query-smartphone-to-tablet }) {}
-
-  @media (#{ $media-query-portrait-tablet }) {}
-
-  @media (#{ $media-query-default }) {}
-
-  @media (#{ $media-query-large-display }) {
+  @media (#{ $media-query-extra-large }) {
     @include font-size(2em);
   }
 }
@@ -447,19 +419,15 @@ dt {
     weight: bold;
   }
 
-  @media (#{ $media-query-smartphone }) {}
-
-  @media (#{ $media-query-smartphone-to-tablet }) {}
-
-  @media (#{ $media-query-portrait-tablet }) {
+  @media (#{ $media-query-medium }) {
     @include font-size(2em);
   }
 
-  @media (#{ $media-query-default }) {
+  @media (#{ $media-query-large }) {
     @include font-size(2em);
   }
 
-  @media (#{ $media-query-large-display }) {
+  @media (#{ $media-query-extra-large }) {
     @include font-size(2em);
   }
 }
@@ -1039,20 +1007,20 @@ menu {}
   html {
     background: repeat-y center top;
 
-    @media (#{ $media-query-smartphone-to-tablet }) {
-      background-image: url('../images/grids/smartphone-to-tablet-#{ $number-of-grid-columns }-columns.png');
+    @media (#{ $media-query-small }) {
+      background-image: url('../images/grids/small-#{ $number-of-grid-columns }-columns.png');
     }
 
-    @media (#{ $media-query-portrait-tablet }) {
-      background-image: url('../images/grids/portrait-tablet-#{ $number-of-grid-columns }-columns.png');
+    @media (#{ $media-query-medium }) {
+      background-image: url('../images/grids/medium-#{ $number-of-grid-columns }-columns.png');
     }
 
-    @media (#{ $media-query-default }) {
-      background-image: url('../images/grids/default-#{ $number-of-grid-columns }-columns.png');
+    @media (#{ $media-query-large }) {
+      background-image: url('../images/grids/large-#{ $number-of-grid-columns }-columns.png');
     }
 
-    @media (#{ $media-query-large-display }) {
-      background-image: url('../images/grids/large-display-#{ $number-of-grid-columns }-columns.png');
+    @media (#{ $media-query-extra-large }) {
+      background-image: url('../images/grids/extra-large-#{ $number-of-grid-columns }-columns.png');
     }
   }
 }
