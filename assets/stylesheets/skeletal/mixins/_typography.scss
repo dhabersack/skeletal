@@ -1,0 +1,13 @@
+// Set `font-size` as well as appropriate `line-height`.
+@mixin font-size($font-size) {
+  $base-line-height: ($font-size * $minimum-line-height-to-font-size-ratio) / $vertical-grid-base-height;
+
+  // round up to nearest whole number if `$base-line-height` is not an integer
+  $delta: (floor($base-line-height * 1000 - floor($base-line-height) * 1000));
+  @if ($delta != 0) {
+    $base-line-height: ceil($base-line-height);
+  }
+
+  font-size: $font-size;
+  line-height: (($base-line-height * $vertical-grid-base-height) / $font-size)#{unit($font-size)};
+}

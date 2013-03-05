@@ -20,7 +20,8 @@ section {
 
 html {
   background-color: #fdfdfd;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  -webkit-text-size-adjust: none; }
 
 body {
   background-color: inherit;
@@ -742,22 +743,4 @@ textarea {
   padding: 0.3125em 0.25em;
   width: 35.628em; }
   textarea:focus {
-    border-color: #ec7a6b; }
-
-html {
-  background: repeat-y center top; }
-  @media (max-width: 479px) {
-    html {
-      background-image: url("../images/grids/smartphone.png"); } }
-  @media (min-width: 480px) and (max-width: 719px) {
-    html {
-      background-image: url("../images/grids/smartphone-to-tablet-16-columns.png"); } }
-  @media (min-width: 720px) and (max-width: 959px) {
-    html {
-      background-image: url("../images/grids/portrait-tablet-16-columns.png"); } }
-  @media (min-width: 960px) and (max-width: 1199px) {
-    html {
-      background-image: url("../images/grids/default-16-columns.png"); } }
-  @media (min-width: 1200px) {
-    html {
-      background-image: url("../images/grids/large-display-16-columns.png"); } }
+    border-color: #ffec72; }

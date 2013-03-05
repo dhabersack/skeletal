@@ -20,7 +20,8 @@ section {
 
 html {
   background-color: #fdfdfd;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  -webkit-text-size-adjust: none; }
 
 body {
   background-color: inherit;
@@ -742,57 +743,14 @@ textarea {
   padding: 0.3125em 0.25em;
   width: 35.628em; }
   textarea:focus {
-    border-color: #ec7a6b; }
+    border-color: #ffec72; }
 
-html {
-  background: repeat-y center top; }
-  @media (max-width: 479px) {
-    html {
-      background-image: url("../images/grids/smartphone.png"); } }
-  @media (min-width: 480px) and (max-width: 719px) {
-    html {
-      background-image: url("../images/grids/smartphone-to-tablet-16-columns.png"); } }
-  @media (min-width: 720px) and (max-width: 959px) {
-    html {
-      background-image: url("../images/grids/portrait-tablet-16-columns.png"); } }
-  @media (min-width: 960px) and (max-width: 1199px) {
-    html {
-      background-image: url("../images/grids/default-16-columns.png"); } }
-  @media (min-width: 1200px) {
-    html {
-      background-image: url("../images/grids/large-display-16-columns.png"); } }
-
-body > header {
-  background: #e33d27;
-  margin: 0;
-  padding: 0;
-  width: 100%; }
-  @media (max-width: 479px) {
-    body > header div {
-      float: none;
-      margin: 0 0 0;
-      padding: 0 0 0;
-      width: 100%; } }
-  @media (min-width: 480px) and (max-width: 719px) {
-    body > header div {
-      margin: 0 auto 0 auto;
-      padding: 0 0 0 0;
-      width: 47.4em; } }
-  @media (min-width: 720px) and (max-width: 959px) {
-    body > header div {
-      margin: 0 auto 0 auto;
-      padding: 0 0 0 0;
-      width: 71.1em; } }
-  @media (min-width: 960px) and (max-width: 1199px) {
-    body > header div {
-      margin: 0 auto 0 auto;
-      padding: 0 0 0 0;
-      width: 94.8em; } }
-  @media (min-width: 1200px) {
-    body > header div {
-      margin: 0 auto 0 auto;
-      padding: 0 0 0 0;
-      width: 118.5em; } }
+@font-face {
+  font-family: Entypo;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Entypo/regular.eot");
+  src: url("../fonts/Entypo/regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Entypo/regular.woff") format("woff"), url("../fonts/Entypo/regular.ttf") format("truetype"), url("../fonts/Entypo/regular.svg#EntypoRegular") format("svg"); }
 
 h2 {
   font-weight: bold;
@@ -804,6 +762,11 @@ p {
 #characteristics {
   list-style: none;
   overflow: hidden; }
+  #characteristics h4::before {
+    font-size: 1.5em;
+    font-family: Entypo;
+    float: left;
+    width: 0.7em; }
   #characteristics > li {
     float: left;
     font-size: 1em;
@@ -840,3 +803,16 @@ p {
         width: 28.5em; } }
     #characteristics > li:last-of-type {
       margin-right: 0; }
+    #characteristics > li:nth-of-type(1) h4::before {
+      content: 'l'; }
+    #characteristics > li:nth-of-type(2) h4::before {
+      content: '+'; }
+    #characteristics > li:nth-of-type(3) h4::before {
+      content: 'C'; }
+    #characteristics > li:nth-of-type(4) h4::before {
+      content: 'V'; }
+
+#test {
+  font-size: 6em;
+  line-height: 1.5em;
+  font-family: Entypo; }

@@ -9,6 +9,8 @@
 html {
   background-color: $color-neutral-lightest;
   overflow-y: scroll;
+
+  -webkit-text-size-adjust: none; // prevent font scaling in landscape on Safari on iOS
 }
 
 
@@ -400,7 +402,7 @@ ol {
 ul {
   list-style: {
     position: inside;
-    style-type: disc;   
+    style-type: disc;
   }
   margin-bottom: 1.2em;
 
@@ -543,7 +545,7 @@ cite {
   @include font-size(1.2em);
 
   font: {
-    style: italic;  
+    style: italic;
     weight: bold;
   }
 }
@@ -754,7 +756,7 @@ tr {
 }
 
 // table data cell
-td { 
+td {
   @include font-size(1.6em);
 
   padding: 0 0.625em; // 0 10px
@@ -1036,10 +1038,6 @@ menu {}
 
   html {
     background: repeat-y center top;
-
-    @media (#{ $media-query-smartphone }) {
-      background-image: url('../images/grids/smartphone.png');
-    }
 
     @media (#{ $media-query-smartphone-to-tablet }) {
       background-image: url('../images/grids/smartphone-to-tablet-#{ $number-of-grid-columns }-columns.png');

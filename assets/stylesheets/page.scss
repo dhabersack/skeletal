@@ -1,0 +1,80 @@
+@import 'skeletal/skeletal.scss';
+
+@font-face {
+  font: {
+    family: Entypo;
+    style: normal;
+    weight: normal;
+  }
+  src: url('../fonts/Entypo/regular.eot');
+  src: url('../fonts/Entypo/regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Entypo/regular.woff') format('woff'),
+       url('../fonts/Entypo/regular.ttf') format('truetype'),
+       url('../fonts/Entypo/regular.svg#EntypoRegular') format('svg');
+}
+
+h2 {
+  font-weight: bold;
+  text-align: center;
+}
+
+p {
+  clear: both;
+}
+
+#characteristics {
+  list-style: none;
+  overflow: hidden;
+
+  h4::before {
+    font: {
+      size: 1.5em;
+      family: Entypo;
+    }
+    float: left;
+    width: 0.7em;
+  }
+
+  > li {
+    @include grid(8, $margin: 0 1gutter 0 0, $media-queries: ('smartphone', 'smartphone-to-tablet'), $break-every-nth: 2);
+    @include grid(4, $margin: 0 1gutter 0 0, $media-queries: ('portrait-tablet', 'default', 'large-display'));
+
+    float: left;
+    font-size: 1em;
+    line-height: 1em;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:nth-of-type(1) {
+      h4::before {
+        content: 'l';
+      }
+    }
+
+    &:nth-of-type(2) {
+      h4::before {
+        content: '+';
+      }
+    }
+
+    &:nth-of-type(3) {
+      h4::before {
+        content: 'C';
+      }
+    }
+
+    &:nth-of-type(4) {
+      h4::before {
+        content: 'V';
+      }
+    }
+  }
+}
+
+#test {
+  @include font-size(6em);
+
+  font-family: Entypo;
+}
