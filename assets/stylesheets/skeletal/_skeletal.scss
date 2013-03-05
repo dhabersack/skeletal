@@ -1032,9 +1032,9 @@ menu {}
 // DEBUGGING                      //
 //--------------------------------//
 @if ($is-in-debug-mode == true) {
-//  * {
-//    background-color: $color-debug;
-//  }
+  * {
+    background-color: $color-debug !important;
+  }
 
   html {
     background: repeat-y center top;
