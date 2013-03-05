@@ -10,17 +10,3 @@
   background-image:      -o-linear-gradient(top, $color-top, $color-bottom);
   background-image:         linear-gradient(top, $color-top, $color-bottom); /* standard, but currently unimplemented */
 }
-
-// Add border-radius to element.
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius:    $radius;
-  border-radius:         $radius;
-}
-
-// Add box-shadow to element.
-@mixin box-shadow($box-shadow) {
-  -webkit-box-shadow: $box-shadow;
-  -moz-box-shadow:    $box-shadow;
-  box-shadow:         $box-shadow;
-}

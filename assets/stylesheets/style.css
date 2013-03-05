@@ -40,22 +40,22 @@ body {
         margin: 0 0 0;
         padding: 0.6em 0 1.2em;
         width: 100%; } }
-    @media (min-width: 480px) and (max-width: 719px) {
+    @media (min-width: 480px) and (max-width: 719px) and (min-width: 480px) and (max-width: 719px) {
       body > footer {
         margin: 0 auto 0 auto;
         padding: 0.6em 0 1.2em 0;
         width: 47.4em; } }
-    @media (min-width: 720px) and (max-width: 959px) {
+    @media (min-width: 720px) and (max-width: 959px) and (min-width: 720px) and (max-width: 959px) {
       body > footer {
         margin: 0 auto 0 auto;
         padding: 0.6em 0 1.2em 0;
         width: 71.1em; } }
-    @media (min-width: 960px) and (max-width: 1199px) {
+    @media (min-width: 960px) and (max-width: 1199px) and (min-width: 960px) and (max-width: 1199px) {
       body > footer {
         margin: 0 auto 0 auto;
         padding: 0.6em 0 1.2em 0;
         width: 94.8em; } }
-    @media (min-width: 1200px) {
+    @media (min-width: 1200px) and (min-width: 1200px) {
       body > footer {
         margin: 0 auto 0 auto;
         padding: 0.6em 0 1.2em 0;
@@ -77,22 +77,22 @@ body {
         margin: 0 0 0;
         padding: 0.6em 0 0.6em;
         width: 100%; } }
-    @media (min-width: 480px) and (max-width: 719px) {
+    @media (min-width: 480px) and (max-width: 719px) and (min-width: 480px) and (max-width: 719px) {
       body > header {
         margin: 0 auto 0 auto;
         padding: 0.6em 0 0.6em 0;
         width: 47.4em; } }
-    @media (min-width: 720px) and (max-width: 959px) {
+    @media (min-width: 720px) and (max-width: 959px) and (min-width: 720px) and (max-width: 959px) {
       body > header {
         margin: 0 auto 0 auto;
         padding: 0.6em 0 0.6em 0;
         width: 71.1em; } }
-    @media (min-width: 960px) and (max-width: 1199px) {
+    @media (min-width: 960px) and (max-width: 1199px) and (min-width: 960px) and (max-width: 1199px) {
       body > header {
         margin: 0 auto 0 auto;
         padding: 0.6em 0 0.6em 0;
         width: 94.8em; } }
-    @media (min-width: 1200px) {
+    @media (min-width: 1200px) and (min-width: 1200px) {
       body > header {
         margin: 0 auto 0 auto;
         padding: 0.6em 0 0.6em 0;
@@ -128,22 +128,22 @@ body {
         margin: 0 0 1.2em;
         padding: 0.6em 0 0.6em;
         width: 100%; } }
-    @media (min-width: 480px) and (max-width: 719px) {
+    @media (min-width: 480px) and (max-width: 719px) and (min-width: 480px) and (max-width: 719px) {
       body nav {
         margin: 0 auto 1.2em auto;
         padding: 0.6em 0 0.6em 0;
         width: 47.4em; } }
-    @media (min-width: 720px) and (max-width: 959px) {
+    @media (min-width: 720px) and (max-width: 959px) and (min-width: 720px) and (max-width: 959px) {
       body nav {
         margin: 0 auto 1.2em auto;
         padding: 0.6em 0 0.6em 0;
         width: 71.1em; } }
-    @media (min-width: 960px) and (max-width: 1199px) {
+    @media (min-width: 960px) and (max-width: 1199px) and (min-width: 960px) and (max-width: 1199px) {
       body nav {
         margin: 0 auto 1.2em auto;
         padding: 0.6em 0 0.6em 0;
         width: 94.8em; } }
-    @media (min-width: 1200px) {
+    @media (min-width: 1200px) and (min-width: 1200px) {
       body nav {
         margin: 0 auto 1.2em auto;
         padding: 0.6em 0 0.6em 0;
@@ -168,22 +168,22 @@ body {
       margin: 0 0 1.2em;
       padding: 0 0 0;
       width: 100%; } }
-  @media (min-width: 480px) and (max-width: 719px) {
+  @media (min-width: 480px) and (max-width: 719px) and (min-width: 480px) and (max-width: 719px) {
     body > section {
       margin: 0 auto 1.2em auto;
       padding: 0 0 0 0;
       width: 47.4em; } }
-  @media (min-width: 720px) and (max-width: 959px) {
+  @media (min-width: 720px) and (max-width: 959px) and (min-width: 720px) and (max-width: 959px) {
     body > section {
       margin: 0 auto 1.2em auto;
       padding: 0 0 0 0;
       width: 71.1em; } }
-  @media (min-width: 960px) and (max-width: 1199px) {
+  @media (min-width: 960px) and (max-width: 1199px) and (min-width: 960px) and (max-width: 1199px) {
     body > section {
       margin: 0 auto 1.2em auto;
       padding: 0 0 0 0;
       width: 94.8em; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 1200px) and (min-width: 1200px) {
     body > section {
       margin: 0 auto 1.2em auto;
       padding: 0 0 0 0;
@@ -317,37 +317,25 @@ hr {
   margin: 1.1em 6em 1.2em; }
 
 pre {
-  -webkit-border-radius: 0.125em;
-  -moz-border-radius: 0.125em;
-  border-radius: 0.125em;
-  -webkit-box-shadow: inset 0 0 0.125em #3e3e3e;
-  -moz-box-shadow: inset 0 0 0.125em #3e3e3e;
-  box-shadow: inset 0 0 0.125em #3e3e3e;
   font-size: 1.6em;
   line-height: 1.5em;
   background: #e3e3e3;
+  border-radius: 0.125em;
+  box-shadow: inset 0 0 0.125em #3e3e3e;
   font-family: "Courier New", Courier, monospace;
   margin-bottom: 1.5em;
   padding: 0.375em 0.625em; }
   pre > code {
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    -webkit-box-shadow: 0 0 0 transparent;
-    -moz-box-shadow: 0 0 0 transparent;
-    box-shadow: 0 0 0 transparent;
     background: none;
+    border-radius: 0;
+    box-shadow: 0 0 0 transparent;
     margin: 0;
     padding: 0; }
 
 blockquote {
-  -webkit-border-radius: 0.2em;
-  -moz-border-radius: 0.2em;
-  border-radius: 0.2em;
-  -webkit-box-shadow: 0 0 0.1em #3e3e3e;
-  -moz-box-shadow: 0 0 0.1em #3e3e3e;
-  box-shadow: 0 0 0.1em #3e3e3e;
   background: #e3e3e3;
+  border-radius: 0.2em;
+  box-shadow: 0 0 0.1em #3e3e3e;
   font-family: Georgia, Times, "Times New Roman", serif;
   font-style: italic;
   margin: 0 6em 2.4em;
@@ -420,13 +408,9 @@ dd {
   margin: 0 0 0.75em 1.25em; }
 
 figure {
-  -webkit-border-radius: 0.2em;
-  -moz-border-radius: 0.2em;
-  border-radius: 0.2em;
-  -webkit-box-shadow: 0 0 0.1em #3e3e3e;
-  -moz-box-shadow: 0 0 0.1em #3e3e3e;
-  box-shadow: 0 0 0.1em #3e3e3e;
   background: #e3e3e3;
+  border-radius: 0.2em;
+  box-shadow: 0 0 0.1em #3e3e3e;
   margin: 0 0 2.4em;
   padding: 1.2em 0 0; }
   figure > img {
@@ -462,13 +446,9 @@ cite {
   font-weight: bold; }
 
 q {
-  -webkit-border-radius: 0.125em;
-  -moz-border-radius: 0.125em;
-  border-radius: 0.125em;
-  -webkit-box-shadow: 0 0 0.0625em #7d7d7d;
-  -moz-box-shadow: 0 0 0.0625em #7d7d7d;
-  box-shadow: 0 0 0.0625em #7d7d7d;
   background: #bdbdbd;
+  border-radius: 0.125em;
+  box-shadow: 0 0 0.0625em #7d7d7d;
   display: inline-block;
   font-family: Georgia, Times, "Times New Roman", serif;
   font-style: italic;
@@ -490,13 +470,9 @@ abbr {
   text-transform: uppercase; }
 
 code {
-  -webkit-border-radius: 0.125em;
-  -moz-border-radius: 0.125em;
-  border-radius: 0.125em;
-  -webkit-box-shadow: inset 0 0 0.125em #3e3e3e;
-  -moz-box-shadow: inset 0 0 0.125em #3e3e3e;
-  box-shadow: inset 0 0 0.125em #3e3e3e;
   background: #e3e3e3;
+  border-radius: 0.125em;
+  box-shadow: inset 0 0 0.125em #3e3e3e;
   display: inline-block;
   font-family: "Courier New", Courier, monospace;
   margin: 0 0.125em;
@@ -519,13 +495,9 @@ b {
   font-weight: bold; }
 
 mark {
-  -webkit-border-radius: 0.125em;
-  -moz-border-radius: 0.125em;
-  border-radius: 0.125em;
-  -webkit-box-shadow: 0 0 0.0625em #3e3e3e;
-  -moz-box-shadow: 0 0 0.0625em #3e3e3e;
-  box-shadow: 0 0 0.0625em #3e3e3e;
   background: #ffec72;
+  border-radius: 0.125em;
+  box-shadow: 0 0 0.0625em #3e3e3e;
   color: inherit;
   display: inline-block;
   margin: 0 0.125em;
@@ -543,11 +515,9 @@ img {
   display: block; }
 
 table {
-  -webkit-border-radius: 0.2em;
-  -moz-border-radius: 0.2em;
-  border-radius: 0.2em;
   background: #fdfdfd;
   border-collapse: collapse;
+  border-radius: 0.2em;
   border-spacing: 0;
   margin-bottom: 2.4em;
   width: 100%; }
@@ -616,10 +586,8 @@ fieldset {
       font-size: 1.2em;
       line-height: 2.5em; }
   fieldset > fieldset {
-    -webkit-border-radius: 0.2em;
-    -moz-border-radius: 0.2em;
-    border-radius: 0.2em;
     border: 0.1em solid #7d7d7d;
+    border-radius: 0.2em;
     margin-bottom: 1.2em;
     padding: 0.5em 0.9em 1.1em; }
     fieldset > fieldset > div {
@@ -649,21 +617,17 @@ input[type="checkbox"], input[type="radio"] {
   margin: 0 0.625em 0 0;
   padding: 0; }
 input[type="color"] {
-  -webkit-border-radius: 0.125em;
-  -moz-border-radius: 0.125em;
-  border-radius: 0.125em;
   border: none;
+  border-radius: 0.125em;
   clear: left;
   float: left;
   font: 1.6em/1em Arial, "Helvetica Neue", Helvetica, sans-serif;
   padding: 0;
   width: 60px; }
 input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"] {
-  -webkit-border-radius: 0.125em;
-  -moz-border-radius: 0.125em;
-  border-radius: 0.125em;
   background: #fdfdfd;
   border-color: #7d7d7d #bdbdbd #bdbdbd #7d7d7d;
+  border-radius: 0.125em;
   border-style: solid;
   border-width: 0.0625em;
   /* 1px */
@@ -690,10 +654,8 @@ button, input[type="submit"], input[type="image"], input[type="reset"], input[ty
   background-image: -o-linear-gradient(top, #fdfdfd, #e3e3e3);
   background-image: linear-gradient(top, #fdfdfd, #e3e3e3);
   /* standard, but currently unimplemented */
-  -webkit-border-radius: 0.125em;
-  -moz-border-radius: 0.125em;
-  border-radius: 0.125em;
   border-color: #bdbdbd #7d7d7d #7d7d7d #bdbdbd;
+  border-radius: 0.125em;
   border-style: solid;
   border-width: 0.0625em;
   /* 1px */
@@ -727,14 +689,11 @@ select {
     clear: none; }
 
 textarea {
-  -webkit-border-radius: 0.125em;
-  -moz-border-radius: 0.125em;
-  border-radius: 0.125em;
   background: #fdfdfd;
   border-color: #7d7d7d #bdbdbd #bdbdbd #7d7d7d;
+  border-radius: 0.125em;
   border-style: solid;
   border-width: 0.0625em;
-  /* 1px */
   clear: left;
   float: left;
   font: 1.6em/1.5em Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -744,3 +703,21 @@ textarea {
   width: 35.628em; }
   textarea:focus {
     border-color: #ffec72; }
+
+* {
+  background-color: rgba(227, 61, 39, 0.0625) !important; }
+
+html {
+  background: repeat-y center top; }
+  @media (min-width: 480px) and (max-width: 719px) {
+    html {
+      background-image: url("../images/grids/small-16-columns.png"); } }
+  @media (min-width: 720px) and (max-width: 959px) {
+    html {
+      background-image: url("../images/grids/medium-16-columns.png"); } }
+  @media (min-width: 960px) and (max-width: 1199px) {
+    html {
+      background-image: url("../images/grids/large-16-columns.png"); } }
+  @media (min-width: 1200px) {
+    html {
+      background-image: url("../images/grids/extra-large-16-columns.png"); } }

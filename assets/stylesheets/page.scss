@@ -36,8 +36,8 @@ p {
   }
 
   > li {
-    @include grid(8, $margin: 0 1gutter 0 0, $media-queries: ('small'), $break-every-nth: 2);
-    @include grid(4, $margin: 0 1gutter 0 0, $media-queries: ('medium', 'large', 'extra-large'));
+    @include grid(8, $media-queries: ('small'), $break-every-nth: 2);
+    @include grid(4, $media-queries: ('medium', 'large', 'extra-large'));
 
     float: left;
     font-size: 1em;
