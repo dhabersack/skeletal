@@ -25,10 +25,10 @@
   $does-include-extra-large: false;
 
   @each $breakpoint in $breakpoints {
-         @if ($breakpoint == 'small'      ) { $does-include-small:       true; }
-    @else if ($breakpoint == 'medium'     ) { $does-include-medium:      true; }
-    @else if ($breakpoint == 'large'      ) { $does-include-large:       true; }
-    @else if ($breakpoint == 'extra-large') { $does-include-extra-large: true; }
+         @if $breakpoint == 'small'       { $does-include-small:       true; }
+    @else if $breakpoint == 'medium'      { $does-include-medium:      true; }
+    @else if $breakpoint == 'large'       { $does-include-large:       true; }
+    @else if $breakpoint == 'extra-large' { $does-include-extra-large: true; }
   }
 
   // extract padding-values from parameter
@@ -38,83 +38,93 @@
   $padding-left:   $padding-top;
 
   // update padding-values
-  @if (length($padding) >= 2) {
+  @if length($padding) >= 2 {
     $padding-right: nth($padding, 2);
     $padding-left:  $padding-right;
   }
 
-  @if (length($padding) >= 3) {
+  @if length($padding) >= 3 {
     $padding-bottom: nth($padding, 3);
   }
 
-  @if (length($padding) >= 4) {
+  @if length($padding) >= 4 {
     $padding-left: nth($padding, 4);
   }
 
   $horizontal-padding: $padding-right + $padding-left;
 
-  @if ($does-include-small == true) {
+  $margin-left: 0;
+
+  @if $does-include-small {
     @media (#{ $media-query-small }) {
-      $margin: $margin-top $grid-small-gutter-width $margin-bottom 0;
-      @if ($center == true) {
-        $margin: $margin-top auto $margin-bottom;
+      $margin-right: $grid-small-gutter-width;
+
+      @if $center {
+        $margin-left: auto;
+        $margin-right: auto;
       }
 
       @include print-grid-values(
         $media-query-small,
-        $margin,
-        $padding-top $padding-right $padding-bottom $padding-left,
+        compress-directional-values($margin-top, $margin-right, $margin-bottom, $margin-left),
+        compress-directional-values($padding-top, $padding-right, $padding-bottom, $padding-left),
         grid-width($number-of-columns, $grid-small-column-width, $grid-small-gutter-width, $horizontal-padding),
         $break-every-nth
       );
     }
   }
 
-  @if ($does-include-medium == true) {
+  @if $does-include-medium {
     @media (#{ $media-query-medium }) {
-      $margin:  $margin-top $grid-medium-gutter-width $margin-bottom 0;
-      @if ($center == true) {
-        $margin: $margin-top auto $margin-bottom;
+      $margin-right: $grid-medium-gutter-width;
+
+      @if $center {
+        $margin-left: auto;
+        $margin-right: auto;
       }
 
       @include print-grid-values(
         $media-query-medium,
-        $margin,
-        $padding-top $padding-right $padding-bottom $padding-left,
+        compress-directional-values($margin-top, $margin-right, $margin-bottom, $margin-left),
+        compress-directional-values($padding-top, $padding-right, $padding-bottom, $padding-left),
         grid-width($number-of-columns, $grid-medium-column-width, $grid-medium-gutter-width, $horizontal-padding),
         $break-every-nth
       );
     }
   }
 
-  @if ($does-include-large == true) {
+  @if $does-include-large {
     @media (#{ $media-query-large }) {
-      $margin: $margin-top $grid-large-gutter-width $margin-bottom 0;
-      @if ($center == true) {
-        $margin: $margin-top auto $margin-bottom;
+      $margin-right: $grid-large-gutter-width;
+
+      @if $center {
+        $margin-left: auto;
+        $margin-right: auto;
       }
 
       @include print-grid-values(
         $media-query-large,
-        $margin,
-        $padding-top $padding-right $padding-bottom $padding-left,
+        compress-directional-values($margin-top, $margin-right, $margin-bottom, $margin-left),
+        compress-directional-values($padding-top, $padding-right, $padding-bottom, $padding-left),
         grid-width($number-of-columns, $grid-large-column-width, $grid-large-gutter-width, $horizontal-padding),
         $break-every-nth
       );
     }
   }
 
-  @if ($does-include-extra-large == true) {
+  @if $does-include-extra-large {
     @media (#{ $media-query-extra-large }) {
-      $margin: $margin-top $grid-extra-large-gutter-width $margin-bottom 0;
-      @if ($center == true) {
-        $margin: $margin-top auto $margin-bottom;
+      $margin-right: $grid-extra-large-gutter-width;
+
+      @if $center {
+        $margin-left: auto;
+        $margin-right: auto;
       }
 
       @include print-grid-values(
         $media-query-extra-large,
-        $margin,
-        $padding-top $padding-right $padding-bottom $padding-left,
+        compress-directional-values($margin-top, $margin-right, $margin-bottom, $margin-left),
+        compress-directional-values($padding-top, $padding-right, $padding-bottom, $padding-left),
         grid-width($number-of-columns, $grid-extra-large-column-width, $grid-extra-large-gutter-width, $horizontal-padding),
         $break-every-nth
       );
@@ -123,8 +133,8 @@
 
   // default, one-column, mobile-first layout
   float: none;
-  margin: $margin-top 0 $margin-bottom;
-  padding: $padding-top 0 $padding-bottom;
+  margin: compress-directional-values($margin-top, 0, $margin-bottom);
+  padding: compress-directional-values($padding-top, 0, $padding-bottom);
   width: 100%;
 }
 
@@ -134,7 +144,7 @@
     $width,
     $break-every-nth) {
   @media (#{ $breakpoint }) {
-    @if ($break-every-nth != 0) {
+    @if $break-every-nth != 0 {
       &:nth-of-type(#{ $break-every-nth }n) {
         margin-right: 0;
       }
@@ -152,4 +162,20 @@
 
 @function grid-width($number-of-columns, $column-width, $gutter-width, $horizontal-padding) {
   @return $number-of-columns * $column-width + ($number-of-columns - 1) * $gutter-width - $horizontal-padding;
+}
+
+// Shortens top-, right-, bottom- and left-values to their shorthand
+// representation.
+@function compress-directional-values($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  @if $top == $right and $right == $bottom and $bottom == $left {
+    @return $top;
+  } @else if $right == $left {
+    @if $top == $bottom {
+      @return $top $right;
+    } @else {
+      @return $top $right $bottom;
+    }
+  } @else {
+    @return $top $right $bottom $left;
+  }
 }
