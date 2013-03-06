@@ -587,6 +587,7 @@ kbd {
 }
 
 sub {}
+
 sup {}
 
 // italic text
@@ -614,14 +615,16 @@ mark {
 }
 
 ruby {}
-rt {}
-rp {}
-bdi {}
-bdo {}
-span {}
 
-// single line break
-br {}
+rt {}
+
+rp {}
+
+bdi {}
+
+bdo {}
+
+span {}
 
 wbr {}
 
@@ -652,21 +655,21 @@ img {
 }
 
 iframe {}
+
 embed {}
+
 object {}
-param {}
+
 video {}
 
 // sound element
 audio {}
 
-source {}
-track {}
-
 // graphics canvas
 canvas {}
 
 map {}
+
 area {}
 
 
@@ -689,7 +692,6 @@ table {
 // table caption
 caption {}
 
-colgroup {}
 col {}
 
 // table body
@@ -743,14 +745,15 @@ th {
 // FORMS                          //
 //--------------------------------//
 
-// form
 form {
   margin-bottom: 2.4em; // 24px
   overflow: hidden;
 
-  > fieldset > legend {
-    position: absolute;
-    text-indent: -999em; // negative a lot
+  > fieldset {
+    > legend {
+      position: absolute;
+      text-indent: -999em; // negative a lot
+    }
   }
 }
 
@@ -831,8 +834,10 @@ legend {
 label {
   display: block;
   float: left;
-  font-family: $font-family-headings;
-  font-size: 1.6em;
+  font: {
+    family: $font-family-headings;
+    size: 1.6em;
+  }
   line-height: 1.875em; // 30px
 }
 
@@ -953,7 +958,9 @@ select {
 }
 
 datalist {}
+
 optgroup {}
+
 option {}
 
 textarea {
@@ -978,8 +985,11 @@ textarea {
 }
 
 keygen {}
+
 output {}
+
 progress {}
+
 meter {}
 
 
@@ -988,15 +998,18 @@ meter {}
 //--------------------------------//
 
 details {}
+
 summary {}
+
 command {}
+
 menu {}
 
 
 //--------------------------------//
 // DEBUGGING                      //
 //--------------------------------//
-@if ($is-in-debug-mode == true) {
+@if $is-in-debug-mode {
   * {
     background-color: $color-debug !important;
   }
