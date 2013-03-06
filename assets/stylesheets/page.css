@@ -649,9 +649,6 @@ button, input[type="submit"], input[type="image"], input[type="reset"], input[ty
   background-color: #e3e3e3;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#e3e3e3));
   background-image: -webkit-linear-gradient(top, #fdfdfd, #e3e3e3);
-  background-image: -moz-linear-gradient(top, #fdfdfd, #e3e3e3);
-  background-image: -ms-linear-gradient(top, #fdfdfd, #e3e3e3);
-  background-image: -o-linear-gradient(top, #fdfdfd, #e3e3e3);
   background-image: linear-gradient(top, #fdfdfd, #e3e3e3);
   /* standard, but currently unimplemented */
   border-color: #bdbdbd #7d7d7d #7d7d7d #bdbdbd;
@@ -670,9 +667,6 @@ button, input[type="submit"], input[type="image"], input[type="reset"], input[ty
     background-color: #fdfdfd;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#e3e3e3), to(#fdfdfd));
     background-image: -webkit-linear-gradient(top, #e3e3e3, #fdfdfd);
-    background-image: -moz-linear-gradient(top, #e3e3e3, #fdfdfd);
-    background-image: -ms-linear-gradient(top, #e3e3e3, #fdfdfd);
-    background-image: -o-linear-gradient(top, #e3e3e3, #fdfdfd);
     background-image: linear-gradient(top, #e3e3e3, #fdfdfd);
     /* standard, but currently unimplemented */
     border-color: #3e3e3e; }
