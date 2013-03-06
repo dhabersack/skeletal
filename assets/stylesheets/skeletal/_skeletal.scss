@@ -28,103 +28,6 @@ body {
     margin: 0 $grid-extra-small-gutter-width;
     width: $grid-extra-small-column-width;
   }
-
-  // main footer
-  > footer {
-    @include grid($number-of-grid-columns, $padding: 0.6em 0 1.2em, $center: true);
-
-    display: block;
-    overflow: hidden;
-
-    li {
-      @include font-size(1.2em);
-
-      margin-bottom: 0;
-    }
-
-    p {
-      @include font-size(1.2em);
-
-      text-align: right;
-    }
-  }
-
-  // main header
-  > header {
-    @include grid($number-of-grid-columns, $padding: 0.6em 0, $center: true);
-
-    font-family: $font-family-headings;
-    overflow: hidden;
-
-    h1 {
-      @include font-size(3.2em);
-
-      margin-bottom: 0.375em; // 12px
-
-      @media (#{ $media-query-medium }) {
-        @include font-size(4em);
-
-        margin-bottom: 0.3em; // 12px
-      }
-
-      @media (#{ $media-query-large }) {
-        @include font-size(5em);
-
-        margin-bottom: 0.24em; // 12px
-      }
-
-      @media (#{ $media-query-extra-large }) {
-        @include font-size(6em);
-
-        margin-bottom: 0.2em; // 12px
-      }
-
-      > a {
-        display: inline-block;
-
-        &:active,
-        &:focus,
-        &:link,
-        &:visited {
-          color: inherit;
-        }
-      }
-    }
-  }
-
-  // main navigation
-  nav {
-    @include grid($number-of-grid-columns, $margin-bottom: 1.2em, $padding: 0.6em 0, $center: true);
-
-    font-family: $font-family-headings;
-
-    a {
-      @include font-size(1.6em);
-
-      display: block;
-    }
-
-    li {
-      float: left;
-      font-size: 1em;
-      margin-right: 2em;
-
-      &:last-of-type {
-        margin-right: 0;
-      }
-    }
-
-    > ol {
-      list-style: none;
-      margin-bottom: 0;
-      overflow: hidden;
-    }
-  }
-
-  // main content area
-  > section {
-    @include grid($number-of-grid-columns, $margin-bottom: 1.2em, $center: true);
-  }
 }
 
 // generic section
@@ -134,7 +37,31 @@ section {
 
 // section with navigation links
 nav {
+  @include grid($number-of-grid-columns, $margin-bottom: 1.2em, $padding: 0.6em 0, $center: true);
+
   display: block;
+  font-family: $font-family-headings;
+
+  a {
+    display: block;
+    font-size: 1em;
+  }
+
+  li {
+    float: left;
+    font-size: 1em;
+    margin-right: 2em;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  > ol {
+    list-style: none;
+    margin-bottom: 0;
+    overflow: hidden;
+  }
 }
 
 // independently distributable or reusable, self-contained composition
@@ -174,6 +101,17 @@ h1 {
 
   @media (#{ $media-query-extra-large }) {
     @include font-size(7.5em);
+  }
+
+  > a {
+    display: inline-block;
+
+    &:active,
+    &:focus,
+    &:link,
+    &:visited {
+      color: inherit;
+    }
   }
 }
 
@@ -267,6 +205,17 @@ header {
 // copyright data, …)
 footer {
   display: block;
+  overflow: hidden;
+
+  li {
+    @include font-size(1.5em);
+
+    margin-bottom: 0;
+  }
+
+  p {
+    @include font-size(1.5em);
+  }
 }
 
 // contact information for its nearest article or body element ancestor
@@ -284,6 +233,10 @@ p {
   @include font-size(1.6em);
 
   margin-bottom: 1.5em; // 24px
+
+  @media (#{ $media-query-extra-large }) {
+    @include font-size(2em);
+  }
 }
 
 // paragraph-level thematic break
@@ -586,9 +539,19 @@ kbd {
   font-family: $font-family-code;
 }
 
-sub {}
+sub,
+sup {
+  font-size: 0.6em;
+  position: relative;
+}
 
-sup {}
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
 
 // italic text
 i {
@@ -918,6 +881,7 @@ input {
 // push buttons
 button {
   @include background-gradient($color-neutral-lightest, $color-neutral-lighter);
+  @include font-size(1.6em);
 
   border: {
     color: $color-neutral $color-neutral-darker $color-neutral-darker $color-neutral;
@@ -928,10 +892,10 @@ button {
   color: $color-neutral-darkest;
   cursor: pointer;
   float: left;
-  font: 1.6em/1.75em $font-family-sans-serif; // 16px/28px
-  height: 1.75em; // 28px
+  font-family: $font-family-sans-serif;
+  height: 2.625em; // 42px
   margin: 0 0.3125em 0 0; // 0 5px 0 0
-  padding: 0 0.875em; // 0 14px
+  padding: 0 1.1875em; // 0 19px
 
   &:active {
     @include background-gradient($color-neutral-lighter, $color-neutral-lightest);
