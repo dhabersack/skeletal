@@ -2,23 +2,28 @@
 // columns within the responsive grid.
 //
 // Parameters:
-// `number-of-columns`: the number of columns this container should occupy
-// `margin-top`:        the margin-top of this container
-// `margin-bottom`:     the margin-bottom of this container
-// `padding`:           the padding of this container
-// `center`:            whether or not this container should be centered
-// `breakpoints`:       list of breakpoints these settings should be used for;
-//                      can be one or more of 'small', 'medium', 'large' or
-//                      'extra-large'
-// `break-every-nth`:   after how many items this container should break into a
-//                      new line
-@mixin grid($number-of-columns,
-    $margin-top: 0,
-    $margin-bottom: 0,
-    $padding: 0,
-    $center: false,
-    $breakpoints: ('small', 'medium', 'large', 'extra-large'),
-    $break-every-nth: 0) {
+// number-of-columns: number of columns this container should occupy
+// break-every-nth:   after how many items this container should break into a
+//                    new line
+// breakpoints:       list of breakpoints these settings should be used for; can
+//                    be one or more of 'small', 'medium', 'large' or
+//                    'extra-large'
+// center:            whether or not this container should be centered
+// margin-bottom:     the margin-bottom of this container
+// margin-top:        the margin-top of this container
+// offset:            number of columns this container should be offset to the
+//                    left; overwrites `$center` if set to anything but `0`
+// padding:           the padding of this container
+@mixin grid(
+    $number-of-columns,
+    $break-every-nth:   0,
+    $breakpoints:       ('small', 'medium', 'large', 'extra-large'),
+    $center:            false,
+    $margin-bottom:     0,
+    $margin-top:        0,
+    $offset:            0,
+    $padding:           0
+) {
   $does-include-small:       false;
   $does-include-medium:      false;
   $does-include-large:       false;
@@ -55,8 +60,17 @@
 
   $margin-left: 0;
 
+  // overrride `$center` if `$offset` is given
+  @if $offset != 0 {
+    $center: false;
+  }
+
   @if $does-include-small {
     @media (#{ $media-query-small }) {
+      @if $offset != 0 {
+        $margin-left: grid-offset($offset, $grid-small-column-width, $grid-small-gutter-width);
+      }
+
       $margin-right: $grid-small-gutter-width;
 
       @if $center {
@@ -76,6 +90,10 @@
 
   @if $does-include-medium {
     @media (#{ $media-query-medium }) {
+      @if $offset != 0 {
+        $margin-left: grid-offset($offset, $grid-medium-column-width, $grid-medium-gutter-width);
+      }
+
       $margin-right: $grid-medium-gutter-width;
 
       @if $center {
@@ -95,6 +113,10 @@
 
   @if $does-include-large {
     @media (#{ $media-query-large }) {
+      @if $offset != 0 {
+        $margin-left: grid-offset($offset, $grid-large-column-width, $grid-large-gutter-width);
+      }
+
       $margin-right: $grid-large-gutter-width;
 
       @if $center {
@@ -114,6 +136,10 @@
 
   @if $does-include-extra-large {
     @media (#{ $media-query-extra-large }) {
+      @if $offset != 0 {
+        $margin-left: grid-offset($offset, $grid-extra-large-column-width, $grid-extra-large-gutter-width);
+      }
+
       $margin-right: $grid-extra-large-gutter-width;
 
       @if $center {
@@ -158,6 +184,10 @@
     padding: $padding;
     width: $width;
   }
+}
+
+@function grid-offset($number-of-columns, $column-width, $gutter-width) {
+  @return $number-of-columns * ($column-width + $gutter-width);
 }
 
 @function grid-width($number-of-columns, $column-width, $gutter-width, $horizontal-padding) {
