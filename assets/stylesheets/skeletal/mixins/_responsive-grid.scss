@@ -51,6 +51,8 @@
     $padding-left: nth($padding, 4);
   }
 
+  $horizontal-padding: $padding-right + $padding-left;
+
   @if ($does-include-small == true) {
     @media (#{ $media-query-small }) {
       $margin: $margin-top $grid-small-gutter-width $margin-bottom 0;
@@ -62,7 +64,7 @@
         $media-query-small,
         $margin,
         $padding-top $padding-right $padding-bottom $padding-left,
-        ($number-of-columns * $grid-small-column-width) + (($number-of-columns - 1) * $grid-small-gutter-width) - $padding-right - $padding-left,
+        grid-width($number-of-columns, $grid-small-column-width, $grid-small-gutter-width, $horizontal-padding),
         $break-every-nth
       );
     }
@@ -79,7 +81,7 @@
         $media-query-medium,
         $margin,
         $padding-top $padding-right $padding-bottom $padding-left,
-        ($number-of-columns * $grid-medium-column-width) + (($number-of-columns - 1) * $grid-medium-gutter-width) - $padding-right - $padding-left,
+        grid-width($number-of-columns, $grid-medium-column-width, $grid-medium-gutter-width, $horizontal-padding),
         $break-every-nth
       );
     }
@@ -96,7 +98,7 @@
         $media-query-large,
         $margin,
         $padding-top $padding-right $padding-bottom $padding-left,
-        ($number-of-columns * $grid-large-column-width) + (($number-of-columns - 1) * $grid-large-gutter-width) - $padding-right - $padding-left,
+        grid-width($number-of-columns, $grid-large-column-width, $grid-large-gutter-width, $horizontal-padding),
         $break-every-nth
       );
     }
@@ -113,7 +115,7 @@
         $media-query-extra-large,
         $margin,
         $padding-top $padding-right $padding-bottom $padding-left,
-        ($number-of-columns * $grid-extra-large-column-width) + (($number-of-columns - 1) * $grid-extra-large-gutter-width) - $padding-right - $padding-left,
+        grid-width($number-of-columns, $grid-extra-large-column-width, $grid-extra-large-gutter-width, $horizontal-padding),
         $break-every-nth
       );
     }
@@ -146,4 +148,8 @@
     padding: $padding;
     width: $width;
   }
+}
+
+@function grid-width($number-of-columns, $column-width, $gutter-width, $horizontal-padding) {
+  @return $number-of-columns * $column-width + ($number-of-columns - 1) * $gutter-width - $horizontal-padding;
 }
