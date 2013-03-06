@@ -7,3 +7,19 @@
   background-image: -webkit-linear-gradient(top, $color-top, $color-bottom);
   background-image:         linear-gradient(top, $color-top, $color-bottom); /* standard, but currently unimplemented */
 }
+
+@mixin border-radius($border-radius) {
+  -webkit-border-radius: $border-radius;
+          border-radius: $border-radius;
+}
+
+@mixin box-shadow($box-shadow) {
+  -webkit-box-shadow: $box-shadow;
+          box-shadow: $box-shadow;
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+      -ms-transform: $transform;
+          transform: $transform;
+}
