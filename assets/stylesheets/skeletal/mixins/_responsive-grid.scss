@@ -9,6 +9,7 @@
 //                    be one or more of 'small', 'medium', 'large' or
 //                    'extra-large'
 // center:            whether or not this container should be centered
+// last:              whether or not this element is the last on its level
 // margin-bottom:     the margin-bottom of this container
 // margin-top:        the margin-top of this container
 // offset:            number of columns this container should be offset to the
@@ -19,6 +20,7 @@
     $break-every-nth:   0,
     $breakpoints:       ('small', 'medium', 'large', 'extra-large'),
     $center:            false,
+    $last:              false,
     $margin-bottom:     0,
     $margin-top:        0,
     $offset:            0,
@@ -73,6 +75,10 @@
 
       $margin-right: $grid-small-gutter-width;
 
+      @if $last {
+        $margin-right: 0;
+      }
+
       @if $center {
         $margin-left: auto;
         $margin-right: auto;
@@ -95,6 +101,10 @@
       }
 
       $margin-right: $grid-medium-gutter-width;
+
+      @if $last {
+        $margin-right: 0;
+      }
 
       @if $center {
         $margin-left: auto;
@@ -119,6 +129,10 @@
 
       $margin-right: $grid-large-gutter-width;
 
+      @if $last {
+        $margin-right: 0;
+      }
+
       @if $center {
         $margin-left: auto;
         $margin-right: auto;
@@ -142,6 +156,10 @@
 
       $margin-right: $grid-extra-large-gutter-width;
 
+      @if $last {
+        $margin-right: 0;
+      }
+
       @if $center {
         $margin-left: auto;
         $margin-right: auto;
@@ -158,19 +176,22 @@
   }
 
   // default, one-column, mobile-first layout
-  float: none;
   margin: compress-directional-values($margin-top, 0, $margin-bottom);
   padding: compress-directional-values($padding-top, 0, $padding-bottom);
   width: 100%;
 }
 
-@mixin print-grid-values($breakpoint,
+@mixin print-grid-values(
+    $breakpoint,
     $margin,
     $padding,
     $width,
-    $break-every-nth) {
+    $break-every-nth
+) {
   @media (#{ $breakpoint }) {
     @if $break-every-nth != 0 {
+      float: left;
+
       &:nth-of-type(#{ $break-every-nth }n) {
         margin-right: 0;
       }
