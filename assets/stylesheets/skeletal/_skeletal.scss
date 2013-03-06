@@ -10,7 +10,7 @@ html {
   background-color: $color-neutral-lightest;
   overflow-y: scroll;
 
-  -webkit-text-size-adjust: none; // prevent font scaling in landscape on Safari on iOS
+  -webkit-text-size-adjust: 100%; // prevent font scaling in landscape on Safari on iOS
 }
 
 
@@ -87,21 +87,10 @@ h1, h2, h3, h4, h5, h6 {
 
 // heading with highest rank
 h1 {
-  @include font-size(4em);
+  @include font-size(2.4em);
 
   font-weight: bold;
-
-  @media (#{ $media-query-medium }) {
-    @include font-size(4.8em);
-  }
-
-  @media (#{ $media-query-large }) {
-    @include font-size(6em);
-  }
-
-  @media (#{ $media-query-extra-large }) {
-    @include font-size(7.5em);
-  }
+  margin-bottom: 0.5em; // 12px
 
   > a {
     display: inline-block;
@@ -119,16 +108,24 @@ h1 {
 h2 {
   @include font-size(3.2em);
 
+  margin-bottom: 0.1875em; // 6px
+
   @media (#{ $media-query-medium }) {
     @include font-size(4em);
+
+    margin-bottom: 0.15em; // 6px
   }
 
   @media (#{ $media-query-large }) {
     @include font-size(5em);
+
+    margin-bottom: 0.12em; // 6px
   }
 
   @media (#{ $media-query-extra-large }) {
     @include font-size(6em);
+
+    margin-bottom: 0.1em; // 6px
   }
 }
 
@@ -136,16 +133,24 @@ h2 {
 h3 {
   @include font-size(2.5em);
 
+  margin-bottom: 0.24em; // 6px
+
   @media (#{ $media-query-medium }) {
     @include font-size(3.2em);
+
+    margin-bottom: 0.1875em; // 6px
   }
 
   @media (#{ $media-query-large }) {
     @include font-size(4em);
+
+    margin-bottom: 0.15em; // 6px
   }
 
   @media (#{ $media-query-extra-large }) {
     @include font-size(5em);
+
+    margin-bottom: 0.12em; // 6px
   }
 }
 
@@ -153,16 +158,24 @@ h3 {
 h4 {
   @include font-size(2em);
 
+  margin-bottom: 0.3em; // 6px
+
   @media (#{ $media-query-medium }) {
     @include font-size(2.5em);
+
+    margin-bottom: 0.24em; // 6px
   }
 
   @media (#{ $media-query-large }) {
     @include font-size(3.2em);
+
+    margin-bottom: 0.1875em; // 6px
   }
 
   @media (#{ $media-query-extra-large }) {
     @include font-size(4em);
+
+    margin-bottom: 0.15em; // 6px
   }
 }
 
@@ -170,16 +183,24 @@ h4 {
 h5 {
   @include font-size(1.6em);
 
+  margin-bottom: 0.375em; // 6px
+
   @media (#{ $media-query-medium }) {
     @include font-size(2em);
+
+    margin-bottom: 0.3em; // 6px
   }
 
   @media (#{ $media-query-large }) {
     @include font-size(2.4em);
+
+    margin-bottom: 0.25em; // 6px
   }
 
   @media (#{ $media-query-extra-large }) {
     @include font-size(3em);
+
+    margin-bottom: 0.2em; // 6px
   }
 }
 
@@ -187,8 +208,12 @@ h5 {
 h6 {
   @include font-size(1.6em);
 
+  margin-bottom: 0.375em; // 6px
+
   @media (#{ $media-query-extra-large }) {
     @include font-size(2em);
+
+    margin-bottom: 0.3em; // 6px
   }
 }
 
@@ -308,6 +333,10 @@ ol {
   > li {
     @include font-size(1.6em);
 
+    @media (#{ $media-query-extra-large }) {
+      @include font-size(2em);
+    }
+
     > ol {
       list-style-type: lower-alpha;
       margin-bottom: 0;
@@ -333,6 +362,10 @@ ul {
 
   > li {
     @include font-size(1.6em);
+
+    @media (#{ $media-query-extra-large }) {
+      @include font-size(2em);
+    }
 
     > ol {
       margin-bottom: 0;
