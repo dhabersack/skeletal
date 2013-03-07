@@ -17,10 +17,10 @@
     $style:     normal,
     $weight:    normal) {
   $paths: ();
-  @if $eot  != '' { $paths: append($paths, #{ url('#{ $path + $eot  }') format('embedded-opentype') }, comma); }
-  @if $woff != '' { $paths: append($paths, #{ url('#{ $path + $woff }') format('woff')              }, comma); }
-  @if $ttf  != '' { $paths: append($paths, #{ url('#{ $path + $ttf  }') format('truetype')          }, comma); }
-  @if $svg  != '' { $paths: append($paths, #{ url('#{ $path + $svg  }') format('svg')               }, comma); }
+  @if $eot  != '' { $paths: append($paths, #{ url('#{ $path + $eot  }#iefix') format('embedded-opentype') }, comma); }
+  @if $woff != '' { $paths: append($paths, #{ url('#{ $path + $woff }'      ) format('woff')              }, comma); }
+  @if $ttf  != '' { $paths: append($paths, #{ url('#{ $path + $ttf  }'      ) format('truetype')          }, comma); }
+  @if $svg  != '' { $paths: append($paths, #{ url('#{ $path + $svg  }'      ) format('svg')               }, comma); }
 
   @font-face {
     font: {
