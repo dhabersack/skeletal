@@ -10,7 +10,11 @@ html {
   background-color: $color-neutral-lightest;
   overflow-y: scroll;
 
-  -webkit-text-size-adjust: 100%; // prevent font scaling in landscape on Safari on iOS
+  // prevent font scaling in landscape on Safari on iOS
+  -webkit-text-size-adjust: 100%;
+
+  // prevent jagged edges when transforming elements
+  -webkit-backface-visibility: hidden;
 }
 
 
