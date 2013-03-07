@@ -12,9 +12,6 @@ html {
 
   // prevent font scaling in landscape on Safari on iOS
   -webkit-text-size-adjust: 100%;
-
-  // prevent jagged edges when transforming elements
-  -webkit-backface-visibility: hidden;
 }
 
 
