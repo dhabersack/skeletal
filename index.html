@@ -7,90 +7,404 @@
 
     <title>Skeletal</title>
 
-    <link rel="stylesheet" type="text/css" href="./stylesheets/base.css">
-    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/page.css">
 
     <link rel="shortcut icon" href="favicon.ico">
   </head>
 
   <body>
     <header>
-      <h1><a href="/">Skeletal</a></h1>
+      <div>
+        <h1>
+          <a href="/">Skeletal</a>
+        </h1>
+
+        <h2>
+          A clean foundation for a lovely frontend.
+        </h2>
+
+        <form action="http://github.com/dhabersack/skeletal">
+          <input type="submit" value="Check it out on GitHub">
+        </form>
+      </div>
     </header>
 
-    <nav>
-      <ol>
-        <li><a href="#what-it-is">What it is</a></li>
-        <li><a href="#examples">Examples</a></li>
-      </ol>
-    </nav>
-
     <section>
-      <h1>Skeletal</h1>
+      <div>
+        <p>
+          Skeletal is a framework that provides a collection of default styles
+          and Sass-mixins that help getting up and running on webdesign projects
+          a lot quicker than writing everything from scratch does.
+        </p>
 
-      <h2 id="what-it-is">A clean foundation for webdesign.</h2>
+        <ol id="characteristics">
+          <li>
+            <h4>T minus zero</h4>
 
-      <p>
-        Skeletal is a <mark>preset-stylesheet</mark> that sets sensible defaults
-        for most HTML5-tags, providing a solid foundation to build your next
-        webdesign project on.
-      </p>
+            <p>
+              You can use Skeletal’s default styles as-is: skip your initial
+              setup and give your site a friendly look in seconds.
+            </p>
+          </li>
+          <li>
+            <h4>Viewer-friendly</h4>
 
-      <h3>What it is</h3>
+            <p>
+              Built-in responsiveness, clean typography and organization of
+              content make your site simple and user-friendly.
+            </p>
+          </li>
+          <li>
+            <h4>Tried and tested</h4>
 
-      <dl>
-        <dt>Clean</dt>
-        <dd>
-          Skeletal puts an emphasis on readability and clean organization to
-          make the sites using it as simple and user-friendly as possible.
-        </dd>
+            <p>
+              Skeletal grew out of real-world projects &mdash; its contents are
+              robust and can be used to create a wide range of layouts.
+            </p>
+          </li>
+          <li>
+            <h4>Clutter-free</h4>
 
-        <dt>Easily configurable</dt>
-        <dd>
-          Everything you might want to change can easily be adapted through
-          straightforward configuration files. This includes fonts, colors,
-          grids and more.
-        </dd>
+            <p>
+              Keep your markup clean: all presentational attributes are kept in
+              stylesheets for easy maintenance.
+            </p>
+          </li>
+          <li>
+            <h4>Adaptable</h4>
 
-        <dt>Responsive</dt>
-        <dd>
-          Our <abbr
-          title="Syntactically Awesome StyleSheets">SASS</abbr>-powered grid
-          grows with the browser. Responsiveness is baked right in and available
-          through the <code>grid</code>-mixin.
-        </dd>
+            <p>
+              Change the defaults and select which features you want to include
+              to make the system meet your requirements.
+            </p>
+          </li>
+          <li>
+            <h4>More to come</h4>
 
-        <dt>
-          Not <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
-        </dt>
-        <dd>
-          Other than options like Bootstrap, your markup won't need any
-          additional attributes and stays maintainable and flexible.
-        </dd>
-      </dl>
+            <p>
+              As it sees more real-world use, more improvements and refinements
+              will be introduced to Skeletal.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-      <h3 id="examples">Examples</h3>
+    <section id="documentation">
+      <div>
+        <h3>Documentation</h3>
 
-      <p>
-        Skeletal enables a variety of designs. The following contains a growing
-        list of examples of what can easily be achieved with very few additional
-        styles:
-      </p>
+        <p>
+          Skeletal is built on <a href="http://sass-lang.com/">Sass</a>. Besides
+          setting sensible defaults for the styling of most tags, it offers a
+          lot of functionality through variables and mixins.
+        </p>
 
-      <ol>
-        <li><a href="examples/example.html">Portfolio</a></li>
-      </ol>
+        <h4>Colors</h4>
 
-      <p>
-        (Yes, I know. More will follow eventually.)
-      </p>
+        <p>
+          <code>_colors.scss</code> contains a list of colors you want to use in
+          your projects with the defaults being:
+        </p>
+
+        <pre>
+$color-blue:   #3581fc;
+$color-gray:   #bdbdbd;
+$color-green:  #23db2a;
+$color-red:    #e33d27;
+$color-violet: #904fff;
+$color-yellow: #ffe226;</pre>
+
+        <p>
+          You then create named proxies for them in <code>_config.scss</code>:
+        </p>
+
+        <pre>
+$color-action:       $color-green;
+$color-alert:        $color-yellow;
+$color-brand:        $color-yellow;
+$color-debug:        rgba($color-red, 0.0625);
+$color-error:        $color-red;
+$color-highlight:    $color-yellow;
+$color-link:         $color-blue;
+$color-link-visited: $color-violet;
+$color-neutral:      $color-gray;</pre>
+
+        <p>
+          For all but <code>$color-debug</code>, Skeletal generates lighter and
+          darker versions in <code>_setup.scss</code> by creating additional
+          variables. This puts the following default palette at your disposal:
+        </p>
+
+        <ul id="color-demo">
+          <li>
+            <span class="color-action-lightest"></span>
+            <code>$color-action-lightest</code>
+          </li>
+          <li>
+            <span class="color-action-lighter"></span>
+            <code>$color-action-lighter</code>
+          </li>
+          <li>
+            <span class="color-action"></span>
+            <code>$color-action</code>
+          </li>
+          <li>
+            <span class="color-action-darker"></span>
+            <code>$color-action-darker</code>
+          </li>
+          <li>
+            <span class="color-action-darkest"></span>
+            <code>$color-action-darkest</code>
+          </li>
+
+          <li>
+            <span class="color-alert-lightest"></span>
+            <code>$color-alert-lightest</code>
+          </li>
+          <li>
+            <span class="color-alert-lighter"></span>
+            <code>$color-alert-lighter</code>
+          </li>
+          <li>
+            <span class="color-alert"></span>
+            <code>$color-alert</code>
+          </li>
+          <li>
+            <span class="color-alert-darker"></span>
+            <code>$color-alert-darker</code>
+          </li>
+          <li>
+            <span class="color-alert-darkest"></span>
+            <code>$color-alert-darkest</code>
+          </li>
+
+          <li>
+            <span class="color-brand-lightest"></span>
+            <code>$color-brand-lightest</code>
+          </li>
+          <li>
+            <span class="color-brand-lighter"></span>
+            <code>$color-brand-lighter</code>
+          </li>
+          <li>
+            <span class="color-brand"></span>
+            <code>$color-brand</code>
+          </li>
+          <li>
+            <span class="color-brand-darker"></span>
+            <code>$color-brand-darker</code>
+          </li>
+          <li>
+            <span class="color-brand-darkest"></span>
+            <code>$color-brand-darkest</code>
+          </li>
+
+          <li>
+            <span class="color-error-lightest"></span>
+            <code>$color-error-lightest</code>
+          </li>
+          <li>
+            <span class="color-error-lighter"></span>
+            <code>$color-error-lighter</code>
+          </li>
+          <li>
+            <span class="color-error"></span>
+            <code>$color-error</code>
+          </li>
+          <li>
+            <span class="color-error-darker"></span>
+            <code>$color-error-darker</code>
+          </li>
+          <li>
+            <span class="color-error-darkest"></span>
+            <code>$color-error-darkest</code>
+          </li>
+
+          <li>
+            <span class="color-highlight-lightest"></span>
+            <code>$color-highlight-lightest</code>
+          </li>
+          <li>
+            <span class="color-highlight-lighter"></span>
+            <code>$color-highlight-lighter</code>
+          </li>
+          <li>
+            <span class="color-highlight"></span>
+            <code>$color-highlight</code>
+          </li>
+          <li>
+            <span class="color-highlight-darker"></span>
+            <code>$color-highlight-darker</code>
+          </li>
+          <li>
+            <span class="color-highlight-darkest"></span>
+            <code>$color-highlight-darkest</code>
+          </li>
+
+          <li>
+            <span class="color-link-lightest"></span>
+            <code>$color-link-lightest</code>
+          </li>
+          <li>
+            <span class="color-link-lighter"></span>
+            <code>$color-link-lighter</code>
+          </li>
+          <li>
+            <span class="color-link"></span>
+            <code>$color-link</code>
+          </li>
+          <li>
+            <span class="color-link-darker"></span>
+            <code>$color-link-darker</code>
+          </li>
+          <li>
+            <span class="color-link-darkest"></span>
+            <code>$color-link-darkest</code>
+          </li>
+
+          <li>
+            <span class="color-link-visited-lightest"></span>
+            <code>$color-link-visited-lightest</code>
+          </li>
+          <li>
+            <span class="color-link-visited-lighter"></span>
+            <code>$color-link-visited-lighter</code>
+          </li>
+          <li>
+            <span class="color-link-visited"></span>
+            <code>$color-link-visited</code>
+          </li>
+          <li>
+            <span class="color-link-visited-darker"></span>
+            <code>$color-link-visited-darker</code>
+          </li>
+          <li>
+            <span class="color-link-visited-darkest"></span>
+            <code>$color-link-visited-darkest</code>
+          </li>
+
+          <li>
+            <span class="color-neutral-lightest"></span>
+            <code>$color-neutral-lightest</code>
+          </li>
+          <li>
+            <span class="color-neutral-lighter"></span>
+            <code>$color-neutral-lighter</code>
+          </li>
+          <li>
+            <span class="color-neutral"></span>
+            <code>$color-neutral</code>
+          </li>
+          <li>
+            <span class="color-neutral-darker"></span>
+            <code>$color-neutral-darker</code>
+          </li>
+          <li>
+            <span class="color-neutral-darkest"></span>
+            <code>$color-neutral-darkest</code>
+          </li>
+
+          <li>
+            <span class="color-debug"></span>
+            <code>$color-debug</code>
+          </li>
+        </ul>
+
+        <p>
+          This setup allows you to easily adapt the mapping of colors to
+          semantic names and automatically update all colors used throughout
+          your site.
+        </p>
+
+        <h4>Grid</h4>
+
+        <p>
+          The grid-mixin allows you to specify a number of columns a container
+          should occupy.
+        </p>
+
+        <p>
+          The grid is fully responsive: resize your browser to check how it
+          behaves at different breakpoints.
+        </p>
+
+        <div class="grid-demo">
+          <div class="grid-demo-item-1"> <p> 1</p></div>
+          <div class="grid-demo-item-2"> <p> 2</p></div>
+          <div class="grid-demo-item-3"> <p> 3</p></div>
+          <div class="grid-demo-item-4"> <p> 4</p></div>
+          <div class="grid-demo-item-5"> <p> 5</p></div>
+          <div class="grid-demo-item-6"> <p> 6</p></div>
+          <div class="grid-demo-item-7"> <p> 7</p></div>
+          <div class="grid-demo-item-8"> <p> 8</p></div>
+          <div class="grid-demo-item-9"> <p> 9</p></div>
+          <div class="grid-demo-item-10"><p>10</p></div>
+          <div class="grid-demo-item-11"><p>11</p></div>
+          <div class="grid-demo-item-12"><p>12</p></div>
+        </div>
+
+        <p>
+          Note that since Skeletal is based entirely on <code>em</code>-values,
+          you can only safely apply this mixin to elements with a
+          <code>font-size</code> of <code>1em</code>.
+        </p>
+
+        <h5>Floating containers</h5>
+
+        <p>
+          The <code>$break-every-nth</code>-parameter floats element with the
+          same class and clears the floating after every nth element:
+        </p>
+
+        <pre>.item {<br>  @include grid(4, $break-every-nth: 3);<br>}</pre>
+
+        <div class="grid-demo">
+          <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+          <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+          <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+          <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+          <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+          <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+        </div>
+
+        <h5>Grid offset</h5>
+
+        <p>
+          The <code>$offset</code>-attribute allows you to move a container to
+          the left by a number of columns. With additional floating, you can
+          easily achieve a layout such as the following:
+        </p>
+
+        <div class="grid-demo">
+          <div class="grid-demo-item-6-offset-1"><p>grid(6, $offset: 1)</p></div>
+          <div class="grid-demo-item-3-offset-1"><p>grid(3, $offset: 1)</p></div>
+          <div class="grid-demo-item-4-offset-2"><p>grid(4, $offset: 2)</p></div>
+          <div class="grid-demo-item-3-offset-2"><p>grid(3, $offset: 2)</p></div>
+        </div>
+
+        <h5>Number of columns</h5>
+
+        <p>
+          You can set the <code>$number-of-grid-columns</code>-variable in
+          <code>_config.scss</code> to <code>12</code>, <code>16</code> or
+          <code>24</code>.
+        </p>
+
+        <p>
+          Changes to this variable have a direct effect on the widths the
+          grid-mixin calculates.
+        </p>
+      </div>
     </section>
 
     <footer>
-      <p>
-        Copyright &copy; 2012 <a href="http://dominikhabersack.com/">Dom
-        Habersack</a>
-      </p>
+      <div>
+        <p>
+          Built by <a href="http://twitter.com/dhabersack">@dhabersack</a><br>
+          Copyright &copy; 2013, <a href="http://islovely.co/">islovely.co</a>
+        </p>
+      </div>
     </footer>
 
     <script>
