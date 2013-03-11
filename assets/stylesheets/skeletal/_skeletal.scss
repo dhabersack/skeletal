@@ -329,7 +329,7 @@ ol {
     position: inside;
     type: decimal;
   }
-  margin-bottom: 1.2em;
+  margin-bottom: 2.4em;
 
   > li {
     @include font-size(1.6em);
@@ -359,7 +359,7 @@ ul {
     position: inside;
     style-type: disc;
   }
-  margin-bottom: 1.2em;
+  margin-bottom: 2.4em;
 
   > li {
     @include font-size(1.6em);
@@ -860,19 +860,7 @@ input {
     width: 60px;
   }
 
-  &[type="date"],
-  &[type="datetime"],
-  &[type="datetime-local"],
-  &[type="email"],
-  &[type="month"],
-  &[type="number"],
-  &[type="password"],
-  &[type="search"],
-  &[type="tel"],
-  &[type="text"],
-  &[type="time"],
-  &[type="url"],
-  &[type="week"] {
+  &[type="text"] {
     background: $color-neutral-lightest;
     border: {
       color: $color-neutral-darker $color-neutral $color-neutral $color-neutral-darker;
@@ -898,17 +886,22 @@ input {
 
   &[type="hidden"] {}
 
+  @each $type in (date, datetime, datetime-local, email, month, number, password, search, tel, time, url, week) {
+    &[type="#{ $type }"] {
+      @extend input[type="text"];
+    }
+  }
+
   &[type="range"] {
     clear: left;
     float: left;
   }
 
   // button elements
-  &[type="submit"],
-  &[type="image"],
-  &[type="reset"],
-  &[type="button"] {
-    @extend button;
+  @each $type in (submit, image, reset, button) {
+    &[type="#{ $type }"] {
+      @extend button;
+    }
   }
 }
 
