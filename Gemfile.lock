@@ -1,0 +1,14 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    listen (0.7.3)
+    rb-fsevent (0.9.3)
+    sass (3.2.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  listen
+  rb-fsevent (~> 0.9.1)
+  sass

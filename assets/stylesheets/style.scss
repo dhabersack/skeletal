@@ -1,0 +1,7 @@
+@import 'skeletal/skeletal.scss';
+
+footer,
+header,
+section {
+  @include grid($number-of-grid-columns, $center: true)
+}

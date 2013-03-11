@@ -9,6 +9,9 @@
 html {
   background-color: $color-neutral-lightest;
   overflow-y: scroll;
+
+  // prevent font scaling in landscape on Safari on iOS
+  -webkit-text-size-adjust: 100%;
 }
 
 
@@ -22,89 +25,9 @@ body {
   color: $color-neutral-darkest;
   font: 62.5%/1 $font-family-content; // 10px/10px
 
-  // main footer
-  > footer {
-    @include grid(12, $margin: 0 auto, $padding: 0.6em 0 1.2em);
-
-    display: block;
-    overflow: hidden;
-
-    li {
-      @include font-size(1.5em);
-
-      margin-bottom: 0;
-    }
-
-    p {
-      @include font-size(1.5em);
-
-      text-align: right;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  // main header
-  > header {
-    @include grid(12, $margin: 0 auto, $padding: 0.6em 0);
-
-    font-family: $font-family-headings;
-    overflow: hidden;
-
-    h1 {
-      @include font-size(2em);
-
-      margin: 0;
-
-      > a {
-        display: inline-block;
-
-        &:active,
-        &:focus,
-        &:link,
-        &:visited {
-          color: inherit;
-        }
-      }
-    }
-  }
-
-  // main navigation
-  nav {
-    @include grid(12, $margin: 0 auto 1.2em, $padding: 0.6em 0);
-
-    font-family: $font-family-headings;
-    overflow: hidden;
-
-    a {
-      @include font-size(1.6em);
-
-      display: block;
-    }
-
-    li {
-      float: left;
-      font-size: 1em;
-      margin-right: 2em;
-
-      &:last-of-type {
-        margin-right: 0;
-      }
-    }
-
-    > ol {
-      float: right;
-      list-style: none;
-      margin-bottom: 0;
-      overflow: hidden;
-    }
-  }
-
-  // main content area
-  > section {
-    @include grid(12, $margin: 0 auto 1.2em);
+  @media (#{ $media-query-extra-small }) {
+    margin: 0 $grid-extra-small-gutter-width;
+    width: $grid-extra-small-column-width;
   }
 }
 
@@ -115,7 +38,31 @@ section {
 
 // section with navigation links
 nav {
+  @include grid($number-of-grid-columns, $margin-bottom: 1.2em, $padding: 0.6em 0, $center: true);
+
   display: block;
+  font-family: $font-family-headings;
+
+  a {
+    display: block;
+    font-size: 1em;
+  }
+
+  li {
+    float: left;
+    font-size: 1em;
+    margin-right: 1em;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  > ol {
+    list-style: none;
+    margin-bottom: 0;
+    overflow: hidden;
+  }
 }
 
 // independently distributable or reusable, self-contained composition
@@ -141,31 +88,20 @@ h1, h2, h3, h4, h5, h6 {
 
 // heading with highest rank
 h1 {
-  @include font-size(4em);
+  @include font-size(2.4em);
 
   font-weight: bold;
-  margin: 0.15em 0 0.3em; // 6px 0 12px
+  margin-bottom: 0.5em; // 12px
 
-  @media #{ $media-query-smartphone } {}
+  > a {
+    display: inline-block;
 
-  @media #{ $media-query-smartphone-to-tablet } {}
-
-  @media #{ $media-query-portrait-tablet } {
-    @include font-size(4.8em);
-
-    margin: 0.125em 0 0.25em; // 6px 0 12px
-  }
-
-  @media #{ $media-query-default } {
-    @include font-size(6em);
-
-    margin: 0.1em 0 0.2em; // 6px 0 12px
-  }
-
-  @media #{ $media-query-large-display } {
-    @include font-size(7.5em);
-
-    margin: 0.08em 0 0.16em; // 6px 0 12px
+    &:active,
+    &:focus,
+    &:link,
+    &:visited {
+      color: inherit;
+    }
   }
 }
 
@@ -173,28 +109,24 @@ h1 {
 h2 {
   @include font-size(3.2em);
 
-  margin: 0.1875em 0 0.375em; // 6px 0 12px
+  margin-bottom: 0.1875em; // 6px
 
-  @media #{ $media-query-smartphone } {}
-
-  @media #{ $media-query-smartphone-to-tablet } {}
-
-  @media #{ $media-query-portrait-tablet } {
+  @media (#{ $media-query-medium }) {
     @include font-size(4em);
 
-    margin: 0.15em 0 0.3em; // 6px 0 12px
+    margin-bottom: 0.15em; // 6px
   }
 
-  @media #{ $media-query-default } {
+  @media (#{ $media-query-large }) {
     @include font-size(5em);
 
-    margin: 0.12em 0 0.24em; // 6px 0 12px
+    margin-bottom: 0.12em; // 6px
   }
 
-  @media #{ $media-query-large-display } {
+  @media (#{ $media-query-extra-large }) {
     @include font-size(6em);
 
-    margin: 0.1em 0 0.2em; // 6px 0 12px
+    margin-bottom: 0.1em; // 6px
   }
 }
 
@@ -202,28 +134,24 @@ h2 {
 h3 {
   @include font-size(2.5em);
 
-  margin: 0.24em 0 0.48em; // 6px 0 12px
+  margin-bottom: 0.24em; // 6px
 
-  @media #{ $media-query-smartphone } {}
-
-  @media #{ $media-query-smartphone-to-tablet } {}
-
-  @media #{ $media-query-portrait-tablet } {
+  @media (#{ $media-query-medium }) {
     @include font-size(3.2em);
 
-    margin: 0.1875em 0 0.375em; // 6px 0 12px
+    margin-bottom: 0.1875em; // 6px
   }
 
-  @media #{ $media-query-default } {
+  @media (#{ $media-query-large }) {
     @include font-size(4em);
 
-    margin: 0.15em 0 0.3em; // 6px 0 12px
+    margin-bottom: 0.15em; // 6px
   }
 
-  @media #{ $media-query-large-display } {
+  @media (#{ $media-query-extra-large }) {
     @include font-size(5em);
 
-    margin: 0.12em 0 0.24em; // 6px 0 12px
+    margin-bottom: 0.12em; // 6px
   }
 }
 
@@ -231,28 +159,24 @@ h3 {
 h4 {
   @include font-size(2em);
 
-  margin: 0.3em 0 0.6em; // 6px 0 12px
+  margin-bottom: 0.3em; // 6px
 
-  @media #{ $media-query-smartphone } {}
-
-  @media #{ $media-query-smartphone-to-tablet } {}
-
-  @media #{ $media-query-portrait-tablet } {
+  @media (#{ $media-query-medium }) {
     @include font-size(2.5em);
 
-    margin: 0.24em 0 0.48em; // 6px 0 12px
+    margin-bottom: 0.24em; // 6px
   }
 
-  @media #{ $media-query-default } {
+  @media (#{ $media-query-large }) {
     @include font-size(3.2em);
 
-    margin: 0.1875em 0 0.375em; // 6px 0 12px
+    margin-bottom: 0.1875em; // 6px
   }
 
-  @media #{ $media-query-large-display } {
+  @media (#{ $media-query-extra-large }) {
     @include font-size(4em);
 
-    margin: 0.15em 0 0.3em; // 6px 0 12px
+    margin-bottom: 0.15em; // 6px
   }
 }
 
@@ -260,28 +184,24 @@ h4 {
 h5 {
   @include font-size(1.6em);
 
-  margin: 0.375em 0 0.75em; // 6px 0 12px
+  margin-bottom: 0.375em; // 6px
 
-  @media #{ $media-query-smartphone } {}
-
-  @media #{ $media-query-smartphone-to-tablet } {}
-
-  @media #{ $media-query-portrait-tablet } {
+  @media (#{ $media-query-medium }) {
     @include font-size(2em);
 
-    margin: 0.3em 0 0.6em; // 6px 0 12px
+    margin-bottom: 0.3em; // 6px
   }
 
-  @media #{ $media-query-default } {
+  @media (#{ $media-query-large }) {
     @include font-size(2.4em);
 
-    margin: 0.25em 0 0.5em; // 6px 0 12px
+    margin-bottom: 0.25em; // 6px
   }
 
-  @media #{ $media-query-large-display } {
+  @media (#{ $media-query-extra-large }) {
     @include font-size(3em);
 
-    margin: 0.2em 0 0.4em; // 6px 0 12px
+    margin-bottom: 0.2em; // 6px
   }
 }
 
@@ -289,20 +209,12 @@ h5 {
 h6 {
   @include font-size(1.6em);
 
-  margin: 0.375em 0 0.75em; // 6px 0 12px
+  margin-bottom: 0.375em; // 6px
 
-  @media #{ $media-query-smartphone } {}
-
-  @media #{ $media-query-smartphone-to-tablet } {}
-
-  @media #{ $media-query-portrait-tablet } {}
-
-  @media #{ $media-query-default } {}
-
-  @media #{ $media-query-large-display } {
+  @media (#{ $media-query-extra-large }) {
     @include font-size(2em);
 
-    margin: 0.3em 0 0.6em; // 6px 0 12px
+    margin-bottom: 0.3em; // 6px
   }
 }
 
@@ -319,6 +231,17 @@ header {
 // copyright data, …)
 footer {
   display: block;
+  overflow: hidden;
+
+  li {
+    @include font-size(1.5em);
+
+    margin-bottom: 0;
+  }
+
+  p {
+    @include font-size(1.5em);
+  }
 }
 
 // contact information for its nearest article or body element ancestor
@@ -336,6 +259,10 @@ p {
   @include font-size(1.6em);
 
   margin-bottom: 1.5em; // 24px
+
+  @media (#{ $media-query-extra-large }) {
+    @include font-size(2em);
+  }
 }
 
 // paragraph-level thematic break
@@ -402,10 +329,14 @@ ol {
     position: inside;
     type: decimal;
   }
-  margin-bottom: 1.2em;
+  margin-bottom: 2.4em;
 
   > li {
     @include font-size(1.6em);
+
+    @media (#{ $media-query-extra-large }) {
+      @include font-size(2em);
+    }
 
     > ol {
       list-style-type: lower-alpha;
@@ -426,12 +357,16 @@ ol {
 ul {
   list-style: {
     position: inside;
-    style-type: disc;   
+    style-type: disc;
   }
-  margin-bottom: 1.2em;
+  margin-bottom: 2.4em;
 
   > li {
     @include font-size(1.6em);
+
+    @media (#{ $media-query-extra-large }) {
+      @include font-size(2em);
+    }
 
     > ol {
       margin-bottom: 0;
@@ -471,19 +406,15 @@ dt {
     weight: bold;
   }
 
-  @media #{ $media-query-smartphone } {}
-
-  @media #{ $media-query-smartphone-to-tablet } {}
-
-  @media #{ $media-query-portrait-tablet } {
+  @media (#{ $media-query-medium }) {
     @include font-size(2em);
   }
 
-  @media #{ $media-query-default } {
+  @media (#{ $media-query-large }) {
     @include font-size(2em);
   }
 
-  @media #{ $media-query-large-display } {
+  @media (#{ $media-query-extra-large }) {
     @include font-size(2em);
   }
 }
@@ -505,7 +436,6 @@ figure {
   padding: 1.2em 0 0;
 
   > img {
-    display: block;
     margin: 0 auto 1.2em;
   }
 }
@@ -570,7 +500,7 @@ cite {
   @include font-size(1.2em);
 
   font: {
-    style: italic;  
+    style: italic;
     weight: bold;
   }
 }
@@ -643,8 +573,19 @@ kbd {
   font-family: $font-family-code;
 }
 
-sub {}
-sup {}
+sub,
+sup {
+  font-size: 0.6em;
+  position: relative;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
 
 // italic text
 i {
@@ -671,14 +612,16 @@ mark {
 }
 
 ruby {}
-rt {}
-rp {}
-bdi {}
-bdo {}
-span {}
 
-// single line break
-br {}
+rt {}
+
+rp {}
+
+bdi {}
+
+bdo {}
+
+span {}
 
 wbr {}
 
@@ -690,14 +633,12 @@ wbr {}
 // inserted text
 ins {
   border-bottom: 0.0625em dashed;
-  font-style: italic;
   text-decoration: none;
 }
 
 // deleted text
 del {
   color: $color-neutral-darkest;
-  font-style: italic;
   text-decoration: line-through;
 }
 
@@ -706,23 +647,26 @@ del {
 // EMBEDDED CONTENT               //
 //--------------------------------//
 
-img {}
+img {
+  display: block;
+}
+
 iframe {}
+
 embed {}
+
 object {}
-param {}
+
 video {}
 
 // sound element
 audio {}
 
-source {}
-track {}
-
 // graphics canvas
 canvas {}
 
 map {}
+
 area {}
 
 
@@ -732,21 +676,19 @@ area {}
 
 // table
 table {
-  @include border-radius(0.2em);
-
   background: $color-neutral-lightest;
   border: {
     collapse: collapse;
+    radius: 0.2em;
     spacing: 0;
   }
-  margin-bottom: 1.2em;
+  margin-bottom: 2.4em; // 24px
   width: 100%;
 }
 
 // table caption
 caption {}
 
-colgroup {}
 col {}
 
 // table body
@@ -780,7 +722,7 @@ tr {
 }
 
 // table data cell
-td { 
+td {
   @include font-size(1.6em);
 
   padding: 0 0.625em; // 0 10px
@@ -800,13 +742,15 @@ th {
 // FORMS                          //
 //--------------------------------//
 
-// form
 form {
-  margin-bottom: 1.2em; // 12px
+  margin-bottom: 2.4em; // 24px
+  overflow: hidden;
 
-  > fieldset > legend {
-    position: absolute;
-    text-indent: -999em; // negative a lot
+  > fieldset {
+    > legend {
+      position: absolute;
+      text-indent: -999em; // negative a lot
+    }
   }
 }
 
@@ -887,8 +831,10 @@ legend {
 label {
   display: block;
   float: left;
-  font-family: $font-family-headings;
-  font-size: 1.6em;
+  font: {
+    family: $font-family-headings;
+    size: 1.6em;
+  }
   line-height: 1.875em; // 30px
 }
 
@@ -914,24 +860,11 @@ input {
     width: 60px;
   }
 
-  &[type="date"],
-  &[type="datetime"],
-  &[type="datetime-local"],
-  &[type="email"],
-  &[type="month"],
-  &[type="number"],
-  &[type="password"],
-  &[type="search"],
-  &[type="tel"],
-  &[type="text"],
-  &[type="time"],
-  &[type="url"],
-  &[type="week"] {
-    @include border-radius(0.125em); // 2px
-
+  &[type="text"] {
     background: $color-neutral-lightest;
     border: {
       color: $color-neutral-darker $color-neutral $color-neutral $color-neutral-darker;
+      radius: 0.125em; // 2px
       style: solid;
       width: 0.0625em; /* 1px */
     }
@@ -953,36 +886,43 @@ input {
 
   &[type="hidden"] {}
 
+  @each $type in (date, datetime, datetime-local, email, month, number, password, search, tel, time, url, week) {
+    &[type="#{ $type }"] {
+      @extend input[type="text"];
+    }
+  }
+
   &[type="range"] {
     clear: left;
     float: left;
   }
 
   // button elements
-  &[type="submit"],
-  &[type="image"],
-  &[type="reset"],
-  &[type="button"] {
-    @extend button;
+  @each $type in (submit, image, reset, button) {
+    &[type="#{ $type }"] {
+      @extend button;
+    }
   }
 }
 
 // push buttons
 button {
   @include background-gradient($color-neutral-lightest, $color-neutral-lighter);
-  @include border-radius(0.125em); // 2px
+  @include font-size(1.6em);
 
   border: {
     color: $color-neutral $color-neutral-darker $color-neutral-darker $color-neutral;
+    radius: 0.125em; // 2px
     style: solid;
     width: 0.0625em; /* 1px */
   }
   color: $color-neutral-darkest;
+  cursor: pointer;
   float: left;
-  font: 1.6em/1.75em $font-family-sans-serif; // 16px/28px
-  height: 1.75em; // 28px
+  font-family: $font-family-sans-serif;
+  height: 2.625em; // 42px
   margin: 0 0.3125em 0 0; // 0 5px 0 0
-  padding: 0 0.875em; // 0 14px
+  padding: 0 1.1875em; // 0 19px
 
   &:active {
     @include background-gradient($color-neutral-lighter, $color-neutral-lightest);
@@ -1009,17 +949,18 @@ select {
 }
 
 datalist {}
+
 optgroup {}
+
 option {}
 
 textarea {
-  @include border-radius(0.125em); // 2px
-
   background: $color-neutral-lightest;
   border: {
     color: $color-neutral-darker $color-neutral $color-neutral $color-neutral-darker;
+    radius: 0.125em; // 2px
     style: solid;
-    width: 0.0625em; /* 1px */
+    width: 0.0625em; // 1px
   }
   clear: left;
   float: left;
@@ -1035,8 +976,11 @@ textarea {
 }
 
 keygen {}
+
 output {}
+
 progress {}
+
 meter {}
 
 
@@ -1045,38 +989,39 @@ meter {}
 //--------------------------------//
 
 details {}
+
 summary {}
+
 command {}
+
 menu {}
 
 
 //--------------------------------//
 // DEBUGGING                      //
 //--------------------------------//
-@if ($is-in-debug-mode == true) {
-//  * { background-color: $color-debug; }
+@if $is-in-debug-mode {
+  * {
+    background-color: $color-debug !important;
+  }
 
   html {
     background: repeat-y center top;
 
-    @media #{ $media-query-smartphone } {
-      background-image: url('../images/grids/smartphone.png');
+    @media (#{ $media-query-small }) {
+      background-image: url('../images/grids/small-#{ $number-of-grid-columns }-columns.png');
     }
 
-    @media #{ $media-query-smartphone-to-tablet } {
-      background-image: url('../images/grids/smartphone-to-tablet.png');
+    @media (#{ $media-query-medium }) {
+      background-image: url('../images/grids/medium-#{ $number-of-grid-columns }-columns.png');
     }
 
-    @media #{ $media-query-portrait-tablet } {
-      background-image: url('../images/grids/tablet.png');
+    @media (#{ $media-query-large }) {
+      background-image: url('../images/grids/large-#{ $number-of-grid-columns }-columns.png');
     }
 
-    @media #{ $media-query-default } {
-      background-image: url('../images/grids/default.png');
-    }
-
-    @media #{ $media-query-large-display } {
-      background-image: url('../images/grids/large-display.png');
+    @media (#{ $media-query-extra-large }) {
+      background-image: url('../images/grids/extra-large-#{ $number-of-grid-columns }-columns.png');
     }
   }
 }
