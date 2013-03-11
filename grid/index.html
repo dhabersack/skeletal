@@ -1,0 +1,82 @@
+---
+layout: default
+---
+
+<h2>Grid</h2>
+
+<p>
+  The grid-mixin allows you to specify a number of columns a container should
+  occupy.
+</p>
+
+<p>
+  The grid is fully responsive: resize your browser to check how it behaves at
+  different breakpoints.
+</p>
+
+<div class="grid-demo">
+  <div class="grid-demo-item-1"> <p> 1</p></div>
+  <div class="grid-demo-item-2"> <p> 2</p></div>
+  <div class="grid-demo-item-3"> <p> 3</p></div>
+  <div class="grid-demo-item-4"> <p> 4</p></div>
+  <div class="grid-demo-item-5"> <p> 5</p></div>
+  <div class="grid-demo-item-6"> <p> 6</p></div>
+  <div class="grid-demo-item-7"> <p> 7</p></div>
+  <div class="grid-demo-item-8"> <p> 8</p></div>
+  <div class="grid-demo-item-9"> <p> 9</p></div>
+  <div class="grid-demo-item-10"><p>10</p></div>
+  <div class="grid-demo-item-11"><p>11</p></div>
+  <div class="grid-demo-item-12"><p>12</p></div>
+</div>
+
+<p>
+  Note that since Skeletal is based entirely on <code>em</code>-values, you can
+  only safely apply this mixin to elements with a <code>font-size</code> of
+  <code>1em</code>.
+</p>
+
+<h5>Floating containers</h5>
+
+<p>
+  The <code>$break-every-nth</code>-parameter floats element with the same class
+  and clears the floating after every nth element:
+</p>
+
+<pre>.item {<br>  @include grid(4, $break-every-nth: 3);<br>}</pre>
+
+<div class="grid-demo">
+  <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+  <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+  <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+  <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+  <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+  <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+</div>
+
+<h5>Grid offset</h5>
+
+<p>
+  The <code>$offset</code>-attribute allows you to move a container to the left
+  by a number of columns. With additional floating, you can easily achieve a
+  layout such as the following:
+</p>
+
+<div class="grid-demo">
+  <div class="grid-demo-item-6-offset-1"><p>grid(6, $offset: 1)</p></div>
+  <div class="grid-demo-item-3-offset-1"><p>grid(3, $offset: 1)</p></div>
+  <div class="grid-demo-item-4-offset-2"><p>grid(4, $offset: 2)</p></div>
+  <div class="grid-demo-item-3-offset-2"><p>grid(3, $offset: 2)</p></div>
+</div>
+
+<h5>Number of columns</h5>
+
+<p>
+  You can set the <code>$number-of-grid-columns</code>-variable in
+  <code>_config.scss</code> to <code>12</code>, <code>16</code> or
+  <code>24</code>.
+</p>
+
+<p>
+  Changes to this variable have a direct effect on the widths the grid-mixin
+  calculates.
+</p>

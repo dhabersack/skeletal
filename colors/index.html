@@ -1,0 +1,219 @@
+---
+layout: default
+---
+
+<h2>Colors</h2>
+
+<p>
+  <code>_colors.scss</code> contains a list of colors you want to use in your
+  projects with the defaults being:
+</p>
+
+<pre>
+$color-blue:   #3581fc;
+$color-gray:   #bdbdbd;
+$color-green:  #23db2a;
+$color-red:    #e33d27;
+$color-violet: #904fff;
+$color-yellow: #ffe226;</pre>
+
+<p>
+  You then create named proxies for them in <code>_config.scss</code>:
+</p>
+
+<pre>
+$color-action:       $color-green;
+$color-alert:        $color-yellow;
+$color-brand:        $color-yellow;
+$color-debug:        rgba($color-red, 0.0625);
+$color-error:        $color-red;
+$color-highlight:    $color-yellow;
+$color-link:         $color-blue;
+$color-link-visited: $color-violet;
+$color-neutral:      $color-gray;</pre>
+
+<p>
+  For all but <code>$color-debug</code>, Skeletal generates lighter and darker
+  versions in <code>_setup.scss</code> by creating additional variables. This
+  puts the following default palette at your disposal:
+</p>
+
+<ul id="color-demo">
+  <li>
+    <span class="color-action-lightest"></span>
+    <code>$color-action-lightest</code>
+  </li>
+  <li>
+    <span class="color-action-lighter"></span>
+    <code>$color-action-lighter</code>
+  </li>
+  <li>
+    <span class="color-action"></span>
+    <code>$color-action</code>
+  </li>
+  <li>
+    <span class="color-action-darker"></span>
+    <code>$color-action-darker</code>
+  </li>
+  <li>
+    <span class="color-action-darkest"></span>
+    <code>$color-action-darkest</code>
+  </li>
+
+  <li>
+    <span class="color-alert-lightest"></span>
+    <code>$color-alert-lightest</code>
+  </li>
+  <li>
+    <span class="color-alert-lighter"></span>
+    <code>$color-alert-lighter</code>
+  </li>
+  <li>
+    <span class="color-alert"></span>
+    <code>$color-alert</code>
+  </li>
+  <li>
+    <span class="color-alert-darker"></span>
+    <code>$color-alert-darker</code>
+  </li>
+  <li>
+    <span class="color-alert-darkest"></span>
+    <code>$color-alert-darkest</code>
+  </li>
+
+  <li>
+    <span class="color-brand-lightest"></span>
+    <code>$color-brand-lightest</code>
+  </li>
+  <li>
+    <span class="color-brand-lighter"></span>
+    <code>$color-brand-lighter</code>
+  </li>
+  <li>
+    <span class="color-brand"></span>
+    <code>$color-brand</code>
+  </li>
+  <li>
+    <span class="color-brand-darker"></span>
+    <code>$color-brand-darker</code>
+  </li>
+  <li>
+    <span class="color-brand-darkest"></span>
+    <code>$color-brand-darkest</code>
+  </li>
+
+  <li>
+    <span class="color-error-lightest"></span>
+    <code>$color-error-lightest</code>
+  </li>
+  <li>
+    <span class="color-error-lighter"></span>
+    <code>$color-error-lighter</code>
+  </li>
+  <li>
+    <span class="color-error"></span>
+    <code>$color-error</code>
+  </li>
+  <li>
+    <span class="color-error-darker"></span>
+    <code>$color-error-darker</code>
+  </li>
+  <li>
+    <span class="color-error-darkest"></span>
+    <code>$color-error-darkest</code>
+  </li>
+
+  <li>
+    <span class="color-highlight-lightest"></span>
+    <code>$color-highlight-lightest</code>
+  </li>
+  <li>
+    <span class="color-highlight-lighter"></span>
+    <code>$color-highlight-lighter</code>
+  </li>
+  <li>
+    <span class="color-highlight"></span>
+    <code>$color-highlight</code>
+  </li>
+  <li>
+    <span class="color-highlight-darker"></span>
+    <code>$color-highlight-darker</code>
+  </li>
+  <li>
+    <span class="color-highlight-darkest"></span>
+    <code>$color-highlight-darkest</code>
+  </li>
+
+  <li>
+    <span class="color-link-lightest"></span>
+    <code>$color-link-lightest</code>
+  </li>
+  <li>
+    <span class="color-link-lighter"></span>
+    <code>$color-link-lighter</code>
+  </li>
+  <li>
+    <span class="color-link"></span>
+    <code>$color-link</code>
+  </li>
+  <li>
+    <span class="color-link-darker"></span>
+    <code>$color-link-darker</code>
+  </li>
+  <li>
+    <span class="color-link-darkest"></span>
+    <code>$color-link-darkest</code>
+  </li>
+
+  <li>
+    <span class="color-link-visited-lightest"></span>
+    <code>$color-link-visited-lightest</code>
+  </li>
+  <li>
+    <span class="color-link-visited-lighter"></span>
+    <code>$color-link-visited-lighter</code>
+  </li>
+  <li>
+    <span class="color-link-visited"></span>
+    <code>$color-link-visited</code>
+  </li>
+  <li>
+    <span class="color-link-visited-darker"></span>
+    <code>$color-link-visited-darker</code>
+  </li>
+  <li>
+    <span class="color-link-visited-darkest"></span>
+    <code>$color-link-visited-darkest</code>
+  </li>
+
+  <li>
+    <span class="color-neutral-lightest"></span>
+    <code>$color-neutral-lightest</code>
+  </li>
+  <li>
+    <span class="color-neutral-lighter"></span>
+    <code>$color-neutral-lighter</code>
+  </li>
+  <li>
+    <span class="color-neutral"></span>
+    <code>$color-neutral</code>
+  </li>
+  <li>
+    <span class="color-neutral-darker"></span>
+    <code>$color-neutral-darker</code>
+  </li>
+  <li>
+    <span class="color-neutral-darkest"></span>
+    <code>$color-neutral-darkest</code>
+  </li>
+
+  <li>
+    <span class="color-debug"></span>
+    <code>$color-debug</code>
+  </li>
+</ul>
+
+<p>
+  This setup allows you to easily adapt the mapping of colors to semantic names
+  and automatically update all colors used throughout your site.
+</p>
