@@ -1,12 +1,15 @@
 # Skeletal
 
-Skeletal is a preset-stylesheet that sets sensible defaults for most HTML5-tags, providing a solid foundation to build your next webdesign project on.
+Skeletal is a framework that provides a collection of default styles and
+Sass-mixins that help getting up and running on webdesign projects a lot quicker
+than writing everything from scratch does.
 
-See a live demo at http://dhabersack.github.com/skeletal/
+See a demo and documentation at http://dhabersack.github.com/skeletal/
+
 
 ## Bug tracker
 
-Please create an issue on GitHub when you find a bug.
+Please create an issue on GitHub when you find a bug or have a feature request.
 
 http://github.com/dhabersack/skeletal/issues
 
@@ -15,6 +18,7 @@ http://github.com/dhabersack/skeletal/issues
 
 __Dominik Habersack__
 
+* http://islovely.co/
 * http://twitter.com/dhabersack
 * http://github.com/dhabersack
 
@@ -23,7 +27,7 @@ __Dominik Habersack__
 
 The MIT License
 
-Copyright 2012 Dominik Habersack
+Copyright 2013 Dominik Habersack
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
