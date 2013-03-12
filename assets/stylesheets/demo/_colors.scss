@@ -1,0 +1,49 @@
+$color-lists: (
+  ('.color-action-lightest',       $color-action-lightest      ),
+  ('.color-action-lighter',        $color-action-lighter       ),
+  ('.color-action',                $color-action               ),
+  ('.color-action-darker',         $color-action-darker        ),
+  ('.color-action-darkest',        $color-action-darkest       ),
+  ('.color-alert-lightest',        $color-alert-lightest       ),
+  ('.color-alert-lighter',         $color-alert-lighter        ),
+  ('.color-alert',                 $color-alert                ),
+  ('.color-alert-darker',          $color-alert-darker         ),
+  ('.color-alert-darkest',         $color-alert-darkest        ),
+  ('.color-brand-lightest',        $color-brand-lightest       ),
+  ('.color-brand-lighter',         $color-brand-lighter        ),
+  ('.color-brand',                 $color-brand                ),
+  ('.color-brand-darker',          $color-brand-darker         ),
+  ('.color-brand-darkest',         $color-brand-darkest        ),
+  ('.color-error-lightest',        $color-error-lightest       ),
+  ('.color-error-lighter',         $color-error-lighter        ),
+  ('.color-error',                 $color-error                ),
+  ('.color-error-darker',          $color-error-darker         ),
+  ('.color-error-darkest',         $color-error-darkest        ),
+  ('.color-highlight-lightest',    $color-highlight-lightest   ),
+  ('.color-highlight-lighter',     $color-highlight-lighter    ),
+  ('.color-highlight',             $color-highlight            ),
+  ('.color-highlight-darker',      $color-highlight-darker     ),
+  ('.color-highlight-darkest',     $color-highlight-darkest    ),
+  ('.color-link-lightest',         $color-link-lightest        ),
+  ('.color-link-lighter',          $color-link-lighter         ),
+  ('.color-link',                  $color-link                 ),
+  ('.color-link-darker',           $color-link-darker          ),
+  ('.color-link-darkest',          $color-link-darkest         ),
+  ('.color-link-visited-lightest', $color-link-visited-lightest),
+  ('.color-link-visited-lighter',  $color-link-visited-lighter ),
+  ('.color-link-visited',          $color-link-visited         ),
+  ('.color-link-visited-darker',   $color-link-visited-darker  ),
+  ('.color-link-visited-darkest',  $color-link-visited-darkest ),
+  ('.color-neutral-lightest',      $color-neutral-lightest     ),
+  ('.color-neutral-lighter',       $color-neutral-lighter      ),
+  ('.color-neutral',               $color-neutral              ),
+  ('.color-neutral-darker',        $color-neutral-darker       ),
+  ('.color-neutral-darkest',       $color-neutral-darkest      ),
+  ('.color-debug',                 $color-debug                )
+);
+
+@each $color-list in $color-lists {
+  #{ nth($color-list, 1) }::before {
+    background: nth($color-list, 2);
+  }
+}

@@ -1,0 +1,121 @@
+
+.grid-demo {
+  background: repeat-y center top;
+  overflow: hidden;
+  margin-bottom: 2.4em;
+
+  @media (#{ $media-query-small       }) { background-image: url('../images/grids/small-#{ $number-of-grid-columns }-columns.png');       }
+  @media (#{ $media-query-medium      }) { background-image: url('../images/grids/medium-#{ $number-of-grid-columns }-columns.png');      }
+  @media (#{ $media-query-large       }) { background-image: url('../images/grids/large-#{ $number-of-grid-columns }-columns.png');       }
+  @media (#{ $media-query-extra-large }) { background-image: url('../images/grids/extra-large-#{ $number-of-grid-columns }-columns.png'); }
+}
+
+.grid-demo-item {
+  @include border-radius(0.2em);
+  @include box-shadow(inset 0 0 0.2em transparentize($color-neutral-darkest, 0.8));
+
+  background: $color-highlight;
+  margin-bottom: 1.2em !important;
+
+  p {
+    @include font-size(1.5em);
+
+    font-family: $font-family-code;
+    margin-bottom: 0;
+    padding: 0.4em 0; // 6px 0
+    text-align: center;
+  }
+}
+
+.grid-demo-item-1 {
+  @extend .grid-demo-item;
+  @include grid(1);
+}
+
+.grid-demo-item-2 {
+  @extend .grid-demo-item;
+  @include grid(2);
+}
+
+.grid-demo-item-3 {
+  @extend .grid-demo-item;
+  @include grid(3);
+}
+
+.grid-demo-item-4 {
+  @extend .grid-demo-item;
+  @include grid(4);
+}
+
+.grid-demo-item-5 {
+  @extend .grid-demo-item;
+  @include grid(5);
+}
+
+.grid-demo-item-6 {
+  @extend .grid-demo-item;
+  @include grid(6);
+}
+
+.grid-demo-item-7 {
+  @extend .grid-demo-item;
+  @include grid(7);
+}
+
+.grid-demo-item-8 {
+  @extend .grid-demo-item;
+  @include grid(8);
+}
+
+.grid-demo-item-9 {
+  @extend .grid-demo-item;
+  @include grid(9);
+}
+
+.grid-demo-item-10 {
+  @extend .grid-demo-item;
+  @include grid(10);
+}
+
+.grid-demo-item-11 {
+  @extend .grid-demo-item;
+  @include grid(11);
+}
+
+.grid-demo-item-12 {
+  @extend .grid-demo-item;
+  @include grid(12);
+}
+
+.grid-demo-item-4-float-left {
+  @extend .grid-demo-item;
+  @include grid(4, $margin-bottom: 1.2em, $break-every-nth: 3);
+}
+
+.grid-demo-item-3-offset-2 {
+  @extend .grid-demo-item;
+  @include grid(3, $offset: 2);
+
+  float: left;
+}
+
+.grid-demo-item-3-offset-1 {
+  @extend .grid-demo-item;
+  @include grid(3, $offset: 1);
+
+  float: left;
+}
+
+.grid-demo-item-4-offset-2 {
+  @extend .grid-demo-item;
+  @include grid(4, $offset: 2);
+
+  float: left;
+}
+
+.grid-demo-item-6-offset-1 {
+  @extend .grid-demo-item;
+  @include grid(6, $offset: 1);
+
+  float: left;
+}
