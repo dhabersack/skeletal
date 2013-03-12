@@ -1,4 +1,5 @@
 @import 'skeletal/skeletal.scss';
+@import 'demo/demo.scss';
 
 @include font-face(
   $name: 'Entypo',
@@ -7,6 +8,15 @@
   $woff: 'regular.woff',
   $ttf:  'regular.ttf',
   $svg:  'regular.svg#EntypoRegular'
+);
+
+@include font-face(
+  $name: 'Skeletal',
+  $path: '../fonts/Skeletal/',
+  $eot:  'regular.eot',
+  $woff: 'regular.woff',
+  $ttf:  'regular.ttf',
+  $svg:  'regular.svg#Skeletal'
 );
 
 @include font-face(
@@ -127,206 +137,40 @@ section {
 }
 
 
-#color-demo {
-  list-style: none;
-
-  code {
-    margin: 0.75em 0; // 48px
-  }
-
+.colors {
   li {
-    margin-bottom: 0.375em; // 6px
-    overflow: hidden;
-  }
-
-  span {
-    @include border-radius(0.125em); // 2px
-    @include box-shadow(inset 0 0 0.0625em $color-neutral-darkest);
-
-    display: inline-block;
-    float: left;
-    height: 3em; // 48px
-    margin-right: 0.625em; // 10px
-    width: 3em; // 48px
-
-    @media (#{ $media-query-extra-large }) {
-      @include border-radius(0.1em); // 2px
+    > code {
+      margin: 0.75em 0; // 48px
     }
   }
-}
 
-.color-action-lightest       { background: $color-action-lightest;       }
-.color-action-lighter        { background: $color-action-lighter;        }
-.color-action                { background: $color-action;                }
-.color-action-darker         { background: $color-action-darker;         }
-.color-action-darkest        { background: $color-action-darkest;        }
-.color-alert-lightest        { background: $color-alert-lightest;        }
-.color-alert-lighter         { background: $color-alert-lighter;         }
-.color-alert                 { background: $color-alert;                 }
-.color-alert-darker          { background: $color-alert-darker;          }
-.color-alert-darkest         { background: $color-alert-darkest;         }
-.color-brand-lightest        { background: $color-brand-lightest;        }
-.color-brand-lighter         { background: $color-brand-lighter;         }
-.color-brand                 { background: $color-brand;                 }
-.color-brand-darker          { background: $color-brand-darker;          }
-.color-brand-darkest         { background: $color-brand-darkest;         }
-.color-error-lightest        { background: $color-error-lightest;        }
-.color-error-lighter         { background: $color-error-lighter;         }
-.color-error                 { background: $color-error;                 }
-.color-error-darker          { background: $color-error-darker;          }
-.color-error-darkest         { background: $color-error-darkest;         }
-.color-highlight-lightest    { background: $color-highlight-lightest;    }
-.color-highlight-lighter     { background: $color-highlight-lighter;     }
-.color-highlight             { background: $color-highlight;             }
-.color-highlight-darker      { background: $color-highlight-darker;      }
-.color-highlight-darkest     { background: $color-highlight-darkest;     }
-.color-link-lightest         { background: $color-link-lightest;         }
-.color-link-lighter          { background: $color-link-lighter;          }
-.color-link                  { background: $color-link;                  }
-.color-link-darker           { background: $color-link-darker;           }
-.color-link-darkest          { background: $color-link-darkest;          }
-.color-link-visited-lightest { background: $color-link-visited-lightest; }
-.color-link-visited-lighter  { background: $color-link-visited-lighter;  }
-.color-link-visited          { background: $color-link-visited;          }
-.color-link-visited-darker   { background: $color-link-visited-darker;   }
-.color-link-visited-darkest  { background: $color-link-visited-darkest;  }
-.color-neutral-lightest      { background: $color-neutral-lightest;      }
-.color-neutral-lighter       { background: $color-neutral-lighter;       }
-.color-neutral               { background: $color-neutral;               }
-.color-neutral-darker        { background: $color-neutral-darker;        }
-.color-neutral-darkest       { background: $color-neutral-darkest;       }
-.color-debug                 { background: $color-debug;                 }
+  section {
+    li {
+      margin-bottom: 0.375em; // 6px
+      overflow: hidden;
 
-.grid-demo {
-  background: repeat-y center top;
-  overflow: hidden;
-  margin-bottom: 2.4em;
+      &::before {
+        @include border-radius(0.125em); // 2px
+        @include box-shadow(inset 0 0 0.0625em $color-neutral-darkest);
 
-  @media (#{ $media-query-small }) {
-    background-image: url('../images/grids/small-#{ $number-of-grid-columns }-columns.png');
+        content: '';
+        float: left;
+        height: 3em; // 48px
+        margin-right: 0.625em; // 10px
+        width: 3em; // 48px
+
+        @media (#{ $media-query-extra-large }) {
+          @include border-radius(0.1em); // 2px
+
+          margin-right: 0.5em; // 10px
+        }
+      }
+    }
   }
 
-  @media (#{ $media-query-medium }) {
-    background-image: url('../images/grids/medium-#{ $number-of-grid-columns }-columns.png');
+  ul {
+    list-style: none;
   }
-
-  @media (#{ $media-query-large }) {
-    background-image: url('../images/grids/large-#{ $number-of-grid-columns }-columns.png');
-  }
-
-  @media (#{ $media-query-extra-large }) {
-    background-image: url('../images/grids/extra-large-#{ $number-of-grid-columns }-columns.png');
-  }
-}
-
-.grid-demo-item {
-  @include border-radius(0.2em);
-  @include box-shadow(inset 0 0 0.2em transparentize($color-neutral-darkest, 0.8));
-
-  background: $color-highlight;
-  margin-bottom: 1.2em !important;
-
-  p {
-    @include font-size(1.5em);
-
-    font-family: $font-family-code;
-    margin-bottom: 0;
-    padding: 0.4em 0; // 6px 0
-    text-align: center;
-  }
-}
-
-.grid-demo-item-1 {
-  @extend .grid-demo-item;
-  @include grid(1);
-}
-
-.grid-demo-item-2 {
-  @extend .grid-demo-item;
-  @include grid(2);
-}
-
-.grid-demo-item-3 {
-  @extend .grid-demo-item;
-  @include grid(3);
-}
-
-.grid-demo-item-4 {
-  @extend .grid-demo-item;
-  @include grid(4);
-}
-
-.grid-demo-item-5 {
-  @extend .grid-demo-item;
-  @include grid(5);
-}
-
-.grid-demo-item-6 {
-  @extend .grid-demo-item;
-  @include grid(6);
-}
-
-.grid-demo-item-7 {
-  @extend .grid-demo-item;
-  @include grid(7);
-}
-
-.grid-demo-item-8 {
-  @extend .grid-demo-item;
-  @include grid(8);
-}
-
-.grid-demo-item-9 {
-  @extend .grid-demo-item;
-  @include grid(9);
-}
-
-.grid-demo-item-10 {
-  @extend .grid-demo-item;
-  @include grid(10);
-}
-
-.grid-demo-item-11 {
-  @extend .grid-demo-item;
-  @include grid(11);
-}
-
-.grid-demo-item-12 {
-  @extend .grid-demo-item;
-  @include grid(12);
-}
-
-.grid-demo-item-4-float-left {
-  @extend .grid-demo-item;
-  @include grid(4, $margin-bottom: 1.2em, $break-every-nth: 3);
-}
-
-.grid-demo-item-3-offset-2 {
-  @extend .grid-demo-item;
-  @include grid(3, $offset: 2);
-
-  float: left;
-}
-
-.grid-demo-item-3-offset-1 {
-  @extend .grid-demo-item;
-  @include grid(3, $offset: 1);
-
-  float: left;
-}
-
-.grid-demo-item-4-offset-2 {
-  @extend .grid-demo-item;
-  @include grid(4, $offset: 2);
-
-  float: left;
-}
-
-.grid-demo-item-6-offset-1 {
-  @extend .grid-demo-item;
-  @include grid(6, $offset: 1);
-
-  float: left;
 }
 
 .home {
@@ -337,11 +181,38 @@ section {
     }
 
     li {
-      @include grid(6, $breakpoints: ('medium'), $break-every-nth: 2);
-      @include grid(4, $breakpoints: ('large', 'extra-large'), $break-every-nth: 3);
+      @include grid(6, $break-every-nth: 2, $padding: 6em 0 0, $breakpoints: ('medium'));
+      @include grid(4, $break-every-nth: 3, $padding: 6em 0 0, $breakpoints: ('large', 'extra-large'));
 
       font-size: 1em;
       line-height: 1em;
+      padding-top: 6em;
+      position: relative;
+
+      &::before {
+        color: $color-brand;
+        font: {
+          family: 'Skeletal';
+          size: 6em;
+        }
+        height: 1em;
+        line-height: 1em;
+        position: absolute;
+        text-align: center;
+        text-shadow: 0 1px 1px $color-brand-lighter;
+        top: 0em;
+        width: 100%;
+      }
+
+      $icons: ('\e026', '\e005', '\e001', '\e002', '\e010', '\e004');
+
+      @for $i from 1 through length($icons) {
+        &:nth-of-type(#{ $i }) {
+          &::before {
+            content: nth($icons, $i);
+          }
+        }
+      }
     }
   }
 }
