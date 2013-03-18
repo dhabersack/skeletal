@@ -5,14 +5,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Skeletal</title>
+    <title>{% if page.title %}{{ page.title }} | {% endif %}Skeletal</title>
 
     <link rel="stylesheet" type="text/css" href="/assets/stylesheets/style.css">
 
     <link rel="shortcut icon" href="/assets/images/theme/favicon.ico">
   </head>
 
-  <body class="{{ page.page_class }}">
+  <body{% if page.page_class %} class="{{ page.page_class }}"{% endif %}>
     <header>
       <div>
         <h1>
@@ -32,6 +32,7 @@
     <nav>
       <ol>
         <li><a href="/">Home</a></li>
+        <li><a href="/getting-started">Getting started</a></li>
         <li><a href="/colors">Colors</a></li>
         <li><a href="/typography">Typography</a></li>
         <li><a href="/grid">Grid</a></li>
@@ -39,6 +40,8 @@
     </nav>
 
     <section>
+      <h2>{{ page.title }}</h2>
+
       {{ page.content }}
     </section>
 
