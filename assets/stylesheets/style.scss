@@ -2,6 +2,7 @@
 
 footer,
 header,
+nav,
 section {
   @include grid($number-of-grid-columns, $center: true)
 }

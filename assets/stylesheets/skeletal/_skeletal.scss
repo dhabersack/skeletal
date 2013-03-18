@@ -38,8 +38,6 @@ section {
 
 // section with navigation links
 nav {
-  @include grid($number-of-grid-columns, $margin-bottom: 1.2em, $padding: 0.6em 0, $center: true);
-
   display: block;
   font-family: $font-family-headings;
 
