@@ -1,0 +1,36 @@
+@import 'stylesheets/sass/import.scss';
+
+article {
+  @include grid(6, $margin: 0 0 1.2em);
+
+  float: left;
+
+  img {
+    @include border-radius(0.2em);
+    @include box-shadow($offset-x: 0, $offset-y: 0, $blur-radius: 0.06em, $color: $color-neutral-darkest);
+
+    width: 100%;
+  }
+}
+
+body {
+  background: transparent url('../images/backgrounds/gradient.png') no-repeat left top;
+  color: $color-neutral-lightest;
+}
+
+em {
+  color: $color-brand;
+  font-style: normal;
+}
+
+h2 {
+  text-shadow: 0 0 0.06em $color-neutral-darkest;
+}
+
+html {
+  background: transparent url('../images/backgrounds/texture.png');
+}
+
+section {
+  overflow: hidden;
+}

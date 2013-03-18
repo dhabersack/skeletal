@@ -1,0 +1,55 @@
+@import 'stylesheets/sass/import.scss';
+
+article {
+  overflow: hidden;
+}
+
+h1 {
+  color: $color-neutral-lightest;
+}
+
+header {
+  background: $color-neutral-darkest;
+}
+
+nav {
+  padding: 1.8em 0 0;
+
+  a {
+   @include border-top-radius(0.125em); // 2px
+
+   background-color: $color-brand;
+   padding: 0.1875em 0.625em; // 3px 10px
+   text-shadow: 0 0.0625em 0.0625em $color-neutral-darkest; // 0 1px 1px
+
+   &#current-item {
+     background-color: $color-link;
+   }
+
+   &:link,
+   &:visited {
+     color: $color-neutral-lightest;
+   }
+  }
+}
+
+
+
+// TODO
+
+img {
+  @include border-radius(0.2em);
+  @include grid(6, $margin: 0 1em 0 0);
+
+  float: left;
+}
+
+nav {
+  bottom: 0;
+  margin-bottom: 0;
+
+  > ol > li {
+    margin-left: 1em;
+    margin-right: 0;
+  }
+}

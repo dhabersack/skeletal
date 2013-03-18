@@ -1,0 +1,80 @@
+@import 'stylesheets/sass/import.scss';
+
+article {
+  @include grid(7, $margin: 0);
+
+  overflow: hidden;
+
+  img {
+    @include box-shadow-inset($offset-x: 0, $offset-y: 0, $blur-radius: 0.5em, $color: $color-neutral);
+    @include grid(4, $margin: 0);
+
+    float: left;
+  }
+
+  div {
+    @include grid(3, $margin: 0);
+
+    float: right;
+  }
+}
+
+body {
+  @include box-shadow($offset-x: 0, $offset-y: 0, $blur-radius: 0.5em, $color: $color-neutral-darker);
+  @include grid(12, $margin: 0 auto, $padding: 0 -1em);
+
+  background: $color-neutral-lightest;
+
+  > header {
+    @include grid(7);
+
+    float: left;
+  }
+}
+
+html {
+  @include background-gradient($color-brand-lightest, $color-brand-darker);
+}
+
+section {
+  clear: both;
+}
+
+
+
+
+
+
+
+
+blockquote {
+  @include box-shadow-inset($offset-x: 0, $offset-y: 0, $blur-radius: 0.5em, $color: $color-neutral);
+
+  margin: {
+    left: 0;
+    right: 0;
+  }
+}
+
+body {
+  position: relative;
+
+  &:after {
+    @include background-gradient($color-brand-lightest, $color-brand-darker);
+    @include border-radius(0 0 2em/10em);
+    @include border-bottom-left-radius(4em);
+    @include box-shadow-inset($offset-x: 0, $offset-y: 0, $blur-radius: 0.5em, $color: $color-neutral-darker);
+
+    content: '';
+    position: absolute;
+    left: 60em;
+    bottom: 4.1em;
+    top: -.5em;
+    width: 6em;
+  }
+}
+
+cite {
+  display: block;
+  text-align: right;
+}
