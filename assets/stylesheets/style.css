@@ -458,8 +458,6 @@ table {
   margin-bottom: 2.4em;
   width: 100%; }
 
-tbody th {
-  font-weight: normal; }
 tbody > tr:nth-child(odd) {
   background: #e3e3e3; }
 
@@ -480,6 +478,7 @@ td {
 th {
   font-size: 1.6em;
   line-height: 1.5em;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: bold;
   padding: 0.1875em 0.625em;
   text-align: left; }
