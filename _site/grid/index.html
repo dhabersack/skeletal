@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grid | Skeletal</title>
+
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/style.css">
+
+    <link rel="shortcut icon" href="/assets/images/theme/favicon.ico">
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <h1>
+          <a href="/">Skeletal</a>
+        </h1>
+
+        <p>
+          A clean foundation for a lovely frontend.
+        </p>
+
+        <form action="http://github.com/dhabersack/skeletal">
+          <input type="submit" value="Check it out on GitHub">
+        </form>
+      </div>
+    </header>
+
+    <nav>
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/getting-started">Getting started</a></li>
+        <li><a href="/colors">Colors</a></li>
+        <li><a href="/typography">Typography</a></li>
+        <li><a href="/grid">Grid</a></li>
+      </ol>
+    </nav>
+
+    <section>
+      <h2>Grid</h2>
+
+      <p>
+  The grid-mixin allows you to specify a number of columns a container should
+  occupy.
+</p>
+
+<p>
+  The grid is fully responsive: resize your browser to check how it behaves at
+  different breakpoints.
+</p>
+
+<div class="grid-demo">
+  <div class="grid-demo-item-1"> <p> 1</p></div>
+  <div class="grid-demo-item-2"> <p> 2</p></div>
+  <div class="grid-demo-item-3"> <p> 3</p></div>
+  <div class="grid-demo-item-4"> <p> 4</p></div>
+  <div class="grid-demo-item-5"> <p> 5</p></div>
+  <div class="grid-demo-item-6"> <p> 6</p></div>
+  <div class="grid-demo-item-7"> <p> 7</p></div>
+  <div class="grid-demo-item-8"> <p> 8</p></div>
+  <div class="grid-demo-item-9"> <p> 9</p></div>
+  <div class="grid-demo-item-10"><p>10</p></div>
+  <div class="grid-demo-item-11"><p>11</p></div>
+  <div class="grid-demo-item-12"><p>12</p></div>
+</div>
+
+<p>
+  Note that since Skeletal is based entirely on <code>em</code>-values, you can
+  only safely apply this mixin to elements with a <code>font-size</code> of
+  <code>1em</code>.
+</p>
+
+<h3>Floating containers</h3>
+
+<p>
+  The <code>$break-every-nth</code>-parameter floats element with the same class
+  and clears the floating after every nth element:
+</p>
+
+<pre>.item {<br>  @include grid(4, $break-every-nth: 3);<br>}</pre>
+
+<div class="grid-demo">
+  <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+  <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+  <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+  <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+  <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+  <div class="grid-demo-item-4-float-left"><p>.item</p></div>
+</div>
+
+<h3>Grid offset</h3>
+
+<p>
+  The <code>$offset</code>-attribute allows you to move a container to the left
+  by a number of columns. With additional floating, you can easily achieve a
+  layout such as the following:
+</p>
+
+<div class="grid-demo">
+  <div class="grid-demo-item-6-offset-1"><p>grid(6, $offset: 1)</p></div>
+  <div class="grid-demo-item-3-offset-1"><p>grid(3, $offset: 1)</p></div>
+  <div class="grid-demo-item-4-offset-2"><p>grid(4, $offset: 2)</p></div>
+  <div class="grid-demo-item-3-offset-2"><p>grid(3, $offset: 2)</p></div>
+</div>
+
+<h3>Breakpoint-aware media queries</h3>
+
+<p>
+  This is the most amazing feature.
+</p>
+
+<h3>Number of columns</h3>
+
+<p>
+  You can set the <code>$number-of-grid-columns</code>-variable in
+  <code>_config.scss</code> to <code>12</code>, <code>16</code> or
+  <code>24</code>.
+</p>
+
+<p>
+  Changes to this variable have a direct effect on the widths the grid-mixin
+  calculates.
+</p>
+
+    </section>
+
+    <footer>
+      <div>
+        <p>
+          Built by <a href="http://twitter.com/dhabersack">@dhabersack</a><br>
+          Copyright &copy; 2013, <a href="http://islovely.co/">islovely.co</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-13202125-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+  </body>
+</html>

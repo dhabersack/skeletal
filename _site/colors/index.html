@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Colors | Skeletal</title>
+
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/style.css">
+
+    <link rel="shortcut icon" href="/assets/images/theme/favicon.ico">
+  </head>
+
+  <body class="colors">
+    <header>
+      <div>
+        <h1>
+          <a href="/">Skeletal</a>
+        </h1>
+
+        <p>
+          A clean foundation for a lovely frontend.
+        </p>
+
+        <form action="http://github.com/dhabersack/skeletal">
+          <input type="submit" value="Check it out on GitHub">
+        </form>
+      </div>
+    </header>
+
+    <nav>
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/getting-started">Getting started</a></li>
+        <li><a href="/colors">Colors</a></li>
+        <li><a href="/typography">Typography</a></li>
+        <li><a href="/grid">Grid</a></li>
+      </ol>
+    </nav>
+
+    <section>
+      <h2>Colors</h2>
+
+      <p>
+  Skeletal promotes the use of proxy-names for variables by mapping color-based
+  names to purpose-based names.
+</p>
+
+<p>
+  <code>_colors.scss</code> contains the colors used in your projects:
+</p>
+
+<pre>
+$color-blue:   #3581fc;
+$color-gray:   #bdbdbd;
+$color-green:  #23db2a;
+$color-red:    #e33d27;
+$color-violet: #904fff;
+$color-yellow: #ffe226;</pre>
+
+<p>
+  The variables you are going to use are set in <code>_config.scss</code>:
+</p>
+
+<pre>
+$color-action:       $color-green;
+$color-alert:        $color-yellow;
+$color-brand:        $color-yellow;
+$color-debug:        rgba($color-red, 0.0625);
+$color-error:        $color-red;
+$color-highlight:    $color-yellow;
+$color-link:         $color-blue;
+$color-link-visited: $color-violet;
+$color-neutral:      $color-gray;</pre>
+
+<p>
+  For all but <code>$color-debug</code>, Skeletal generates lighter and darker
+  versions in <code>_setup.scss</code>. Note that this only works for this exact
+  set of variables.
+</p>
+
+<p>
+  The following default palette can easily be changed by adapting the
+  color-variables and updating the mapping:
+</p>
+
+<ul>
+  <li class="color-action-lightest">      <code>$color-action-lightest      </code></li>
+  <li class="color-action-lighter">       <code>$color-action-lighter       </code></li>
+  <li class="color-action">               <code>$color-action               </code></li>
+  <li class="color-action-darker">        <code>$color-action-darker        </code></li>
+  <li class="color-action-darkest">       <code>$color-action-darkest       </code></li>
+  <li class="color-alert-lightest">       <code>$color-alert-lightest       </code></li>
+  <li class="color-alert-lighter">        <code>$color-alert-lighter        </code></li>
+  <li class="color-alert">                <code>$color-alert                </code></li>
+  <li class="color-alert-darker">         <code>$color-alert-darker         </code></li>
+  <li class="color-alert-darkest">        <code>$color-alert-darkest        </code></li>
+  <li class="color-brand-lightest">       <code>$color-brand-lightest       </code></li>
+  <li class="color-brand-lighter">        <code>$color-brand-lighter        </code></li>
+  <li class="color-brand">                <code>$color-brand                </code></li>
+  <li class="color-brand-darker">         <code>$color-brand-darker         </code></li>
+  <li class="color-brand-darkest">        <code>$color-brand-darkest        </code></li>
+  <li class="color-error-lightest">       <code>$color-error-lightest       </code></li>
+  <li class="color-error-lighter">        <code>$color-error-lighter        </code></li>
+  <li class="color-error">                <code>$color-error                </code></li>
+  <li class="color-error-darker">         <code>$color-error-darker         </code></li>
+  <li class="color-error-darkest">        <code>$color-error-darkest        </code></li>
+  <li class="color-highlight-lightest">   <code>$color-highlight-lightest   </code></li>
+  <li class="color-highlight-lighter">    <code>$color-highlight-lighter    </code></li>
+  <li class="color-highlight">            <code>$color-highlight            </code></li>
+  <li class="color-highlight-darker">     <code>$color-highlight-darker     </code></li>
+  <li class="color-highlight-darkest">    <code>$color-highlight-darkest    </code></li>
+  <li class="color-link-lightest">        <code>$color-link-lightest        </code></li>
+  <li class="color-link-lighter">         <code>$color-link-lighter         </code></li>
+  <li class="color-link">                 <code>$color-link                 </code></li>
+  <li class="color-link-darker">          <code>$color-link-darker          </code></li>
+  <li class="color-link-darkest">         <code>$color-link-darkest         </code> </li>
+  <li class="color-link-visited-lightest"><code>$color-link-visited-lightest</code></li>
+  <li class="color-link-visited-lighter"> <code>$color-link-visited-lighter </code></li>
+  <li class="color-link-visited">         <code>$color-link-visited         </code></li>
+  <li class="color-link-visited-darker">  <code>$color-link-visited-darker  </code></li>
+  <li class="color-link-visited-darkest"> <code>$color-link-visited-darkest </code></li>
+  <li class="color-neutral-lightest">     <code>$color-neutral-lightest     </code></li>
+  <li class="color-neutral-lighter">      <code>$color-neutral-lighter      </code></li>
+  <li class="color-neutral">              <code>$color-neutral              </code></li>
+  <li class="color-neutral-darker">       <code>$color-neutral-darker       </code></li>
+  <li class="color-neutral-darkest">      <code>$color-neutral-darkest      </code></li>
+  <li class="color-debug">                <code>$color-debug                </code></li>
+</ul>
+
+    </section>
+
+    <footer>
+      <div>
+        <p>
+          Built by <a href="http://twitter.com/dhabersack">@dhabersack</a><br>
+          Copyright &copy; 2013, <a href="http://islovely.co/">islovely.co</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-13202125-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+  </body>
+</html>
