@@ -24,11 +24,6 @@ body {
   background-color: inherit;
   color: $color-neutral-darkest;
   font: 62.5%/1 $font-family-content; // 10px/10px
-
-  @media (#{ $media-query-extra-small }) {
-    margin: 0 $grid-extra-small-gutter-width;
-    width: $grid-extra-small-column-width;
-  }
 }
 
 // generic section
