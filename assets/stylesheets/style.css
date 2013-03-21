@@ -535,57 +535,74 @@ input[type="color"] {
   padding: 0;
   width: 60px; }
 input[type="text"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="week"] {
-  background: #fdfdfd;
-  border-color: #7d7d7d #bdbdbd #bdbdbd #7d7d7d;
+  -webkit-border-radius: 0.125em;
   border-radius: 0.125em;
-  border-style: solid;
-  border-width: 0.0625em;
-  /* 1px */
+  font-size: 1.6em;
+  line-height: 1.5em;
+  background: #fdfdfd;
+  border: 0.0625em solid #bdbdbd;
   clear: left;
+  color: #3e3e3e;
   float: left;
-  font: 1.6em/1em Arial, "Helvetica Neue", Helvetica, sans-serif;
-  height: 1em;
-  margin: 0 0.625em 0 0;
-  padding: 0.375em 0.25em;
-  width: 16.875em;
-  width: 18.125em; }
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  height: 1.5em;
+  margin: 0 2% 0 0;
+  padding: 0.3125em 0.5625em;
+  width: 90%; }
+  @media (min-width: 480px) and (max-width: 719px) {
+    input[type="text"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="week"] {
+      margin-right: 0.5em;
+      width: 13.25em; } }
+  @media (min-width: 720px) and (max-width: 959px) {
+    input[type="text"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="week"] {
+      margin-right: 0.75em;
+      width: 20.5em; } }
+  @media (min-width: 960px) and (max-width: 1199px) {
+    input[type="text"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="week"] {
+      margin-right: 1.0em;
+      width: 27.75em; } }
+  @media (min-width: 1200px) {
+    input[type="text"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="week"] {
+      margin-right: 2.0em;
+      margin-right: 1.25em;
+      width: 35em; } }
   input[type="text"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus {
-    border-color: #3581fc; }
+    border-color: #ffe226; }
 input[type="range"] {
   clear: left;
   float: left; }
 
 button, input[type="submit"], input[type="image"], input[type="reset"], input[type="button"] {
   background-color: #e3e3e3;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#e3e3e3));
-  background-image: -webkit-linear-gradient(top, #fdfdfd, #e3e3e3);
-  background-image: linear-gradient(top, #fdfdfd, #e3e3e3);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#e3e3e3));
+  background-image: -webkit-linear-gradient(top, white, #e3e3e3);
+  background-image: linear-gradient(top, white, #e3e3e3);
   /* standard, but currently unimplemented */
-  font-size: 1.6em;
-  line-height: 1.5em;
-  border-color: #bdbdbd #7d7d7d #7d7d7d #bdbdbd;
+  -webkit-border-radius: 0.125em;
   border-radius: 0.125em;
-  border-style: solid;
-  border-width: 0.0625em;
-  /* 1px */
+  border: 0.0625em solid #c5c5c5;
   color: #3e3e3e;
   cursor: pointer;
   float: left;
+  font-size: 1.6em;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  height: 2.625em;
+  line-height: 1em;
   margin: 0 0.3125em 0 0;
-  padding: 0 1.1875em; }
+  padding: 0 1.1875em;
+  padding: 0.5625em 1.1875em; }
+  button::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="image"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
   button:active, input[type="submit"]:active, input[type="image"]:active, input[type="reset"]:active, input[type="button"]:active {
-    background-color: #fdfdfd;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#e3e3e3), to(#fdfdfd));
-    background-image: -webkit-linear-gradient(top, #e3e3e3, #fdfdfd);
-    background-image: linear-gradient(top, #e3e3e3, #fdfdfd);
+    background-color: white;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#e3e3e3), to(white));
+    background-image: -webkit-linear-gradient(top, #e3e3e3, white);
+    background-image: linear-gradient(top, #e3e3e3, white);
     /* standard, but currently unimplemented */
-    border-color: #3e3e3e; }
+    border-color: #a6a6a6; }
   button[disabled], input[disabled][type="submit"], input[disabled][type="image"], input[disabled][type="reset"], input[disabled][type="button"] {
     background: #e3e3e3;
-    color: #bdbdbd;
-    text-shadow: 0 -1px 0 #fdfdfd; }
+    color: #bdbdbd; }
 
 select {
   clear: left;

@@ -853,30 +853,10 @@ input {
   }
 
   &[type="text"] {
-    background: $color-neutral-lightest;
-    border: {
-      color: $color-neutral-darker $color-neutral $color-neutral $color-neutral-darker;
-      radius: 0.125em; // 2px
-      style: solid;
-      width: 0.0625em; /* 1px */
-    }
-    clear: left;
-    float: left;
-    font: 1.6em/1em $font-family-inputs; // 16px/16px
-    height: 1em; // 16px
-    margin: 0 0.625em 0 0; // 0 10px 0 0
-    padding: 0.375em 0.25em; // 6px 4px
-    width: 16.875em; // 270px
-    width: 18.125em; // 160px
-
-    &:focus {
-      border-color: $color-link;
-    }
+    @include textfield();
   }
 
   &[type="file"] {}
-
-  &[type="hidden"] {}
 
   @each $type in (date, datetime, datetime-local, email, month, number, password, search, tel, time, url, week) {
     &[type="#{ $type }"] {
@@ -899,34 +879,7 @@ input {
 
 // push buttons
 button {
-  @include background-gradient($color-neutral-lightest, $color-neutral-lighter);
-  @include font-size(1.6em);
-
-  border: {
-    color: $color-neutral $color-neutral-darker $color-neutral-darker $color-neutral;
-    radius: 0.125em; // 2px
-    style: solid;
-    width: 0.0625em; /* 1px */
-  }
-  color: $color-neutral-darkest;
-  cursor: pointer;
-  float: left;
-  font-family: $font-family-sans-serif;
-  height: 2.625em; // 42px
-  margin: 0 0.3125em 0 0; // 0 5px 0 0
-  padding: 0 1.1875em; // 0 19px
-
-  &:active {
-    @include background-gradient($color-neutral-lighter, $color-neutral-lightest);
-
-    border-color: $color-neutral-darkest;
-  }
-
-  &[disabled] {
-    background: $color-neutral-lighter;
-    color: $color-neutral;
-    text-shadow: 0 -1px 0 $color-neutral-lightest;
-  }
+  @include button();
 }
 
 select {
