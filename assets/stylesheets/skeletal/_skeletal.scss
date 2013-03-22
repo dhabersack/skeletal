@@ -718,7 +718,7 @@ tr {
 td {
   @include font-size(1.6em);
 
-  padding: 0.375em 0.625em; // 6px 10px
+  padding: 0.375em 0.3125em; // 6px 5px
 }
 
 // table header cell
@@ -727,9 +727,9 @@ th {
 
   font: {
     family: $font-family-headings;
-    weight: bold;
+    weight: normal;
   }
-  padding: 0.375em 0.625em; // 6px 10px
+  padding: 0.375em 0.3125em; // 6px 5px
   text-align: left;
 }
 
