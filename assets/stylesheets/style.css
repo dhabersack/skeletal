@@ -476,7 +476,6 @@ fieldset {
   clear: left;
   line-height: 1; }
   fieldset > div {
-    margin-bottom: 1.2em;
     overflow: hidden;
     position: relative; }
     fieldset > div > label[data-unit]::after {
