@@ -2,8 +2,8 @@
 
 @mixin button(
     $background-color: $color-neutral-lighter,
-    $color-variation:  12%,
-    $icon:             ''
+    $icon:             '',
+    $color-variation:  12%
 ) {
   $font-size: 1.6em;
 
