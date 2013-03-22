@@ -763,27 +763,6 @@ fieldset {
     overflow: hidden;
     position: relative;
 
-    > label {
-      &[data-unit] {
-        &::after {
-          color: $color-neutral-darker;
-          content: attr(data-unit);
-          font-size: 0.75em; // 12px
-          line-height: 2.5em; // 30px
-          position: absolute;
-          left: 20em; // 240px
-          text-align: right;
-          top: 2.5em; // 30px
-          width: 2.5em; // 30px
-        }
-
-        + input[type="text"] {
-          padding-right: 3.0625em; // 49px
-          width: 14.0625em; // 225px
-        }
-      }
-    }
-
     > p {
       @include font-size(1.2em);
 

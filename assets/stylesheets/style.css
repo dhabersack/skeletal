@@ -465,19 +465,6 @@ fieldset {
   fieldset > div {
     overflow: hidden;
     position: relative; }
-    fieldset > div > label[data-unit]::after {
-      color: #7d7d7d;
-      content: attr(data-unit);
-      font-size: 0.75em;
-      line-height: 2.5em;
-      position: absolute;
-      left: 20em;
-      text-align: right;
-      top: 2.5em;
-      width: 2.5em; }
-    fieldset > div > label[data-unit] + input[type="text"], fieldset > div > label[data-unit] + input[type="date"], fieldset > div > label[data-unit] + input[type="datetime"], fieldset > div > label[data-unit] + input[type="datetime-local"], fieldset > div > label[data-unit] + input[type="email"], fieldset > div > label[data-unit] + input[type="month"], fieldset > div > label[data-unit] + input[type="number"], fieldset > div > label[data-unit] + input[type="password"], fieldset > div > label[data-unit] + input[type="search"], fieldset > div > label[data-unit] + input[type="tel"], fieldset > div > label[data-unit] + input[type="time"], fieldset > div > label[data-unit] + input[type="url"], fieldset > div > label[data-unit] + input[type="week"] {
-      padding-right: 3.0625em;
-      width: 14.0625em; }
     fieldset > div > p {
       font-size: 1.2em;
       line-height: 1.5em;
