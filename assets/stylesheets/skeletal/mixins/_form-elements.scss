@@ -2,26 +2,59 @@
 
 @mixin button(
     $background-color: $color-neutral-lighter,
-    $color-variation:  12%
+    $color-variation:  12%,
+    $icon:             ''
 ) {
-  @include background-gradient(lighten($background-color, $color-variation), $background-color);
+  $font-size: 1.6em;
+
   @include border-radius(0.125em); // 2px
 
+  background: $background-color;
   border: 0.0625em solid darken($background-color, $color-variation); // 1px
   color: $color-neutral-darkest;
   cursor: pointer;
   float: left;
-  font-size: 1.6em;
-  font-family: $font-family-sans-serif;
-  line-height: 1em;
-  margin: 0 0.3125em 0 0; // 0 5px 0 0
-  padding: 0 1.1875em; // 0 19px
-  padding: 0.5625em 1.1875em;
+  font: {
+    size: $font-size;
+    family: $font-family-sans-serif;
+  }
+  line-height: normal;
+  margin: 0 $grid-extra-small-gutter-width 0.75em 0;
+  padding: 0.5em 1.1875em; // 8px 19px
+
+  @media (#{ $media-query-small }) {
+    margin-right: $grid-small-gutter-width / $font-size * 1em;
+  }
+
+  @media (#{ $media-query-medium }) {
+    margin-right: $grid-medium-gutter-width / $font-size * 1em;
+  }
+
+  @media (#{ $media-query-large }) {
+    margin-right: $grid-large-gutter-width / $font-size * 1em;
+  }
+
+  @media (#{ $media-query-extra-large }) {
+    margin-right: $grid-extra-large-gutter-width / $font-size * 1em;
+  }
 
   // remove additional padding in Firefox
   &::-moz-focus-inner {
     border: 0;
     padding: 0;
+  }
+
+  @if $icon != '' {
+    &::before {
+      content: $icon;
+      float: left;
+      font: {
+        family: 'Skeletal Icons';
+        size: 1.25em; // 20px
+      }
+      line-height: 0.8em; // 16px
+      margin: 0 0.125em 0 0; // 0 5px 0 0
+    }
   }
 
   &:active {
@@ -71,7 +104,7 @@
   float: left;
   font-family: $font-family-inputs;
   height: 1.5em; // 24px
-  margin: 0 $grid-extra-small-gutter-width 0 0;
+  margin: 0 $grid-extra-small-gutter-width 0.75em 0;
   padding: $padding-vertical $padding-horizontal;
   width: 90%;
 

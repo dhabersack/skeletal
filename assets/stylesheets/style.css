@@ -18,6 +18,13 @@ nav,
 section {
   display: block; }
 
+@font-face {
+  font-family: "Skeletal Icons";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Skeletal-Icons/icons.eot");
+  src: url("../fonts/Skeletal-Icons/icons.eot?#iefix") format("embedded-opentype"), url("../fonts/Skeletal-Icons/icons.woff") format("woff"), url("../fonts/Skeletal-Icons/icons.ttf") format("truetype"), url("../fonts/Skeletal-Icons/icons.svg#Skeletal-Icons") format("svg"); }
+
 html {
   background-color: #fdfdfd;
   overflow-y: scroll;
@@ -546,7 +553,7 @@ input[type="text"], input[type="date"], input[type="datetime"], input[type="date
   float: left;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   height: 1.5em;
-  margin: 0 2% 0 0;
+  margin: 0 2% 0.75em 0;
   padding: 0.3125em 0.5625em;
   width: 90%; }
   @media (min-width: 480px) and (max-width: 719px) {
@@ -573,23 +580,30 @@ input[type="range"] {
   float: left; }
 
 button, input[type="submit"], input[type="image"], input[type="reset"], input[type="button"] {
-  background-color: #e3e3e3;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#e3e3e3));
-  background-image: -webkit-linear-gradient(top, white, #e3e3e3);
-  background-image: linear-gradient(top, white, #e3e3e3);
-  /* standard, but currently unimplemented */
   -webkit-border-radius: 0.125em;
   border-radius: 0.125em;
+  background: #e3e3e3;
   border: 0.0625em solid #c5c5c5;
   color: #3e3e3e;
   cursor: pointer;
   float: left;
   font-size: 1.6em;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  line-height: 1em;
-  margin: 0 0.3125em 0 0;
-  padding: 0 1.1875em;
-  padding: 0.5625em 1.1875em; }
+  line-height: normal;
+  margin: 0 2% 0.75em 0;
+  padding: 0.5em 1.1875em; }
+  @media (min-width: 480px) and (max-width: 719px) {
+    button, input[type="submit"], input[type="image"], input[type="reset"], input[type="button"] {
+      margin-right: 0.5em; } }
+  @media (min-width: 720px) and (max-width: 959px) {
+    button, input[type="submit"], input[type="image"], input[type="reset"], input[type="button"] {
+      margin-right: 0.75em; } }
+  @media (min-width: 960px) and (max-width: 1199px) {
+    button, input[type="submit"], input[type="image"], input[type="reset"], input[type="button"] {
+      margin-right: 1.0em; } }
+  @media (min-width: 1200px) {
+    button, input[type="submit"], input[type="image"], input[type="reset"], input[type="button"] {
+      margin-right: 1.25em; } }
   button::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="image"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner {
     border: 0;
     padding: 0; }

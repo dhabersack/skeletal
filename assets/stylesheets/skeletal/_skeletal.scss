@@ -1,6 +1,17 @@
 @import 'import.scss';
 @import 'reset.scss';
 
+
+@include font-face(
+  $name: 'Skeletal Icons',
+  $path: '../fonts/Skeletal-Icons/',
+  $eot:  'icons.eot',
+  $woff: 'icons.woff',
+  $ttf:  'icons.ttf',
+  $svg:  'icons.svg#Skeletal-Icons'
+);
+
+
 //--------------------------------//
 // ROOT ELEMENT                   //
 //--------------------------------//
