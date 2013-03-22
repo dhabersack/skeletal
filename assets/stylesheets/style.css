@@ -422,8 +422,10 @@ table {
   margin-bottom: 2.4em;
   width: 100%; }
 
-tbody > tr:nth-child(even) {
+tbody th {
   background: #ffec72; }
+tbody > tr:nth-child(even) {
+  background: #fff3a5; }
 
 thead {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
@@ -440,14 +442,14 @@ tr > th:first-of-type {
 td {
   font-size: 1.6em;
   line-height: 1.5em;
-  padding: 0.375em 0.3125em; }
+  padding: 0.375em 0.625em; }
 
 th {
   font-size: 1.6em;
   line-height: 1.5em;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: normal;
-  padding: 0.375em 0.3125em;
+  padding: 0.375em 0.625em;
   text-align: left; }
 
 form {
