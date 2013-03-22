@@ -28,7 +28,7 @@
     </nav>
 
     <section>
-      <h1>Headline</h1>
+      <h2>Headline</h2>
 
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -45,9 +45,36 @@
           <legend>Legend</legend>
 
           <div>
-            <input type="text" placeholder="Placeholder">
+            <label for="textfield">Label</label>
+            <input type="text" id="textfield" placeholder="Placeholder">
             <button type="submit">Search</button>
           </div>
+
+          <fieldset>
+            <legend>Legend</legend>
+
+            <div>
+              <input id="checkbox1" type="checkbox" checked>
+              <label for="checkbox1">Checkbox</label>
+              <input id="checkbox2" type="checkbox" checked>
+              <label for="checkbox2">Checkbox</label>
+              <input id="checkbox3" type="checkbox" checked>
+              <label for="checkbox3">Checkbox</label>
+              <input id="checkbox4" type="checkbox" checked>
+              <label for="checkbox4">Checkbox</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Legend</legend>
+
+            <div>
+              <input id="radio1" type="radio" name="radio" checked>
+              <label for="radio1">Radio</label>
+              <input id="radio2" type="radio" name="radio">
+              <label for="radio2">Radio</label>
+            </div>
+          </fieldset>
         </fieldset>
       </form>
 
@@ -61,6 +88,10 @@
 10*) OPSYS=darwin; HEAP_OPSYS=darwin ;; # MacOS X 10.6
 11*) OPSYS=darwin; HEAP_OPSYS=darwin ;; # MacOS X 10.7
   *) exit 1;;</code></pre>
+
+      <p>
+        This is what a blockquote looks like:
+      </p>
 
       <blockquote>
         <p>
@@ -79,6 +110,10 @@
           Lorem ipsum
         </cite>
       </blockquote>
+
+      <p>
+        And a table:
+      </p>
 
       <table>
         <thead>

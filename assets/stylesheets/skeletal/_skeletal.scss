@@ -807,6 +807,7 @@ legend {
 }
 
 label {
+  cursor: pointer;
   display: block;
   float: left;
   font: {
@@ -814,17 +815,75 @@ label {
     size: 1.6em;
   }
   line-height: 1.875em; // 30px
+
+  &:hover {
+    & + input {
+      border-color: $color-highlight;
+    }
+  }
 }
 
 input {
   &[type="checkbox"],
   &[type="radio"] {
-    // TODO not happy with use of em-values on top of unknown base value
-    float: left;
-    font-size: 1.6em; // 16px
-    height: 1.875em; // 30px
-    margin: 0 0.625em 0 0; // 0 10px 0 0
-    padding: 0;
+    display: none;
+
+    &:checked {
+      & + label {
+        &::before {
+          color: $color-neutral-darkest;
+        }
+      }
+    }
+
+    & + label {
+      display: inline-block;
+      clear: both;
+
+      &::before {
+        $color: $color-neutral-lighter;
+
+        background: $color;
+        border: 0.0625em solid $color-neutral; // 1px
+        color: $color;
+        content: '';
+        display: inline-block;
+        font-family: 'Skeletal Icons';
+        height: 1em; // 16px
+        line-height: 1em; // 16px
+        margin-right: 0.4375em; // 7px
+        padding: 0.1875em; // 3px
+        text-align: center;
+        width: 1em; // 16px
+
+      }
+
+      &:hover {
+        &::before {
+          border-color: $color-highlight;
+        }
+      }
+    }
+  }
+
+  &[type="checkbox"] {
+    & + label {
+      &::before {
+        @include border-radius(0.125em);
+
+        content: $icon-check;
+      }
+    }
+  }
+
+  &[type="radio"] {
+    & + label {
+      &::before {
+        @include border-radius(50%);
+
+        content: $icon-record;
+      }
+    }
   }
 
   &[type="color"] {

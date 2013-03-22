@@ -495,18 +495,45 @@ legend {
   letter-spacing: 0.025em; }
 
 label {
+  cursor: pointer;
   display: block;
   float: left;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.6em;
   line-height: 1.875em; }
+  label:hover + input {
+    border-color: #ffe226; }
 
 input[type="checkbox"], input[type="radio"] {
-  float: left;
-  font-size: 1.6em;
-  height: 1.875em;
-  margin: 0 0.625em 0 0;
-  padding: 0; }
+  display: none; }
+  input[type="checkbox"]:checked + label::before, input[type="radio"]:checked + label::before {
+    color: #3e3e3e; }
+  input[type="checkbox"] + label, input[type="radio"] + label {
+    display: inline-block;
+    clear: both; }
+    input[type="checkbox"] + label::before, input[type="radio"] + label::before {
+      background: #e3e3e3;
+      border: 0.0625em solid #bdbdbd;
+      color: #e3e3e3;
+      content: '';
+      display: inline-block;
+      font-family: 'Skeletal Icons';
+      height: 1em;
+      line-height: 1em;
+      margin-right: 0.4375em;
+      padding: 0.1875em;
+      text-align: center;
+      width: 1em; }
+    input[type="checkbox"] + label:hover::before, input[type="radio"] + label:hover::before {
+      border-color: #ffe226; }
+input[type="checkbox"] + label::before {
+  -webkit-border-radius: 0.125em;
+  border-radius: 0.125em;
+  content: "\e001"; }
+input[type="radio"] + label::before {
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  content: "\e003"; }
 input[type="color"] {
   -webkit-border-radius: 0.125em;
   border-radius: 0.125em;
