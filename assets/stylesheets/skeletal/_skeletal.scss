@@ -718,6 +718,11 @@ tr {
   }
 }
 
+td,
+th {
+  vertical-align: top;
+}
+
 // table data cell
 td {
   @include font-size(1.6em);

@@ -439,6 +439,10 @@ tfoot {
 tr > th:first-of-type {
   text-align: right; }
 
+td,
+th {
+  vertical-align: top; }
+
 td {
   font-size: 1.6em;
   line-height: 1.5em;
