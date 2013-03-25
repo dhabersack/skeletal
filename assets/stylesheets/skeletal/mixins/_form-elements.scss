@@ -2,10 +2,10 @@
 
 @mixin button(
     $background-color: $color-neutral-lighter,
-    $icon:             '',
-    $color-variation:  12%
+    $icon:             ''
 ) {
-  $font-size: 1.6em;
+  $color-variation: 12%;
+  $font-size:       1.6em;
 
   @include border-radius(0.125em); // 2px
 
