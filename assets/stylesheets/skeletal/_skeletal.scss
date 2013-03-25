@@ -812,14 +812,14 @@ legend {
 }
 
 label {
+  @include font-size(1.6em);
+
   cursor: pointer;
   display: block;
   float: left;
   font: {
     family: $font-family-headings;
-    size: 1.6em;
   }
-  line-height: 1.875em; // 30px
 
   &:hover {
     & + input {
