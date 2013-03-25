@@ -58,8 +58,7 @@
   }
 
   &:active {
-    @include background-gradient($background-color, lighten($background-color, $color-variation));
-
+    background-color: lighten($background-color, $color-variation);
     border-color: darken($background-color, $color-variation * 2);
   }
 
