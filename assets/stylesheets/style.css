@@ -1,4 +1,3 @@
-@charset "UTF-8";
 a, abbr, address, b, blockquote, body, caption, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, samp, small, span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, var {
   border: 0;
   font-size: 100%;
@@ -18,6 +17,13 @@ nav,
 section {
   display: block; }
 
+@font-face {
+  font-family: "Skeletal Icons";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Skeletal-Icons/icons.eot");
+  src: url("../fonts/Skeletal-Icons/icons.eot?#iefix") format("embedded-opentype"), url("../fonts/Skeletal-Icons/icons.woff") format("woff"), url("../fonts/Skeletal-Icons/icons.ttf") format("truetype"), url("../fonts/Skeletal-Icons/icons.svg#Skeletal-Icons") format("svg"); }
+
 html {
   background-color: #fdfdfd;
   overflow-y: scroll;
@@ -27,40 +33,13 @@ body {
   background-color: inherit;
   color: #3e3e3e;
   font: 62.5%/1 Georgia, Times, "Times New Roman", serif; }
-  @media (max-width: 479px) {
-    body {
-      margin: 0 2%;
-      width: 96%; } }
 
 section {
   display: block; }
 
 nav {
-  margin: 0 0 1.2em;
-  padding: 0.6em 0;
-  width: 100%;
   display: block;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
-  @media (min-width: 480px) and (max-width: 719px) and (min-width: 480px) and (max-width: 719px) {
-    nav {
-      margin: 0 auto 1.2em;
-      padding: 0.6em 0;
-      width: 47.2em; } }
-  @media (min-width: 720px) and (max-width: 959px) and (min-width: 720px) and (max-width: 959px) {
-    nav {
-      margin: 0 auto 1.2em;
-      padding: 0.6em 0;
-      width: 70.8em; } }
-  @media (min-width: 960px) and (max-width: 1199px) and (min-width: 960px) and (max-width: 1199px) {
-    nav {
-      margin: 0 auto 1.2em;
-      padding: 0.6em 0;
-      width: 94.4em; } }
-  @media (min-width: 1200px) and (min-width: 1200px) {
-    nav {
-      margin: 0 auto 1.2em;
-      padding: 0.6em 0;
-      width: 118em; } }
   nav a {
     display: block;
     font-size: 1em; }
@@ -217,42 +196,36 @@ hr {
   border-color: #7d7d7d;
   border-style: solid;
   border-width: 0.1em 0 0 0;
-  margin: 1.1em 6em 1.2em; }
+  margin: 0 6em 2.3em; }
 
 pre {
-  -webkit-border-radius: 0.125em;
-  border-radius: 0.125em;
-  -webkit-box-shadow: inset 0 0 0.125em #3e3e3e;
-  box-shadow: inset 0 0 0.125em #3e3e3e;
   font-size: 1.6em;
   line-height: 1.5em;
-  background: #e3e3e3;
+  border-left: 0.3125em solid #3e3e3e;
   font-family: "Courier New", Courier, monospace;
   margin-bottom: 1.5em;
-  padding: 0.375em 0.625em; }
-  pre > code {
-    -webkit-border-radius: 0;
-    border-radius: 0;
-    -webkit-box-shadow: 0 0 0 transparent;
-    box-shadow: 0 0 0 transparent;
-    background: none;
-    margin: 0;
-    padding: 0; }
+  padding: 0.375em 0 0.375em 0.9375em; }
 
 blockquote {
-  -webkit-border-radius: 0.2em;
-  border-radius: 0.2em;
-  -webkit-box-shadow: 0 0 0.1em #3e3e3e;
-  box-shadow: 0 0 0.1em #3e3e3e;
-  background: #e3e3e3;
+  border-left: 0.5em solid #ffe226;
   font-family: Georgia, Times, "Times New Roman", serif;
   font-style: italic;
-  margin: 0 6em 2.4em;
-  padding: 1.2em 2em; }
+  margin: 0 4em 2.4em;
+  padding: 0.6em 0 0.6em 1.5em; }
+  @media (min-width: 480px) and (max-width: 719px) {
+    blockquote {
+      margin: 0 4em 2.4em; } }
+  @media (min-width: 720px) and (max-width: 959px) {
+    blockquote {
+      margin: 0 6em 2.4em; } }
+  @media (min-width: 960px) and (max-width: 1199px) {
+    blockquote {
+      margin: 0 8em 2.4em; } }
+  @media (min-width: 1200px) {
+    blockquote {
+      margin: 0 10em 2.4em; } }
   blockquote > cite::before {
-    content: '– '; }
-  blockquote > p:last-of-type {
-    margin-bottom: 0; }
+    content: '\2014 '; }
 
 ol {
   list-style-position: inside;
@@ -391,15 +364,7 @@ abbr {
   text-transform: uppercase; }
 
 code {
-  -webkit-border-radius: 0.125em;
-  border-radius: 0.125em;
-  -webkit-box-shadow: inset 0 0 0.125em #3e3e3e;
-  box-shadow: inset 0 0 0.125em #3e3e3e;
-  background: #e3e3e3;
-  display: inline-block;
-  font-family: "Courier New", Courier, monospace;
-  margin: 0 0.125em;
-  padding: 0 0.3125em; }
+  font-family: "Courier New", Courier, monospace; }
 
 var {
   font-family: "Courier New", Courier, monospace;
@@ -453,35 +418,42 @@ img {
 table {
   background: #fdfdfd;
   border-collapse: collapse;
-  border-radius: 0.2em;
   border-spacing: 0;
   margin-bottom: 2.4em;
   width: 100%; }
 
 tbody th {
-  font-weight: normal; }
-tbody > tr:nth-child(odd) {
-  background: #e3e3e3; }
+  background: #ffec72; }
+tbody > tr:nth-child(even) {
+  background: #fff3a5; }
 
 thead {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+  thead th {
+    text-align: center; }
 
-tfoot > tr {
-  border-bottom: none; }
+thead,
+tfoot {
+  background: #e3e3e3; }
 
-tr {
-  border-bottom: 0.1em solid #7d7d7d; }
+tr > th:first-of-type {
+  text-align: right; }
+
+td,
+th {
+  vertical-align: top; }
 
 td {
   font-size: 1.6em;
   line-height: 1.5em;
-  padding: 0 0.625em; }
+  padding: 0.375em 0.625em; }
 
 th {
   font-size: 1.6em;
   line-height: 1.5em;
-  font-weight: bold;
-  padding: 0.1875em 0.625em;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: normal;
+  padding: 0.375em 0.625em;
   text-align: left; }
 
 form {
@@ -495,22 +467,8 @@ fieldset {
   clear: left;
   line-height: 1; }
   fieldset > div {
-    margin-bottom: 1.2em;
     overflow: hidden;
     position: relative; }
-    fieldset > div > label[data-unit]::after {
-      color: #7d7d7d;
-      content: attr(data-unit);
-      font-size: 0.75em;
-      line-height: 2.5em;
-      position: absolute;
-      left: 20em;
-      text-align: right;
-      top: 2.5em;
-      width: 2.5em; }
-    fieldset > div > label[data-unit] + input[type="text"], fieldset > div > label[data-unit] + input[type="date"], fieldset > div > label[data-unit] + input[type="datetime"], fieldset > div > label[data-unit] + input[type="datetime-local"], fieldset > div > label[data-unit] + input[type="email"], fieldset > div > label[data-unit] + input[type="month"], fieldset > div > label[data-unit] + input[type="number"], fieldset > div > label[data-unit] + input[type="password"], fieldset > div > label[data-unit] + input[type="search"], fieldset > div > label[data-unit] + input[type="tel"], fieldset > div > label[data-unit] + input[type="time"], fieldset > div > label[data-unit] + input[type="url"], fieldset > div > label[data-unit] + input[type="week"] {
-      padding-right: 3.0625em;
-      width: 14.0625em; }
     fieldset > div > p {
       font-size: 1.2em;
       line-height: 1.5em;
@@ -541,18 +499,45 @@ legend {
   letter-spacing: 0.025em; }
 
 label {
+  cursor: pointer;
   display: block;
   float: left;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.6em;
   line-height: 1.875em; }
+  label:hover + input {
+    border-color: #ffe226; }
 
 input[type="checkbox"], input[type="radio"] {
-  float: left;
-  font-size: 1.6em;
-  height: 1.875em;
-  margin: 0 0.625em 0 0;
-  padding: 0; }
+  display: none; }
+  input[type="checkbox"]:checked + label::before, input[type="radio"]:checked + label::before {
+    color: #3e3e3e; }
+  input[type="checkbox"] + label, input[type="radio"] + label {
+    display: inline-block;
+    clear: both; }
+    input[type="checkbox"] + label::before, input[type="radio"] + label::before {
+      background: #e3e3e3;
+      border: 0.0625em solid #bdbdbd;
+      color: #e3e3e3;
+      content: '';
+      display: inline-block;
+      font-family: 'Skeletal Icons';
+      height: 1em;
+      line-height: 1em;
+      margin-right: 0.4375em;
+      padding: 0.1875em;
+      text-align: center;
+      width: 1em; }
+    input[type="checkbox"] + label:hover::before, input[type="radio"] + label:hover::before {
+      border-color: #ffe226; }
+input[type="checkbox"] + label::before {
+  -webkit-border-radius: 0.125em;
+  border-radius: 0.125em;
+  content: "\e001"; }
+input[type="radio"] + label::before {
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  content: "\e003"; }
 input[type="color"] {
   -webkit-border-radius: 0.125em;
   border-radius: 0.125em;
@@ -563,57 +548,77 @@ input[type="color"] {
   padding: 0;
   width: 60px; }
 input[type="text"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="week"] {
-  background: #fdfdfd;
-  border-color: #7d7d7d #bdbdbd #bdbdbd #7d7d7d;
+  -webkit-border-radius: 0.125em;
   border-radius: 0.125em;
-  border-style: solid;
-  border-width: 0.0625em;
-  /* 1px */
+  font-size: 1.6em;
+  line-height: 1.5em;
+  background: #fdfdfd;
+  border: 0.0625em solid #bdbdbd;
   clear: left;
+  color: #3e3e3e;
   float: left;
-  font: 1.6em/1em Arial, "Helvetica Neue", Helvetica, sans-serif;
-  height: 1em;
-  margin: 0 0.625em 0 0;
-  padding: 0.375em 0.25em;
-  width: 16.875em;
-  width: 18.125em; }
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  height: 1.5em;
+  margin: 0 2% 0.75em 0;
+  padding: 0.3125em 0.5625em;
+  width: 90%; }
+  @media (min-width: 480px) and (max-width: 719px) {
+    input[type="text"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="week"] {
+      margin-right: 0.5em;
+      width: 13.25em; } }
+  @media (min-width: 720px) and (max-width: 959px) {
+    input[type="text"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="week"] {
+      margin-right: 0.75em;
+      width: 20.5em; } }
+  @media (min-width: 960px) and (max-width: 1199px) {
+    input[type="text"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="week"] {
+      margin-right: 1.0em;
+      width: 27.75em; } }
+  @media (min-width: 1200px) {
+    input[type="text"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="week"] {
+      margin-right: 2.0em;
+      margin-right: 1.25em;
+      width: 35em; } }
   input[type="text"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus {
-    border-color: #3581fc; }
+    border-color: #ffe226; }
 input[type="range"] {
   clear: left;
   float: left; }
 
 button, input[type="submit"], input[type="image"], input[type="reset"], input[type="button"] {
-  background-color: #e3e3e3;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#e3e3e3));
-  background-image: -webkit-linear-gradient(top, #fdfdfd, #e3e3e3);
-  background-image: linear-gradient(top, #fdfdfd, #e3e3e3);
-  /* standard, but currently unimplemented */
-  font-size: 1.6em;
-  line-height: 1.5em;
-  border-color: #bdbdbd #7d7d7d #7d7d7d #bdbdbd;
+  -webkit-border-radius: 0.125em;
   border-radius: 0.125em;
-  border-style: solid;
-  border-width: 0.0625em;
-  /* 1px */
+  background: #e3e3e3;
+  border: 0.0625em solid #c5c5c5;
   color: #3e3e3e;
   cursor: pointer;
   float: left;
+  font-size: 1.6em;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  height: 2.625em;
-  margin: 0 0.3125em 0 0;
-  padding: 0 1.1875em; }
+  line-height: normal;
+  margin: 0 2% 0.75em 0;
+  padding: 0.5em 1.1875em; }
+  @media (min-width: 480px) and (max-width: 719px) {
+    button, input[type="submit"], input[type="image"], input[type="reset"], input[type="button"] {
+      margin-right: 0.5em; } }
+  @media (min-width: 720px) and (max-width: 959px) {
+    button, input[type="submit"], input[type="image"], input[type="reset"], input[type="button"] {
+      margin-right: 0.75em; } }
+  @media (min-width: 960px) and (max-width: 1199px) {
+    button, input[type="submit"], input[type="image"], input[type="reset"], input[type="button"] {
+      margin-right: 1.0em; } }
+  @media (min-width: 1200px) {
+    button, input[type="submit"], input[type="image"], input[type="reset"], input[type="button"] {
+      margin-right: 1.25em; } }
+  button::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="image"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
   button:active, input[type="submit"]:active, input[type="image"]:active, input[type="reset"]:active, input[type="button"]:active {
-    background-color: #fdfdfd;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#e3e3e3), to(#fdfdfd));
-    background-image: -webkit-linear-gradient(top, #e3e3e3, #fdfdfd);
-    background-image: linear-gradient(top, #e3e3e3, #fdfdfd);
-    /* standard, but currently unimplemented */
-    border-color: #3e3e3e; }
+    background: #f3f3f3;
+    border-color: #c5c5c5; }
   button[disabled], input[disabled][type="submit"], input[disabled][type="image"], input[disabled][type="reset"], input[disabled][type="button"] {
     background: #e3e3e3;
-    color: #bdbdbd;
-    text-shadow: 0 -1px 0 #fdfdfd; }
+    color: #bdbdbd; }
 
 select {
   clear: left;
@@ -760,6 +765,170 @@ textarea {
 
 .color-debug::before {
   background: rgba(227, 61, 39, 0.0625); }
+
+.form-elements form {
+  margin-bottom: 0; }
+
+#button-2 {
+  -webkit-border-radius: 0.125em;
+  border-radius: 0.125em;
+  background: #ffe226;
+  border: 0.0625em solid #e8c900;
+  color: #3e3e3e;
+  cursor: pointer;
+  float: left;
+  font-size: 1.6em;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: normal;
+  margin: 0 2% 0.75em 0;
+  padding: 0.5em 1.1875em; }
+  @media (min-width: 480px) and (max-width: 719px) {
+    #button-2 {
+      margin-right: 0.5em; } }
+  @media (min-width: 720px) and (max-width: 959px) {
+    #button-2 {
+      margin-right: 0.75em; } }
+  @media (min-width: 960px) and (max-width: 1199px) {
+    #button-2 {
+      margin-right: 1.0em; } }
+  @media (min-width: 1200px) {
+    #button-2 {
+      margin-right: 1.25em; } }
+  #button-2::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+  #button-2:active {
+    background: #ffe645;
+    border-color: #e8c900; }
+  #button-2[disabled] {
+    background: #e3e3e3;
+    color: #bdbdbd; }
+
+#button-3 {
+  -webkit-border-radius: 0.125em;
+  border-radius: 0.125em;
+  background: #e3e3e3;
+  border: 0.0625em solid #c5c5c5;
+  color: #3e3e3e;
+  cursor: pointer;
+  float: left;
+  font-size: 1.6em;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: normal;
+  margin: 0 2% 0.75em 0;
+  padding: 0.5em 1.1875em; }
+  @media (min-width: 480px) and (max-width: 719px) {
+    #button-3 {
+      margin-right: 0.5em; } }
+  @media (min-width: 720px) and (max-width: 959px) {
+    #button-3 {
+      margin-right: 0.75em; } }
+  @media (min-width: 960px) and (max-width: 1199px) {
+    #button-3 {
+      margin-right: 1.0em; } }
+  @media (min-width: 1200px) {
+    #button-3 {
+      margin-right: 1.25em; } }
+  #button-3::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+  #button-3::before {
+    content: "\e000";
+    float: left;
+    font-family: 'Skeletal Icons';
+    font-size: 1.25em;
+    line-height: 0.8em;
+    margin: 0 0.125em 0 0; }
+  #button-3:active {
+    background: #f3f3f3;
+    border-color: #c5c5c5; }
+  #button-3[disabled] {
+    background: #e3e3e3;
+    color: #bdbdbd; }
+
+#button-4 {
+  -webkit-border-radius: 0.125em;
+  border-radius: 0.125em;
+  background: #23db2a;
+  border: 0.0625em solid #1ba620;
+  color: #3e3e3e;
+  cursor: pointer;
+  float: left;
+  font-size: 1.6em;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: normal;
+  margin: 0 2% 0.75em 0;
+  padding: 0.5em 1.1875em; }
+  @media (min-width: 480px) and (max-width: 719px) {
+    #button-4 {
+      margin-right: 0.5em; } }
+  @media (min-width: 720px) and (max-width: 959px) {
+    #button-4 {
+      margin-right: 0.75em; } }
+  @media (min-width: 960px) and (max-width: 1199px) {
+    #button-4 {
+      margin-right: 1.0em; } }
+  @media (min-width: 1200px) {
+    #button-4 {
+      margin-right: 1.25em; } }
+  #button-4::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+  #button-4::before {
+    content: "\e001";
+    float: left;
+    font-family: 'Skeletal Icons';
+    font-size: 1.25em;
+    line-height: 0.8em;
+    margin: 0 0.125em 0 0; }
+  #button-4:active {
+    background: #3de043;
+    border-color: #1ba620; }
+  #button-4[disabled] {
+    background: #e3e3e3;
+    color: #bdbdbd; }
+
+#button-5 {
+  -webkit-border-radius: 0.125em;
+  border-radius: 0.125em;
+  background: #e33d27;
+  border: 0.0625em solid #b52a18;
+  color: #3e3e3e;
+  cursor: pointer;
+  float: left;
+  font-size: 1.6em;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: normal;
+  margin: 0 2% 0.75em 0;
+  padding: 0.5em 1.1875em; }
+  @media (min-width: 480px) and (max-width: 719px) {
+    #button-5 {
+      margin-right: 0.5em; } }
+  @media (min-width: 720px) and (max-width: 959px) {
+    #button-5 {
+      margin-right: 0.75em; } }
+  @media (min-width: 960px) and (max-width: 1199px) {
+    #button-5 {
+      margin-right: 1.0em; } }
+  @media (min-width: 1200px) {
+    #button-5 {
+      margin-right: 1.25em; } }
+  #button-5::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+  #button-5::before {
+    content: "\e002";
+    float: left;
+    font-family: 'Skeletal Icons';
+    font-size: 1.25em;
+    line-height: 0.8em;
+    margin: 0 0.125em 0 0; }
+  #button-5:active {
+    background: #e75542;
+    border-color: #b52a18; }
+  #button-5[disabled] {
+    background: #e3e3e3;
+    color: #bdbdbd; }
 
 .grid-demo {
   background: repeat-y center top;
@@ -1332,7 +1501,7 @@ footer {
         width: 96%; } }
 
 header {
-  background: #e3e3e3;
+  background: #0a0201;
   color: #e33d27;
   padding: 2.4em 0 2.3em; }
   header > div {

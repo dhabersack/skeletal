@@ -1,0 +1,31 @@
+.form-elements {
+  form {
+    margin-bottom: 0;
+  }
+}
+
+#button-2 {
+  @include button(
+    $background-color: $color-highlight
+  );
+}
+
+#button-3 {
+  @include button(
+    $icon: $icon-search
+  );
+}
+
+#button-4 {
+  @include button(
+    $background-color: $color-action,
+    $icon: $icon-check
+  );
+}
+
+#button-5 {
+  @include button(
+    $background-color: $color-error,
+    $icon: $icon-cross
+  );
+}

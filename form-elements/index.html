@@ -1,0 +1,164 @@
+---
+layout: default
+page_class: form-elements
+title: Form elements
+---
+
+<h3>Buttons</h3>
+
+<h4>Standard</h4>
+
+<p>
+  Buttons are created with the background-color of
+  <code>$color-neutral-lighter</code>. They offer subtle highlighting in their
+  <code>:active</code>-state.
+</p>
+
+<form>
+  <input type="submit">
+</form>
+
+<h5>HTML</h5>
+
+<pre>&lt;input type="submit"&gt;</pre>
+
+
+<h4>Colored buttons</h4>
+
+<p>
+  You can specify an optional <code>$background-color</code>-attribute to change
+  the color of the button. Setting this parameter also changes the border color.
+</p>
+
+<form>
+  <input type="submit" id="button-2">
+</form>
+
+<h6>HTML</h6>
+
+<pre>&lt;input type="submit"&gt;</pre>
+
+
+<h6>CSS</h6>
+
+<pre>input[type="submit"] {
+  @include button(
+    $background-color: $color-highlight
+  );
+}</pre>
+
+
+<h4>Icons</h4>
+
+<p>
+  With the optional <code>$icon</code>-parameter, you can specify an icon to
+  insert in front of the button text.
+</p>
+
+<p>
+  Currently, the following icons are supported:
+</p>
+
+<ul>
+  <li><code>$icon-search</code></li>
+  <li><code>$icon-check</code></li>
+  <li><code>$icon-cross</code></li>
+</ul>
+
+<p>
+  <strong>Note:</strong> You can only use the <code>$icon</code>-parameter on
+  <code>button</code>-tags.
+</p>
+
+
+<h5>Search-button</h5>
+
+<form>
+  <button id="button-3">Search</button>
+</form>
+
+
+<h6>HTML</h6>
+
+<pre>&lt;button&gt;Search&lt;/button&gt;</pre>
+
+
+<h6>CSS</h6>
+
+<pre>button {
+  @include button(
+    $icon: $icon-search
+  );
+}</pre>
+
+
+<h5>Accept-button</h5>
+
+<form>
+  <button id="button-4">Accept</button>
+</form>
+
+
+<h6>HTML</h6>
+
+<pre>&lt;button&gt;Accept&lt;/button&gt;</pre>
+
+
+<h6>CSS</h6>
+
+<pre>button {
+  @include button(
+    $background-color: $color-action,
+    $icon: $icon-check
+  );
+}</pre>
+
+
+<h5>Cancel-button</h5>
+
+<form>
+  <button id="button-5">Cancel</button>
+</form>
+
+
+<h6>HTML</h6>
+
+<pre>&lt;button&gt;Cancel&lt;/button&gt;</pre>
+
+
+<h6>CSS</h6>
+
+<pre>button {
+  @include button(
+    $background-color: $color-error,
+    $icon: $icon-cross
+  );
+}</pre>
+
+
+<h3>Textfields</h3>
+
+<h4>Standard</h4>
+
+<form>
+  <input type="text" placeholder="Placeholder">
+</form>
+
+<h5>HTML</h5>
+
+<pre>&lt;input type="text" placeholder="Placeholder"&gt;</pre>
+
+<h5>CSS</h5>
+
+<pre>input[type="text"] {
+  @include textfield(
+    // TODO
+  );
+}</pre>
+
+
+<h4><code>$number-of-columns</code></h4>
+
+<p>
+  All form fields are responsive, meaning they resize at set breakpoints.
+</p>
