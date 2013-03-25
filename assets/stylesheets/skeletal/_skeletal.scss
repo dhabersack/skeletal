@@ -1000,6 +1000,11 @@ menu {}
     background-color: $color-debug !important;
   }
 
+  body {
+    background-image: -webkit-linear-gradient(top, transparent ($vertical-grid-base-height * 2 - 0.1em), $color-neutral-lighter 100%);
+    background-size: auto $vertical-grid-base-height * 2;
+  }
+
   html {
     background: repeat-y center top;
 
