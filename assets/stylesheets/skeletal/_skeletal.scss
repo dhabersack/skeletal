@@ -844,6 +844,8 @@ input {
     & + label {
       display: inline-block;
       clear: both;
+      height: 1.5em;
+      margin-bottom: 0.75em; // 12px
 
       &::before {
         $color: $color-neutral-lighter;
