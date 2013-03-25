@@ -721,13 +721,18 @@ tr {
 td,
 th {
   vertical-align: top;
+
+  border: {
+    color: transparentize($color-neutral-darker, 0.8);
+    style: solid;
+    width: 0.0625em 0; // 1px
+  }
+  padding: 0.3125em 0.625em; // 5px 9px
 }
 
 // table data cell
 td {
   @include font-size(1.6em);
-
-  padding: 0.375em 0.625em; // 6px 10px
 }
 
 // table header cell
@@ -738,7 +743,6 @@ th {
     family: $font-family-headings;
     weight: normal;
   }
-  padding: 0.375em 0.625em; // 6px 10px
   text-align: left;
 }
 
