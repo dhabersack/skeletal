@@ -1,2 +1,3 @@
+baseurl: http://dhabersack.github.com/skeletal
 auto: true
 exclude: [Gemfile, Gemfile.lock, vendor]
