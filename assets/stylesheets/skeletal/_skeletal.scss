@@ -540,6 +540,7 @@ time {}
 // fragment of computer code
 code {
   font-family: $font-family-code;
+  vertical-align: top; // `middle` increased height of `dd` this was nested in by one pixel
 }
 
 var {
