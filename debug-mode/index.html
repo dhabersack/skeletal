@@ -1,0 +1,25 @@
+---
+layout: default
+title: Debug mode
+---
+
+<p>
+  You can activate debug mode by setting <code>$is-in-debug-mode</code> in
+  <code>_config.scss</code> to <code>true</code>. This activates both a
+  column-grid background and a baseline-grid based on the value set as
+  <code>$vertical-grid-base-height</code> in the same file:
+</p>
+
+<figure>
+  <img src="debug-mode.jpg">
+
+  <figcaption>
+    Debug mode activated on the main page of this documentation.
+  </figcaption>
+</figure>
+
+<p>
+  In order to see the column background, <code>$number-of-grid-columns</code> in
+  <code>_config.scss</code> needs to be set to <code>12</code>, <code>16</code>
+  or <code>24</code>.
+</p>

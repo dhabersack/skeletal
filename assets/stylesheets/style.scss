@@ -1,22 +1,22 @@
 @import 'skeletal/skeletal.scss';
 @import 'demo/demo.scss';
 
-@include font-face(
-  $name: 'Entypo',
-  $path: '../fonts/Entypo/',
-  $eot:  'regular.eot',
-  $woff: 'regular.woff',
-  $ttf:  'regular.ttf',
-  $svg:  'regular.svg#EntypoRegular'
-);
+$icon-github:     '\e000';
+$icon-twitter:    '\e001';
+$icon-gauge:      '\e002';
+$icon-eye:        '\e003';
+$icon-graduation: '\e004';
+$icon-archive:    '\e005';
+$icon-tools:      '\e006';
+$icon-rocket:     '\e007';
 
 @include font-face(
-  $name: 'Skeletal',
-  $path: '../fonts/Skeletal/',
-  $eot:  'regular.eot',
-  $woff: 'regular.woff',
-  $ttf:  'regular.ttf',
-  $svg:  'regular.svg#Skeletal'
+  $name: 'Skeletal Documentation Icons',
+  $path: '../fonts/Skeletal-Documentation-Icons/',
+  $eot:  'icons.eot',
+  $woff: 'icons.woff',
+  $ttf:  'icons.ttf',
+  $svg:  'icons.svg#SkeletalDocumentationIcons'
 );
 
 body {
@@ -67,10 +67,41 @@ footer {
   }
 }
 
+h1 {
+  color: $color-brand-darkest;
+  color: $color-neutral-lightest;
+  font-weight: normal;
+
+  > a {
+    @include border-radius(0.125em); // 3px
+
+    background: $color-brand;
+    padding: 0 0.5em; // 0 0 12px
+    text-decoration: none;
+    text-shadow: 0 0 0.125em $color-neutral-darkest; // 0 0 3px
+  }
+}
+
 header {
-  background: $color-brand-darkest;
+  background: url('../images/theme/header.jpg') no-repeat center bottom;
+  background-size: cover;
   color: $color-brand;
   padding: 2.4em 0 2.3em;
+
+  button {
+    float: none;
+
+    &::before {
+      content: $icon-github;
+      float: left;
+      font: {
+        family: 'Skeletal Documentation Icons';
+        size: 1.25em; // 20px
+      }
+      line-height: 0.8em; // 16px
+      margin: 0 0.125em 0 0; // 0 5px 0 0
+    }
+  }
 
   > div {
     @include grid($number-of-grid-columns, $center: true);
@@ -79,30 +110,30 @@ header {
     width: $grid-extra-small-column-width;
   }
 
-  p {
-    @include font-size(4em);
-
-    font: {
-      family: $font-family-headings;
-      weight: bold;
-    }
-    margin-bottom: 0;
+  form {
     text-align: center;
+  }
 
-    text-shadow: 0 -1px 1px $color-brand-darker, 0 1px 1px $color-brand-lightest;
+  p {
+    @include font-size(3.2em);
 
+    margin-bottom: 0.75em;
+    text: {
+      align: center;
+      shadow: 0 -1px 1px $color-brand-lightest, 0 1px 1px $color-brand-darker;
+    }
     word-spacing: 0.125em;
 
     @media (#{ $media-query-medium }) {
-      @include font-size(6em);
+      @include font-size(4em);
     }
 
     @media (#{ $media-query-large }) {
-      @include font-size(8em);
+      @include font-size(5em);
     }
 
     @media (#{ $media-query-extra-large }) {
-      @include font-size(10em);
+      @include font-size(6em);
     }
   }
 }
@@ -124,7 +155,8 @@ section {
 .colors {
   li {
     > code {
-      margin: 0.75em 0; // 48px
+      margin-top: 0.75em; // 12px
+      display: inline-block;
     }
   }
 
@@ -157,6 +189,15 @@ section {
   }
 }
 
+.form-elements {
+  section {
+    > form {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
 .home {
   section {
     ol {
@@ -176,7 +217,7 @@ section {
         &::before {
           color: $color-brand;
           font: {
-            family: 'Skeletal';
+            family: 'Skeletal Documentation Icons';
             size: 8em;
           }
           height: 1em;
@@ -188,7 +229,7 @@ section {
           width: 100%;
         }
 
-        $icons: ('\e026', '\e005', '\e001', '\e002', '\e010', '\e004');
+        $icons: ($icon-gauge, $icon-eye, $icon-graduation, $icon-archive, $icon-tools, $icon-rocket);
 
         @for $i from 1 through length($icons) {
           &:nth-of-type(#{ $i }) {
@@ -211,5 +252,11 @@ section {
         }
       }
     }
+  }
+}
+
+.typography {
+  .item {
+    @include font-size(4.8em);
   }
 }

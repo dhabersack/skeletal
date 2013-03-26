@@ -428,14 +428,14 @@ dd {
 // self-contained, single unit referenced from main flow of document
 figure {
   @include border-radius(0.2em);
-  @include box-shadow(0 0 0.1em $color-neutral-darkest);
 
-  background: $color-neutral-lighter;
-  margin: 0 0 2.4em;
-  padding: 1.2em 0 0;
+  border: 0.1em solid $color-neutral;
+  margin: 0 0 2.3em;
+  padding: 1.1em 0 0;
 
   > img {
     margin: 0 auto 1.2em;
+    max-width: 90%;
   }
 }
 
@@ -443,12 +443,12 @@ figure {
 figcaption {
   @include font-size(1.5em);
 
-  background: $color-neutral;
+  background: $color-neutral-lighter;
   font: {
     family: $font-family-headings;
     style: italic;
   }
-  padding: 0.4em 1em; // 6px 15px
+  padding: 0.4em 0.6em; // 6px 9px
   text-align: center;
 }
 
@@ -506,24 +506,17 @@ cite {
 
 // phrasing content quoted from another source
 q {
-  @include border-radius(0.125em); // 2px
-  @include box-shadow(0 0 0.0625em $color-neutral-darker); // 1px
-
-  background: $color-neutral;
-  display: inline-block;
   font: {
     family: $font-family-quotes;
     style: italic;
   }
-  margin: 0 0.125em; // 0 2px
-  padding: 0 0.3125em; // 0 5px
 
   &::after {
-    content: '"';
+    content: '”';
   }
 
   &::before {
-    content: '"';
+    content: '“';
   }
 }
 
@@ -547,6 +540,7 @@ time {}
 // fragment of computer code
 code {
   font-family: $font-family-code;
+  vertical-align: top; // `middle` increased height of `dd` this was nested in by one pixel
 }
 
 var {
@@ -594,7 +588,6 @@ u {}
 // marked text
 mark {
   @include border-radius(0.125em); // 2px
-  @include box-shadow(0 0 0.0625em $color-neutral-darkest); // 1px
 
   background: $color-highlight-lighter;
   color: inherit;
@@ -673,6 +666,7 @@ table {
     collapse: collapse;
     spacing: 0;
   }
+  font-family: $font-family-data;
   margin-bottom: 2.4em; // 24px
   width: 100%;
 }
@@ -696,13 +690,7 @@ tbody {
 }
 
 // table header
-thead {
-  font-family: $font-family-headings;
-
-  th {
-    text-align: center;
-  }
-}
+thead {}
 
 thead,
 tfoot {
@@ -721,24 +709,25 @@ tr {
 td,
 th {
   vertical-align: top;
+
+  border: {
+    color: transparentize($color-neutral-darker, 0.8);
+    style: solid;
+    width: 0.0625em 0; // 1px
+  }
+  padding: 0.3125em 0.625em; // 5px 9px
 }
 
 // table data cell
 td {
   @include font-size(1.6em);
-
-  padding: 0.375em 0.625em; // 6px 10px
 }
 
 // table header cell
 th {
   @include font-size(1.6em);
 
-  font: {
-    family: $font-family-headings;
-    weight: normal;
-  }
-  padding: 0.375em 0.625em; // 6px 10px
+  font-weight: normal;
   text-align: left;
 }
 
@@ -812,14 +801,14 @@ legend {
 }
 
 label {
+  @include font-size(1.6em);
+
   cursor: pointer;
   display: block;
   float: left;
   font: {
     family: $font-family-headings;
-    size: 1.6em;
   }
-  line-height: 1.875em; // 30px
 
   &:hover {
     & + input {
@@ -844,6 +833,8 @@ input {
     & + label {
       display: inline-block;
       clear: both;
+      height: 1.5em;
+      margin-bottom: 0.75em; // 12px
 
       &::before {
         $color: $color-neutral-lighter;
@@ -998,6 +989,11 @@ menu {}
 @if $is-in-debug-mode {
   * {
     background-color: $color-debug !important;
+  }
+
+  body {
+    background-image: -webkit-linear-gradient(top, transparent ($vertical-grid-base-height * 2 - 0.1em), $color-neutral-lighter 100%);
+    background-size: auto $vertical-grid-base-height * 2;
   }
 
   html {

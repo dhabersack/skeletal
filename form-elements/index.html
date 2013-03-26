@@ -14,9 +14,13 @@ title: Form elements
   <code>:active</code>-state.
 </p>
 
+
+<h5>Output</h5>
+
 <form>
   <input type="submit">
 </form>
+
 
 <h5>HTML</h5>
 
@@ -26,20 +30,23 @@ title: Form elements
 <h4>Colored buttons</h4>
 
 <p>
-  You can specify an optional <code>$background-color</code>-attribute to change
-  the color of the button. Setting this parameter also changes the border color.
+  The (optional) <code>$background-color</code>-attribute changes the coloring
+  of a button.
 </p>
+
+
+<h5>Output</h5>
 
 <form>
   <input type="submit" id="button-2">
 </form>
 
-<h6>HTML</h6>
+<h5>HTML</h5>
 
 <pre>&lt;input type="submit"&gt;</pre>
 
 
-<h6>CSS</h6>
+<h5>CSS</h5>
 
 <pre>input[type="submit"] {
   @include button(
@@ -51,12 +58,8 @@ title: Form elements
 <h4>Icons</h4>
 
 <p>
-  With the optional <code>$icon</code>-parameter, you can specify an icon to
-  insert in front of the button text.
-</p>
-
-<p>
-  Currently, the following icons are supported:
+  The (optional) <code>$icon</code>-parameter specifies an icon that gets
+  inserted in front of the button text. The following icons are available:
 </p>
 
 <ul>
@@ -71,64 +74,37 @@ title: Form elements
 </p>
 
 
-<h5>Search-button</h5>
+<h5>Output</h5>
 
 <form>
   <button id="button-3">Search</button>
-</form>
-
-
-<h6>HTML</h6>
-
-<pre>&lt;button&gt;Search&lt;/button&gt;</pre>
-
-
-<h6>CSS</h6>
-
-<pre>button {
-  @include button(
-    $icon: $icon-search
-  );
-}</pre>
-
-
-<h5>Accept-button</h5>
-
-<form>
   <button id="button-4">Accept</button>
-</form>
-
-
-<h6>HTML</h6>
-
-<pre>&lt;button&gt;Accept&lt;/button&gt;</pre>
-
-
-<h6>CSS</h6>
-
-<pre>button {
-  @include button(
-    $background-color: $color-action,
-    $icon: $icon-check
-  );
-}</pre>
-
-
-<h5>Cancel-button</h5>
-
-<form>
   <button id="button-5">Cancel</button>
 </form>
 
 
-<h6>HTML</h6>
+<h5>HTML</h5>
 
-<pre>&lt;button&gt;Cancel&lt;/button&gt;</pre>
+<pre>&lt;button id="search"&gt;Search&lt;/button&gt;
+&lt;button id="accept"&gt;Accept&lt;/button&gt;
+&lt;button id="cancel"&gt;Cancel&lt;/button&gt;</pre>
 
+<h5>CSS</h5>
 
-<h6>CSS</h6>
+<pre>#search {
+  @include button(
+    $icon: $icon-search
+  );
+}
 
-<pre>button {
+#accept {
+  @include button(
+    $background-color: $color-action,
+    $icon: $icon-check
+  );
+}
+
+#cancel {
   @include button(
     $background-color: $color-error,
     $icon: $icon-cross
@@ -138,27 +114,89 @@ title: Form elements
 
 <h3>Textfields</h3>
 
+<p>
+  All form fields are responsive, meaning they resize at set breakpoints.
+</p>
+
+
 <h4>Standard</h4>
+
+<p>
+  The default styling of a text field spans half of the page width at all
+  breakpoints. The color of the border changes to <a
+  href="/colors"><code>$color-highlight</code></a> when the field is in focus.
+</p>
+
+
+<h5>Output</h5>
 
 <form>
   <input type="text" placeholder="Placeholder">
 </form>
 
+
 <h5>HTML</h5>
 
 <pre>&lt;input type="text" placeholder="Placeholder"&gt;</pre>
+
+
+<h4>Widths</h4>
+
+<p>
+  The (optional) <code>$number-of-columns</code>-parameter specifies how many
+  columns of the underlying <a href="/grid">grid</a> a textfield should occupy.
+</p>
+
+<p>
+  On the smallest breakpoint, textfields always span the full width of the
+  parent container.
+</p>
+
+
+<h5>Output</h5>
+
+<form>
+  <input type="text" placeholder="Placeholder" id="demo-textfield-1">
+</form>
 
 <h5>CSS</h5>
 
 <pre>input[type="text"] {
   @include textfield(
-    // TODO
+    $number-of-columns: 3
   );
 }</pre>
 
-
-<h4><code>$number-of-columns</code></h4>
+<h4>Breakpoint-aware widths</h4>
 
 <p>
-  All form fields are responsive, meaning they resize at set breakpoints.
+  Identical to the <a href="/grid"><code>grid</code>-mixin</a>, textfields can
+  be given different widths at different breakpoints through the (optional)
+  <code>$breakpoints</code>-parameter.
 </p>
+
+<h5>Output</h5>
+
+<form>
+  <input type="text" placeholder="Placeholder" id="demo-textfield-2">
+</form>
+
+
+<h5>CSS</h5>
+
+<pre>input[type="text"] {
+  @include textfield(
+    8,
+    $breakpoints: ('small')
+  );
+
+  @include textfield(
+    6,
+    $breakpoints: ('medium', 'large')
+  );
+
+  @include textfield(
+    4,
+    $breakpoints: ('extra-large')
+  );
+}</pre>

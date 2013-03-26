@@ -1,9 +1,3 @@
-.form-elements {
-  form {
-    margin-bottom: 0;
-  }
-}
-
 #button-2 {
   @include button(
     $background-color: $color-highlight
@@ -27,5 +21,26 @@
   @include button(
     $background-color: $color-error,
     $icon: $icon-cross
+  );
+}
+
+#demo-textfield-1 {
+  @include textfield(3);
+}
+
+#demo-textfield-2 {
+  @include textfield(
+    8,
+    $breakpoints: ('small')
+  );
+
+  @include textfield(
+    6,
+    $breakpoints: ('medium', 'large')
+  );
+
+  @include textfield(
+    4,
+    $breakpoints: ('extra-large')
   );
 }

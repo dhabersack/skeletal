@@ -1,4 +1,64 @@
 ---
 layout: default
+page_class: typography
 title: Typography
 ---
+
+<h3>Baseline grid</h3>
+
+<p>
+  The <code>font-size</code>-mixin takes an <code>em</code>-based value and sets
+  it as the <code>font-size</code> while also setting the appropriate
+  <code>line-height</code>.
+</p>
+
+<p>
+  The calculation of the correct <code>line-height</code> takes the variables
+  <code>$vertical-grid-base-height</code> and
+  <code>$minimum-line-height-to-font-size-ratio</code> in
+  <code>_config.scss</code> into account.
+</p>
+
+<p>
+  The following font-sizes are recommended in order to maintain a solid
+  baseline-grid:
+</p>
+
+<ul>
+  <li>10px</li>
+  <li>12px</li>
+  <li>15px</li>
+  <li>16px</li>
+  <li>20px</li>
+  <li>24px</li>
+  <li>25px</li>
+  <li>30px</li>
+  <li>32px</li>
+  <li>40px</li>
+  <li>48px</li>
+  <li>50px</li>
+  <li>60px</li>
+  <li>75px</li>
+  <li>80px</li>
+  <li>96px</li>
+  <li>100px</li>
+  <li>120px</li>
+</ul>
+
+<p>
+  <strong>Note:</strong> You will have to translate these to
+  <code>em</code>-based values in the individual environments in order for the
+  mixin to calculate the correct results.
+</p>
+
+<h4>Example</h4>
+
+<h5>Output</h5>
+
+<p class="item">This is my content.</p>
+
+<h5>CSS</h5>
+
+<pre>p {
+  @include font-size(4.8em);
+}</pre>
