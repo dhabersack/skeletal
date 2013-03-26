@@ -506,24 +506,17 @@ cite {
 
 // phrasing content quoted from another source
 q {
-  @include border-radius(0.125em); // 2px
-  @include box-shadow(0 0 0.0625em $color-neutral-darker); // 1px
-
-  background: $color-neutral;
-  display: inline-block;
   font: {
     family: $font-family-quotes;
     style: italic;
   }
-  margin: 0 0.125em; // 0 2px
-  padding: 0 0.3125em; // 0 5px
 
   &::after {
-    content: '"';
+    content: '”';
   }
 
   &::before {
-    content: '"';
+    content: '“';
   }
 }
 
@@ -594,7 +587,6 @@ u {}
 // marked text
 mark {
   @include border-radius(0.125em); // 2px
-  @include box-shadow(0 0 0.0625em $color-neutral-darkest); // 1px
 
   background: $color-highlight-lighter;
   color: inherit;
