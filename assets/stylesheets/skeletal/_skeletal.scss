@@ -698,13 +698,7 @@ tfoot {
 }
 
 // table row
-tr {
-  > th {
-    &:first-of-type {
-      text-align: right;
-    }
-  }
-}
+tr {}
 
 td,
 th {
