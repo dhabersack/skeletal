@@ -21,6 +21,7 @@
   line-height: normal;
   margin: 0 $grid-extra-small-gutter-width 0.75em 0;
   padding: 0.5em 1.1875em; // 8px 19px
+  -webkit-appearance: none;
 
   @media (#{ $media-query-small }) {
     margin-right: $grid-small-gutter-width / $font-size * 1em;
@@ -106,6 +107,7 @@
   margin: 0 $grid-extra-small-gutter-width 0.75em 0;
   padding: $padding-vertical $padding-horizontal;
   width: 90%;
+  -webkit-appearance: none;
 
   @if $does-include-small {
     @media (#{ $media-query-small }) {
